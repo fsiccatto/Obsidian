@@ -1,0 +1,20 @@
+{
+	"nodes":[
+		{"id":"66e85d639e0d41c3","type":"group","x":-145,"y":-84,"width":765,"height":400,"label":"Nombres"},
+		{"id":"d835b69df07282d1","type":"text","text":"**Nombers de Variables**\n","x":-125,"y":-30,"width":251,"height":60,"color":"1"},
+		{"id":"a3003d36657e48b1","type":"text","text":"Reglas\n","x":-124,"y":116,"width":250,"height":60,"color":"4"},
+		{"id":"b472b848b256268d","type":"text","text":"No debe ser palaba reservada","x":255,"y":115,"width":345,"height":60},
+		{"id":"df05f8ecec981ead","type":"text","text":"El nombre debe inciar con una letra","x":255,"y":51,"width":345,"height":60},
+		{"id":"b5fbd28a14ff42e9","type":"text","text":"Combinaciones de letras mayúsculas y minúsculas, dígitos y guión bajo","x":255,"y":-64,"width":303,"height":115},
+		{"id":"3ce669020f1b3619","type":"text","text":"Longitud máx de caracteres: 10","x":255,"y":236,"width":345,"height":60},
+		{"id":"e5634b530bd2991f","type":"text","text":"Significativa y con relación al objeto\n","x":255,"y":176,"width":345,"height":60}
+	],
+	"edges":[
+		{"id":"cf99773f4baa84ac","fromNode":"d835b69df07282d1","fromSide":"bottom","toNode":"a3003d36657e48b1","toSide":"top"},
+		{"id":"ce4ce314e80e1c96","fromNode":"a3003d36657e48b1","fromSide":"right","toNode":"b5fbd28a14ff42e9","toSide":"left"},
+		{"id":"6c07b03272168aa7","fromNode":"a3003d36657e48b1","fromSide":"right","toNode":"df05f8ecec981ead","toSide":"left"},
+		{"id":"bcbdd8709bb20eca","fromNode":"a3003d36657e48b1","fromSide":"right","toNode":"b472b848b256268d","toSide":"left"},
+		{"id":"54bb72f20ee30107","fromNode":"a3003d36657e48b1","fromSide":"right","toNode":"e5634b530bd2991f","toSide":"left"},
+		{"id":"df872a5c53395aa6","fromNode":"a3003d36657e48b1","fromSide":"right","toNode":"3ce669020f1b3619","toSide":"left"}
+	]
+}
