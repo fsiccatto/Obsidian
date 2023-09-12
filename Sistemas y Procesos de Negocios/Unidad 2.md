@@ -44,7 +44,7 @@ Contienen información breve y siempre remiten a fuentes primarias y secundarias
 ## Técnicas de recopilación de Información
 ### Entrevistas
 #### ¿Qué es una entrevista?
-Es una conversación dirigida con un propósito específico, en la cual se usa un formato de preguntas y respuestas. En la entrevista hay que obtener las opiniones del entrevistado y lo que siente sobre el estado actual del sistema, los objetivos de la organización y los personales, y los procedimientos informales para interactuar con las tecnologías de la información. Sobre todo busque las opiniones del entrevistado. Éstas pueden ser más importantes y reveladoras que los hechos.
+Es una conversación dirigida con un propósito específico, en la cual se usa un formato de preguntas y respuestas. En la entrevista hay que obtener las opiniones del entrevistado y lo que siente sobre el estado actual del sistema, los objetivos de la organización y los personales, y los procedimientos informales para interactuar con las tecnologías de la información. Sobre todo busque las opiniones del entrevistado. Éstas pueden ser más importantes y reveladoras que los hechos.
 #### ¿Qué tipo de información se pretende obtener mediante las entrevistas?
 Los **objetivos** son información importante que podemos obtener de las entrevistas. Los datos “duros” pueden explicar el desempeño en el pasado, pero los objetivos proyectan el futuro de la organización. Trate de averiguar a través de las entrevistas la mayor cantidad posible de objetivos de la organización, pues tal vez no pueda determinarlos mediante los otros métodos de recopilación de datos.
 #### Explique los pasos necesarios para preparar una entrevista.
@@ -131,3 +131,32 @@ Hay que utilizar preguntas cerradas cuando el analista de sistemas pueda enlista
 
 ![[Preguntas abiertas y cerradas cuestionarios.png]]
 #### Escalas y tipos
+Escalar es el proceso de asignar números u otros símbolos a un atributo o característica, con el fin de medirlos.
+1. Escalas nominales: se utilizan para clasificar cosas.
+2. Escalas de intervalo: los intervalos entre cada uno de los números son **iguales**.
+##### Validez y Confiabilidad
+Son dos medidas de rendimiento.
+**Validez**: es el grado con el que la pregunta mide lo que el analista requiere.
+**Confiabilidad**: implica consistencia. Es decir, si el cuestionario se aplicó una vez y después se volvió a aplicar bajo las mismas condiciones, y se obtuvieron los mismos resultados en ambas ocasiones, se dice que el instrumento tiene consistencia externa. Si el cuestionario contiene subpartes y éstas tienen resultados equivalentes, se dice que el instrumento tiene consistencia interna. Es importante tener consistencia externa e interna
+##### Construcción de las escalas
+Si se hacen mal, puede surgir:
+1. Indulgencia → es un problema que provocan los encuestados que califican en forma superficial. 
+2. Tendencia central → ocurre cuando los encuestados califican todo como promedio
+3. Efecto halo → surge cuando la impresión que se forja en una pregunta se acarrea hasta la siguiente
+#### Diseño de un cuestionario
+Un cuestionario bien diseñado y relevante puede ayudar a vencer parte de esta resistencia a responder. He aquí algunas reglas para diseñar un buen cuestionario: 
+1. Incluya mucho espacio en blanco. 
+2. Incluya mucho espacio para escribir o teclear las respuestas. 
+3. Facilite a los encuestados la acción de marcar con claridad sus respuestas. 
+4. Mantenga un estilo consistente.
+#### Administración de los cuestionarios
+1. Convocar al mismo tiempo a todos los encuestados concernientes. 
+2. Entregar cuestionarios en blanco en forma personal y recoger los cuestionarios que ya estén llenos. 
+3. Permitir que los encuestados administren su propio cuestionario en el trabajo y lo depositen en una caja ubicada en un lugar céntrico. 
+4. Enviar por correo los cuestionarios a los empleados en las sucursales y proveer una fecha de entrega, instrucciones y un sobre con franqueo pagado. 
+5. Administrar el cuestionario en forma electrónica, ya sea a través de correo electrónico o Web.
+Cada uno de estos cinco métodos tiene ventajas y desventajas. Es común permitir que los encuestados administren su propio cuestionario. Las tasas de respuesta con este método son un poco más bajas que con los otros métodos, debido a que las personas a veces se olvidan del formulario, lo pierden o lo ignoran de manera intencional. Sin embargo, al administrar su propio cuestionario, las personas sienten que tienen asegurado su *anonimato* y es posible que algunos encuestados den respuestas menos cautelosas. Las encuestas por correo electrónico y Web se encuentran en la categoría de cuestionarios autoadministrados.
+#### Cuestionarios electrónicos
+Administrar el cuestionario vía electrónica, ya sea por correo electrónico o a través de un sitio Web, es una manera de llegar rápidamente a los usuarios del sistema actual. Se minimizan los costos de tener que sacar copias. Además, el encuestado puede responder a su propia conveniencia para después recolectar todos los cuestionarios en forma automática y almacenarlos en medios electrónicos. Hay cierto software que permite a los encuestados empezar a contestar una encuesta, guardar sus respuestas y regresar más tarde para terminar de contestar en caso de interrupciones. Se pueden enviar recordatorios a los encuestados de una manera fácil y económica por medio de correo electrónico, al igual que las notificaciones para hacer saber al analista cuando el encuestado haya abierto el correo electrónico. También hay software que convierte los datos de los correos electrónicos en tablas para usarlas en software de hojas de cálculo o de análisis estadístico.
+La investigación muestra que los encuestados están dispuestos a responder, a través de Internet, preguntas sobre cuestiones delicadas. Por ende, es probable que las preguntas que tal vez sean difíciles de plantear en persona en relación con los problemas de sistemas, sí se puedan plantear en una encuesta Web.
+### Investigación
