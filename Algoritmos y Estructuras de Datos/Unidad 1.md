@@ -34,7 +34,13 @@ Siempre vamos a seguir 3 pasos:
 - Diagrama de flujos
 - Pseudocódigo
 ## Estructura de un Programa
-![[Estructura.png]]
+```
+PROGRAMA nombreDelPrograma
+VAR declaracion de variables
+INICIO
+	Acciones
+FINPROGRAMA
+```
 #### Calidad de un Programa
 - Un programa debe _funcionar correctamente_
 - La _documentación_: es importante para comprender y utilizar el programa

@@ -19,6 +19,8 @@ Es una variable estructurada de **UNA** dimensión, con elementos del mismo tipo
 Vector: A
 tamaño: n
 A[1], A[2], A[3], ..., A[n];
+
+VAR nomVector[TAMAÑO]: TIPO DE DATO
 ```
 #Indice Para poder referirnos al vector completo o a un elemtento, debemos hacer `nombre[subindice]`. Tiene que ser de tipo **ENTERO** y va de `1 <= subindice <= tamaño`.
 ##### Operaciones con Vectores
@@ -46,6 +48,8 @@ A[2, 1], A[2, 2], A[2, 3], ..., A[2, m]
 A[3, 1], A[3, 2], A[3, 3], ..., A[3, m]
 ...
 A[n, 1], A[n, 2], A[n, 3], ..., A[n, m]
+
+VAR nomMatriz[TAMAÑOFILA][TAMAÑOCOLUMNA]: TIPO DE DATO
 ```
 #Indice Podemos referirnos a la matriz completa o a un único elemento. Debemos hacerlo `nombre[subidndiceFila, subindiceColumna]`.
 Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que se **ENTERO**.
@@ -84,7 +88,6 @@ Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que 
 	FINVARIAR
 	```
 
-
 ### Sección Transversal
 Una sección tranveresal de un arreglo bidimensional #Matrices  se obtine al mantener uno de sus subíndices constantes mientras se hace variar a otro.
 Para denotar la sección transversal se usa `*` para el subídince que puede tomar cualquier valor del rango definido. Ej: `B[*, 4]` hacemos variar todas las filas para la columna 4.
@@ -120,6 +123,7 @@ La búsqueda procede mediante una serie de pruebas sucesivas en el arreglo:
  - La primera prueba compara el valor del elemento que está a la mitad del conjunto contra el valor buscado, si el valor buscado es menor, entonces la segunda mitad del conjunto puede ignorarse. Si el valor es mayor se considerará la segunda mitad y se descartará la primera.
  - La segunda prueba compara el valor de la mitad del conjunto que queda, si el valor buscado es menor se parte el conjunto y se descarta la segunda mitad, si es mayor se descarta la primera mitad.
 De esta forma se continúa partiendo el conjunto buscando el valor hasta encontrarlo o hasta probar que no existe.
+
 ###### Ejemplo
 ```
 FUNCION BusqBin(tamaño, vector[100], valor: ENTERO): LOGICO
@@ -150,8 +154,6 @@ FINSI
 RETORNO
 ```
 
-
----
 ### Ordenamiento por Selección o Burbuja
 Consiste en compara elementos sucesivos e intercambiar los elementos fuera de secuencia. El método termina cuando no hay intercambios que hacer durante una iteración.
 ###### Ejemplo
@@ -177,7 +179,7 @@ FIN PROCEDIMIENTO
 ### Ordenamiento por Partición e Intercambio (quicksort)
 La idea básica es usar los resultados de cada paso de comparación para guiar el siguiente paso de comparación.
 Durante un paso los elementos se intercambian de tal forma que cuando se completa el paso, el conjunto se ha particionado de tal manera que los elementos de una partición son todos menores que un determinado valor y los elementos de la otra partición son todos mayores (aunque desordenados).
-"Divide y vencerás" permite ordenar `n` elementos en un tiempo proporcional a O(n log(n)) y en el peor de los casos O(n<sup>2</sup>) 
+"Divide y vencerás" permite ordenar `n` elementos en un tiempo proporcional a O(n log(n)) y en el peor de los casos O(n<sup>2</sup>) .
 ![[quickSort.webp]]
 ``` JavaScript
 function swap(items, leftIndex, rightIndex){
@@ -244,5 +246,6 @@ Se siguen tres pasos:
 1. Suponer el peor de los casos
 2. Asignar un costo a cada operación o línea de código
 3. Ver cuantas veces va a ser ejecutada cada línea de código
+---
 # Ejercicios
 ![[Arreglos]]

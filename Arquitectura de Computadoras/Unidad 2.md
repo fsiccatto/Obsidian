@@ -1,0 +1,1 @@
+# Álgebra de Boole

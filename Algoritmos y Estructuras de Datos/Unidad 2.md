@@ -19,11 +19,11 @@ Son valores que cambian a lo largo del programa. Debe identificarse y manejarse 
 - Nombre
 - Contenido
 - Tipo de Dato
-`VAR nomVar: VALOR`
+`VAR nomVar: TIPO DE DATO`
 ![[Variables.canvas]]
 #### Constantes
 Son valores que no varían durante la ejecución del algoritmo.
-`CONST nomConst: VALOR`
+`CONST nomConst: TIPO DE DATO`
 #### Lectura de datos
 Permite introducir los datos. Puede hacerse desde el teclado, lector de códigos de barra, mouse, etc.
 `LEER(nomVar1, nomVar2)`

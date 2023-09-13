@@ -160,3 +160,13 @@ Cada uno de estos cinco métodos tiene ventajas y desventajas. Es común permiti
 Administrar el cuestionario vía electrónica, ya sea por correo electrónico o a través de un sitio Web, es una manera de llegar rápidamente a los usuarios del sistema actual. Se minimizan los costos de tener que sacar copias. Además, el encuestado puede responder a su propia conveniencia para después recolectar todos los cuestionarios en forma automática y almacenarlos en medios electrónicos. Hay cierto software que permite a los encuestados empezar a contestar una encuesta, guardar sus respuestas y regresar más tarde para terminar de contestar en caso de interrupciones. Se pueden enviar recordatorios a los encuestados de una manera fácil y económica por medio de correo electrónico, al igual que las notificaciones para hacer saber al analista cuando el encuestado haya abierto el correo electrónico. También hay software que convierte los datos de los correos electrónicos en tablas para usarlas en software de hojas de cálculo o de análisis estadístico.
 La investigación muestra que los encuestados están dispuestos a responder, a través de Internet, preguntas sobre cuestiones delicadas. Por ende, es probable que las preguntas que tal vez sean difíciles de plantear en persona en relación con los problemas de sistemas, sí se puedan plantear en una encuesta Web.
 ### Investigación
+Investigar **es descubrir y analizar información**. Los datos revelan dónde ha estado la organización y hacia dónde creen sus miembros que se dirige. Para formar una imagen precisa, el analista necesita examinar datos tanto cuantitativos como cualitativos.
+#### ¿Qué se investiga?
+- Informes para la toma de decisiones
+- Informes de rendimiento
+- Registros
+- Formularios de captura de datos
+- Memos
+- Anuncios 
+- Sitios web corporativos
+- Manuales

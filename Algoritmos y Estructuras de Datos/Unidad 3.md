@@ -63,21 +63,21 @@ Es una estructura que permite controlar la ejecución de acciones que requieren 
 Estructuras qe repiten una secuencia de instrucciones un número determinado de veces, iteración se llama al hecho de repetir la ejecución de una secuencia de acciones.
 ##### Tipos de estructuras repetitivas
 - ###### Repetir (Ciclo 1 - X)
-	Ejecuta las acciones tantas veces como sea necesario hasta que se cumpla la condición. Se ejecuta por lo menos 1 vez  `do-while`.
+	Ejecuta las acciones tantas veces como sea necesario hasta que se cumpla la condición. Se ejecuta por lo menos 1 vez  (`do-while`).
 	```
 	REPETIR
 		Acciones 1
 	HASTA QUE condicion
 	```
 - ###### Mientras (Ciclo 0... X)
-	Se analiza la condición, si se cumple (V) se ejecutan las acciones, sino (F) sale del bucle `while`.
+	Se analiza la condición, si se cumple (V) se ejecutan las acciones, sino (F) sale del bucle (`while`).
 	```
 	MIENTRAS condicion HACER
 		Acciones 1
 	FIN MIENTRAS
 	```
 - ###### Variar (Ciclo Exacto)
-	Se ejecuta determinadas veces, desde 1 hasta vf con el paso que querramos `for`.
+	Se ejecuta determinadas veces, desde 1 hasta vf con el paso que querramos (`for`).
 	```
 	VARIAR var1 DESDE vi HASTA vf PASO inc
 		Acciones 1
@@ -93,7 +93,6 @@ Estructuras qe repiten una secuencia de instrucciones un número determinado de 
 		Acciones 2
 	FINITERAR
 	```
-
 
 <ins>Cuadro Comparativo</ins>
 
