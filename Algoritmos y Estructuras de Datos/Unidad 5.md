@@ -2,13 +2,14 @@
 [[U5_Arreglos 1.pdf]]
 Hasta ahora hemos visto datos simples o pirmitivos en la [[remote-repo/Algoritmos y Estructuras de Datos/Unidad 2]], que solo pueden almacenar un valor a la vez.
 ## ¿Qué es una #EstructuraDeDatos?
+Es la representacion interna de los datos en la computadora
 Es un tipo de dato formado por un conjunto de elementos de un mismo tipo de datos. Un #dato de tipo estructurado puede almacenar a más de un elemento a la vez, con la condición de que deben ser del **mismo tipo de dato**.
 ⚠️ Cada variable representa múltiples datos individuales, y a su vez cada uno de estos elementos se pueden referenciar de manera independiente.
 Las estructuras pueden ser:
 ➡️ **Estáticas**: el tamaño que ocupan se define antes que se ejecte el programa. Por ej: Arreglos
 ➡️ **Dinámicas**: no tiene la definición del tamaño ocupado. Por ej: Listas.
 ### Arreglos
-Conjunto finito y ordenado de elemtnos homogéneos
+Conjunto finito y ordenado de elementos homogéneos
 - Finito: es un número determinado de elementos
 - Ordenado: siguen una secuencia y pueden identificarse
 - Homogéneo: todos los elementos son del mismo tipo de dato
