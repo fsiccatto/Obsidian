@@ -240,6 +240,8 @@ Existen dos técnicas diferenciadas que pueden utilizar los algoritmos: **la sus
 	Los caracteres de texto plano son simplemente reorganizados en una secuencia diferente, bajo la influencia de la clave de cifrado.
 
 Ninguna de las técnicas de sustitución y permutación es particularmente segura en sí misma, pero los algoritmos que combinan a las dos pueden proporcionar un alto grado de seguridad
-
+## Otros Códigos
+### Códigos de Barra
+### Códigos QR
 
 [^1]: Inteligible: Que puede ser comprendido o entendido.
