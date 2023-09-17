@@ -233,11 +233,9 @@ La utilización de estos códigos implica la transferencia de un bloque de infor
 ## Encriptación o Cifrado
 Es necesario la necesidad para proteger los archivos y otras informaciones almacenadas en su memoria.
 El texto plano es cifrado sometiéndolo a un algoritmo de cifrado, cuyas entradas son el texto plano y la clave de cifrado, y a la salida de este algoritmo (la forma cifrada del texto plano) se le llama texto cifrado. El texto cifrado debe ser inteligible[^1] para cualquiera que posea la clave de cifrado.
-Existen dos técnicas diferenciadas que pueden utilizar los algoritmos: **la sustitución** y **la permutación**. 
-###### La sustitución
-	Es uno de los enfoques básicos del cifrado, como se practica tradicionalmente, donde se usa una clave de cifrado para determinar, para cada caracter del texto plano, un caracter de texto cifrado que va a sustituir a ese carácter. 
-###### La permutación 
-	Los caracteres de texto plano son simplemente reorganizados en una secuencia diferente, bajo la influencia de la clave de cifrado.
+Existen dos técnicas diferenciadas que pueden utilizar los algoritmos: la sustitución y la permutación. 
+###### La **sustitución** es uno de los enfoques básicos del cifrado, como se practica tradicionalmente, donde se usa una clave de cifrado para determinar, para cada caracter del texto plano, un caracter de texto cifrado que va a sustituir a ese carácter. 
+###### La **permutación**, los caracteres de texto plano son simplemente reorganizados en una secuencia diferente, bajo la influencia de la clave de cifrado.
 
 Ninguna de las técnicas de sustitución y permutación es particularmente segura en sí misma, pero los algoritmos que combinan a las dos pueden proporcionar un alto grado de seguridad
 ## Otros Códigos
