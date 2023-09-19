@@ -1,21 +1,23 @@
 # Arreglos
-[[U5_Arreglos 1.pdf]]
-Hasta ahora hemos visto datos simples o pirmitivos en la [[remote-repo/Algoritmos y Estructuras de Datos/Unidad 2]], que solo pueden almacenar un valor a la vez.
+Hasta ahora hemos visto datos simples o primitivos en la [[remote-repo/Algoritmos y Estructuras de Datos/Unidad 2]], que solo pueden almacenar un valor a la vez.
 ## ¿Qué es una #EstructuraDeDatos?
-Es la representacion interna de los datos en la computadora
-Es un tipo de dato formado por un conjunto de elementos de un mismo tipo de datos. Un #dato de tipo estructurado puede almacenar a más de un elemento a la vez, con la condición de que deben ser del **mismo tipo de dato**.
+Es la representación interna de los datos en la computadora. 
+Un #dato de tipo estructurado puede almacenar a más de un elemento a la vez, con la condición de que deben ser del **mismo tipo de dato**.
 ⚠️ Cada variable representa múltiples datos individuales, y a su vez cada uno de estos elementos se pueden referenciar de manera independiente.
+
 Las estructuras pueden ser:
-➡️ **Estáticas**: el tamaño que ocupan se define antes que se ejecte el programa. Por ej: Arreglos
+➡️ **Estáticas**: el tamaño que ocupan se define antes que se ejecute el programa. Por ej: arreglos
 ➡️ **Dinámicas**: no tiene la definición del tamaño ocupado. Por ej: Listas.
 ### Arreglos
-Conjunto finito y ordenado de elementos homogéneos
-- Finito: es un número determinado de elementos
-- Ordenado: siguen una secuencia y pueden identificarse
-- Homogéneo: todos los elementos son del mismo tipo de dato
+Conjunto finito y ordenado de elementos homogéneos.
+- Finito: es un número determinado de elementos,
+- Ordenado: siguen una secuencia y pueden identificarse,
+- Homogéneo: todos los elementos son del mismo tipo de dato.
 Se clasifican dependiendo del número de dimensiones:
 #### Arreglos Unidimensionales: #Vectores
-Es una variable estructurada de **UNA** dimensión, con elementos del mismo tipo de dato y bajo un nombre, cada elemento tiene una posición dentro del arreglo. `VAR nombre[tamaño]: tipo de dato`
+Es una variable estructurada de **UNA** dimensión, con elementos del mismo tipo de dato y bajo un nombre, cada elemento tiene una posición dentro del arreglo. 
+`VAR nombre[tamaño]: tipo de dato`
+
 ```
 Vector: A
 tamaño: n
@@ -40,7 +42,9 @@ VAR nomVector[TAMAÑO]: TIPO DE DATO
 - Ordenamiento
 - Búsqueda
 #### Arreglos Bidimensionales: #Matrices
-Es una variable estructurada de **DOS** dimensiones, con elementos del mismo tipo de dato y bajo un nombre y se distribuye en filas y columnas. `VAR nombre[tFila, tColumna]: tipo de dato`
+Es una variable estructurada de **DOS** dimensiones, con elementos del mismo tipo de dato y bajo un nombre y se distribuye en filas y columnas. 
+`VAR nombre[tFila, tColumna]: tipo de dato`
+
 ```
 Matriz: A
 tamaño: n * m
@@ -68,7 +72,8 @@ Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que 
 	FINVARIAR
 	```
 #### Arreglos Tridimensionales:
-Es una variable estructurada de **TRES** dimensiones que agrupa varias celdas de memoria distribuidas en filas, columnas y planos. `VAR nombre[tFila, tColumna, tPlano]: tipo de dato´.
+Es una variable estructurada de **TRES** dimensiones que agrupa varias celdas de memoria distribuidas en filas, columnas y planos. 
+`VAR nombre[tFila, tColumna, tPlano]: tipo de dato.
 
 ![[Arreglos Tridimensionales.png]]
 #Indice Podemos referirnos al arreglo completo o a un único elemento. Debemos hacerlo como `nombre[subidndiceFila, subindiceColumna, subindicePlano]`.
@@ -90,7 +95,7 @@ Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que 
 	```
 
 ### Sección Transversal
-Una sección tranveresal de un arreglo bidimensional #Matrices  se obtine al mantener uno de sus subíndices constantes mientras se hace variar a otro.
+Una sección tranveresal de un arreglo bidimensional #Matrices se obtine al mantener uno de sus subíndices constantes mientras se hace variar a otro.
 Para denotar la sección transversal se usa `*` para el subídince que puede tomar cualquier valor del rango definido. Ej: `B[*, 4]` hacemos variar todas las filas para la columna 4.
 ### Traspuesta
 La traspuesta de las #Matrices es el cambio de las filas por columnas y las columnas por filas.
@@ -112,9 +117,9 @@ INICIO
 		i = i + 1
 	FINMIENTRAS
 	SI i <= 100 [Y] numeros[i] = buscado ENTONCES
-		ESCRIBIR("El", buscado, "está en el arreglo en posición", i)
-	SINO
-		ESCRIBIR("EL", buscado, "no esta en el arreglo")
+			ESCRIBIR("El", buscado, "está en el arreglo en posición", i)
+		SINO
+			ESCRIBIR("EL", buscado, "no esta en el arreglo")
 	FINSI
 FINPROGRAMA
 ```
@@ -124,7 +129,6 @@ La búsqueda procede mediante una serie de pruebas sucesivas en el arreglo:
  - La primera prueba compara el valor del elemento que está a la mitad del conjunto contra el valor buscado, si el valor buscado es menor, entonces la segunda mitad del conjunto puede ignorarse. Si el valor es mayor se considerará la segunda mitad y se descartará la primera.
  - La segunda prueba compara el valor de la mitad del conjunto que queda, si el valor buscado es menor se parte el conjunto y se descarta la segunda mitad, si es mayor se descarta la primera mitad.
 De esta forma se continúa partiendo el conjunto buscando el valor hasta encontrarlo o hasta probar que no existe.
-
 ###### Ejemplo
 ```
 FUNCION BusqBin(tamaño, vector[100], valor: ENTERO): LOGICO
@@ -133,30 +137,30 @@ VAR band: LOGICO
 INCIO
 inf = 1
 sup = tamaño
-SI (valor < vector[1]) [O] (valor > vector[tamaño]) ENTONCES
-	busqBin = [F]
-SINO
-	ITERAR
-		mitad = (inf + sup) / 2
-	SALIR (SI inf >= sup) [O] (vector[mitad] = valor)
-		SI vector[mitad] < valor ENTONCES
-			sup = mitad - 1 // El valor buscado esta en la primer mitad del conjunto
-		SINO
-			inf = mitad + 1 // El valor buscado esta en la segunda mitad del conjunto
-		FINSI
-	FINITERAR
-	SI vector[mitad] = valor ENTONCES
-		band = [V]
+	SI (valor < vector[1]) [O] (valor > vector[tamaño]) ENTONCES
+		busqBin = [F]
 	SINO
-		band = [F]
+		ITERAR
+			mitad = (inf + sup) / 2
+		SALIR (SI inf >= sup) [O] (vector[mitad] = valor)
+			SI vector[mitad] < valor ENTONCES
+				sup = mitad - 1 // El valor buscado esta en la primer mitad del conjunto
+			SINO
+				inf = mitad + 1 // El valor buscado esta en la segunda mitad del conjunto
+			FINSI
+		FINITERAR
+		SI vector[mitad] = valor ENTONCES
+			band = [V]
+		SINO
+			band = [F]
+		FINSI
+		busqBin = band
 	FINSI
-	busqBin = band
-FINSI
 RETORNO
 ```
 
 ### Ordenamiento por Selección o Burbuja
-Consiste en compara elementos sucesivos e intercambiar los elementos fuera de secuencia. El método termina cuando no hay intercambios que hacer durante una iteración.
+Consiste en comparar elementos sucesivos e intercambiar los elementos fuera de secuencia. El método termina cuando no hay intercambios que hacer durante una iteración.
 ###### Ejemplo
 ```
 PROCEDIMIENTO burbuja(cant, por ref. vector[100]: ENTERO)
@@ -166,7 +170,7 @@ INICIO
 	señal = [V]
 	MIENTAS señal HACER
 		señal = [F]
-		VARIA j DESDE 1 HASTA cant - 1
+		VARIAR j DESDE 1 HASTA cant - 1
 			SI vector[j] > vector[j + 1] ENTOCES
 				señal = [V]
 				aux = vector[j]
@@ -181,7 +185,7 @@ FIN PROCEDIMIENTO
 La idea básica es usar los resultados de cada paso de comparación para guiar el siguiente paso de comparación.
 Durante un paso los elementos se intercambian de tal forma que cuando se completa el paso, el conjunto se ha particionado de tal manera que los elementos de una partición son todos menores que un determinado valor y los elementos de la otra partición son todos mayores (aunque desordenados).
 "Divide y vencerás" permite ordenar `n` elementos en un tiempo proporcional a O(n log(n)) y en el peor de los casos O(n<sup>2</sup>) .
-![[quickSort.webp]]
+![[quickSort.webp|center]]
 ``` JavaScript
 function swap(items, leftIndex, rightIndex){
     let temp = items[leftIndex];

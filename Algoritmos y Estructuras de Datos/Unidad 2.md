@@ -2,9 +2,9 @@
 ## Estructuras de Datos
 Dijimos que un programa es: ![[Programa.png]]
 ###### <ins>Dato</ins>
-Es la representación de los objetos con los que opera una computadoras. 
+Es la representación de los objetos con los que opera una computadora. 
 ###### <ins>Las Estructuras de Datos</ins>
-Representación interna de datos en la computadora.
+Es la representación interna de datos en la computadora.
 ### Tipos de Datos
 - ##### Númerico
 	- Entero: no contienen componentes decimales. Ej `450, -325, 4, -4` 
@@ -37,7 +37,7 @@ Prioridad:
 1. ^
 2. \*, /
 3. +, -
-4. <, >, <=, >=, =
+4. <, >, <=, >=, =, !=
 5. \[NO]
 6. \[Y]
 7. \[O]

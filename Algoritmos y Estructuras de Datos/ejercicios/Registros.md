@@ -24,4 +24,3 @@ PROCEDIMIENTO mostrarLibro(L: LIBRO)
 	ESCRIBIR("Editorial del libro: "), ESCRIBIR(L.editorial)
 FIN PROCEDIMIENTO
 ```
-#### Ejercicio 3
