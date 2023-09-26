@@ -134,7 +134,7 @@ Un sistema digital es *combinacional* cuando a cada combinación de las variable
 ![[Sistemas combinacionales.png|center]]
 
 Un sistema digital es *secuencial* cuando a un mismo vector de entrada le puede corresponder más de uno de salida. Estos sistemas deben poseer memoria interna, ya que sus salidas son consecuencias de la evolución anterior de sus entradas.
-![[Sistemas secuenciales.png|center]]
+![[remote-repo/Arquitectura de Computadoras/imagenes/Sistemas secuenciales.png|center]]
 ## Sistemas Combinacionales
 En un sistema combinacional las salidas no son otra cosa que funciones lógicas de las entradas. Se puede escribir que:
 $$
@@ -237,3 +237,21 @@ Permiten realizar operaciones lógicas y aritméticas sobre números binarios (g
 Estos bloques funcionales pueden conectarse en cascada para realizar operaciones sobre números de mayor número de bits.
 - Las salidas P y G son las funciones Propagadora y Generadora de acarreos. Se usan para mejorar el tiempo de procesamiento.
 ![[ALU.png]]
+
+# Sistemas Secuenciales
+Son aquellos sistemas digitales cuyas salidas no sólo dependen de sus entradas en un momento dado, sino también de cómo han evolucionado estas anteriormente.
+El sistema secuencial tiene que ser capaz de memorizar la mencionada evolución, es decir, que las salidas dependen de las entradas y de ellas mismas.
+==Un Sistema Secuencial parte de un Sistema Combinacional REALIMENTADO.==
+![[Sistemas Secuenciales|center|800]]
+Se observa un nuevo tipo de variables llamadas **variables internas**. El bloque M es un circuito capaz de mantener el estado de sus entradas en su valor, por un tiempo. 
+Para un valor dado de las variables de entrada, se inicia un proceso, llamado evolución automática del sistema, hasta que se alcanza un estado estable.
+Si las variables internas se las deja pasar de izquierda a derecha sólo en ciertos momentos, se obtienen un Sistema Secuencial Síncrono.
+### Biestables
+Poseen dos estados estables, es decir, que las variables internas pueden adoptar en este caso dos estados en los cuales permancerán indefinidamente a menos que cambien las variables de entrada. Los Biestables representan los circuitos base para la construcción de secuenciales más complejos.
+![[Biestables|center|600]]
+#### Biestables Asíncronos
+Son aquellos en los cuales las entradas actúan directamente sobre el biestable. Biestables SR.
+![[Secuenciales#Biestable SR]]
+#### Biestables Síncronos
+Estos biestables cuentan con una entrada adicional: la entrada del reloj (sincronismo).
+##### 

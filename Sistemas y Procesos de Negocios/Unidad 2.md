@@ -1,5 +1,5 @@
-![[Guia de estudio Informacion.pdf]]
 # Información
+![[Guia de estudio Informacion.pdf]]
 ## Datos e Información
 ### Diferencia entre Dato e Información
 Los #datos son símbolos no aleatorios que representan valores de atributos o sucesos. Los datos son hechos, acontecimientos y transacciones que se han ido almacenando en un código convenido; obtenidos mediante la lectura, la observación, el cálculo, la medición, etc.
@@ -170,3 +170,92 @@ Investigar **es descubrir y analizar información**. Los datos revelan dónde ha
 - Anuncios 
 - Sitios web corporativos
 - Manuales
+### Observación Personal
+#### Propósito
+STROBE (STRuctures OBservation of the Enviroment) se tiene que observar de manera explícita siete elementos concretos que se encuentran en la oficina. Estos pueden revelar información sobre la forma en que un encargado toma decisiones recopila, procesa, almacena y comparte información, así como su credibilidad en el lugar de trabajo.
+Se puede observar:
+- Ubicación de la oficina
+- Colocación del escritorio
+- Equipo estacionario
+- Accesorios
+- Fuentes externas de información
+- Iluminación y colores de la oficina
+- Vestimenta
+
+# Decisiones
+![[Guía de estudio Trabajo Decisiones 2023.pdf]]
+### Concepto de Decisión
+Es la resolución que se toma o se da en una cosa dudosa.
+### Concepto de Toma de Decisiones
+La toma de decisiones es el proceso mediante el cual se realiza una elección entre las alternativas o formas para resolver diferentes situaciones de la vida.
+Para tomar cualquier decisión es necesario conocer, comprender y analizar un problema, para así poder darle solución.
+### Decisiones Gerenciales
+#### Falta de estructura
+Existen: 
+- **Decisiones Programadas**
+	Son aquellas que se han encontrado y resuelto con anterioridad. Tienen respuestas objetivamente correctas y pueden ser resueltas haciendo uso de reglas simples, de políticas previamente establecidas o de sumas numéricas.
+	Si tenemos una decisión programada, ya existe un procedimiento claro o una estructura definida para llegar a la opción correcta.
+- **Decisiones No Programadas**
+	Son decisiones nuevas, novedosas y complejas que no cuentan con respuestas probadas.
+	El tomador de decisiones debe crear o imponer una metodología para la toma de decisiones; no existe una estructura predeterminada en la cual basarse.
+#### La incertidumbre y el riesgo
+**Incertidumbre** es el estado que existe cuando los que toman decisiones no tienen suficiente información para conocer las consecuencias de las diferentes acciones.
+Cuando pueden estimarse las probabilidades de diferentes resultados, sin saber aún con certeza lo que sucederá, se está en una situación de **riesgo**. El riesgo existe cuando las probabilidades de que una acción sea exitosa son menores a 100% y las pérdidas pueden ocurrir
+#### El conflicto
+Existe cuando un director debe considerar oponerse a las presiones provenientes de diferentes fuentes, ocurre en dos niveles.
+1. Los tomadores individuales de decisiones enfrentan un conflicto psicológico cuando diferentes opciones son atractivas o cuando ninguna lo es.
+2. Los conflictos nacen entre las personas.
+### Etapas de la toma de decisiones
+![[Etapas de las decisiones|700|center]]
+#### Identificación y diagnóstico del problema
+Reconocer la existencia de un problema que debe ser resuelto. El “problema” puede ser una oportunidad que requiere ser explorada, una brecha entre lo que la organización está haciendo en la actualidad y lo que podría hacer para crear un futuro más positivo.
+Reconocer que existe un problema y una oportunidad es sólo el principio de esta fase. El tomador de decisiones también debe desear hacer algo y debe creer que existen los recursos y las capacidades necesarias para conseguirlo, después debe escarbar muy a fondo e intentar diagnosticar la situación.
+#### Generar soluciones alternativas
+Posibless acciones alternativas para la resolución del problema.
+Existen **soluciones establecidas** (soluciones inmediatas, utilizan ideas que han sido implementadas antes) y **soluciones hechas a la medida** (requieren diseños para problemas específicos, combina idea y las transforma en soluciones creativas).
+#### Evaluar alternativas
+Determinación del valor o de la precisión de las alternativas generadas. Es fundamental en este proceso prever las consecuencias de las diferentes opciones que hay sobre la mesa.
+Algunos resultados no pueden ser pronosticados, sin embargo, se podrán generar **planes de contingencia** que son caminos alternativos de acción que pueden ser implementados de acuerdo con lo que suceda en el futuro.
+#### Tomar la decisión
+Es tiempo de tomar una decisión.
+- **Maximización** que consiste en obtener el mejor resultado posible, con el menor de los costos y con el mayor retorno total esperado.
+- **Satisfacción** que consiste en selecciona la pirmera opción que es mínimamente aceptable, aunque no necesariamente la perfecta ni la mejor.
+- **Optimización** es alcanzar el equilibrio de diferentes metas.
+#### Implementar la decisión
+La alternativa seleccionada debe ser puesta en marcha. La planeación correcta requiere etapas:
+1. Determinar cómo se verán las cosas cuando la decisión esté operando completamente. 
+2. Ordenar cronológicamente, tal vez con la ayuda de un diagrama de flujo, los pasos necesarios para alcanzar una decisión operativa completa.
+3. Elaborar una lista de los recursos y de las actividades necesarias para la implementación de cada etapa. 
+4. Estimar los tiempos necesarios para cada fase.
+5. Asignar a individuos específicos responsabilidades para cada etapa.
+#### Evaluar la decisión
+La etapa final del proceso de selección de una alternativa es evaluarla. Esto implica obtener información acerca de su funcionamiento.
+La evaluación de la decisión es útil independientemente de que resulte positiva o negativa.
+- Cuando se concluye que la alternativa adoptada está funcionando, ésta deberá continuar e incluso ser aplicada en otras áreas de la organización.
+- Cuando se concluye que no ha funcionado correctamente, significa que 
+	1) la implementación requerirá de más tiempo, más recursos, más iniciativas o más análisis, o 
+	2) la decisión era equivocada.
+### ¿Qué puede pasar si no se respetan estas etapas en un proceso de toma de decisión?
+Se puede tomar la decisión equivocada y puede generar pérdidas e incluso cierre de la organización. Por otro lado, si se implementa de mala manera, es posible que no se llegue al resultado esperado.
+### Creatividad e Innovación
+Creatividad suele entenderse como la capacidad para desarrollar nuevas ideas.
+Innovación significa el uso de esas ideas.
+### Condiciones para tomas de decisiones
+Toman en cuenta las características estructurales y políticas de la organización.
+![[Tomas de decisiones.png]]
+### Modelos para toma de decisiones
+#### Individuales
+
+| Nombre                        | Concepto básico         | Patrones de interferencia                                                                                                                                                                                                                                                                                                                                                             |
+| ----------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Modelo racional               | Racionalidad exhaustiva | Establecer metas, examinar alternativas y elegir la mejor de ellas.                                                                                                                                                                                                                                                                                                                   |
+| Modelo de satisfacción        | Racionalidad acotada    | Establecer metas, examinar unas cuantas alternativas y elegir la primera que lleve más cerca de las metas.                                                                                                                                                                                                                                                                            |
+| "Arreglárselas como se pueda" | Comparación sucesiva    | Examinar alternativas para establecer una combinación de metas y consecuencias; elegir políticas que sean marginalmente diferentes de las del pasado.                                                                                                                                                                                                                                 |
+| Modelo psicológico            | Tipos congnoscitivos    | Todos los encargados de tomar decisiones eleigen metas, pero difieren en términos de reunir y evaluar información. Los pensadores sistemáticos imponen orden sobre las percepciones y evaluaciones; los pensadores intuitivos están más abiertos a información inesperada y utilizan múltiples modelos y perespectivas al evaluar la información. Uno no es más racional que el otro. |
+#### Organizaciones
+| Nombre         | Concepto básico                                                | Patrón de inferencia                                                                                                                                                                                                                                                                                                                                    |
+| -------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Actor racional | Racionalidad exhaustiva                                        | Las organizaciones seleccionan metas, examinan todas las alternativas y consecuencias, y luego eligen una política que maximiza la meta o la función de preferencia.                                                                                                                                                                                    |
+| Burocrático    | Salidas de la organización; procedimientos operativos estándar | Las restricciones de recursos y los recursos humanos y de capital existentes determinan las metas; los SOP se combinan para formar programas, y éstos se combinan para formar repertorios, los cuales determinan las políticas que se escogerán. El propósito primario de la organización es sobrevivir, la meta principal es reducir la incertidumbre. |
+| Político       | Resultado político                                             | Las decisiones de una organización son resultado de la competencia política; los protagonistas clave participan en un juego de influencia, negociación y poder. Los resultados de la organización dependen de las creencias y metas de los jugadores, su hablidad para juegar el juego, los recursos que aplican y los límites de su atención y poder.  |
+| "Basurero"     | Programas no adaptativos de las organización                   | Casi todas las organizaciones son no adaptativas, temporales y desaparecen con el tiempo. Las decisiones de las organizaciones son el resultado de interacciones entre flujos de problemas, acciones potenciales, participantes y el azar.                                                                                                              |               |                                                                |                                                                                                                                                                                                                                                                                                                                                         |
