@@ -1,5 +1,5 @@
 # Sistema
-- Conjunto de cosas relacionadas entre sí ordenadamente contribuyen a determinado objeto
+- Conjunto de cosas relacionadas entre sí que ordenadamente contribuyen a un determinado objetivo
     - Es una reunión o conjunto de elementos interrelacionados con un objetivo en común.
     - Es una unión de partes conectados de forma organizada.
     - Un conjunto de elementos dinámicamente relacionados, formando una actividad para alcanzar un objetivo, para alcanzar un objetivo, operando sobre datos/energía/materia para proveer información/energía/materia.
@@ -9,9 +9,7 @@
 
 <aside> 
 	🔑 Un sistema es un conjunto de elementos que mantienen determinadas relaciones entre sí y que se encuentran separadas de un entorno determinado. La relación entre sistema y entorno es fundamental para la caracterización del sistema, y el sistema se define siempre respecto a un determinado entorno.
-
 </aside>
-
 ## Características de los Sistemas
 Según Bertalanffy se deducen dos conceptos:
 - **Propósito u objetivo:** todo sistema tiene uno o algunos propósitos. Los elementos y las relaciones, definen una distribución para alcanzar un objetivo.
@@ -24,14 +22,11 @@ Según su **constitución**:
 - Sistemas abstractos: compuestos por conceptos, planes, hipótesis e ideas. Es el software
 
 Según su **naturaleza**:
-- Sistemas cerrados: no presentan intercambio con el medio que los rodea, herméticos. No existen realmente, sino que son sistemas cuyo comportamiento es determinístico y programado, opera con un pequeño intercambio de energía. Tienden a desaparecer (?).
-- Sistemas abiertos: presentan intercambio con el ambiente, a través de entradas y salidas. Intercambian energía y materia con el ambiente. Son adaptativos (aprenden y se autoorganizan).
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c3641ce4-eb77-41e6-a1cc-6bdd0c783e35/Untitled.png)
-    
+- Sistemas cerrados: no presentan intercambio con el medio que los rodea, herméticos. No existen realmente, sino que son sistemas cuyo comportamiento es determinístico y programado, opera con un pequeño intercambio de energía. Tienden a desaparecer.
+- Sistemas abiertos: presentan intercambio con el ambiente, a través de entradas y salidas. Intercambian energía y materia con el ambiente. Son adaptativos (aprenden y se auto-organizan). 
 ### Parámetros de los sistemas abiertos
 - Entrada: es la fuerza de arranque del sistema, provee el material o la energía para la operación.
 - Salida: es la finalidad para la cual se juntaron elementos y relaciones del sistema. Deben ser coherentes con el objetivo del sistema. Los resultados de los sistemas son finales, mientras que los resultados de los subsistemas son intermedios.
 - Proceso: fenómeno que produce cambios, es el mecanismo de conversión de las entradas en salidas.
-- Retroalimentación: función de retorno del sistema que tiende a compara la salida con un criterio.
+- Retroalimentación: función de retorno del sistema que tiende a comparar la salida con un criterio.
 - Ambiente: es el medio que envuelve externamente el sistema. Está en constante interacción con el sistema (entradas, procesos, salidas). Puede ser un recurso o una amenaza para el sistema.

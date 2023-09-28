@@ -1,6 +1,7 @@
 ![[Guia de estudio TGS.pdf]]
 # Teoría General de Sistemas
 Se presenta como una forma sistemática y científica de aproximación y representación de la realidad y al mismo tiempo, como una orientación que motiva para trabajar en forma multidisciplinar.
+Es el estudio interdisciplinario de los sistemas en general. Su **propósito** es estudiar los principios aplicables a los sistemas en cualquier nivel en todos los campos de la investigación.​ Un **sistema** se define como una entidad con límites y con partes interrelacionadas e interdependientes cuya suma es mayor a la suma de sus partes.
 ## 1- Principales hechos que dieron lugar al surgimiento de la TGS
 Surge en la década del 60 por respuesta al agotamiento e inaplicabilidad de los **enfoques analítico-reduccionistas y sus principios mecánico-causales.**
 Quiere evitar la superficialidad científica que ha estancado a las ciencias. Para lograrlo emplea como instrumentos, modelos utilizables y transferibles entre varios polos científicos, con el fin, que dichos modelos sean posibles e integrables a las respectivas disciplinas.
@@ -17,19 +18,21 @@ Para Ludwig, la TGS debería construirse en un mecanismo de integración entre l
     - Ontología de sistemas → distingue sistemas reales de sistemas conceptuales
     - Epistemología de sistemas → cómo se genera y se valida el conocimientos de las ciencias (realidad)
     - Filosofía de sistemas → visión heurística → marco unificador y una perspectiva integradora para el estudio de sistemas complejos en todas las disciplinas.
+      
 - **Metodológico** → estructura del razonamiento → forma de explicar la realidad
-    1. Teoría analógica de los sistemas: busca las semejanzas o relaciones de analogía entre los fenómenos de las diferentes ciencias (el cuerpo humano es un sistema, dentro hay subsistemas que se relacionan entre sí, dependiendo cada uno del otro su funcionamiento y supervivencia, tanto de ellos como del sistema total.
+    1. Teoría analógica de los sistemas: busca las semejanzas o relaciones de analogía entre los fenómenos de las diferentes ciencias (el cuerpo humano es un sistema, dentro hay subsistemas que se relacionan entre sí, dependiendo cada uno del otro su funcionamiento y supervivencia, tanto de ellos como del sistema total).
     2. Teoría del rango de las estructuras de los sistemas: existen 9 niveles de complejidad.
-    
     Niveles de complejidad:
     - Sistemas NO vivientes (1-3)
     - Sistemas vivientes (4-7)
     - Sistemas metavivientes (8,9)
-	![[Metodológico.png]]![[Tabla TGS]]
-	3.  Modelo procesal o del sistema adaptativo complejo
+	![[Metodológico.png]]
+	![[Tabla TGS]]
+	3.  Modelo procesal o del sistema adaptativo complejo:
 	    Tipos de modelos:
 	    - Origen mecánico (de equilibrio) → aplicable a tipos de sistemas que pierden organización al desplazarse hacia un punto de equilibrio y tienden a mantener ese nivel de perturbación pequeño.
 	    - Origen biológico (homeostáticos) → aplicables a sistemas que tienden a mantener nivel de organización elevado a pesar de las tendencias constantes de disminuirlo.
+	
 - **Semántico** → utilización de ciertos términos comprendidos y utilizados universalmente → Terminología universal
     1. Concepto general de Sistema
         1. 🧠 [[Sistema]] → Punto 6-
@@ -71,7 +74,7 @@ Para Ludwig, la TGS debería construirse en un mecanismo de integración entre l
         2. Centralización y descentralización
         3. Organización centralizada
         4. Organización jerárquica
-        5. Organización Horizontal
+        5. Organización horizontal
 ## 4- Pensamiento Sistémico
 ### Premisa principal
 Los sistemas son entidades complejas e interconectadas que no pueden ser comprendidas completamente a través del análisis reduccionista de sus partes individuales, sino que deben ser entendidas como un todo integrado. Debe modificarse solo a través de cambios en las partes del sistema.
@@ -81,3 +84,5 @@ Los sistemas son entidades complejas e interconectadas que no pueden ser compren
 - Las partes no pueden comprenderse si se consideran aisladas del todo
 - Las partes están dinámicamente interrelacionadas y son interdependientes entre sí
 ## 5- Clasificación de los Sistemas
+
+![[Resumen TGS.canvas|Resumen TGS]]
