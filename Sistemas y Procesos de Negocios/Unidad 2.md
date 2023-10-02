@@ -2,9 +2,9 @@
 ![[Guia de estudio Informacion.pdf]]
 ## Datos e Información
 ### Diferencia entre Dato e Información
-Los #datos son símbolos no aleatorios que representan valores de atributos o sucesos. Los datos son hechos, acontecimientos y transacciones que se han ido almacenando en un código convenido; obtenidos mediante la lectura, la observación, el cálculo, la medición, etc.
+Los **datos** son símbolos no aleatorios que representan valores de atributos o sucesos. Los datos son hechos, acontecimientos y transacciones que se han ido almacenando en un código convenido; obtenidos mediante la lectura, la observación, el cálculo, la medición, etc.
 ![[Datos.png]]
-La #información es un conjunto de datos transformados de forma que contribuye a reducir la incertidumbre del futuro y ayuda a la toma de decisiones por parte del receptor. Una información será significativa en cuanto que sea útil como materia prima para tomar una #decisión determinada.
+La **información** es un conjunto de datos transformados de forma que contribuye a reducir la incertidumbre del futuro y ayuda a la toma de decisiones por parte del receptor. Una información será significativa en cuanto sea útil como materia prima para tomar una decisión determinada.
 ![[Informacion.png]]
 ### Relación necesaria entre el valor de la información y el coste de esta.
 Los **costes de la información** pueden ser estimados en función de: 
@@ -27,10 +27,10 @@ El **valor de la información** se puede dar como una estimación del _valor esp
 |Detalle| La información debería contener la mínima cantidad de detalles para una eficaz toma de decisiones. Cada cosa significa más almacenamiento, procesamiento, dificultad de asimilación y peores decisiones.  |
 |Comprensión| La comprensión transforma datos en información. Si la información no es entendida no puede ser utilizada y no puede añadir valor. |
 ### Conjuntos de necesidades de información
-Las necesidades de información se refieren a la información necesaria para llevar a cabo tanto la adopción de decisiones como la ejecución de las tareas derivadas de tales decisiones.
-Hay tres grandes conjuntos de necesidades de información en dirreción estratégica.
+Se refieren a la información necesaria para llevar a cabo tanto la adopción de decisiones como la ejecución de las tareas derivadas de tales decisiones.
+Hay tres grandes conjuntos de necesidades de información en direción estratégica.
 - En la *formulación de la estrategia* se debe llevar a cabo el diagnóstico estratégico, es decir, que debe realizarse un análisis del entorno (cultural, financiero, político, competencia, tecnología) tanto general como específico. La información es un elemento fundamental.
-- En la *implementación de la estrategia*, cada miembro debe conocer la estrategia que le corresponde ejecutar, las tareas que debe desempeñar y cómo. Los encargados de llevar a cabo las acciones necesitan información acerca de qué debemo hacer y cómo hacerlo.
+- En la *implementación de la estrategia*, cada miembro debe conocer la estrategia que le corresponde ejecutar, las tareas que debe desempeñar y cómo. Los encargados de llevar a cabo las acciones necesitan información acerca de qué debemos hacer y cómo hacerlo.
 - *Control de la estrategia*; para llevar a cabo un control eficaz hay que conocer cuáles son los resultados de las acciones emprendidas al ejecutar los planes, y hay que conocer también cómo van evolucionando los distintos componentes del entorno, todo ello a fin de verificar si la estrategia se está desarrollando correctamente y si no hay cambios que influyen en la viabilidad de la estrategia.
 ### Fuentes de información
 Son documentos de diversos tipos y orígenes que proveen datos y recursos sobre un tema o área determinada. Pueden calsificarse como:
@@ -40,7 +40,6 @@ Son las que tienen información nueva y original. Son producto de un trabajo int
 Son fuentes que tienen información ordenada y elaborada como resultado de la reorganización y análisis de documentos originales. Enciclopedias, antologías, directorios, libros que interpretan otros trabajos.
 ##### Terciarias
 Contienen información breve y siempre remiten a fuentes primarias y secundarias. Bibliografías, directorios, artículos sobre entrevistas.
-
 ## Técnicas de recopilación de Información
 ### Entrevistas
 #### ¿Qué es una entrevista?
@@ -69,15 +68,15 @@ Son las que describe las opciones que tiene el entrevistado para responder. La r
 ✅El entrevistado encuentra el proceso más interesante.
 ✅Se permite una mayor espontaneidad.
 ✅El entrevistador puede expresar mejor las preguntas.
-✅El entrevistador puede recurrir a ellas en caso de que tenga que improvisar
+✅El entrevistador puede recurrir a ellas en caso de que tenga que improvisar.
 ###### Desventajas
 ❌Las preguntas pueden generar muchos detalles irrelevantes. 
 ❌Se puede llegar a perder el control de la entrevista. 
-❌Se permiten respuestas que pueden requerir demasiado tiempo debido a la cantidad obtenida de información útil. 
-❌Podría parecer que el entrevistador no está preparado. 
+❌Se permiten respuestas que pueden requerir demasiado tiempo debido a la cantidad obtenida de información útil.
+❌Podría parecer que el entrevistador no está preparado.
 ❌Puede darse la impresión de que el entrevistador “anda de pesca”, sin objetivos bien definidos.
 ##### Preguntas Cerradas
-Una pregunta cerrada limita el entrevistado la respuesta disponible. Se le proporciona una pregunta y cinco respuestas, y no puede anotar una respuesta propia ya que se considerará equivocada.
+Una pregunta cerrada limita al entrevistado la respuesta disponible. Se le proporciona una pregunta y cinco respuestas, y no puede anotar una respuesta propia ya que se considerará equivocada.
 La pregunta bipolar limita al entrevistado ya que su respuesta es si o no, verdadero o falso.
 ###### Beneficios:
 ✅Ahorro de tiempo.
@@ -88,7 +87,7 @@ La pregunta bipolar limita al entrevistado ya que su respuesta es si o no, verda
 ✅ Se obtienen datos relevantes.
 ###### Desventajas
 ❌ Son aburridas para el entrevistado.
-❌ No proporcionan detalles adicionales (debido a que el entrevistador provee el marco de referencia para el entrevistado). 
+❌ No proporcionan detalles adicionales (debido a que el entrevistador provee el marco de referencia para el entrevistado).
 ❌ Se pierden las ideas principales por la razón anterior.
 ❌ No se puede generar una buena comunicación entre el entrevistador y el entrevistado.
 ![[Preguntas abiertas y cerradas entrevistas.png]]
@@ -96,7 +95,6 @@ La pregunta bipolar limita al entrevistado ya que su respuesta es si o no, verda
 El propósito del sondeo es ir más allá de la respuesta inicial para obtener más detalles significativos, aclarar la información, y ampliar el punto del entrevistado. Los sondeos pueden ser preguntas abiertas o cerradas.
 Es imprecindible realizar sondeos. ¿Por qué? ¿Podría explicar eso? ¿Me puede dar un ejemplo?
 #### Estructuras de las entrevistas
-
 ##### Estructura Pirámide
 La organización inductiva de las preguntas de la entrevista se puede visualizar en forma de pirámide. El entrevistador empieza con preguntas muy detalladas, a menudo cerradas. Después expande los temas al permitir preguntas abiertas y respuestas más generalizadas.
 Utilice una estructura de pirámide si cree que su entrevistado necesita entrar en calor en cuanto al tema.
@@ -110,7 +108,7 @@ El entrevistador empieza con preguntas fáciles y cerradas que permiten al entre
 ![[Estructura Diamante.png]]ç
 #### Documentar una entrevista
 Necesita capturar la esencia de la entrevista por medio de un informe escrito. Es imperativo que escriba el informe tan pronto como sea posible después de la entrevista. Este paso es otra manera en la que puede asegurar la calidad de los datos obtenidos de la entrevista: entre más tiempo espere para escribir su entrevista, más borrosa se volverá la calidad de sus datos.
-Después de este resumen inicial, elabore otro más detallado donde exprese los puntos principales de la entrevista y sus propias opiniones. Ayuda a aclarar el significado que tenía el entrevistado en mente y le hace saber que usted tiene el suficiente interés como para tomarse el tiempo de comprender su punto de vista y sus percepciones.
+Después de este resumen inicial, elabore otro más detallado donde exprese los puntos principales de la entrevista y sus propias opiniones. Ayuda a aclarar el significado que tenía el entrevistado en mente y le hace saber que usted tiene el suficiente interés como para tomarse el tiempo de comprender su punto de vista y sus percepciones.
 ### Cuestionarios
 #### Tipo de Información a obtener
 Permite a los analistas de sistemas estudiar las posturas, las creencias, el comportamiento y las características de varias personas clave en la organización que se pueden ver afectadas por los sistemas actual y propuesto.
@@ -122,7 +120,7 @@ Se pueden utilizar cuestionarios para **encuestar a una muestra grande de usuari
 3. Piensa realizar un estudio exploratorio y desea medir la opinión general antes de que el proyecto de sistemas tome cualquier dirección específica.
 4. Desea estar seguro de que se identifiquen y consideren los problemas con el sistema actual en las entrevistas de seguimiento.
 #### Tipos de Preguntas en los cuestionarios
-Los cuestionarios no permiten la interacción entre las preguntas y sus significados, es decir, no puede refina una pregunta, definir un término como confuso, cambiar el curso del cuestionamiento, responeder a una mirada desconcertada, etc.
+Los cuestionarios no permiten la interacción entre las preguntas y sus significados, es decir, no puede refinar una pregunta, definir un término como confuso, cambiar el curso del cuestionamiento, responeder a una mirada desconcertada, etc.
 Las preguntas deben ser claras, el flujo convincente, se debe anticipar a las preguntas del encuestado, y la administración del cuestionario se debe planear con detalle.
 ##### Preguntas Abiertas
 Debemos anticiparnos al tipo de respuesta que obtendremos, debe ser estrecha como para guiar a los encuestados a responder en cierta forma específica. Las preguntas abiertas son adecuadas para las situaciones en las que queremos conocer las opiniones de los miembros de la organización sobre cierto aspecto del sistema, ya sea un producto o un proceso (es imposible enlistar con efectividad todas las posibles respuestas).
@@ -141,8 +139,8 @@ Son dos medidas de rendimiento.
 ##### Construcción de las escalas
 Si se hacen mal, puede surgir:
 1. Indulgencia → es un problema que provocan los encuestados que califican en forma superficial. 
-2. Tendencia central → ocurre cuando los encuestados califican todo como promedio
-3. Efecto halo → surge cuando la impresión que se forja en una pregunta se acarrea hasta la siguiente
+2. Tendencia central → ocurre cuando los encuestados califican todo como promedio.
+3. Efecto halo → surge cuando la impresión que se forja en una pregunta se acarrea hasta la siguiente.
 #### Diseño de un cuestionario
 Un cuestionario bien diseñado y relevante puede ayudar a vencer parte de esta resistencia a responder. He aquí algunas reglas para diseñar un buen cuestionario: 
 1. Incluya mucho espacio en blanco. 
@@ -200,7 +198,7 @@ Existen:
 	El tomador de decisiones debe crear o imponer una metodología para la toma de decisiones; no existe una estructura predeterminada en la cual basarse.
 #### La incertidumbre y el riesgo
 **Incertidumbre** es el estado que existe cuando los que toman decisiones no tienen suficiente información para conocer las consecuencias de las diferentes acciones.
-Cuando pueden estimarse las probabilidades de diferentes resultados, sin saber aún con certeza lo que sucederá, se está en una situación de **riesgo**. El riesgo existe cuando las probabilidades de que una acción sea exitosa son menores a 100% y las pérdidas pueden ocurrir
+Cuando pueden estimarse las probabilidades de diferentes resultados, sin saber aún con certeza lo que sucederá, se está en una situación de **riesgo**. El riesgo existe cuando las probabilidades de que una acción sea exitosa son menores a 100% y las pérdidas pueden ocurrir.
 #### El conflicto
 Existe cuando un director debe considerar oponerse a las presiones provenientes de diferentes fuentes, ocurre en dos niveles.
 1. Los tomadores individuales de decisiones enfrentan un conflicto psicológico cuando diferentes opciones son atractivas o cuando ninguna lo es.
@@ -211,7 +209,7 @@ Existe cuando un director debe considerar oponerse a las presiones provenientes 
 Reconocer la existencia de un problema que debe ser resuelto. El “problema” puede ser una oportunidad que requiere ser explorada, una brecha entre lo que la organización está haciendo en la actualidad y lo que podría hacer para crear un futuro más positivo.
 Reconocer que existe un problema y una oportunidad es sólo el principio de esta fase. El tomador de decisiones también debe desear hacer algo y debe creer que existen los recursos y las capacidades necesarias para conseguirlo, después debe escarbar muy a fondo e intentar diagnosticar la situación.
 #### Generar soluciones alternativas
-Posibless acciones alternativas para la resolución del problema.
+Posibles acciones alternativas para la resolución del problema.
 Existen **soluciones establecidas** (soluciones inmediatas, utilizan ideas que han sido implementadas antes) y **soluciones hechas a la medida** (requieren diseños para problemas específicos, combina idea y las transforma en soluciones creativas).
 #### Evaluar alternativas
 Determinación del valor o de la precisión de las alternativas generadas. Es fundamental en este proceso prever las consecuencias de las diferentes opciones que hay sobre la mesa.
@@ -219,7 +217,7 @@ Algunos resultados no pueden ser pronosticados, sin embargo, se podrán generar 
 #### Tomar la decisión
 Es tiempo de tomar una decisión.
 - **Maximización** que consiste en obtener el mejor resultado posible, con el menor de los costos y con el mayor retorno total esperado.
-- **Satisfacción** que consiste en selecciona la pirmera opción que es mínimamente aceptable, aunque no necesariamente la perfecta ni la mejor.
+- **Satisfacción** que consiste en selecciona la primera opción que es mínimamente aceptable, aunque no necesariamente la perfecta ni la mejor.
 - **Optimización** es alcanzar el equilibrio de diferentes metas.
 #### Implementar la decisión
 La alternativa seleccionada debe ser puesta en marcha. La planeación correcta requiere etapas:
@@ -232,7 +230,7 @@ La alternativa seleccionada debe ser puesta en marcha. La planeación correcta r
 La etapa final del proceso de selección de una alternativa es evaluarla. Esto implica obtener información acerca de su funcionamiento.
 La evaluación de la decisión es útil independientemente de que resulte positiva o negativa.
 - Cuando se concluye que la alternativa adoptada está funcionando, ésta deberá continuar e incluso ser aplicada en otras áreas de la organización.
-- Cuando se concluye que no ha funcionado correctamente, significa que 
+- Cuando se concluye que no ha funcionado correctamente, significa que 
 	1) la implementación requerirá de más tiempo, más recursos, más iniciativas o más análisis, o 
 	2) la decisión era equivocada.
 ### ¿Qué puede pasar si no se respetan estas etapas en un proceso de toma de decisión?
@@ -245,7 +243,6 @@ Toman en cuenta las características estructurales y políticas de la organizaci
 ![[Tomas de decisiones.png]]
 ### Modelos para toma de decisiones
 #### Individuales
-
 | Nombre                        | Concepto básico         | Patrones de interferencia                                                                                                                                                                                                                                                                                                                                                             |
 | ----------------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Modelo racional               | Racionalidad exhaustiva | Establecer metas, examinar alternativas y elegir la mejor de ellas.                                                                                                                                                                                                                                                                                                                   |

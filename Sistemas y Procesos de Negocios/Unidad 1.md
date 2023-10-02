@@ -7,7 +7,7 @@ Surge en la década del 60 por respuesta al agotamiento e inaplicabilidad de los
 Quiere evitar la superficialidad científica que ha estancado a las ciencias. Para lograrlo emplea como instrumentos, modelos utilizables y transferibles entre varios polos científicos, con el fin, que dichos modelos sean posibles e integrables a las respectivas disciplinas.
 ## 2- Principales autores y sus contribuciones
 Aportes teóricos del biólogo Ludwig Von Bertalanffy (1901-1972). Su aporte más importante es la **concepción totalizadora de la biología**, con teorías que conceptualizaban a los organismos vivos como un sistema abierto, en constate intercambio con otros sistemas adyacentes por medio de complicadas interacciones.
-Para Ludwig, la TGS debería construirse en un mecanismo de integración entre las ciencias naturales y sociales, y ser al mismo tiempo, un instrumento básico para la formación y preparación de científicos. (Noción de totalidad orgánica)
+Para Ludwig, la TGS debería construirse en un mecanismo de integración entre las ciencias naturales y sociales, y ser al mismo tiempo, un instrumento básico para la formación y preparación de científicos. (Noción de totalidad orgánica).
 ## 3- Teoría General de Sistemas
 ### a- Objetivos
 - Impulsar el desarrollo de una terminología general que permita describir las características, funciones y comportamientos sistemáticos.
@@ -83,6 +83,5 @@ Los sistemas son entidades complejas e interconectadas que no pueden ser compren
 - El todo determina la naturaleza de las partes
 - Las partes no pueden comprenderse si se consideran aisladas del todo
 - Las partes están dinámicamente interrelacionadas y son interdependientes entre sí
-## 5- Clasificación de los Sistemas
 
 ![[Resumen TGS.canvas|Resumen TGS]]
