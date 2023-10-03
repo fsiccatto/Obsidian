@@ -251,7 +251,36 @@ Poseen dos estados estables, es decir, que las variables internas pueden adoptar
 ![[Biestables|center|600]]
 #### Biestables Asíncronos
 Son aquellos en los cuales las entradas actúan directamente sobre el biestable. Biestables SR.
-![[Secuenciales#Biestable SR]]
+![[Secuenciales#Asíncronos#Biestable Asíncrono SR]]
 #### Biestables Síncronos
 Estos biestables cuentan con una entrada adicional: la entrada del reloj (sincronismo).
-##### 
+![[Secuenciales#Síncronos]]
+### Aplicaciones de los Biestables
+Los biestables son capaces de memorizar un bit. Existen para:
+- Memorias electrónicas
+- Registros
+- Contadores
+#### Registros de desplazamiento
+Es un sistema secuencial síncrono que almacena varios bits de información. El formato de la información puede ser de dos tipos: **serie** o **paralelo**. Se pueden clasificar en:
+1. Registros de Desplazamiento
+	- Entrada serie, salida serie
+	- Entrada serie, salida paralela
+	- Entrada paralela, salida serie
+2. Registros propiamente dichos
+	- Entrada paralela, salida paralela
+##### Registros de desplazamiento
+| serie - serie | paralelo- paralelo |
+| ------------- | ------------------ |
+|    ![[Registro serie-serie.png]]           |      ![[Registro paralelo-serie.png]]              |
+##### Registros propiamente dichos
+Consisten en un conjunto de biestables sincronizados por nivel o por flancos, cuyas entradas de sincronismo se encuentran unidas (paralelo). Uso extensivo en cualquier sistema digital.
+Se presenta una forma de interconexión entre registros llamada BUS COMÚN. Se trata de tres registros de dos bits cada uno.
+![[Interconexion de registros por BUS.png|300]]
+### Contadores
+Es un sistema secuencial formado por biestables y lógica combinacional, capaz de almacenar en binario u otro código, la cantidad de impulsos recibidos por su entrada de cuenta. Puede aplicarse como divisor de frecuencia, control de tiempos, generador de direcciones en sistemas de memoria, secuenciador en unidades de control, etc.
+
+|                                                                                                                           Contadores Asíncronos                                                                                                                            |                                                                       Contadores Síncronos                                                                        |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Son secuenciales **síncronos** formados por un conjunto de biestables síncronos por flancos. Asíncrono se refiere a que las entradas de sincronimos de sus biestables no están unidas entre sí. La salida de un biestable sirve como entrada de sincronismo del siguiente. | Son similares a los anteriores, sólo que comparten la misma señal de reloj. Son más rápidos y complejos que los asíncronos. Tiene más compuertas que el anterior. |
+| ![[Contador Asíncrono.png]]                                                                                                                                                                                                                                                                          |                                                                                                                                                                   ![[Contador Síncrono.png]]|
+El diseño de contadores se realiza planteando una tabla de verdad temporal, y luego de obtener las funciones correspondientes, se minimizan teniendo en cuenta el biestable elegido. Los biestables utilizados en los contadores, como así también en los registros de desplazamiento, son biestables síncrono maestro – esclavo o activados por flancos.
