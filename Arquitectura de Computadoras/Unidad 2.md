@@ -21,7 +21,7 @@ $$
 ##### Propiedad Distribuitva
 $$
 \begin{split}
-    a.(b + c) &= (a.b) + (b.c) \\
+    a.(b + c) &= (a.b) + (a.c) \\
 	a + (b.c) &= (a+b).(a+c)
 \end{split}
 $$
@@ -159,20 +159,20 @@ Los decodificadores, además de usarse para decodificar, son útiles para implem
 Disponen de $`m = 2^n`$ líneas de entradas (canales), una línea de salida y `n` líneas de selección. En función de las líneas de selección, se determina qué entrada aparece en la salida.
 ![[Multiplexor.png|300]]
 #### Demultiplexores
-Cumplen la función opuesta a los multiplexores. Tienen una entrada y m salidas, y n entradas de selección. La salida seleccionada tendrá el valor de la entrada.
+Cumplen la función opuesta a los multiplexores. Tienen una entrada y `m` salidas, y `n` entradas de selección. La salida seleccionada tendrá el valor de la entrada.
 El circuito de un demultiplexor es coincidente con un decodificador que posea entrada de habilitación. Por esta razón no se encuentran demultiplexores específicos.
-![[Demultiplexor.png]]
+![[Demultiplexor.png|center]]
 #### Comparadores
 Realizan la comparación entre dos números binarios de n bits. Poseen entradas por =, < y >. Permite realizar comparadores de elevado número de bits, partiendo de comparadores menores.
-![[Comparador.png|500]]
+![[Comparador.png|500|center]]
 #### Detectores/Generadores de paridad
 Son CI capaces de generar/detectar la paridad de un conjunto de bits. Las señales de control TO (paridad impar) y TE (paridad par) permiten seleccionar la paridad.
-![[Detector-Generador de paridad.png|500]]
+![[Detector-Generador de paridad.png|500|center]]
 #### Sumadores
 Son CI que realizan la suma aritmética de dos números de n bits. Antes se debe estudiar la suma y resta binaria.
 ##### Semisumador
 La idea es sumar números binarios, por lo que la mecánica es la suma y el excedente se acarrea.
-![[Semisumador.png]]
+![[Semisumador.png|center]]
 ##### Sumador Total
 Se desea sumar dos números binarios A y B de 4 bits:
 $$
@@ -187,7 +187,7 @@ S&=s_{3}s_{2}s_{1}s_{0}
 $$
 Podemos observar que son necesario cuatro circuitos, uno para cada columna, y cada uno debe ser capaz de sumar tres bits: $`a_{i},\ b_{i} \ y \ c_{i}`$. Se implementa el circuito llamado sumador total.
 La idea es:
-![[Sumador.png]]
+![[Sumador.png|400]]
 
 | Ci  | Bi  | Ai  | **Si** | Ci+1 |
 |:---:|:---:|:---:|:------:|:----:|
@@ -200,7 +200,7 @@ La idea es:
 |  1  |  1  |  0  | **0**  |  1   |
 |  1  |  1  |  1  | **1**  |  1   |
 
-![[Sumador Total.png]]
+![[Sumador Total.png|center]]
 1. **Sumador con acarreo en serie**
 	La salida de acarreo del sumador total correspondiente a los bits menos significativos (LSBs) puede conectarse a la entrada de acarreo del sumador total siguiente, y así sucesivamente.
 	Tiene un tiempo de suma
@@ -224,20 +224,19 @@ Sean `A` y `B` dos números binarios signados en convenio de complemento a dos:
 	Por lo que se debe interpretar:
 	- Si (A - B) es positivo, el complemento debe despreciarse.
 	- Si (A - B) es negativo, el resultado estará expresado en complemento a dos.
-	![[Restador complemento a dos.png]]
+	![[Restador complemento a dos.png|center]]
 
 Sean `A` y `B` dos números binarios signados en convenio de complemento a uno:
 	$`A - B = A + C_{1}(B) = A + 2^n - 1 - B = 2^n + (A - B) - 1`$.
 	Por lo que se debe interpretar:
 	- Si (A - B) es positivo, el complemento debe despreciarse.
 	- Si (A - B) es negativo, el resultado estará expresado en complemento a uno.
-	![[Restador complemento a uno.png]]
+	![[Restador complemento a uno.png|center]]
 ##### ALU (Unidad Aritmética Lógica)
 Permiten realizar operaciones lógicas y aritméticas sobre números binarios (generalmente de 4 bits). La operación a realizar se selecciona colocando los valores adecuados en las líneas de selección.
 Estos bloques funcionales pueden conectarse en cascada para realizar operaciones sobre números de mayor número de bits.
 - Las salidas P y G son las funciones Propagadora y Generadora de acarreos. Se usan para mejorar el tiempo de procesamiento.
-![[ALU.png]]
-
+![[ALU.png|center]]
 # Sistemas Secuenciales
 Son aquellos sistemas digitales cuyas salidas no sólo dependen de sus entradas en un momento dado, sino también de cómo han evolucionado estas anteriormente.
 El sistema secuencial tiene que ser capaz de memorizar la mencionada evolución, es decir, que las salidas dependen de las entradas y de ellas mismas.
@@ -275,7 +274,7 @@ Es un sistema secuencial síncrono que almacena varios bits de información. El 
 ##### Registros propiamente dichos
 Consisten en un conjunto de biestables sincronizados por nivel o por flancos, cuyas entradas de sincronismo se encuentran unidas (paralelo). Uso extensivo en cualquier sistema digital.
 Se presenta una forma de interconexión entre registros llamada BUS COMÚN. Se trata de tres registros de dos bits cada uno.
-![[Interconexion de registros por BUS.png|300]]
+![[Interconexion de registros por BUS.png|300|center]]
 ### Contadores
 Es un sistema secuencial formado por biestables y lógica combinacional, capaz de almacenar en binario u otro código, la cantidad de impulsos recibidos por su entrada de cuenta. Puede aplicarse como divisor de frecuencia, control de tiempos, generador de direcciones en sistemas de memoria, secuenciador en unidades de control, etc.
 

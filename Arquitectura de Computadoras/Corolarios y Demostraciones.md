@@ -1,4 +1,5 @@
 ##### Corolarios de Teoremas de Funciones Lógicas
+Se obtienen efectuando el producto miembro a miembro de la primera expresión por a o por a', como se indica a continuación:
 $$
     af(a, b, c, \dots, n) = a[af(1, b, c, \dots, n) + \overline{a}f(0, b, c, \dots, n)]
 $$
@@ -6,6 +7,7 @@ Aplicando distributiva al primer miembro:
 $$
 af(a, b, c, \dots, n) = af(1, b, c, \dots, n) \rightarrow \text{Primer Corolario}
 $$
+En cambio,
 $$
     \overline{a}f(a, b, c, \dots, n) = \overline{a}[af(1, b, c, \dots, n) + \overline{a}f(0, b, c, \dots, n)]
 $$
@@ -13,7 +15,6 @@ Aplicando propiedad distributiva al segundo miembro
 $$
 \overline{a}f(a, b, c, \dots, n) = \overline{a}f(0, b, c, \dots, n) \rightarrow \text{Segundo Corolario}
 $$
-
 Aplicando dualidad a los corolarios, se obtiene
 $$
 a+f(a, b, c, \dots, n) = a+ f(0, b, c, \dots, n) \rightarrow \text{Tercer Corolario}

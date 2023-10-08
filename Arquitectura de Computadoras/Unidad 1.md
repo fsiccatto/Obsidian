@@ -12,28 +12,28 @@ Dónde:
 	k: cantidad de cifras fraccionarias.
 
 Un sistema numérico está formado por:
-- Un conjunto finito y no vacío de símbolos
-- Un conjunto de reglas para formar los símbolos numerales
-- Un conjunto de reglas para operar entre los numerales
+- Un conjunto finito y no vacío de símbolos,
+- Un conjunto de reglas para formar los símbolos numerales, y
+- Un conjunto de reglas para operar entre los numerales.
 #### Clasificación de los sistemas numéricos
 - ##### Sistemas numéricos no posicionales
-	El valor está determinado po el símbolo. Ejemplo: números romanos y egipcios.
+	El valor está determinado por el símbolo. Ejemplo: números romanos y egipcios.
 - ##### Sistemas numéricos posicionales
 	Cada símbolo o dígito tiene un *peso* distinto según la posición que ocupa en la cifra.
 	**Caracterísitcas**:
-	- Consta de un número finito de símbolos distintos que constituyen su base
-	- Cada símbolo aislado representa un número específico de unidades
-	- Existe un símbolo para indicar la ausencia de elementos (como el cero)
-	- Los símbolos pueden ordenarse de forma monótona creciente
-	- El valor del dígito depende de la posición en la que se encuentre el número
-	- La posición extrema derecha corresponde a unidades (peso 1)
+	- Consta de un número finito de símbolos distintos que constituyen su base.
+	- Cada símbolo aislado representa un número específico de unidades.
+	- Existe un símbolo para indicar la ausencia de elementos (como el cero).
+	- Los símbolos pueden ordenarse de forma monótona creciente.
+	- El valor del dígito depende de la posición en la que se encuentre el número.
+	- La posición extrema derecha corresponde a unidades (peso 1).
 ###### Sistema Decimal
 Sistema de numeración posicional de base 10: $`D_{10} = \{0, 1, 2, 3, ..., 9\} `$
 ###### Sistema Binario
 Sistema de numeración posicional de base 2: $`B_{2} = \{0, 1\}`$
 ###### Sistema Octal
 Sistema de numeración posicional de base 8: $`O_{8} = \{0, 1, 2, 3, ..., 7\} `$
-###### Sistema Binario
+###### Sistema Hexadecimal
 Sistema de numeración posicional de base 16: $`H_{16} = \{0, 1, 2, 3, ..., 9, A, B, C, D, E, F\} `$
 #### Conversión entre números de distintas bases
 ![[Conversiones entre sistemas|1200|center]]
@@ -70,10 +70,10 @@ Cuando queremos representar números muy pequeños o muy grandes utilizamos la n
 	- 1 negativo (-)
 
 2. Exponente (E)
-	Es un campo de varios bits con la **Convención Exceso $`2^{n-1}`$**. Por ejemplo, el exceso 64 usa 7 bits y el exceso 128 require 8 bits
+	Es un campo de varios bits con la **Convención Exceso $`2^{n-1}`$**. Por ejemplo, el exceso 64 usa 7 bits y el exceso 128 require 8 bits.
 
 3. Mantisa (M)
-	Es un campo de varios bits fraccionarios. Para que el número esté *normalizado*, el bit más significativo debe ser 1, es decir
+	Es un campo de varios bits fraccionarios. Para que el número esté *normalizado*, el bit más significativo debe ser 1, es decir,
 $$
 \frac{1}{b}\leq M < 1
 $$
@@ -111,7 +111,7 @@ $$
 - Se consideran 5 clases de números
 	![[Casos especiales Punto Flotante.png|center]]
 ## Códigos
-Un #código es una representación biunívoca de algún conjunto de elementos de tal forma que, a cada uno de estos, se le asigna una combinación de símbolos dterminados y viceversa.
+Un **código** es una representación biunívoca de algún conjunto de elementos de tal forma que, a cada uno de estos, se le asigna una combinación de símbolos determinados y viceversa.
 Para "comunicarse" hay que conocer el código utilizado.
 ![[Codigos|center|600]]
 ### Códigos Binarios
@@ -148,7 +148,7 @@ Esta codificación especial nos permite realizar operaciones aritméticas de nú
 ![[Códigos#BCD]]
 La conversión se realiza expresando cada dígito mediante la combinación binaria dependiendo del código especificado.
 ### Códigos Alfanuméricos
-Muchas aplicaciones requieren manejar datos que sean letras o caracteres. Consiste en un grupo de elementos consistente de los diez números decumales, 26 caracteres del alfabeto y de cierto símbolos especiales.
+Muchas aplicaciones requieren manejar datos que sean letras o caracteres. Consiste en un grupo de elementos consistente de los diez números decimales, 26 caracteres del alfabeto y de cierto símbolos especiales.
 El código **ASCII** (*American Standard Code for Information Interchange* = Código normalizado americano para el intercambio de información) es el más conocido.
 ![[Códigos#ASCII]]
 Es el estándar de 7 bits. El extendido es de 8 bits.
@@ -171,16 +171,19 @@ $$
 \end{split}
 $$
 ### Código Detectores de Error
-La manera más simble de lograrlo es agregar un **bit de paridad**, puede ser par o impar. Por lo que al mensaje se le agregará un bit adicional, dejando un *código de pardidad* en el que es necesario ponerse de acuerdo en qué convención se trabaja.
+La manera más simple de lograrlo es agregar un **bit de paridad**, puede ser par o impar. Por lo que al mensaje se le agregará un bit adicional, dejando un *código de pardidad* en el que es necesario ponerse de acuerdo en qué convención se trabaja.
 Por lo tanto, la detección de errores consiste en comprobar si el número de unos de cada combinación cumple con el bit de paridad. Si existe un error, se deberá solicitar una nueva transmisión del dato.
 Algunos códigos de detección de errores que encontramos son el 2 entre 5 y el biquinario.
 ![[Códigos#Detectores de Errores]]
 Tienen dos unos en cada combinación (paridad par) y se forman de acuerdo a los pesos asignados.
 ### Códigos Correctores de Errores
 Un código corrector detecta si la información codificada presenta o no errores, y en caso afirmativo determina la posición del bit o bits erróneos, de manera de poder corregirlos por inversión.
-Los códigos con $`D_m > 2`$ son códigos detectores de error.
+Los códigos con $`D_m > 2`$ son códigos correctores de error. Existen tres:
+- Código de Hamming
+- Código CRC y LRC
+- Código Bidimensional
 #### Código de Hamming
-Su formación parte de un código cualquiera de `n` bits al que se le adicionan `p` bits formando un nuevo código de `n + p` bits. En este código se realizan p detecciones de paridad, obteniéndose un bit de paridad uno o cero (dependiendo si el número de bits es impar o par). El conjunto de los p bits de paridad forma un número en el sistema binario natural cuyo equivalente decimal nos indica la posición del bit erróneo. Si no hay error, el número obtenido debe ser cero.
+Su formación parte de un código cualquiera de `n` bits al que se le adicionan `p` bits formando un nuevo código de `n + p` bits. En este código se realizan `p` detecciones de paridad, obteniéndose un bit de paridad uno o cero (dependiendo si el número de bits es impar o par). El conjunto de los `p` bits de paridad forma un número en el sistema binario natural cuyo equivalente decimal nos indica la posición del bit erróneo. Si no hay error, el número obtenido debe ser cero.
 Se debe cumplir que: 
 $$
 2^p \geq n + p + 1
@@ -200,12 +203,12 @@ $$
 \begin{split}
 	b_1 = b_3 \oplus b_5 \oplus b_7 \\
 	b_2 = b_3 \oplus b_6 \oplus b_7 \\
-	b_3 = b_5 \oplus b_6 \oplus b_7 
+	b_4 = b_5 \oplus b_6 \oplus b_7 
 \end{split}
 $$
 ![[Códigos#Código Hamming]]
 ### Verificación de Redundancia de LRC y CRC
-La utilización de códigos cíclicos, que nos aquellos que al realizar una rotación cíclica de una palabra se produce otra palabra que pertenece al mismo código.
+La utilización de códigos cíclicos, que son aquellos que al realizar una rotación cíclica de una palabra se produce otra palabra que pertenece al mismo código.
 #### Verificación de Redundancia Longitudinal (LRC)
 Es un código detector de error de un bit. Utilizado en la adquisición de datos y control en la industria, para la comunicación entre dispositivos y con una PC.
 El cálculo del LRC consiste en realizar la suma hexadecimal de los datos y calcular el complemento a 2.
@@ -237,9 +240,6 @@ Existen dos técnicas diferenciadas que pueden utilizar los algoritmos: la susti
 ###### La **sustitución** es uno de los enfoques básicos del cifrado, como se practica tradicionalmente, donde se usa una clave de cifrado para determinar, para cada caracter del texto plano, un caracter de texto cifrado que va a sustituir a ese carácter. 
 ###### La **permutación**, los caracteres de texto plano son simplemente reorganizados en una secuencia diferente, bajo la influencia de la clave de cifrado.
 
-Ninguna de las técnicas de sustitución y permutación es particularmente segura en sí misma, pero los algoritmos que combinan a las dos pueden proporcionar un alto grado de seguridad
-## Otros Códigos
-### Códigos de Barra
-### Códigos QR
+Ninguna de las técnicas de sustitución y permutación es particularmente segura en sí misma, pero los algoritmos que combinan a las dos pueden proporcionar un alto grado de seguridad.
 
 [^1]: Inteligible: Que puede ser comprendido o entendido.
