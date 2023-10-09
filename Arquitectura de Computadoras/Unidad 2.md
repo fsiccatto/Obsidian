@@ -115,7 +115,7 @@ Es necesario que la función esté expresada en forma canónica. Toda función l
 #### Método de Simplificación de Karnaugh
 Consiste en mapas aplicables a funciones de dos, tres, cuatro y cinco variables. Este método ==no resulta práctico para funciones de más de 5 variables==.
 Los dos números binarios en las columnas y las filas, que siguen un código Gray de dos variables, se corresponden con las variables directas o negadas de cada cuadro, y los números decimales son los asignados a cada término canónico según la convención indicada con anterioridad.
-![[Metodo Karnaugh.png|center]]
+![[Metodo Karnaugh.png|center|300]]
 Formar un grupo entre dos unos colindantes en el mapa se corresponde con sacar factor común y perder la variable que cambia.
 De lo visto, pueden enunciarse la siguiente regla de formación de grupos: 
 1. Se agrupan la mayor cantidad de unos posible, siempre que sean una potencia de dos y el grupo resultante pueda subdividirse en grupos menores.
@@ -131,16 +131,16 @@ Existen dos tipos de variables en un sistema digital:
 - Variables de salida que dependen de las de entrada.
 ### Clasificación de Sistemas Digitales
 Un sistema digital es *combinacional* cuando a cada combinación de las variables de entrada le corresponde **UNA Y SÓLO UNA** combinación de las variables de salida. Siempre que se repita un conjunto de valores de las variables de entrada, se repetirá la salida.
-![[Sistemas combinacionales.png|center]]
+![[Sistemas combinacionales.png|center|300]]
 
 Un sistema digital es *secuencial* cuando a un mismo vector de entrada le puede corresponder más de uno de salida. Estos sistemas deben poseer memoria interna, ya que sus salidas son consecuencias de la evolución anterior de sus entradas.
-![[remote-repo/Arquitectura de Computadoras/imagenes/Sistemas secuenciales.png|center]]
+![[remote-repo/Arquitectura de Computadoras/imagenes/Sistemas secuenciales.png|center|300]]
 ## Sistemas Combinacionales
 En un sistema combinacional las salidas no son otra cosa que funciones lógicas de las entradas. Se puede escribir que:
 $$
 z_{i} =f_{i}({x_{1}, x_{2}, \dots, x_{n}})
 $$
-![[Circuito Combinacional.png|center]]
+![[Circuito Combinacional.png|center|300]]
 ### Circuitos Combinacionales MSI
 Las técnicas de integración han permitido CI más complejos. Las ventajas son varias: disminución de los CI necesarios, del tiempo de diseño, del número de conexiones externas, y la facilidad de mantenimiento.
 #### Codificadores
@@ -154,25 +154,25 @@ También cuentan con una entrada de habilitación.
 #### Decodificadores
 Poseen `n` entradas y `m` salidas que realizan lo opuesto a un codificador. Generalmente, son binarios o BCD. En el caso de un binario, si posee `n` entradas poseerá $`m = 2^n`$ salidas.
 Los decodificadores, además de usarse para decodificar, son útiles para implementar funciones lógicas. Cada una de sus salidas es un minterm de una función de n variables.
-![[Decodificador.png|500]]
+![[Decodificador.png|400]]
 #### Multiplexores
 Disponen de $`m = 2^n`$ líneas de entradas (canales), una línea de salida y `n` líneas de selección. En función de las líneas de selección, se determina qué entrada aparece en la salida.
-![[Multiplexor.png|300]]
+![[Multiplexor.png|200]]
 #### Demultiplexores
 Cumplen la función opuesta a los multiplexores. Tienen una entrada y `m` salidas, y `n` entradas de selección. La salida seleccionada tendrá el valor de la entrada.
 El circuito de un demultiplexor es coincidente con un decodificador que posea entrada de habilitación. Por esta razón no se encuentran demultiplexores específicos.
-![[Demultiplexor.png|center]]
+![[Demultiplexor.png|center|400]]
 #### Comparadores
 Realizan la comparación entre dos números binarios de n bits. Poseen entradas por =, < y >. Permite realizar comparadores de elevado número de bits, partiendo de comparadores menores.
-![[Comparador.png|500|center]]
+![[Comparador.png|400|center]]
 #### Detectores/Generadores de paridad
 Son CI capaces de generar/detectar la paridad de un conjunto de bits. Las señales de control TO (paridad impar) y TE (paridad par) permiten seleccionar la paridad.
-![[Detector-Generador de paridad.png|500|center]]
+![[Detector-Generador de paridad.png|400|center]]
 #### Sumadores
 Son CI que realizan la suma aritmética de dos números de n bits. Antes se debe estudiar la suma y resta binaria.
 ##### Semisumador
 La idea es sumar números binarios, por lo que la mecánica es la suma y el excedente se acarrea.
-![[Semisumador.png|center]]
+![[Semisumador.png|center|300]]
 ##### Sumador Total
 Se desea sumar dos números binarios A y B de 4 bits:
 $$
@@ -187,7 +187,7 @@ S&=s_{3}s_{2}s_{1}s_{0}
 $$
 Podemos observar que son necesario cuatro circuitos, uno para cada columna, y cada uno debe ser capaz de sumar tres bits: $`a_{i},\ b_{i} \ y \ c_{i}`$. Se implementa el circuito llamado sumador total.
 La idea es:
-![[Sumador.png|400]]
+![[Sumador.png|300]]
 
 | Ci  | Bi  | Ai  | **Si** | Ci+1 |
 |:---:|:---:|:---:|:------:|:----:|
@@ -200,7 +200,7 @@ La idea es:
 |  1  |  1  |  0  | **0**  |  1   |
 |  1  |  1  |  1  | **1**  |  1   |
 
-![[Sumador Total.png|center]]
+![[Sumador Total.png|center|500]]
 1. **Sumador con acarreo en serie**
 	La salida de acarreo del sumador total correspondiente a los bits menos significativos (LSBs) puede conectarse a la entrada de acarreo del sumador total siguiente, y así sucesivamente.
 	Tiene un tiempo de suma
@@ -224,30 +224,30 @@ Sean `A` y `B` dos números binarios signados en convenio de complemento a dos:
 	Por lo que se debe interpretar:
 	- Si (A - B) es positivo, el complemento debe despreciarse.
 	- Si (A - B) es negativo, el resultado estará expresado en complemento a dos.
-	![[Restador complemento a dos.png|center]]
+	![[Restador complemento a dos.png|center|500]]
 
 Sean `A` y `B` dos números binarios signados en convenio de complemento a uno:
 	$`A - B = A + C_{1}(B) = A + 2^n - 1 - B = 2^n + (A - B) - 1`$.
 	Por lo que se debe interpretar:
 	- Si (A - B) es positivo, el complemento debe despreciarse.
 	- Si (A - B) es negativo, el resultado estará expresado en complemento a uno.
-	![[Restador complemento a uno.png|center]]
+	![[Restador complemento a uno.png|center|500]]
 ##### ALU (Unidad Aritmética Lógica)
 Permiten realizar operaciones lógicas y aritméticas sobre números binarios (generalmente de 4 bits). La operación a realizar se selecciona colocando los valores adecuados en las líneas de selección.
 Estos bloques funcionales pueden conectarse en cascada para realizar operaciones sobre números de mayor número de bits.
 - Las salidas P y G son las funciones Propagadora y Generadora de acarreos. Se usan para mejorar el tiempo de procesamiento.
-![[ALU.png|center]]
+![[ALU.png|center|500]]
 # Sistemas Secuenciales
 Son aquellos sistemas digitales cuyas salidas no sólo dependen de sus entradas en un momento dado, sino también de cómo han evolucionado estas anteriormente.
 El sistema secuencial tiene que ser capaz de memorizar la mencionada evolución, es decir, que las salidas dependen de las entradas y de ellas mismas.
 ==Un Sistema Secuencial parte de un Sistema Combinacional REALIMENTADO.==
-![[Sistemas Secuenciales|center|800]]
+![[Sistemas Secuenciales|center|700]]
 Se observa un nuevo tipo de variables llamadas **variables internas**. El bloque M es un circuito capaz de mantener el estado de sus entradas en su valor, por un tiempo. 
 Para un valor dado de las variables de entrada, se inicia un proceso, llamado evolución automática del sistema, hasta que se alcanza un estado estable.
 Si las variables internas se las deja pasar de izquierda a derecha sólo en ciertos momentos, se obtienen un Sistema Secuencial Síncrono.
 ### Biestables
 Poseen dos estados estables, es decir, que las variables internas pueden adoptar en este caso dos estados en los cuales permancerán indefinidamente a menos que cambien las variables de entrada. Los Biestables representan los circuitos base para la construcción de secuenciales más complejos.
-![[Biestables|center|600]]
+![[Biestables|center|400]]
 #### Biestables Asíncronos
 Son aquellos en los cuales las entradas actúan directamente sobre el biestable. Biestables SR.
 ![[Secuenciales#Asíncronos#Biestable Asíncrono SR]]

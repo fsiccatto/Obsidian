@@ -1,6 +1,6 @@
 ## Asíncronos
 ### Biestable Asíncrono SR
-![[Biestable SR.png]]
+![[Biestable SR.png|300]]
 
 |  R  |  S  | Qt  | Qt+1 |
 |:---:|:---:|:---:|:----:|
@@ -34,17 +34,17 @@ Las compuertas lógicas reales se diferencian de las ideales en:
 ## Síncronos
 ### Biestable Síncrono Activados por nivel
 Son aquellos en los cuales la tabla de verdad es válida sólo en presencia de un nivel activo en la entrada de sincronismo.
-![[Biestable SR Activado por nivel.png]]
+![[Biestable SR Activado por nivel.png|300]]
 ### Biestable Síncrono Maestro - Esclavo
 Formado por 2 biestables activados por nivel. 
 - Cuando `Ck = 1` funciona el primer biestable maestro. 
 - Cuando `Ck = 0` la información del maestro pasa al esclavo.
 Este biestable actúa como si estuviera activado en el flanco de bajada de la señal de sincronismo, las entradas actúan sobre el maestro mientras `Ck = 1`.
-![[Biestable Maestro-Esclavo.png]]
+![[Biestable Maestro-Esclavo.png|300]]
 ### Biestable Activados por flancos
 Las entradas actúan sólo en presencia de un flanco (de subida o bajada) en la entrada de sincronismo. Por lo que la tabla de verdad será válida en esos instantes.
 Se trata de un SR síncrono por nivel al cual se le agrega un circuito detector de flancos.
-![[Biestable Activado por flancos.png]]
+![[Biestable Activado por flancos.png|300]]
 #### Tipos de Biestables
 ### Biestables J-K
 |  K  |  J  | Qt+1 |
@@ -68,4 +68,4 @@ No están disponibles comercialmente. Se obtienen a partir de un biestable JK ha
 |  0  |  0  |
 |  1  |  0   |
 Este Biestable **carece** de aplicación. Pueden obtenerse a partir de un SR síncrono, haciendo S = R’ = D. También desde un JK, haciendo J = K’ = D.
-![[Biestable D.png]]
+![[Biestable D.png|300]]
