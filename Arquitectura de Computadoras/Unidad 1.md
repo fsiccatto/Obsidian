@@ -106,14 +106,14 @@ $$
 	Luego, procedemos a sumar o restar las mantisas según sea el caso. El resultado debe ser *normalizado*.
 ### Norma IEEE 754
 - Establece tres tipos de representaciones
-	![[Punto Flotante IEEE 754.png|500|center]]
+	![[Punto Flotante IEEE 754.png|400|center]]
 - Los exponentes mínimo y máximo se utilizan para casos especiales
 - Se consideran 5 clases de números
-	![[Casos especiales Punto Flotante.png|center]]
+	![[Casos especiales Punto Flotante.png|center|300]]
 ## Códigos
 Un **código** es una representación biunívoca de algún conjunto de elementos de tal forma que, a cada uno de estos, se le asigna una combinación de símbolos determinados y viceversa.
 Para "comunicarse" hay que conocer el código utilizado.
-![[Codigos|center|600]]
+![[Codigos|center|300]]
 ### Códigos Binarios
 Son los códigos utilizados por sistemas decimales.
 ###### Códigos Binarios Continuos:
@@ -154,11 +154,11 @@ El código **ASCII** (*American Standard Code for Information Interchange* = Có
 Es el estándar de 7 bits. El extendido es de 8 bits.
 ## Códigos Detectores y Correctores de Error
 Debe existir un formato para los datos y una estrategia de sincronización de cómo se envían y reciben los mensajes, incluyendo la detección y corrección de los errores.
-![[Enlace de Datos|center|500]]
+![[Enlace de Datos|center|400]]
 - DTE: Equipo Terminal de Datos
 - DCE: Equipo de Comunicación de Datos
 En general, el mensaje tiene la siguiente estructura:
-![[Estructura general de un mensaje de un protocolo|center|400]]
+![[Estructura general de un mensaje de un protocolo|center|300]]
 Si se detecta la presencia de errores (por ruido) en la información es necesario volver a mandarla. Para poder detectar y/o corregir errores se da el concepto de distancia entre combinaciones de un código:
 	**Distancia** entre dos combinaciones binarias cualesquiera de un código es el número de bits que deben cambiarse para pasar de una combinación a la otra.
 ### Distancia Mínima
