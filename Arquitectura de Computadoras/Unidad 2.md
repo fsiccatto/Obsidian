@@ -268,7 +268,7 @@ Es un sistema secuencial síncrono que almacena varios bits de información. El 
 2. Registros propiamente dichos
 	- Entrada paralela, salida paralela
 ##### Registros de desplazamiento
-| serie - serie | paralelo- paralelo |
+| serie - serie | paralelo - serie |
 | ------------- | ------------------ |
 |    ![[Registro serie-serie.png]]           |      ![[Registro paralelo-serie.png]]              |
 ##### Registros propiamente dichos
