@@ -1,5 +1,5 @@
 # Álgebra de Boole
-Un sistema es un conjunto de elementos que guardan relación entre sí.
+Un sistema es un conjunto de elementos binarios que guardan relación entre sí por operaciones lógicas.
 Un sistema digital es aquel cuyos elementos son digitales (solo pueden adoptar valores discretos).
 ### Postulados y Teoremas
 Es útil definir la bivalencia, está compuesta por sólo dos elementos. El álgebra de Bool es un conjunto de elementos binarios relacionados entre sí mediante operaciones lógicas de producto y de suma, que cumplen con los postulados de Boole.
@@ -25,7 +25,7 @@ $$
 	a + (b.c) &= (a+b).(a+c)
 \end{split}
 $$
-##### Complementación
+##### Complementación o Inversión Lógica
 $$
 \begin{split}
     a + \overline{a} &= 1 \\
@@ -37,7 +37,7 @@ $$
 ##### 1- Dualidad
 Toda igualdad lógica sigue siendo válida si se intercambian los operadores `+ y .` y los elementos de identidad `1 y 0`. La simetría de estos postulados demuestra este teorema.
 ##### 2- El álgebra es un conjunto cerrado
-Los resultados de aplicar las operaciones lógicas a las variables, pertenecen al álgebra
+Los resultados de aplicar las operaciones lógicas a las variables, pertenecen al álgebra.
 ##### 3- En el álgebra se cumple:
 $$
 \begin{split}

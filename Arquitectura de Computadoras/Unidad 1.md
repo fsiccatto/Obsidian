@@ -70,7 +70,7 @@ Cuando queremos representar números muy pequeños o muy grandes utilizamos la n
 	- 1 negativo (-)
 
 2. Exponente (E)
-	Es un campo de varios bits con la **Convención Exceso $`2^{n-1}`$**. Por ejemplo, el exceso 64 usa 7 bits y el exceso 128 require 8 bits.
+	Es un campo de varios bits con la **Convención Exceso $`2^{n-1}`$** o **Convenio de Complemento a dos**. Por ejemplo, el exceso 64 usa 7 bits y el exceso 128 require 8 bits.
 
 3. Mantisa (M)
 	Es un campo de varios bits fraccionarios. Para que el número esté *normalizado*, el bit más significativo debe ser 1, es decir,
@@ -136,7 +136,7 @@ Entre dos combinaciones seguidas cambia un solo bit. Entre la primera y la últi
 El ejemplo más típico de un código continuo y cíclico es el llamado **Código de Gray**. Se utiliza en convertidores muy rápidos y en codificadores, ya que solo cambia un bit.
 ![[Códigos#Gray]]
 Representación del Código de Gray de 2, 3 y 4 bits
-Otro ejemplo de código binario continuo y cíclico es el de Johnson:
+Otro ejemplo de código binario continuo y cíclico es el de Johnson: donde la cantidad de combinaciones posibles es `2^n`.
 ![[Códigos#Johnson]]
 ### Códigos BCD
 La conversión de binaria a decimal es difícil. En las calculadoras, juegos digitales, instrumentos digitales; en los que es común la entrada y salida de números en notación decimal, se emplea un código *BCD decimal codificado en binario*.
@@ -178,7 +178,7 @@ Algunos códigos de detección de errores que encontramos son el 2 entre 5 y el 
 Tienen dos unos en cada combinación (paridad par) y se forman de acuerdo a los pesos asignados.
 ### Códigos Correctores de Errores
 Un código corrector detecta si la información codificada presenta o no errores, y en caso afirmativo determina la posición del bit o bits erróneos, de manera de poder corregirlos por inversión.
-Los códigos con $`D_m > 2`$ son códigos correctores de error. Existen tres:
+Los códigos con $`D_m \geq 2`$ son códigos correctores de error. Existen tres:
 - Código de Hamming
 - Código CRC y LRC
 - Código Bidimensional
@@ -198,7 +198,7 @@ $$
 	c_3 = b_4 \oplus b_5 \oplus b_6 \oplus b_7
 	\end{split}
 $$
-Podemos sacar $`b_1, b_2 \space y \space b_4`$ ya que aparecen una sola vez y pueden generarse a partir de los otros, por ejemplo `b1` debe valer uno si el número $`b_3, b_5 \space y \space b_7`$ es impar, por lo tanto:
+Podemos sacar $`b_1, b_2 \space y \space b_4`$ ya que aparecen una sola vez y pueden generarse a partir de los otros, por ejemplo `b1` debe valer uno si el número $`b_3, b_5, b_6 \space y \space b_7`$ es impar, por lo tanto:
 $$
 \begin{split}
 	b_1 = b_3 \oplus b_5 \oplus b_7 \\

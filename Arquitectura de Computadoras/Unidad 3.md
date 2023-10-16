@@ -104,7 +104,7 @@ La salida del bus de datos son triestados para permitir la conexión de más de 
 Los elementos de conexión son diodos o transistores con un fusible en serie. Inicialmente la memoria presenta todas las conexiones establecidas. La programación consiste en destruir el fusible en aquellos lugares donde quiere almacenarse un 0. Esto se consigue direccionando la palabra deseada e inyectando una corriente adecuada en las salidas, así la conexión queda abierta y es como si no existiera el elemento acoplador. Se deduce que **una vez programada la memoria ya no es posible volver a hacerlo**.
 #### Memorias RPROM
 Las RPROM pueden ser reescritas por el usuario. Existen tres tipos:
-- EPROM: constituidas por MOSFET's. La descarga es por luz ultravioleta y la repogramación es eléctrica aplicando tensiones superiores a las de funcionamiento, es parmanente hasta que vuelva a grabarse.
+- EPROM: constituidas por celdas de MOSFET's. La descarga es por luz ultravioleta y la repogramación es eléctrica aplicando tensiones superiores a las de funcionamiento, es parmanente hasta que vuelva a grabarse.
 - EEPROM: similares a la anterior, pero el borrado es posición a posición.
 - FLASH: similares a las anteriores, pero el borrado se realiza simultáneamente en todas las posiciones.
 ### Extensión de Longitud de palabra y capacidad

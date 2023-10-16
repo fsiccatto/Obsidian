@@ -88,7 +88,7 @@
 |    7    |  1 1 0   |  0  |  1  |  1 0  |
 |    8    |  1 1 1   |  1  |  0  |  0 0  |
 |    9    |  1 1 1   |  1  |  1  |  1 1  |
-$`b_3, b_5 \space y \space b_7`$ son los bits del código original *Aiken*, mientras que los bits restantes se forman de acuedo a las condiciones de paridad (en este caso, par).
+$`b_3, b_5, b_6 \space y \space b_7`$ son los bits del código original *Aiken*, mientras que los bits restantes se forman de acuedo a las condiciones de paridad (en este caso, par).
 ### Códigos Bidimensionales
 Se presenta el código bidimensional, a las filas se agregan bits Hamming y al código de columnas se le agrega un bit de paridad.
 El código de filas tendrá `Dm = 3` ya que es código Hamming, el código de las columnas tendrá una `Dm = 2` ya que es un código de paridad.
