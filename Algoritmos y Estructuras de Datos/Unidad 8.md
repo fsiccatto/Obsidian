@@ -230,3 +230,31 @@ Estas listas permiten avanzar o retroceder a través de la misma.
 | Esta vacía cuando                         |        Cima = 0         |        Final = 0         |      Longitud = 0       |           Inicio = 0           |
 | Uso de punteros                           |           No            |            No            |           No            |               Si               |
 | Luego de una operación se corren los elementos |           No            |            Si            |           Si            |               No               |
+# Estructuras de Datos NO Lineales
+## No Lineales
+Las estructuras dinámicas lineales de datos tienen grandes ventajas, sin embargo tienen un punto débil, son listas secuenciales, están dispuestas de modo que es necesario moverse a través de ellas una posición a la vez.
+Las estructuras de datos no lineales tienen la característica que cada elemento puede tener diferentes siguientes elementos.
+### Árbol
+Es una estructura de datos muy utilizada porque se adapta a la representación natural de informaciones homogéneas organizadas y de una gran comodidad y rapidez de manipulación.
+Se usan para representar datos con una *relación jerárquica* entre sus elementos, como son árboles genealógicos, organigramas, llamadas a subprogramas, entre otros.
+#### Características
+- Cada elemento del árbol se denomina **nodo**.
+- Existe un nodo especial: nodo raíz.
+- Los nodos sin ramificaciones se llaman terminal u hoja.
+- Cada nodo apunta a uno o más nodos.
+- A un nodo le apunta sólo un nodo.
+- El *grado* es el número de descendientes DIRECTOS de un nodo.
+![[Arbol.png|200]]
+#### Árboles Binarios
+Los árboles de grado 2 representan una estructura importante. En los árboles binarios todos sus nodos excepto los del último nivel, tienen dos hijos: el subárbol izquierdo y el subárbol derecho.
+![[Arboles binarios.png|200]]
+
+### Grafos
+Si en los árboles eliminamos la restricción de que un nodo sólo puede ser apuntado por un solo nodo obtenemos un grafo.
+Un grafo tiene una gran número de aplicaciones, por ej.: red de caminos, red de enlaces aéreos, entre otros.
+![[Grafo.png|200]]
+### Ciclo
+Un ciclo es una trayectoria, secuencia de una o más aristas que conectan a 2 nodos, que se dan las siguientes condiciones:
+- Ninguna arista puede aparecer más de una vez en una secuencia.
+- El nodo inicial de la trayectoria es el mismo que el nodo final.
+![[Ciclo.png|200]]
