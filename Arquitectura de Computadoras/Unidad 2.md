@@ -120,7 +120,7 @@ Formar un grupo entre dos unos colindantes en el mapa se corresponde con sacar f
 De lo visto, pueden enunciarse la siguiente regla de formación de grupos: 
 1. Se agrupan la mayor cantidad de unos posible, siempre que sean una potencia de dos y el grupo resultante pueda subdividirse en grupos menores.
 2. Se agrupan los unos restantes siguiendo la regla `1.` , pudiendo usar (si es conveniente) un uno ya agrupado anteriormente 
-3. Se repite `2` hasta realizar todos los unos.
+3. Se repite `2.` hasta realizar todos los unos.
 # Sistemas Combinacionales
 ## Sistemas Digitales
 Un sistema digital es un conjunto de elementos binarios (compuertas digitales) relacionados entre sí.
