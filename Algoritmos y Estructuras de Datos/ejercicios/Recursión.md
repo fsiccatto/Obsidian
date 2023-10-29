@@ -5,7 +5,7 @@ $$
      Mult(m, n) = \left\{
 	       \begin{array}{ll}
 		 0 & \mathrm{si\ } m = 0 \\
-		 n + Mult(m, n) & \mathrm{si\ } m > 0 \\
+		 n + Mult(m - 1, n) & \mathrm{si\ } m > 0 \\
 	    \end{array}
 	\right.
 \end{equation}
@@ -16,7 +16,7 @@ INICIO
 	SI (m = 0) ENTONCES
 		Mult = 0
 	SINO
-		n * Mult(m - 1, n)
+		n + Mult(m - 1, n)
 	FINSI
 RETORNO
 ```

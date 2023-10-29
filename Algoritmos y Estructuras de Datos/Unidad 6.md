@@ -9,7 +9,7 @@ La estructura de datos registro permite que un conjunto de elementos de informac
 | ----- | ------- | ------ | --------- | ----------- |
 ```
 TIPO
-Domicilio= REGISTRO
+Domicilio = REGISTRO
 calle: CADENA
 nro: ENTERO
 localidad: CADENA
@@ -20,7 +20,7 @@ Empleado = REGISTRO
 tarea: CADENA
 numEmpl: ENTERO
 sueldo: REAL
-dom: Domicilio
+domicilio: Domicilio
 codProyecto[6]: ENTERO
 FIN REGISTRO
 ```
@@ -28,29 +28,33 @@ FIN REGISTRO
 El principal propósito es agrupar campos lógicamente para ejecutar sobre ellos operaciones de entrada/salida.
 Los elementos de registro se pueden referenciar de forma individual o bien en grupo de manera colectiva para las operaciones de entrada/salida.
 Las operaciones que se pueden ejecutar sobre los elementos son de acuerdo con sus tipos de datos individuales.
+#### Llaves de Identificación
+Un registro contiene un campo que lo identifica, que lo hace único. A este campo se lo llama campo llave o clave.
+La llave puede ser un elemento básico o grupal. Por ejemplo: dni, legajo, nro de Factura.
 ## Archivos
 Un archivo es una colección de ocurrencias de registros lógicamente relacionados que se tratan como una unidad. Todos los registros del archivo son del **mismo formato**. Las operaciones que pueden realizarse dependen de los registros y de los tipos de datos de los elementos.
 #### Clasificiación de archivos
-Por función
-1. *Maestro*: Representa una visión estática del negocio. Contiene datos relativamente permanentes o datos históricos. Ej clientes, productos, personal.
-2. *De transacciones*: Representa eventos o actividades del negocio que implican por lo general agregar un registro, modifcar o eliminar. Ej ventas, liquidación de haberes.
-3. *De reporte*: Datos formateados para ser representados al usuario. El archivo enviado puede ser enviado a cola de impresión o pantalla.
-4. *De trabajo*: Es temporal en el sistema. No es de largo plazo, ni tiene entradas/salidas. Se usa por lo general para pasar datos de un programa a otro.
-5. *De programa*: Contiene instrucciones para procesar datos. Pueden ser de código fuente o el resultado de una compilación.
-6. *De texto*: Contiene datos alfanuméricos y gráficos ingresados a través de un editor de textos.
+Por función:
+1. *Archivo maestro*: Representa una visión estática del negocio. Contiene datos relativamente permanentes o datos históricos. Ej clientes, productos, personal.
+2. *Archivo de transacciones*: Representa eventos o actividades del negocio que implican por lo general agregar un registro, modificar o eliminar. Ej ventas, liquidación de haberes.
+3. *Archivo de reporte*: Datos formateados para ser representados al usuario. El archivo enviado puede ser enviado a cola de impresión o pantalla.
+4. *Archivo de trabajo*: Es temporal en el sistema. No es de largo plazo, ni tiene entradas/salidas. Se usa por lo general para pasar datos de un programa a otro.
+5. *Archivo de programa*: Contiene instrucciones para procesar datos. Pueden ser de código fuente o el resultado de una compilación.
+6. *Archivo de texto*: Contiene datos alfanuméricos y gráficos ingresados a través de un editor de textos.
 #### Maneras de Acceder
 1. Entrada: cuando el programa solamente lo lee.
 2. Salida: es escrito por el programa.
 3. Entrada/salida: es leído y escrito durante la ejecución de un programa.
 #### Organizaciones de archivos
 Es la técnica utilizada para representar y **almacenar registros en archivos**.
-1. Secuencial
-2. Relativa
-3. Secuencial indexado
-4. Multi-llave
+1. *Secuencial*: registros ordenados uno contiguo al otro.
+2. *Relativa*: existe una relación entre la llave del registro y su localización dentro del archivo.
+3. *Secuencial indexado*: acceso a los registros de forma secuencial y relativa (individualmente)
+4. *Multi-llave*: se permite el acceso directo por más de una llave. Una primaria y una o más secundarias.
+
 Corresponde a la ordenación física de los registros almacenados. La organización más apropiada está dada por las características del medio de almacenamiento y por el tipo de operaciones a ejecutar.
-- Acceso directo: cuando se pretende acceder a un registro en particular sin tener que accesar a todos los anteriores.
-- Acceso secuencial: para acceder a un registro debemos accesar a todos los anteriores.
+- *Acceso directo*: cuando se pretende acceder a un registro en particular sin tener que accesar a todos los anteriores.
+- *Acceso secuencial*: para acceder a un registro debemos accesar a todos los anteriores.
 #### Operaciones sobre archivos
 - Creación
 - Actualización

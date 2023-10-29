@@ -105,3 +105,4 @@ La tarea de la unidad de control es coordinar todas las acciones de la máquina.
 Existen dos manera de diseñarla, su diferencia es la implementación interna:
 - Unidad de Control Cableada
 - Unidad de Control Micoprogramada
+### Bus en la Máquina Elemental

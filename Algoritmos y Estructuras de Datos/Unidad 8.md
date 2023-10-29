@@ -1,5 +1,5 @@
 # Listas, Pilas y Colas
-Las estructuras de datos es un tipo de dato formado por un conjunto de elementos de un mismo tipo de datos. Pueden ser:
+Las estructuras de datos es un tipo de dato formado por un conjunto de elementos de un mismo tipo de dato. Pueden ser:
 - Estáticas: el tamaño que ocupan se define antes de que se ejecute el programa
 - Dinámicas: su tamaño crece y se encoje en tiempo de ejecución
 ### Estructuras Dinámicas Lineales
@@ -11,7 +11,7 @@ Existe la necesidad de querer relacionar arreglos y para eso utilizamos enlaces.
 - Explícitos: en uno de los arreglos debe existir un elemento que indique (valor entero) la posición donde está ubicado el elemento relacionado del otro arreglo.
 ![[Enlaces.png]]
 ## Pilas
-Es una estructura lineal donde la inseción y eliminiación de elementos se hacen por un solo extremo que se denomina cima o tope. Modelo LIFO.
+Es una estructura lineal donde la inserción y eliminación de elementos se hacen por un solo extremo que se denomina cima o tope. Modelo LIFO.
 Casos aplicación natural, por ej.: pila de platos, pila de cajas, pila de libros.
 ### LIFO
  Insertamos (apilar) elementos por la cima (final), incrementando en 1
