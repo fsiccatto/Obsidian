@@ -40,13 +40,11 @@ INICIO
 		ESCRIBIR("Pila vacia")
 	SINO
 		libro = pilaLibros[cima]
-		pilaLibros[cima]
+		pilaLibros[cima] = ""
 		cima = cima - 1
-		elemento
 	FINSI
 FINPROCEDIMIENTO
 ```
-
 ## Colas
 Es un estructura lineal donde la inserción se realiza por el final de la lista y la eliminación de elementos se hace por el principio. Modelo FIFO.
 Casos de aplicación natural, por ej.: cola del supermercado, atención por orden de llegada en el médico, cola de impresión.
@@ -81,7 +79,7 @@ INICIO
 	SINO
 		nomPaciente = colaPacientes[inicio]
 		VARIAR i DESDE inicio HASTA final - 1
-			colaPacientes[i] = colaPacientes[i + 1]
+			colaPacientes[i] = colaPacientes[i + 1] // corro elementos
 		FINVARIAR
 		colaPacientes[final] = ""
 		final = final - 1
@@ -107,6 +105,7 @@ FINPROCEDIMIENTO
 ##### Eliminar elementos
 ```
 PROCEIDMIENTO borrarVentas(por ref. longitud: ENTERO, por ref. ventas[30]: REAL, elemento: ENTERO)
+VAR i: ENTERO
 INICIO
 	SI longitud = 0 ENTONCES
 		ESCRIBIR("Lista vacia")
@@ -115,6 +114,7 @@ INICIO
 			VARIAR i DESDE elemento HASTA longitud - 1
 				ventas[i] = ventas[i + 1]
 			FIN VARIAR
+		FINSI
 	FINSI
 	SI elemento >= 1 [Y] elemento <= longitud ENTONCES
 		ventas[longitud] = 0.0
@@ -131,7 +131,7 @@ Caso de aplicación natural, ej: en un zoológico el orden de las jaulas para da
 Para trabajar con datos tipo cadena se necesita usar 2 arreglos, uno tipo cadena con los datos y otro tipo entero con la posición “siguiente”. En este caso relacionamos ambos arreglos con *enlace implícito*.
 ##### Insertar elementos
 ```
-PROCEIDMIENTO insertarElem(por ref. longitud, por ref. inicio, por ref. vacio, por ref. listaE[100, 2], jaula: ENTERO)
+PROCEDMIENTO insertarElem(por ref. longitud, por ref. inicio, por ref. vacio, por ref. listaE[100, 2], jaula: ENTERO)
 VAR i: ENTERO
 INICIO
 	SI vacio <> 0 ENTONCES // Si vacio = 0 lista llena
@@ -149,10 +149,11 @@ FINPROCEDIMIENTO
 PROCEDIMIENTO asignoSig(por ref. listaE[100, 2], inicio, vacio: ENTERO)
 VAR i: ENTERO
 INCIO
+	i = inicio
 	MIENTRAS listaE[i, 2] <> 0 HACER
 		i = listaE[i, 2]
 	FINMIENTRAS
-	listaE[i, 2] = vacio // al ultimo le asigno 'sig' el nuevo elem insertado
+	listaE[i, 2] = vacio // al ultimo le asigno como 'sig' el nuevo elem insertado
 FINPROCEDIMIENTO
 ```
 ###### Procedimiento buscoVac
@@ -212,6 +213,32 @@ INICIO
 	FINSI
 FINPROCEDIMIENTO
 ```
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+typedef struct Libro {
+	char titulo[50];
+	char autor[50];
+	char isbn[13];
+} Libro;
+
+typedef struct Nodo {
+	Libro libro;
+	struct Nodo* siguiente;
+} Nodo;
+
+typedef struct Lista {
+	Nodo* cabeza;
+} Lista;
+
+Nodo* CrearNodo(Libro* libro) {
+	Nodo* nodo = (Nodo *) malloc(sizeof(Nodo));
+}
+[Estructuras de datos – 3. Listas enlazadas en C (COMPLETO) - YouTube](https://www.youtube.com/watch?v=vldM-3PYAmo)
+```
 ## Lista Doblemente Enlazadas
 Se pueden almacenar los elementos en posiciones de memoria no consecutivas
 Cada elemento contiene *dos punteros*, uno apuntando al siguiente elemento de la lista, es decir del sucesor, y otro al predecesor.
@@ -224,7 +251,7 @@ Estas listas permiten avanzar o retroceder a través de la misma.
 |                                           |          Pilas          |          Colas           |         Listas          |        Listas Enlazadas        |
 | ----------------------------------------- |:-----------------------:|:------------------------:|:-----------------------:|:------------------------------:|
 | Inserción                                 |       Final(cima)       |          Final           |     Cualquier lado      |         Cualquier lado         |
-| Eliminación                               |       Final(cim)        |        Principio         |     Cualquier lado      |         Cualquier lado         |
+| Eliminación                               |       Final(cima)        |        Principio         |     Cualquier lado      |         Cualquier lado         |
 | Recorrido p/datos / Rec. p/incializar     | 1 a cima / 1 a longitud | 1 a final / 1 a longitud | 1 a longitud / 1 a tope | Mientras i <> 0 / 1 a longitud |
 | Esta llena cuando                         |     Longitud = Cima     |     Longitud = Final     |     Tope = Longitud     |           Vacio = 0            |
 | Esta vacía cuando                         |        Cima = 0         |        Final = 0         |      Longitud = 0       |           Inicio = 0           |
@@ -253,7 +280,7 @@ Los árboles de grado 2 representan una estructura importante. En los árboles b
 Si en los árboles eliminamos la restricción de que un nodo sólo puede ser apuntado por un solo nodo obtenemos un grafo.
 Un grafo tiene una gran número de aplicaciones, por ej.: red de caminos, red de enlaces aéreos, entre otros.
 ![[Grafo.png|200]]
-### Ciclo
+#### Ciclo
 Un ciclo es una trayectoria, secuencia de una o más aristas que conectan a 2 nodos, que se dan las siguientes condiciones:
 - Ninguna arista puede aparecer más de una vez en una secuencia.
 - El nodo inicial de la trayectoria es el mismo que el nodo final.
