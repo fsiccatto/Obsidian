@@ -102,9 +102,17 @@ El **Flujo de instrucciones y operandos** en la BLUE son movimientos entre regis
 Para poder hacer las transferencias vistas es necesario implementar un BUS COMÚN.
 ### Unidad de Control
 La tarea de la unidad de control es coordinar todas las acciones de la máquina. Para este trabajo se necesita una secuencia de pulsos y señales que deben generarse sincrónicamente al reloj.
-Existen dos manera de diseñarla, su diferencia es la implementación interna:
+Existen dos manera de diseñarla, su diferencia es la implementación interna [[Unidad de Control]]:
 - Unidad de Control Cableada
 - Unidad de Control Micoprogramada
 ### Bus en la Máquina Elemental
 Las órdenes qe emite la UC implican una gran transferencia entre registros. Son 20 señales entre enviar al BUS y cargar desde el BUS.
 Por lo tanto los registros deben estar eficazmente interconectados y esto se logra con la arquitectura de BUS COMÚN. Este puede transportar un dato (16 bits), una instrucción (16 bits) o una dirección (12 bits) en distintos momentos. Las señales de control son diseminadas por la máquina por un BUS de CONTROL.
+![[imagenes/Bus en la maquina elemental.png|300]]
+Sólo se debe enviar un registro al BUS. Pero, es posible cargar más de un registro desde el BUS de forma simultánea.
+![[imagenes/Carga MBR.png|100]]
+La señal Cargar MBR debe estar retardada un tiempo mayor al de respuesta del biestable y las compuertas AND y OR.
+### ALU
+La ALU de la máquina elemental realiza las operaciones AND, OR, IOR, XOR y ADD sobre los operandos contenidos en los registros Z e Y. Las operaciones se realizan bit a bit y la suma aritmética se realiza con el convenio de Complemento a 2. También, la ALU realiza la operación NOT (C1) y RAL (rotación de bits hacia la izquierda) sobre el contenido Z.
+![[imagenes/ALU 1.png|200]]
+Para los ciclos de máquina se ha supuesto que la ALU tarda para sumar (ADD), como máximo, `200 ns` y para el resto de las operaciones `80 ns`. Por lo tanto, cuando la ALU suma, la UC debería esperarla un pulso de reloj (para la UC Cableada) o una microinstrucción (para la UC Microprogramada).

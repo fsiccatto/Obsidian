@@ -59,4 +59,11 @@ El circuito de control deberá tener en cuenta si la máquina está parada y que
 ![[imagenes/Unidad de control Microprogramada.png]]
 La búsqueda y ejecución de cada macroinstrucción son realizadas por los microprogramas residentes en la micro-ROM (al contenido de la ROM, es decir, los microprogramas y la propia ROM se le llama FIRMWARE). La dirección de la primera microinstrucción a ejecutar, es proporcionada por el código de operación de la macroinstrucción, es decir, será alguna de las 16 primeras posiciones.
 Cada microinstrucción está compuesta de 45 bits, divididos en seis campos: Acción, Test, Envíe, Reciba, Falso, y Éxito.
-El campo Acción está relacionado con las órdenes que debe dar la Unidad de Control (leer la memoria, escribir la memoria, etc.), el campo Test se relaciona con la necesidad de chequear el estado de la máquina en un momento dado (Bit 15 del acumulador, señal de overflow, etc.). Los campos Envíe y Reciba tienen que ver con enviar los contenidos de los registros al bus o levantarlos del mismo. Por último, los campos falso y éxito están relacionados con el resultado del chequeo indicado por el campo Test y definen la próxima microinstrucción a ejecutar. Nótese que la máquina interior no posee contador de programa.
+El campo *Acción* está relacionado con las órdenes que debe dar la Unidad de Control (leer la memoria, escribir la memoria, etc.), el campo *Test* se relaciona con la necesidad de chequear el estado de la máquina en un momento dado (Bit 15 del acumulador, señal de overflow, etc.). Los campos *Envíe* y *Reciba* tienen que ver con enviar los contenidos de los registros al bus o levantarlos del mismo. Por último, los campos *Falso* y *Éxito* están relacionados con el resultado del chequeo indicado por el campo Test y definen la próxima microinstrucción a ejecutar. Nótese que la máquina interior no posee contador de programa.
+El circuito de la UNIDAD de CONTROL MICROPROGRAMADA se observa que el contenido del micro-MAR (los 8 biestables D de la Figura) puede tener cuatro orígenes: 
+- Contenido del campo FALSO, en caso que la salida del multiplexor sea cero. 
+- Contenido del campo ÉXITO, en caso que la salida del multiplexor sea 1. 
+- El código de operación de la macrointrucción residente en el registro de instrucciones, en el caso que el bit 5 del campo acción sea 1 
+- Cero, en el caso que RESET sea 1 (esta señal proviene del botón Master Reset en la consola del operador).
+
+VER INSTRUCCIONES
