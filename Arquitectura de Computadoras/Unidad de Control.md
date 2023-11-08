@@ -7,7 +7,7 @@ Está integrada por los siguientes componentes:
 	- 1 biestable para tareas relacionadas con los pulsadores EXA y DEP
 	- 1 reloj externo de 8MHz
 3. Lógica de Control: sistema combinacional que consiste en un conjunto de compuertas que generan las señales de control.
-![[Unidad de control cableada.png|500]]
+![[imagenes/Unidad de control cableada.png|500]]
 ### Secuenciador
 La señal de sincronismo es un oscilador de 8 MHz llamado RELOJ que se divide en una secuencia de *8 pulsos* (`750 ns` en total), llamado CICLO DE MEMORIA, en líneas distintas separadas en tiempo por `125 ns`.
 Si RUN = 1 el contador cuenta los pulsos del reloj. Las salidas del contador están conectadas a las entradas de un deco binario cuyas salidas son de `125 ns`.
@@ -16,10 +16,10 @@ Nótese que la máquina arranca con RUN = 1, al presionar el pulsador START y se
 El biestable SR E/S genera la señal TRA hacia los periféricos en las condiciones que se ven en la Figura 4.10. Además, recibe la señal R (READY) desde los periféricos y se pone en cero.
 Los pulsadores EXA y DEP funcionan sólo si RUN = 0 y ESTADO = 0, y disparan un único CICLO DE MEMORIA. Más adelante se muestra el diagrama de tiempo del secuenciador, y aparecen los CP1 a CP8. El CP9, que no se usa en el CICLO DE MEMORIA, es de menor duración.
 La ALU tiene un tiempo de suma de `200 ns`, es decir, que es mayor al del reloj. El de operación es de `80 ns`.
-![[Secuenciador Cableado.png|400]]
+![[imagenes/Secuenciador Cableado.png|400]]
 #### El Ciclo de Búsqueda
 Si el biestable RUN = 1, arranca el reloj, el biestabl de STATE = 0 está en Búsqueda y se inicia el ciclo de búsqueda de la máquina, en la cual la máquina carga la instrucción cuya dirección está en el PC, en el registro de instrucciones. Se necesita que el operador haya cargado un PROGRAMA en memoria y la dirección de la primera instrucción en el PC desde la consola.
-![[Ciclo de busqueda cableada.png|200]]
+![[imagenes/Ciclo de busqueda cableada.png|200]]
 
 | CP  | Acción       | Comentario                                                                           |
 | --- | ------------ | ------------------------------------------------------------------------------------ |
@@ -42,12 +42,12 @@ Las instrucciones que requieren de un dato a memoria para realizar una operació
 Pero también existen instrucciones que requieren más de un ciclo y no acceden a memoria en su ejecución. Es el caso particular de las instrucciones de E/S: INP y OUT. Utilizan nuevos ciclos para esperar al periférico involucrado. Y serán tantos ciclos como el tiempo de espera.
 a) Instrucciones de 8 pulsos (`1000ns = 1micros`).
 b) Instrucciones de 16 pulsos (`2000ns = 2micros`).
-![[Ejecucion de las instrucciones uno y dos ciclos.png]]
+![[imagenes/Ejecucion de las instrucciones uno y dos ciclos.png]]
 <small>Ejecución de las instrucciones de uno y dos ciclos.</small>
-![[Ciclo de busqueda de las instrucciones INP y OUT.png]]
+![[imagenes/Ciclo de busqueda de las instrucciones INP y OUT.png]]
 <small>Ciclo de Búsqueda de las instrucciones INP y OUT.</small>
 El hardware es:
-![[Logica para el funcionamiento de la E-S.png|300]]
+![[imagenes/Logica para el funcionamiento de la E-S.png|300]]
 #### Lógica de Control
 Las entradas a este bloque combinacional son los códigos de operación decodificados, los pulsos de reloj y el estado de búsqueda o ejecución. Las salidas deben ser las órdenes concretas que emite la unidad de control.
 Ejemplo: ¿En qué casos la UC debe emitir la orden de CARGAR MAR?
@@ -56,7 +56,7 @@ Ejemplo: ¿En qué casos la UC debe emitir la orden de CARGAR MAR?
 3. Si la máquina está funcionando y está en ejecución de las instrucciones LDA, STA, ADD, IOR, AND o XOR durante el CP1.
 El circuito de control deberá tener en cuenta si la máquina está parada y que se producirá una única secuencia de pulsos CP1 a CP8 sólo si el operador presionó EXA o DEP.
 ## Microprogramada
-![[Unidad de control Microprogramada.png]]
+![[imagenes/Unidad de control Microprogramada.png]]
 La búsqueda y ejecución de cada macroinstrucción son realizadas por los microprogramas residentes en la micro-ROM (al contenido de la ROM, es decir, los microprogramas y la propia ROM se le llama FIRMWARE). La dirección de la primera microinstrucción a ejecutar, es proporcionada por el código de operación de la macroinstrucción, es decir, será alguna de las 16 primeras posiciones.
 Cada microinstrucción está compuesta de 45 bits, divididos en seis campos: Acción, Test, Envíe, Reciba, Falso, y Éxito.
 El campo Acción está relacionado con las órdenes que debe dar la Unidad de Control (leer la memoria, escribir la memoria, etc.), el campo Test se relaciona con la necesidad de chequear el estado de la máquina en un momento dado (Bit 15 del acumulador, señal de overflow, etc.). Los campos Envíe y Reciba tienen que ver con enviar los contenidos de los registros al bus o levantarlos del mismo. Por último, los campos falso y éxito están relacionados con el resultado del chequeo indicado por el campo Test y definen la próxima microinstrucción a ejecutar. Nótese que la máquina interior no posee contador de programa.

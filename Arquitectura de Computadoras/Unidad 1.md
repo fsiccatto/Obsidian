@@ -36,7 +36,7 @@ Sistema de numeración posicional de base 8: $`O_{8} = \{0, 1, 2, 3, ..., 7\} `$
 ###### Sistema Hexadecimal
 Sistema de numeración posicional de base 16: $`H_{16} = \{0, 1, 2, 3, ..., 9, A, B, C, D, E, F\} `$
 #### Conversión entre números de distintas bases
-![[Conversiones entre sistemas|1200|center]]
+![[imagenes/Conversiones entre sistemas|1200|center]]
 ### Sistema Binario
 Es el que se utiliza en las computadoras, debido a que trabajan internamente con dos niveles de voltaje, por lo cual su sistema de numeración natural es el sistema binario.
 	Un **bit** es un dígito binario. Un **nibble** es un grupo de 4 bits. Un **byte** es un grupo de 8 bits.
@@ -63,7 +63,7 @@ $$
 En este caso disponemos de 10 bits para representar el número, de los cuales 7 son enteros y 3 decimales.
 ### Punto Flotante
 Cuando queremos representar números muy pequeños o muy grandes utilizamos la notación de punto flotante. Es muy similar a la notación científica, divide al número en tres campos
-![[Punto Flotante|800|center]]
+![[imagenes/Punto Flotante|800|center]]
 1. Signo de la Mantisa (S)
 	Es un campo de 1 bit.
 	- 0 positivo (+)
@@ -106,14 +106,14 @@ $$
 	Luego, procedemos a sumar o restar las mantisas según sea el caso. El resultado debe ser *normalizado*.
 ### Norma IEEE 754
 - Establece tres tipos de representaciones
-	![[Punto Flotante IEEE 754.png|400|center]]
+	![[imagenes/Punto Flotante IEEE 754.png|400|center]]
 - Los exponentes mínimo y máximo se utilizan para casos especiales
 - Se consideran 5 clases de números
-	![[Casos especiales Punto Flotante.png|center|300]]
+	![[imagenes/Casos especiales Punto Flotante.png|center|300]]
 ## Códigos
 Un **código** es una representación biunívoca de algún conjunto de elementos de tal forma que, a cada uno de estos, se le asigna una combinación de símbolos determinados y viceversa.
 Para "comunicarse" hay que conocer el código utilizado.
-![[Codigos|center|300]]
+![[imagenes/Codigos|center|300]]
 ### Códigos Binarios
 Son los códigos utilizados por sistemas decimales.
 ###### Códigos Binarios Continuos:
@@ -154,11 +154,11 @@ El código **ASCII** (*American Standard Code for Information Interchange* = Có
 Es el estándar de 7 bits. El extendido es de 8 bits.
 ## Códigos Detectores y Correctores de Error
 Debe existir un formato para los datos y una estrategia de sincronización de cómo se envían y reciben los mensajes, incluyendo la detección y corrección de los errores.
-![[Enlace de Datos|center|400]]
+![[imagenes/Enlace de Datos|center|400]]
 - DTE: Equipo Terminal de Datos
 - DCE: Equipo de Comunicación de Datos
 En general, el mensaje tiene la siguiente estructura:
-![[Estructura general de un mensaje de un protocolo|center|300]]
+![[imagenes/Estructura general de un mensaje de un protocolo|center|300]]
 Si se detecta la presencia de errores (por ruido) en la información es necesario volver a mandarla. Para poder detectar y/o corregir errores se da el concepto de distancia entre combinaciones de un código:
 	**Distancia** entre dos combinaciones binarias cualesquiera de un código es el número de bits que deben cambiarse para pasar de una combinación a la otra.
 ### Distancia Mínima

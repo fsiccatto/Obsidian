@@ -7,7 +7,7 @@ Nos permiten organizar los problemas complejos y agrupar acciones repetitivas. L
 - Mayor posibilidad de reutilización, incluso con otros programadores
 - Mejora la distribución de las tareas entre los programadores
 
-![[Subprograma|300|center]]
+![[imagenes/Subprograma|300|center]]
 ### Encabezamiento de Subprogramas
 Contiene:
 - Tipo de subprograma: Procedimiento o Función
@@ -25,7 +25,7 @@ Contiene:
 |Forma de llamarla|Linea de programa|Expresion|
 |Asignacion de lectura y escritura|Si permite|No permite|
 
-![[Subprogramas|center]]
+![[imagenes/Subprogramas|center]]
 ##### Procedimientos
 ```
 PROCEDIMIENTO nombre (lista de parametros formales: tipo de variable)

@@ -27,7 +27,7 @@ Conjunto de técnicas que aumentan considerablemente la productividad del progra
 #### **Estructuras Secuenciales**
 Es una estructura que permite controlar la ejecución de un conjunto de acciones, en orden *secuencial*.
 Estas acciones peden ser operaciones primitivas elementales como: declaraciones de variables, leer datos, escribir o mostrar datos, calcular alguna expresión.
-![[Secuencializacion|200x200|center]]
+![[imagenes/Secuencializacion|200x200|center]]
 #### **Estructuras Selectivas**
 Es una estructura que permite controlar la ejecución de acciones que requieren de condiciones (dependiendo el camino que tengamos que seguir) para su realización.
 ##### Tipos de Estructuras Selectivas

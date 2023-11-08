@@ -1,6 +1,6 @@
 # Tipos de Datos, Operaciones y Expresiones
 ## Estructuras de Datos
-Dijimos que un programa es: ![[Programa.png]]
+Dijimos que un programa es: ![[imagenes/Programa.png]]
 ###### <ins>Dato</ins>
 Es la representación de los objetos con los que opera una computadora. 
 ###### <ins>Las Estructuras de Datos</ins>
@@ -20,7 +20,7 @@ Son valores que cambian a lo largo del programa. Debe identificarse y manejarse 
 - Contenido
 - Tipo de Dato
 `VAR nomVar: TIPO DE DATO`
-![[Variables.canvas]]
+![[imagenes/Variables.canvas]]
 #### Constantes
 Son valores que no varían durante la ejecución del algoritmo.
 `CONST nomConst: TIPO DE DATO`

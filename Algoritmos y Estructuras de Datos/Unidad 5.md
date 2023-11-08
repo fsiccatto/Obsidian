@@ -75,7 +75,7 @@ Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que 
 Es una variable estructurada de **TRES** dimensiones que agrupa varias celdas de memoria distribuidas en filas, columnas y planos. 
 `VAR nombre[tFila, tColumna, tPlano]: tipo de dato.
 
-![[Arreglos Tridimensionales.png]]
+![[imagenes/Arreglos Tridimensionales.png]]
 #Indice Podemos referirnos al arreglo completo o a un único elemento. Debemos hacerlo como `nombre[subidndiceFila, subindiceColumna, subindicePlano]`.
 Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que se **ENTERO**.
 ##### Operaciones con Arreglos Tridimensionales
@@ -185,7 +185,7 @@ FIN PROCEDIMIENTO
 La idea básica es usar los resultados de cada paso de comparación para guiar el siguiente paso de comparación.
 Durante un paso los elementos se intercambian de tal forma que cuando se completa el paso, el conjunto se ha particionado de tal manera que los elementos de una partición son todos menores que un determinado valor y los elementos de la otra partición son todos mayores (aunque desordenados).
 "Divide y vencerás" permite ordenar `n` elementos en un tiempo proporcional a O(n log(n)) y en el peor de los casos O(n<sup>2</sup>) .
-![[quickSort.webp|center]]
+![[imagenes/quickSort.webp|center]]
 ``` JavaScript
 function swap(items, leftIndex, rightIndex){
     let temp = items[leftIndex];
@@ -253,4 +253,4 @@ Se siguen tres pasos:
 3. Ver cuantas veces va a ser ejecutada cada línea de código
 ---
 # Ejercicios
-![[Arreglos]]
+![[ejercicios/Arreglos]]

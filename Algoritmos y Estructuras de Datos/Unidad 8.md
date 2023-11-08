@@ -9,7 +9,7 @@ Para poder utilizar arreglos se debe establecer un tamaño suficiente para que c
 Existe la necesidad de querer relacionar arreglos y para eso utilizamos enlaces. Pueden ser: 
 - Implícitos: dado el número de subíndices.
 - Explícitos: en uno de los arreglos debe existir un elemento que indique (valor entero) la posición donde está ubicado el elemento relacionado del otro arreglo.
-![[Enlaces.png]]
+![[imagenes/Enlaces.png]]
 ## Pilas
 Es una estructura lineal donde la inserción y eliminación de elementos se hacen por un solo extremo que se denomina cima o tope. Modelo LIFO.
 Casos aplicación natural, por ej.: pila de platos, pila de cajas, pila de libros.
@@ -127,7 +127,7 @@ FINPROCEDIMIENTO
 ## Listas Enlazadas
 Se pueden almacenar los elementos en posiciones de memoria **no consecutivas**. Cada elemento contiene la posición o dirección del siguiente elemento de la lista.
 Caso de aplicación natural, ej: en un zoológico el orden de las jaulas para dar la comida.
-![[Listas Enlazadas.png|200]]
+![[imagenes/Listas Enlazadas.png|200]]
 Para trabajar con datos tipo cadena se necesita usar 2 arreglos, uno tipo cadena con los datos y otro tipo entero con la posición “siguiente”. En este caso relacionamos ambos arreglos con *enlace implícito*.
 ##### Insertar elementos
 ```
@@ -243,7 +243,7 @@ Nodo* CrearNodo(Libro* libro) {
 Se pueden almacenar los elementos en posiciones de memoria no consecutivas
 Cada elemento contiene *dos punteros*, uno apuntando al siguiente elemento de la lista, es decir del sucesor, y otro al predecesor.
 Estas listas permiten avanzar o retroceder a través de la misma.
-![[Listas Doblemente Enlazadas.png]]
+![[imagenes/Listas Doblemente Enlazadas.png]]
 #### Operaciones
 - Inserción de un elemento: al final, al principio o en medio.
 - Borrado de un elemento: el primero, el último o en medio.
@@ -271,17 +271,17 @@ Se usan para representar datos con una *relación jerárquica* entre sus element
 - Cada nodo apunta a uno o más nodos.
 - A un nodo le apunta sólo un nodo.
 - El *grado* es el número de descendientes DIRECTOS de un nodo.
-![[Arbol.png|200]]
+![[imagenes/Arbol.png|200]]
 #### Árboles Binarios
 Los árboles de grado 2 representan una estructura importante. En los árboles binarios todos sus nodos excepto los del último nivel, tienen dos hijos: el subárbol izquierdo y el subárbol derecho.
-![[Arboles binarios.png|200]]
+![[imagenes/Arboles binarios.png|200]]
 
 ### Grafos
 Si en los árboles eliminamos la restricción de que un nodo sólo puede ser apuntado por un solo nodo obtenemos un grafo.
 Un grafo tiene una gran número de aplicaciones, por ej.: red de caminos, red de enlaces aéreos, entre otros.
-![[Grafo.png|200]]
+![[imagenes/Grafo.png|200]]
 #### Ciclo
 Un ciclo es una trayectoria, secuencia de una o más aristas que conectan a 2 nodos, que se dan las siguientes condiciones:
 - Ninguna arista puede aparecer más de una vez en una secuencia.
 - El nodo inicial de la trayectoria es el mismo que el nodo final.
-![[Ciclo.png|200]]
+![[imagenes/Ciclo.png|200]]

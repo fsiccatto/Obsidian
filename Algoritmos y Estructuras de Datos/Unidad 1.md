@@ -2,7 +2,7 @@
 ## Programa
 Un #programa es un conjunto de instrucciones para realizar una actividad o resolver un problema, se deben ejecutar una serie de acciones sobre determinados datos.
 Se compone de: 
-![[Programa.png]]
+![[imagenes/Programa.png]]
 ### Lenguaje de Programación
 Medio a través del cual le comunicamos a la computadora **la secuencia de instrucciones que debe ejecutar para llevar a cabo actividades**.
 #### Características

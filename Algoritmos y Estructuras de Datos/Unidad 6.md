@@ -89,4 +89,4 @@ Los registros de un archivo secuencial quedan ordenados de acuerdo con el valor 
 	- Acceso directo (discos)
 
 ---
-![[Registros]]
+![[ejercicios/Registros]]

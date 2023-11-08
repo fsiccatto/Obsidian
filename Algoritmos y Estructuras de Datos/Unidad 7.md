@@ -13,4 +13,4 @@ Todo aquello que pueda resolverse con una estructura repetitiva se puede plantea
 		- Encontrar una **relación recurrente** que exprese el modo de obtener un conjunto de valores genéricos representativos del proceso.
 
 ---
-![[Recursión]]
+![[ejercicios/Recursión]]
