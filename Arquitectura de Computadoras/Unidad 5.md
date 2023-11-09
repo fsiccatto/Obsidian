@@ -36,7 +36,7 @@ Son medios que facilitan la tarea de programación, permitiendo el acceso a los 
 - En un Registro de la CPU, 
 - En la propia Instrucción (el dato se encuentra dentro de la instrucción almacenada en el IR, y por lo tanto, en la CPU).
 De acuerdo a donde está ubicado el operando y a cómo se especifica, tenemos los siguientes modos de direccionamiento:
-![Modos_de_Direccionamiento](Modos%20de%20Direccionamiento.png)
+![Modos_de_Direccionamiento](imagenes/Modos%20de%20Direccionamiento.png)
 #### Operando en la CPU
 ##### Modo de direccionamiento inmediato
 El operando está en la instrucción. En la BLUE, no disponemos de este modo.
