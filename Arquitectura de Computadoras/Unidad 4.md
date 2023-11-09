@@ -87,7 +87,7 @@ El **Flujo de direcciones** en la BLUE son movimientos entre registros de 12 bit
 - SRJ (salto a subrutina): envía los 12 bits del PC al Acumulador (ACC). 
 - Búsqueda de una instrucción: envía los 12 bits del PC al MAR. 
 - Búsqueda de un Operando: envía los 12 bits más bajos de RI al MAR.
-![[imagenes/imagenes/imagenes/Transmision de Operaciones.png|300]]
+![[imagenes/Transmision de Operaciones.png|300]]
 El **Flujo de instrucciones y operandos** en la BLUE son movimientos entre registros de 16 bits:
 - CSA: copia los 16 bits del R.Sw. al ACC. 
 - Deposit: copia los 16 bits del R.Sw. al MBR. 

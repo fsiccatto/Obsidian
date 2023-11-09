@@ -106,7 +106,7 @@ $$
 	Luego, procedemos a sumar o restar las mantisas según sea el caso. El resultado debe ser *normalizado*.
 ### Norma IEEE 754
 - Establece tres tipos de representaciones
-	![[imagenes/Punto Flotante IEEE 754.png|400|center]]
+![[Punto Flotante IEEE 754.png]]
 - Los exponentes mínimo y máximo se utilizan para casos especiales
 - Se consideran 5 clases de números
 	![[imagenes/Casos especiales Punto Flotante.png|center|300]]
