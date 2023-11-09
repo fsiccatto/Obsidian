@@ -290,36 +290,135 @@ La Unidad de Control del 8088 es **microprogramada**, y posee una ROM de 504 pal
 La instrucción que se encuentra almacenada en la cola de instrucciones, es transferida al registro de instrucciones (IR), el decodificador la extrae y la disemina por la Unidad de Control. La información relacionada con la fuente y destino de los operandos se transfiere a los registros M y N. El código de operación se transfiere al registro X (para indicar a la ALU la operación a realizar) y al registro B (para indicar a la ALU si se trata de una operación de 8 o 16 bits). El código de operación también se transfiere a un combinacional (PLA) a fin de obtener la dirección de comienzo del microprocedimiento correspondiente. Cada microprocedimiento tiene como máximo 16 microinstrucciones.
 Formato de microinstrucciones del 8088:
 ![Formato de Instrucción del 8088](imagenes/Formato%20de%20instruccion%20del%208088.png)
+- Campo Fuente: Indica el registro fuente de una operación.
+- Campo Destino: Indica el registro destino de una operación.
+- Campo Tipo: Indica el tipo de microinstrucción:
+	- Operación de la ALU
+	- Operación de la memoria
+	- Salto corto
+	- Salto largo
+	- Llamada de microprocedimiento
+	- Contabilidad
+- Campo ALU: indica la operación que debe realizar la ALU.
+- Campo Registro: Proporciona el operando.
+- Campo de Condición: Indica la activación de registro F.
+
+Las microinstrucciones se ejecutan una por ciclo de reloj. La dirección de la primera microinstrucción a ejecutar la proporciona el código de operación de la instrucción a través de la PLA, cargando el microMAR. Se observa en la configuración de pines de la 8088 que el microMAR puede ser cargado también desde la ROM de traslación, que mapea direcciones de 5 bits y desde el registro SR. La ROM de traslación se usa cuando el microprograma requiere de un salto, y el registro SR se utiliza para guardar la dirección de retorno de una micro-subrutina.
+### Registros del 8088
+El 8088 tiene catorce registros que se agrupan en las siguientes tres categorías:
+##### Registros Generales
+Ocho registros generales de 16 bits se dividen en dos grupos:
+- Cuatro regitros direccionables como de 16 bits u 8 bits:
+	**AX** (Acumulador), usado para almacenar resultados de operaciones, L/E desde o hacia memoria o los puertos (AH, AL).
+	**BX** (Base), usado en direccionamiento (BH, BL).
+	**CX** (Contador), usado en interacciones como contador (CH, CL).
+	**DX** (Datos), usado para el acceso de datos (DH, DL).
+- Cuatro registros índice y registros base:
+	**BP** (Puntero de base), usado en direccionamiento.
+	**SI** (Ídice), usado en direccionamiento.
+	**DI** (Ídice), usado en direccionamiento.
+	**SP** (Puntero de pila), apunta a la última dirección de pila utilizada.
+#### Registros de Segmento
+Cuatro registros de 16 bits de propósitos especiales, están relacionados con la segmentación de la memoria.
+	**CS** Selecciona el área de memoria destinada al código del programa. 
+	**DS** Selecciona el área de memoria destinada a los datos. 
+	**SS** Selecciona el área de memoria destinada a la pila (STACK). 
+	**ES** Selecciona el área de memoria destinada.
+#### Registros de control y estado
+Dos registros de 16 bits de propósitos especiales:
+- **F** Registro de condiciones.
+- **IP** Puntero de instrucciones, indica la dirección de la próxima instrucción a ejecutar.
+### Organización de la Memoria
+La memoria está organizada como un conjunto de cuatro segmentos, cada uno como una secuencia lineal de hasta 64 kbytes. La memoria se direcciona usando dos componentes de dirección consistentes en un *selector de segmento* de 16 bits y un *offset* de 16 bits. El primero indica el segmento seleccionado y el segundo indica el byte deseado dentro del segmento. El registro de segmento correcto es elegido automáticamente.
+![[imagenes/Suma del segmento y offset.png|150]]
+Las primeras 03FFh posiciones (como se verá posteriormente) se encuentran destinadas para el proceso de interrupciones. Las últimas Fh posiciones (desde la FFF0h a la FFFFh) están reservadas para operaciones que tienen que ver con la carga del programa inicial.
+### Modos de Direccionamiento
+En el 8088 son posibles *ocho modos* de direccionamiento para especificar operandos.
+Dos de ellos son provistos para instrucciones que operan sobre registros o con operandos inmediatos:
+- **Modo de operando en registro**: el operando está en uno de los registros generales (8 o 16 bits). Ejemplo: MOV AX, DX --- (DX)→(AX)
+- **Modo de operando inmediato**: el operando está incluido en la instrucción. Ejemplo: MOV AH, 14 --- 14 → AH
+Los seis modos de direccionamiento restantes permiten especificar operandos ubicados en un segmento de memoria. Como se observó, una dirección de operando en memoria posee dos componentes de 16 bits: el selector de segmento y el offset. El selector de segmento se suple por alguno de los registros de segmento, mientras que el offset se calcula por la suma de diferentes combinaciones de los siguientes tres elementos de dirección:
+- el *desplazamiento*: valor de 8 o 16 bits incluido en la instrucción.
+- el *base*: contenido de cualquier registro base BP o BX.
+- el *índice*: contenido de cualquier registro índice SI o DI.
+
+La combinación de estos elementos de dirección define los siguientes seis modos:
+- **Modo directo**: el offset está contenido en la instrucción como un desplazamiento. Ejemplo: MOV \[14], AL --- (AL)→(DS) * 10h + 14h
+- **Modo indirecto por registro**: el offset está contenido en uno de los registros BX, BP, SI o DI. Ejemplo: MOV \[BX], CX --- (CX)→(DS) * 10h + (BX)
+- **Modo basado**: el offset resulta de la suma de un desplazamiento y el contenido de BP o BX. Ejemplo: MOV \[BP + 3], 2A 2A → (DS) * 10h + (BP) + 3h
+- **Modo indexado**: el offset resulta de la suma de un desplazamiento y el contenido de SI o DI. Ejemplo: MOV \[SI + 3], 2A 2A → (DS) * 10h + (SI) + 3h
+- **Modo basado indexado**: el offset resulta de la suma del contenido de un registro base y de un registro índice. Ejemplo: MOV \[BP + SI], 2A 2A → (DS) * 10h + (BP) + (SI)
+- **Modo basado indexado con desplazamiento**:el offset resulta de la suma del contenido de un registro base más un registro índice y un desplazamiento. Ejemplo: MOV \[BP + SI + 3], 2A 2A → (DS) * 10h + (BP) + (SI) + 3h
+Cualquier acarreo con la suma se ignora y el desplazamiento es un valor signado.
+
+También cabe aclarar que el offset puede obtenerse del registro IP en la búsqueda de una instrucción o en las instrucciones de salto. En este último caso, el contenido de IP puede modificarse de tres formas: 
+- salto relativo: al contenido de IP se le suma un desplazamiento. 
+- salto directo: al contenido de IP se lo cambia por un desplazamiento. 
+- salto indirecto: el contenido de IP es cambiado por el offset obtenido por cualquiera de los modos indirectos vistos anteriormente.
+### Conjunto de Instrucciones
+Las instrucciones del 8088 se dividen en siete categorías:
+- Transferencia de datos 
+- Aritméticas
+- Lógicas
+- De desplazamiento y rotación
+- De manipulación de cadenas.
+- De control de programa
+- De control del procesador
+  
+Una instrucción puede referirse a cero, uno o dos operandos, donde un operando puede residir en un registro, en la propia instrucción o en la memoria. Las instrucciones con cero operando (NOP, HLT) tienen un byte de longitud. Las de un operando (INC, DEC) tienen usualmente dos bytes de longitud. Las de dos operandos (MOV, ADD) usualmente tienen una longitud de tres a seis bytes y pueden hacer referencia a un registro o a una locación de memoria Así, estas instrucciones permiten los siguientes cinco tipos de operaciones:
+- registro a registro 
+- memoria a registro 
+- inmediato a registro 
+- registro a memoria
+- inmediato a memoria
+
+Los tipos de datos que soporta el 8088 son:
+- Entero: valor signado de 8 o 16 bits (Complemento a 2)
+- Ordinal: sin signo de 8 o 16 bits
+- Puntero: 32 bits compuesto por un selector de segmento y un offset, 16 bits cada uno
+- Cadena: secuencia continua de bytes, desde 1 hasta 64Kbytes
+- BCD: un byte en BCD
+- BCD empaquetado: un byte representa dos dígitod BCD
+### Direccionamiento de E/S
+El 8088 permite operar sobre un mapa de E/S independiente del de la memoria mediante las instrucciones IN y OUT. Estas instrucciones durante su ejecución hacen la línea IO/* M a=1.
+Todas las operaciones de E/S requieren al Acumulador con operando.
+- AL para el caso de 8 bits.
+- AX para el caso de 16 bits.
+Existen dos modos de direccionamiento E/S
+##### Directo
+Para los puertos de E/S: 0 a 0FFH.
+El Registro (AL o AX) indica el destino del contenido del puerto referenciado.
+##### Por Registro
+Para los puertos de E/S: 0000H a 0FFFFH.
+El Registro DX se usa como puntero, el cual no se altera después de ejecutada la instrucción IN o OUT.
+### Interrupciones del 8088
+Está compuesto por un sistema de interrupciones vectorizado. Se pueden clasificar en:
+1. Interrupciones iniciadas por hardware
+	- Externas
+		- Enmascarables (pin INTR)
+		- No Enmascarables (pin NMI)
+	- Internas
+2. Interrupciones iniciadas por software 
+	Usan la instrucción INT XX
+
+Una interrupción resulta en la transferencia del control a un nuevo programa.
+En las primeras 1024 (03FF) posiciones de memoria reside una tabla de 256 elementos, que contiene punteros a programas de servicio de interrupción.
+Cada elemento (puntero) es de 4 bytes, y se corresponde con lo que se llama tipo de interrupción. El dispositivo que interrumpe suministra, durante el proceso de reconocimiento de interrupción, un valor de 8 bits que se usa como un vector hacia el tipo de interrupción que corresponda.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4) Clase 1º1º del 12/10/21 - https://youtu.be/fhSc_zjIYco  
-5) Clase 1º1º del 19/10/21 - https://youtu.be/ANnvRwOdzI4  
-6) Clase 1º1º del 26/10/21 - https://youtu.be/zxE9FOM2dEw  
-7) Clase 1º1º del 02/11/21 - https://youtu.be/LToKhtOewEQ  
-8) Clase 1º1º del 09/11/21 - https://youtu.be/YCQ7HXPXqac  
-9) Clase 1º1º del 16/11/21 - https://youtu.be/Z4qtwVJ5cy0  
-10) Clase Práctica 1º1º-1º22 del 19/11/21 - https://youtu.be/idKo_uU9eCA  
-11) Clase 1º1º del 23/11/21 - https://youtu.be/UZAesdKentI  
-12) Clase 1º22º del 13/10/21 - https://youtu.be/OblItzSfa8c  
-13) Clase 1º22º del 20/10/21 - https://youtu.be/STFfty5J_kc  
-14) Clase 1º22º del 27/10/21 - https://youtu.be/_ZQUkllMP2c  
-15) Clase 1º22º del 03/11/21 - https://youtu.be/-rHA7M0X-bo  
-16) Clase 1º22º del 10/11/21 - https://youtu.be/hUrfID1qppU  
-17) Clase 1º22º del 17/11/21 - https://youtu.be/hCu4g6sfs4Y  
-18) Clase Práctica 1º1º-1º22 del 19/11/21 - https://youtu.be/idKo_uU9eCA  
-19) Clase 1º22º del 24/11/21 - https://youtu.be/p0Lyns5b9jw
+3) Clase 1º1º del 12/10/21 - https://youtu.be/fhSc_zjIYco  
+4) Clase 1º1º del 19/10/21 - https://youtu.be/ANnvRwOdzI4  
+5) Clase 1º1º del 26/10/21 - https://youtu.be/zxE9FOM2dEw  
+6) Clase 1º1º del 02/11/21 - https://youtu.be/LToKhtOewEQ  
+7) Clase 1º1º del 09/11/21 - https://youtu.be/YCQ7HXPXqac  
+8) Clase 1º1º del 16/11/21 - https://youtu.be/Z4qtwVJ5cy0  
+9) Clase Práctica 1º1º-1º22 del 19/11/21 - https://youtu.be/idKo_uU9eCA  
+10) Clase 1º1º del 23/11/21 - https://youtu.be/UZAesdKentI  
+11) Clase 1º22º del 13/10/21 - https://youtu.be/OblItzSfa8c  
+12) Clase 1º22º del 20/10/21 - https://youtu.be/STFfty5J_kc  
+13) Clase 1º22º del 27/10/21 - https://youtu.be/_ZQUkllMP2c  
+14) Clase 1º22º del 03/11/21 - https://youtu.be/-rHA7M0X-bo  
+15) Clase 1º22º del 10/11/21 - https://youtu.be/hUrfID1qppU  
+16) Clase 1º22º del 17/11/21 - https://youtu.be/hCu4g6sfs4Y  
+17) Clase Práctica 1º1º-1º22 del 19/11/21 - https://youtu.be/idKo_uU9eCA  
+18) Clase 1º22º del 24/11/21 - https://youtu.be/p0Lyns5b9jw
