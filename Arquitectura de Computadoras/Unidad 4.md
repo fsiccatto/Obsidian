@@ -29,7 +29,7 @@ Las características principales de esta computadora son:
 - Usa punto fijo y sus datos son de 16 bits (15 bits mantisa y 1 un bit de signo),
 - Usa instrucciones de formato fijo de 16 bits (4 bits para el código de operación y 12 bits para el campo de dirección),
 - Usa un BUS común de 16 bits multiplexado (datos y direcciones),
-- Capacidada para manejar hasta 128 periféricos (64 de entrada y 64 de salida) y,
+- Capacidad para manejar hasta 128 periféricos (64 de entrada y 64 de salida) y,
 - La ALU realiza, sobre 1 o 2 operandos, las siguientes operaciones:
 
 | ADD | OR  | XOR | AND | RAL | NOT |

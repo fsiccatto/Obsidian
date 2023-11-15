@@ -11,6 +11,6 @@
 - **JMP XXXX**: Produce un salto incondicional a otra parte del programa, dado que se copia el número XXXX en el contador de programa, y la próxima instrucción a ejecutar se toma de la dirección XXXX. 
 - **INP XXYY**: Los 8 bits de mayor peso del acumulador se colocan a cero, y el próximo carácter de 8 bits que viene del dispositivo externo YY se coloca en la parte baja del acumulador. La parte XX del campo de dirección se ignora. La próxima instrucción no se ejecuta hasta que la transferencia del dato se haya completado. 
 - **OUT XXYY**: Lo 8 bits más significativos del acumulador se envían al dispositivo externo YY. La parte XX del campo de dirección se ignora. Si el dispositivo externo no puede aceptar el dato en ese momento, la computadora espera hasta que se haya podido realizar la trasferencia.
-- **RAL XXXX**: Los bits del acumulador se rotan un lugar hacia la izquierda. El bit AC15 se coloca en ACo, de modo que el desplazamiento es cíclico. El campo de direcciones XXXX se ignora.
+- **RAL XXXX**: Los bits del acumulador se rotan un lugar hacia la izquierda. El bit AC15 se coloca en AC0, de modo que el desplazamiento es cíclico. El campo de direcciones XXXX se ignora.
 - **CSA XXXX**: El número que está en el registro de llaves (introducido por las llaves de la consola) se copia en el acumulador. El campo de direcciones XXXX se ignora.
 - **NOP XXXX**: Esta instrucción no hace nada. El campo de direcciones XXXX se ignora. Se usa para crear un delay.

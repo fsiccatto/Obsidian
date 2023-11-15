@@ -336,6 +336,7 @@ En el 8088 son posibles *ocho modos* de direccionamiento para especificar operan
 Dos de ellos son provistos para instrucciones que operan sobre registros o con operandos inmediatos:
 - **Modo de operando en registro**: el operando está en uno de los registros generales (8 o 16 bits). Ejemplo: MOV AX, DX --- (DX)→(AX)
 - **Modo de operando inmediato**: el operando está incluido en la instrucción. Ejemplo: MOV AH, 14 --- 14 → AH
+
 Los seis modos de direccionamiento restantes permiten especificar operandos ubicados en un segmento de memoria. Como se observó, una dirección de operando en memoria posee dos componentes de 16 bits: el selector de segmento y el offset. El selector de segmento se suple por alguno de los registros de segmento, mientras que el offset se calcula por la suma de diferentes combinaciones de los siguientes tres elementos de dirección:
 - el *desplazamiento*: valor de 8 o 16 bits incluido en la instrucción.
 - el *base*: contenido de cualquier registro base BP o BX.
