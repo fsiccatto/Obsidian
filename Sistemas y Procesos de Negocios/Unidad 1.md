@@ -1,4 +1,4 @@
-![[Guia de estudio TGS.pdf]]
+[[Guia de estudio TGS.pdf]]
 # Teoría General de Sistemas
 Se presenta como una forma sistemática y científica de aproximación y representación de la realidad y al mismo tiempo, como una orientación que motiva para trabajar en forma multidisciplinar.
 Es el estudio interdisciplinario de los sistemas en general. Su **propósito** es estudiar los principios aplicables a los sistemas en cualquier nivel en todos los campos de la investigación.​ Un **sistema** se define como una entidad con límites y con partes interrelacionadas e interdependientes cuya suma es mayor a la suma de sus partes.
@@ -26,7 +26,7 @@ Para Ludwig, la TGS debería construirse en un mecanismo de integración entre l
     - Sistemas NO vivientes (1-3)
     - Sistemas vivientes (4-7)
     - Sistemas metavivientes (8,9)
-	![[Metodológico.png]]
+	![[Metodológico.png|300]]
 	![[Tabla TGS]]
 	3.  Modelo procesal o del sistema adaptativo complejo:
 	    Tipos de modelos:
@@ -36,7 +36,7 @@ Para Ludwig, la TGS debería construirse en un mecanismo de integración entre l
 - **Semántico** → utilización de ciertos términos comprendidos y utilizados universalmente → Terminología universal
     1. Concepto general de Sistema
         1. 🧠 [[Sistema]] → Punto 6-
-           ![[Sistemas.png]]
+           ![[Sistemas.png|200]]
         2. Conglomerado → Conjunto de objetos donde no existen interacciones que lleven a obtener un resultado superior a la suma de sus partes (carentes de sinergia). 
     2. Conceptos relacionados al ambiente:
         1. Metasistema → sistema que conceptualmente va más allá del concepto convencional del sistema. Se adaptan a su entorno.

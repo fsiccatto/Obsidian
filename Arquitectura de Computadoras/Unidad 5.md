@@ -69,7 +69,7 @@ Con esto surge la idea de mejorar el hardware a fin de facilitar tareas.
 ## Nuevo Hardware y Nuevo Software
 ### Registros Nuevos
 #### Registros Índices
-Vamos a agregar Registros Índice a la máquina elemental. Serán dos registros de 16 bits:
+Vamos a agregar Registros Índice, los cuales *facilitan el movimiento de un bloque de datos en la memoria*, a la máquina elemental. Serán dos registros de 16 bits:
 - Registro Índice Fuente (RIF)
 - Registro Índice Destino (RID)
 Modificaremos el formato de instrucción, a fin de poder indicar de qué modo de direccionamiento se trata. Planteamos el formato:
@@ -96,7 +96,7 @@ Para realizar la suma indicada para el direccionamiento indexado, agregamos un s
 ##### Decodificador del Campo Modificador
 Implementamos en la Unidad de Control un nuevo decodificador: el DECODIFICADOR DEL CAMPO MODIFICADOR, además del Decodificador de Instrucciones ya existente. Esto permite realizar simultáneamente la decodificación del Código de Operación de la instrucción y del Campo Modificador.
 #### Registro Base
-Permite reubicar programas, es un registro de 16 bits. Es parecido al Registro Índice en el sentido que su contenido se suma al campo de dirección de la instrucción a fin de obtener la dirección efectiva. La *diferencia* consiste en que:
+Permite reubicar programas (guarda el contexto), es un registro de 16 bits. Es parecido al Registro Índice en el sentido que su contenido se suma al campo de dirección de la instrucción a fin de obtener la dirección efectiva. La *diferencia* consiste en que:
 - El usuario común **no tiene control** sobre el contenido del Registro Base, y
 - El contenido del Registro Base se suma **siempre** a la dirección efectiva cuando se realiza una referencia a memoria (puntero) en la Ejecución de la instrucción.
 - Las constantes son inmunes al cambio de instrucción en la dirección.
@@ -252,8 +252,8 @@ Si se trata de un Periférico de Entrada y se ha ejecutado una instrucción INP 
 - Si PRO = 0, la Máquina no está atendiendo una interrupción. Por lo tanto, cuando se ejecuta INP YY, el periférico YY recibe TRA e inicia las acciones para obtener el dato solicitado. 
 - Sin PRO = 1, la Máquina está atendiendo una interrupción y su Registro de Datos tendrá el dato solicitado y estará disponible en el Bus de E/S cuando el periférico sea seleccionado (CP7 de la instrucción INP YY). La señal TRA no se genera en este caso por la instrucción INP YY.
 #### Registro de Puntero de Pila
-El Sistema de Interrupciones descripto no permite que la CPU sea interrumpida cuando está atendiendo una interrupción, ya que la dirección de retorno guardada en la posición CERO se perdería.
-Si el contexto de la máquina (incluido el PC) se guardara en la memoria en una estructura LIFO (pila), cuya dirección inicial se indicara en un nuevo Registro, sería posible atender interrupciones dentro de una interrupción (interrupciones anidadas). A este registro se le llama REGISTRO PUNTERO DE PILA (SP). Por cada nueva interrupción, sólo debe incrementarse este Registro en la cantidad adecuada, y su contenido debe decrementarse por cada retorno de interrupción. Además, el biestable SI debería ponerse en 1 justo al comienzo de la Rutina de Atención de Dispositivo.
+El Sistema de Interrupciones descripto no permite que la CPU sea interrumpida cuando está atendiendo una interrupción, ya que la dirección de retorno guardada en la posición CERO se perdería. *Entonces el Registro Puntero de Pila guarda la dirección de retorno de interrupción.*
+Si el contexto de la máquina (incluido el PC) se guardara en la memoria en una estructura LIFO (pila), cuya dirección inicial se indicará en un nuevo Registro, sería posible atender interrupciones dentro de una interrupción (interrupciones anidadas). A este registro se le llama REGISTRO PUNTERO DE PILA (SP). Por cada nueva interrupción, sólo debe incrementarse este Registro en la cantidad adecuada, y su contenido debe decrementarse por cada retorno de interrupción. Además, el biestable SI debería ponerse en 1 justo al comienzo de la Rutina de Atención de Dispositivo.
 El programador debe escribir la Rutina de Interrupción de manera que los dispositivos de menor prioridad no puedan interrumpir un proceso de interrupción corriente de mayor prioridad. Y habría que agregar nuevo hardware y más instrucciones.
 ## Microprocesador Intel 8088
 El término microprocesador se refiere a una CPU contenida en un solo circuito integrado.
@@ -343,12 +343,18 @@ Los seis modos de direccionamiento restantes permiten especificar operandos ubic
 - el *índice*: contenido de cualquier registro índice SI o DI.
 
 La combinación de estos elementos de dirección define los siguientes seis modos:
-- **Modo directo**: el offset está contenido en la instrucción como un desplazamiento. Ejemplo: MOV \[14], AL --- (AL)→(DS) * 10h + 14h
-- **Modo indirecto por registro**: el offset está contenido en uno de los registros BX, BP, SI o DI. Ejemplo: MOV \[BX], CX --- (CX)→(DS) * 10h + (BX)
-- **Modo basado**: el offset resulta de la suma de un desplazamiento y el contenido de BP o BX. Ejemplo: MOV \[BP + 3], 2A 2A → (DS) * 10h + (BP) + 3h
-- **Modo indexado**: el offset resulta de la suma de un desplazamiento y el contenido de SI o DI. Ejemplo: MOV \[SI + 3], 2A 2A → (DS) * 10h + (SI) + 3h
-- **Modo basado indexado**: el offset resulta de la suma del contenido de un registro base y de un registro índice. Ejemplo: MOV \[BP + SI], 2A 2A → (DS) * 10h + (BP) + (SI)
-- **Modo basado indexado con desplazamiento**:el offset resulta de la suma del contenido de un registro base más un registro índice y un desplazamiento. Ejemplo: MOV \[BP + SI + 3], 2A 2A → (DS) * 10h + (BP) + (SI) + 3h
+- **Modo directo**: el offset está contenido en la instrucción como un desplazamiento.
+	  MOV \[14], AL --- (AL) → (DS) * 10h + 14h
+- **Modo indirecto por registro**: el offset está contenido en uno de los registros BX, BP, SI o DI. 
+	  MOV \[BX], CX --- (CX) → (DS) * 10h + (BX)
+- **Modo basado**: el offset resulta de la suma de un desplazamiento y el contenido de BP o BX. 
+	  MOV \[BP + 3], 2A --- 2A → (DS) * 10h + (BP) + 3h
+- **Modo indexado**: el offset resulta de la suma de un desplazamiento y el contenido de SI o DI. 
+	  MOV \[SI + 3], 2A --- 2A → (DS) * 10h + (SI) + 3h
+- **Modo basado indexado**: el offset resulta de la suma del contenido de un registro base y de un registro índice.
+	  MOV \[BP + SI], 2A --- 2A → (DS) * 10h + (BP) + (SI)
+- **Modo basado indexado con desplazamiento**:el offset resulta de la suma del contenido de un registro base más un registro índice y un desplazamiento.
+	  MOV \[BP + SI + 3], 2A --- 2A → (DS) * 10h + (BP) + (SI) + 3h
 Cualquier acarreo con la suma se ignora y el desplazamiento es un valor signado.
 
 También cabe aclarar que el offset puede obtenerse del registro IP en la búsqueda de una instrucción o en las instrucciones de salto. En este último caso, el contenido de IP puede modificarse de tres formas: 

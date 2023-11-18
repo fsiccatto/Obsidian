@@ -1,7 +1,6 @@
 # Organización
 La organización es un *sistema social* que, bajo una determinada estructura y dentro de un contexto al que controlan parcialmente, desarrollan actividades aplicando recursos en pos de ciertos valores comunes.
-	El sistema social está compuesto por individuos o grupos de individuos inmersos en una dinámica propia con valores compartidos (creencias, costumbres, símbolos en común). Estos individuos o grupos de individuos se *interrelacionan*, creando una sinergia propia. Además, utilizan recursos con los que desarrollan actividades; deben planificar y disponer de recursos materiales y humanos.
-	Los objetivos comunes hace referencia a los principios de eficacia y eficiencia.
+>[!info] El sistema social está compuesto por individuos o grupos de individuos inmersos en una dinámica propia con valores compartidos (creencias, costumbres, símbolos en común). Estos individuos o grupos de individuos se *interrelacionan*, creando una sinergia propia. Además, utilizan recursos con los que desarrollan actividades; deben planificar y disponer de recursos materiales y humanos. Los objetivos comunes hace referencia a los principios de eficacia y eficiencia.
 ## La organización como sistema social
 Existen diferentes enfoques:
 - Institucionalista: conjunto de relaciones entre todos los miembros.

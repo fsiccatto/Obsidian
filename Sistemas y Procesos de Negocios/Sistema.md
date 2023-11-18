@@ -7,9 +7,7 @@
     - Es un conjunto de objetos unidos por alguna forma de interacción.
     - Es un conjunto de elementos que ordenadamente interactúan entre sí, contribuyendo a lograr un objetivo.
 
-<aside> 
-	🔑 Un sistema es un conjunto de elementos que mantienen determinadas relaciones entre sí y que se encuentran separadas de un entorno determinado. La relación entre sistema y entorno es fundamental para la caracterización del sistema, y el sistema se define siempre respecto a un determinado entorno.
-</aside>
+>[!note] Un sistema es un conjunto de elementos que mantienen determinadas relaciones entre sí y que se encuentran separadas de un entorno determinado. La relación entre sistema y entorno es fundamental para la caracterización del sistema, y el sistema se define siempre respecto a un determinado entorno.
 ## Características de los Sistemas
 Según Bertalanffy se deducen dos conceptos:
 - **Propósito u objetivo:** todo sistema tiene uno o algunos propósitos. Los elementos y las relaciones, definen una distribución para alcanzar un objetivo.
