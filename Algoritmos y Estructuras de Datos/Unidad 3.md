@@ -2,7 +2,7 @@
 ## Técnicas de Porgramación
 El diseño de un programa establece la descomposición del problema en módulos y su posterior unión con procedimientos ascendentes o descendentes. ==Programación modular y programación estructurada==.
 #### Caracterísiticas
-Un #programa cumple las siguientes caracterísiticas: 
+Un programa cumple las siguientes caracterísiticas: 
 - Posee un solo punto de entrada y uno de salida para control del programa.
 - Existen caminos desde la entrada hasta la salida que se pueden seguir y pasan por todas las partes del programa.
 - Todas las instrucciones son ejecutables y no existen lazos o bucles infinitos.
@@ -16,7 +16,7 @@ Conjunto de técnicas que aumentan considerablemente la productividad del progra
 - ##### Recursos  abstractos
 	Se auxilia en recursos abstractos en lugar de recursos concretos. Consiste en descomponer una determinada acción compleja en función de un número de acciones más simples, capaces de ser ejecutadas y que constituirán las instrucciones.
 - ##### Diseños descendentes (top-down).
-	El problema se descompone en una serie de pasos sucesivos de refinamiento, obteniendo estructras jerárquicas.
+	El problema se descompone en una serie de pasos sucesivos de refinamiento, obteniendo estructuras jerárquicas.
 	- Nivel n: Vista exterior: ¿Qué hace?
 	- Nivel n+1: Vista interior: ¿Cómo lo hace?
 - ##### Estructuras básicas
@@ -48,7 +48,7 @@ Es una estructura que permite controlar la ejecución de acciones que requieren 
 	FINSI
 	```
 - ###### Múltiples
-	Es cuando existen más de dos alternativas posibles. Se evalúa una expresión que podrá tomar `n` valores distintos, según el resultado podrá segir una de las `n` acciones posibles
+	Es cuando existen más de dos alternativas posibles. Se evalúa una expresión que podrá tomar `n` valores distintos, según el resultado podrá seguir una de las `n` acciones posibles
 	```
 	SEGUN CASO selector HACER
 		v1: accion 1
@@ -58,9 +58,9 @@ Es una estructura que permite controlar la ejecución de acciones que requieren 
 		accion n
 	FINSEGUN
 	```
-	También se puede hacer una selección anidada de `SI ENTONCES FINSI`.
+	También se puede hacer una selección anidada de `SI ... ENTONCES FINSI`.
 #### **Estructuras Repetitivas: Ciclos o Bucles**
-Estructuras qe repiten una secuencia de instrucciones un número determinado de veces, iteración se llama al hecho de repetir la ejecución de una secuencia de acciones.
+Estructuras que repiten una secuencia de instrucciones un número determinado de veces, iteración se llama al hecho de repetir la ejecución de una secuencia de acciones.
 ##### Tipos de estructuras repetitivas
 - ###### Repetir (Ciclo 1 - X)
 	Ejecuta las acciones tantas veces como sea necesario hasta que se cumpla la condición. Se ejecuta por lo menos 1 vez  (`do-while`).
@@ -96,12 +96,11 @@ Estructuras qe repiten una secuencia de instrucciones un número determinado de 
 
 <ins>Cuadro Comparativo</ins>
 
-| | Repetir | Mientras | Iterar | Variar|
-|:---:|:-------:|:----------:|:-------:|:---------:|
-|Ciclo| 1 - x | 0 - x| Acciones 1: 1-x, Acciones2: 0-x | exacto|
-|Cond final| Verdadera| Falsa | Verdadera | No tiene |
-|Pos de la cond| Final| Principio| Medio| No tiene|
-
+|                |  Repetir   |  Mientras  |  Variar    |  Iterar                           |
+|:---------------|:-----------|:-----------|:-----------|:----------------------------------|
+| Ciclo          |     1 - x  |      0 - x |  Exacto    |  Acciones 1: 1-x, Acciones2: 0-x  |
+| Cond final     |  Verdadera |  Falsa     |  No tiene  |  Verdadera                        |
+| Pos de la cond |  Final     |  Principio |  No tiene  |  Medio                            |  
 ## Puesta a Punto de Programas
 Consiste en **localizar, verificar y corregir** los errores de programación. El objetivo es prevenir tantos errores como sea posible a la hora de ejecutar un programa. Una prueba o ensayo es satisfactoria cuando se detectan errores. Consiste en las siguientes fases:
 1. Detección de errores

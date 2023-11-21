@@ -29,7 +29,7 @@ El principal propósito es agrupar campos lógicamente para ejecutar sobre ellos
 Los elementos de registro se pueden referenciar de forma individual o bien en grupo de manera colectiva para las operaciones de entrada/salida.
 Las operaciones que se pueden ejecutar sobre los elementos son de acuerdo con sus tipos de datos individuales.
 #### Llaves de Identificación
-Un registro contiene un campo que lo identifica, que lo hace único. A este campo se lo llama campo llave o clave.
+Un registro contiene un campo que lo *identifica*, que lo hace único. A este campo se lo llama campo llave o clave.
 La llave puede ser un elemento básico o grupal. Por ejemplo: dni, legajo, nro de Factura.
 ## Archivos
 Un archivo es una colección de ocurrencias de registros lógicamente relacionados que se tratan como una unidad. Todos los registros del archivo son del **mismo formato**. Las operaciones que pueden realizarse dependen de los registros y de los tipos de datos de los elementos.
@@ -72,7 +72,7 @@ Corresponde a la ordenación física de los registros almacenados. La organizaci
 - Por lo general primero se asigna el espacio y luego se cargan los datos
 ###### Actualización
 - Permite *cambiar el contenido* para tener un imagen de la realidad.
-- Se puede insertar registros, modifcar los datos de los ya existentes, suprimir, borrar un registro.
+- Se puede insertar registros, modificar los datos de los ya existentes, suprimir, borrar un registro.
 ###### Recuperación
 - Es el acceso a un archivo con el propósito de *extraer información significativa*. Se diferencia en que la consulta puede tener menor cantidad de datos y ser más interactiva, mientras que la generación de reportes es un proceso en lotes más planificado.
 - La recuperación puede ser comprensiva (todos los registros), o selectiva (recuperar algunos registros según determinados criterios).

@@ -1,13 +1,13 @@
 # Arreglos
 Hasta ahora hemos visto datos simples o primitivos en la [[remote-repo/Algoritmos y Estructuras de Datos/Unidad 2]], que solo pueden almacenar un valor a la vez.
-## ¿Qué es una #EstructuraDeDatos?
+## ¿Qué es una Estructura de Datos?
 Es la representación interna de los datos en la computadora. 
-Un #dato de tipo estructurado puede almacenar a más de un elemento a la vez, con la condición de que deben ser del **mismo tipo de dato**.
+Un dato de tipo estructurado puede almacenar a más de un elemento a la vez, con la condición de que deben ser del **mismo tipo de dato**.
 ⚠️ Cada variable representa múltiples datos individuales, y a su vez cada uno de estos elementos se pueden referenciar de manera independiente.
 
 Las estructuras pueden ser:
 ➡️ **Estáticas**: el tamaño que ocupan se define antes que se ejecute el programa. Por ej: arreglos
-➡️ **Dinámicas**: no tiene la definición del tamaño ocupado. Por ej: Listas.
+➡️ **Dinámicas**: no tiene la definición del tamaño ocupado. Por ej: listas.
 ### Arreglos
 Conjunto finito y ordenado de elementos homogéneos.
 - Finito: es un número determinado de elementos,
@@ -25,7 +25,7 @@ A[1], A[2], A[3], ..., A[n];
 
 VAR nomVector[TAMAÑO]: TIPO DE DATO
 ```
-#Indice Para poder referirnos al vector completo o a un elemtento, debemos hacer `nombre[subindice]`. Tiene que ser de tipo **ENTERO** y va de `1 <= subindice <= tamaño`.
+Indice: para poder referirnos al vector completo o a un elemento, debemos hacer `nombre[subindice]`. Tiene que ser de tipo **ENTERO** y va de `1 <= subindice <= tamaño`.
 ##### Operaciones con Vectores
 - Asignación
 	Asiganr el valor x al i-ésimo elemento del vector `nombre[i] = x`.
@@ -56,7 +56,7 @@ A[n, 1], A[n, 2], A[n, 3], ..., A[n, m]
 
 VAR nomMatriz[TAMAÑOFILA][TAMAÑOCOLUMNA]: TIPO DE DATO
 ```
-#Indice Podemos referirnos a la matriz completa o a un único elemento. Debemos hacerlo `nombre[subidndiceFila, subindiceColumna]`.
+Indice: podemos referirnos a la matriz completa o a un único elemento. Debemos hacerlo `nombre[subidndiceFila, subindiceColumna]`.
 Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que se **ENTERO**.
 ##### Operaciones con Matrices
 - Asignación
@@ -76,8 +76,8 @@ Es una variable estructurada de **TRES** dimensiones que agrupa varias celdas de
 `VAR nombre[tFila, tColumna, tPlano]: tipo de dato.
 
 ![[imagenes/Arreglos Tridimensionales.png]]
-#Indice Podemos referirnos al arreglo completo o a un único elemento. Debemos hacerlo como `nombre[subidndiceFila, subindiceColumna, subindicePlano]`.
-Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que se **ENTERO**.
+Indice: podemos referirnos al arreglo completo o a un único elemento. Debemos hacerlo como `nombre[subidndiceFila, subindiceColumna, subindicePlano]`.
+Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que ser **ENTERO**.
 ##### Operaciones con Arreglos Tridimensionales
 - Asignación
 - Lectura
@@ -88,17 +88,17 @@ Cada subíndice va desde 1 hasta el tamaño de la fila o la columna y tiene que 
 	VARIAR i DESDE 1 HASTA n
 		VARIAR j DESDE 1 HASTA m
 			VARIAR k DESDE 1 hasta p
-				LEER(matriz[i, j, p])
+				LEER(matriz[i, j, k])
 			FINVARIAR
 		FINVARIAR
 	FINVARIAR
 	```
 
 ### Sección Transversal
-Una sección tranveresal de un arreglo bidimensional #Matrices se obtine al mantener uno de sus subíndices constantes mientras se hace variar a otro.
+Una sección tranveresal de un arreglo bidimensional (matrices) se obtine al mantener uno de sus subíndices constantes mientras se hace variar a otro.
 Para denotar la sección transversal se usa `*` para el subídince que puede tomar cualquier valor del rango definido. Ej: `B[*, 4]` hacemos variar todas las filas para la columna 4.
 ### Traspuesta
-La traspuesta de las #Matrices es el cambio de las filas por columnas y las columnas por filas.
+La traspuesta de las matrices es el cambio de las filas por columnas y las columnas por filas.
 Por definición `B[i, j] = BT[j, i]`.
 ## Búsqueda y Ordenamiento
 La *búsqueda* es la localización de un elemento y el *ordenamiento* es el secuenciamiento de elementos teniendo en cuenta un determinado criterio. Siempre es más fácil encontrar un elemento dentro de un conjunto si éste se encuentra ordenado.
@@ -113,10 +113,10 @@ INICIO
 	LEER(buscado)
 	i = 1
 	// Lo hago con un MIENTRAS para no tener que recorrer todo el array
-	MIENTRAS i <= 100 [Y] numeros[i] <> buscado HACER
+	MIENTRAS (i <= 100 [Y] numeros[i] <> buscado) HACER
 		i = i + 1
 	FINMIENTRAS
-	SI i <= 100 [Y] numeros[i] = buscado ENTONCES
+	SI (i <= 100 [Y] numeros[i] = buscado) ENTONCES
 			ESCRIBIR("El", buscado, "está en el arreglo en posición", i)
 		SINO
 			ESCRIBIR("EL", buscado, "no esta en el arreglo")
@@ -124,7 +124,7 @@ INICIO
 FINPROGRAMA
 ```
 ### Búsqueda Binaria
-Cuando la cantidad de elementos que queremos buscar es grande utilizamos la *búsqueda binaria*.  Es necesario que los elementos estén **ordenados** #ordenamiento en el arreglo para hacer la búsqueda binaria.
+Cuando la cantidad de elementos que queremos buscar es grande utilizamos la *búsqueda binaria*.  Es necesario que los elementos estén **ordenados** en el arreglo para hacer la búsqueda binaria.
 La búsqueda procede mediante una serie de pruebas sucesivas en el arreglo:
  - La primera prueba compara el valor del elemento que está a la mitad del conjunto contra el valor buscado, si el valor buscado es menor, entonces la segunda mitad del conjunto puede ignorarse. Si el valor es mayor se considerará la segunda mitad y se descartará la primera.
  - La segunda prueba compara el valor de la mitad del conjunto que queda, si el valor buscado es menor se parte el conjunto y se descarta la segunda mitad, si es mayor se descarta la primera mitad.
@@ -245,7 +245,7 @@ El algoritmo más eficiente es:
 - la eficiencia se expresa como función del tamaño del problema
 ### Costo computacional
 Se habla de dos tipos de casos:
-- El **peor** caso, que es el más difícil de calcular, calculando su función de crecimiento dándole la peor de todas las entradas posibles
+- El **peor** caso, que es el más difícil de calcular, calculando su función de crecimiento dándole la peor de todas las entradas posibles.
 - El caso **promedio** es el promedio de cuánto tardaría nuestro algoritmo de cada una de las entradas posibles.
 Se siguen tres pasos:
 1. Suponer el peor de los casos

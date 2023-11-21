@@ -22,7 +22,7 @@ Casos aplicación natural, por ej.: pila de platos, pila de cajas, pila de libro
 Operaciones:
 ##### Insertar elementos
 ```
-PROCEIDMIENTO insertarPila(longitud, por ref. cima: ENTERO; por ref. pilaLibros[100], libro: CADENA)
+PROCEDIMIENTO insertarPila(longitud, por ref. cima: ENTERO; por ref. pilaLibros[100], libro: CADENA)
 INICIO
 	SI cima < longitud ENTONCES
 		cima = cima + 1
@@ -34,7 +34,7 @@ FINPROCEDIMIENTO
 ```
 ##### Eliminar elementos
 ```
-PROCEIDMIENTO eliminarPila(por ref. cima: ENTERO; por ref. pilaLibros[100], por ref. libro: CADENA)
+PROCEDIMIENTO eliminarPila(por ref. cima: ENTERO; por ref. pilaLibros[100], por ref. libro: CADENA)
 INICIO
 	SI cima = 0 ENTONCES
 		ESCRIBIR("Pila vacia")
@@ -57,7 +57,7 @@ Casos de aplicación natural, por ej.: cola del supermercado, atención por orde
 Operaciones:
 ##### Insertar elementos
 ```
-PROCEIDMIENTO insertarCola(por ref. inicio, por ref. final: ENTERO; por ref. colaPacientes[100], nomPaciente: CADENA)
+PROCEDIMIENTO insertarCola(por ref. inicio, por ref. final: ENTERO; por ref. colaPacientes[100], nomPaciente: CADENA)
 INICIO
 	SI final = 0 ENTONCES
 		inicio = 1
@@ -72,7 +72,7 @@ FINPROCEDIMIENTO
 ```
 ##### Eliminar elementos
 ```
-PROCEIDMIENTO eliminarCola(inicio, por ref. final: ENTERO; por ref. colaPacientes[100]: CADENA, por ref. nomPaciente: CADENA)
+PROCEDIMIENTO eliminarCola(inicio, por ref. final: ENTERO; por ref. colaPacientes[100]: CADENA, por ref. nomPaciente: CADENA)
 INICIO
 	SI final = 0 ENTONCES
 		ESCRIBIR("Cola vacia")
@@ -92,7 +92,7 @@ Para insertar o eliminar un elemento, salvo en el principio o en el final que so
 ##### Insertar elementos
 Inserta al final en este ejemplo
 ```
-PROCEIDMIENTO insertarVentas(por ref. longitud: ENTERO; por ref. ventas[30], ventaDia: REAL)
+PROCEDIMIENTO insertarVentas(por ref. longitud: ENTERO; por ref. ventas[30], ventaDia: REAL)
 INICIO
 	SI longitud = tope ENTONCES
 		ESCRIBIR("Lista completa")
@@ -104,7 +104,7 @@ FINPROCEDIMIENTO
 ```
 ##### Eliminar elementos
 ```
-PROCEIDMIENTO borrarVentas(por ref. longitud: ENTERO, por ref. ventas[30]: REAL, elemento: ENTERO)
+PROCEDIMIENTO borrarVentas(por ref. longitud: ENTERO, por ref. ventas[30]: REAL, elemento: ENTERO)
 VAR i: ENTERO
 INICIO
 	SI longitud = 0 ENTONCES
@@ -191,7 +191,7 @@ RETORNO
 ```
 ##### Eliminar elementos
 ```
-PROCEIDMIENTO eliminarElem(por ref. iniciar, por ref. listaE[100, 2], valor: ENTERO)
+PROCEDIMIENTO eliminarElem(por ref. iniciar, por ref. listaE[100, 2], valor: ENTERO)
 VAR i, anterior: ENTERO
 INICIO
 	i = iniciar
@@ -248,15 +248,16 @@ Estas listas permiten avanzar o retroceder a través de la misma.
 - Inserción de un elemento: al final, al principio o en medio.
 - Borrado de un elemento: el primero, el último o en medio.
 ## Cuadro Comparativo
-|                                           |          Pilas          |          Colas           |         Listas          |        Listas Enlazadas        |
-| ----------------------------------------- |:-----------------------:|:------------------------:|:-----------------------:|:------------------------------:|
-| Inserción                                 |       Final(cima)       |          Final           |     Cualquier lado      |         Cualquier lado         |
-| Eliminación                               |       Final(cima)        |        Principio         |     Cualquier lado      |         Cualquier lado         |
-| Recorrido p/datos / Rec. p/incializar     | 1 a cima / 1 a longitud | 1 a final / 1 a longitud | 1 a longitud / 1 a tope | Mientras i <> 0 / 1 a longitud |
-| Esta llena cuando                         |     Longitud = Cima     |     Longitud = Final     |     Tope = Longitud     |           Vacio = 0            |
-| Esta vacía cuando                         |        Cima = 0         |        Final = 0         |      Longitud = 0       |           Inicio = 0           |
-| Uso de punteros                           |           No            |            No            |           No            |               Si               |
-| Luego de una operación se corren los elementos |           No            |            Si            |           Si            |               No               |
+
+|                                                           |           Pilas                         |           Colas                          |          Listas                         |         Listas Enlazadas                            |
+|:----------------------------------------------------------|:----------------------------------------|:-----------------------------------------|:----------------------------------------|:----------------------------------------------------|
+|  Inserción                                                |        Final(cima)                      |           Final                          |      Cualquier lado                     |          Cualquier lado                             |
+|  Eliminación                                              |        Final(cima)                      |         Principio                        |      Cualquier lado                     |          Cualquier lado                             |
+|  Recorrido p/datos&nbsp;<div>Rec. p/incializar     </div> |  1 a cima&nbsp;<div>1 a longitud </div> |  1 a final&nbsp;<div>1 a longitud </div> |  1 a longitud&nbsp;<div>1 a tope </div> |  Mientras i &lt;&gt; 0&nbsp;<div>1 a longitud</div> |
+|  Esta llena cuando                                        |      Longitud = Cima                    |      Longitud = Final                    |      Tope = Longitud                    |            Vacio = 0                                |
+|  Esta vacía cuando                                        |         Cima = 0                        |         Final = 0                        |       Longitud = 0                      |            Inicio = 0                               |
+|  Uso de punteros                                          |            No                           |             No                           |            No                           |                Si                                   |
+|  Luego de una operación se corren los elementos           |            No                           |             Si                           |            Si                           |                No                                   |  
 # Estructuras de Datos NO Lineales
 ## No Lineales
 Las estructuras dinámicas lineales de datos tienen grandes ventajas, sin embargo tienen un punto débil, son listas secuenciales, están dispuestas de modo que es necesario moverse a través de ellas una posición a la vez.
@@ -273,7 +274,7 @@ Se usan para representar datos con una *relación jerárquica* entre sus element
 - El *grado* es el número de descendientes DIRECTOS de un nodo.
 ![[imagenes/Arbol.png|200]]
 #### Árboles Binarios
-Los árboles de grado 2 representan una estructura importante. En los árboles binarios todos sus nodos excepto los del último nivel, tienen dos hijos: el subárbol izquierdo y el subárbol derecho.
+Los árboles de *grado 2* representan una estructura importante. En los árboles binarios todos sus nodos excepto los del último nivel, tienen dos hijos: el subárbol izquierdo y el subárbol derecho.
 ![[imagenes/Arboles binarios.png|200]]
 
 ### Grafos

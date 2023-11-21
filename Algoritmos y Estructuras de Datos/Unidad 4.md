@@ -47,14 +47,14 @@ RETORNO
 ```
 
 ### Parámetros
-A través de la lista de parámetros **se pasan los valores o las direcciones** donde se encuentran los valores, con los que debe trabajar el subprograma.
+A través de la lista de parámetros **se pasan los valores o las direcciones donde se encuentran los valores**, con los que debe trabajar el subprograma.
 #### Clasificación de Parámetros
-- Entrada: proporcionan los valroes desde el programa o subprograma que llama.
-- Salida: valores resultantes del subprograma. Las funciones no usan parámetreos de salida, ya que el resultado lo devuelven en el nombre.
+- Entrada: proporcionan los valores desde el programa o subprograma que llama.
+- Salida: valores resultantes del subprograma. Las funciones no usan parámetros de salida, ya que el resultado lo devuelven en el nombre.
 - Entrada/Salida: un mismo parámetro sirve para mandar argumentos a un subprograma y para devolver el resultado.
 #### Pasaje de Parámetros
 ##### Por valor
-- Es la forma mas simple. Se comunica con los programas enviando una **copia de la variable original**.
+- Es la forma más simple. Se comunica con los programas enviando una **copia de la variable original**.
 - El subprograma recibe los valores, como valores iniciales, ejecuta las acciones, pero no los devulve con otros valores. No afecta la variable original del programa.
 - **Las funciones siempre utilizan parámetros por valor y devuelve el resultado en el nombre de la función**.
 ##### Por Referencia

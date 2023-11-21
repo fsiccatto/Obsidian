@@ -1,6 +1,6 @@
 # Introducción General
 ## Programa
-Un #programa es un conjunto de instrucciones para realizar una actividad o resolver un problema, se deben ejecutar una serie de acciones sobre determinados datos.
+Un programa es un conjunto de instrucciones para realizar una actividad o resolver un problema, se deben ejecutar una serie de acciones sobre determinados datos.
 Se compone de: 
 ![[imagenes/Programa.png]]
 ### Lenguaje de Programación
@@ -34,7 +34,7 @@ Secuencia ordenada y cronológica de pasos que llevan a la solución. Siempre va
 ## Estructura de un Programa
 ```
 PROGRAMA nombreDelPrograma
-VAR declaracion de variables
+	VAR declaracion de variables
 INICIO
 	Acciones
 FINPROGRAMA
@@ -44,7 +44,7 @@ FINPROGRAMA
 - La _documentación_: es importante para comprender y utilizar el programa,
 - La _eficiencia_: está dada por la relación tiempo-espacio,
 - La _corrección_: un programa debe proporcionar resultados correctos,
-- La _felexibilidad_: los porgramas deben permitir cambios con ligeros toques,
+- La _flexibilidad_: los programas deben permitir cambios con ligeros toques,
 - La _fiabiliad_: la dan la exactitud y precisión de los resultados, y
 - La _presentación_: es importante usar comentarios y sangrados.
 Un buen estilo de programación hace a su legibilidad, a la calidad, mejor comprensión.
