@@ -44,6 +44,9 @@ Prioridad:
 Los paréntesis indican orden de prioridad 0, es decir, que se tiene que resolver de más adentro y luego ir hacia afuera.
 #### Expresiones Aritméticas
 Deben escribirse en una sola línea: `variable = expresión aritmética`. Por ejemplo: `n = (x + y ) / (y - 2)`.
+- Las expresiones son combinaciones válidas de operandos y operadores, es decir combinaciones de constantes, variables, símbolos de operación, paréntesis y nombres de funciones especiales.
+- Cuando en una expresión las variables toman valor, puedo obtener el resultado de la expresión.
+- Las variables y constantes dentro de una expresión se denominan operandos.
 #### Operadores Lógicos
 Permiten formular condiciones complejas a partir de condiciones simples.
 
