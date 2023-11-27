@@ -1,4 +1,4 @@
-# Arreglos
+ # Arreglos
 Hasta ahora hemos visto datos simples o primitivos en la [[remote-repo/Algoritmos y Estructuras de Datos/Unidad 2]], que solo pueden almacenar un valor a la vez.
 ## ¿Qué es una Estructura de Datos?
 Es la representación interna de los datos en la computadora. 
