@@ -371,7 +371,7 @@ La combinación de estos elementos de dirección define los siguientes seis modo
 - **Modo basado indexado con desplazamiento**:el offset resulta de la suma del contenido de un registro base más un registro índice y un desplazamiento.
 	  MOV \[BP + SI + 3], 2A --- 2A → (DS) * 10h + (BP) + (SI) + 3h
 Cualquier acarreo con la suma se ignora y el desplazamiento es un valor signado.
-![[../Modos de direccionamiento.png]]
+![[imagenes/Modos de direccionamiento clase.png]]
 
 También cabe aclarar que el offset puede obtenerse del registro IP en la búsqueda de una instrucción o en las instrucciones de salto. En este último caso, el contenido de IP puede modificarse de tres formas: 
 - salto relativo: al contenido de IP se le suma un desplazamiento. 
