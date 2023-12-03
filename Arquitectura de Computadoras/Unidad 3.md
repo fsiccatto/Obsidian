@@ -12,7 +12,7 @@ Se pueden definir algunos parámetros generales aplicables a todas las memorias:
 4) Tipo de acceso:
 	- Acceso aleatorio
 	- Acceso serie
-5) Tiempo de ciclo (`tc`): mínimo tiempo entre dos accesos sucesivos a la memoria. tc > ta.
+5) Tiempo de ciclo (`tc`): mínimo tiempo entre dos accesos sucesivos a la memoria. `tc>ta`.
 6) Medio físico
 	- Electrónicas
 	- Magnéticas
@@ -87,25 +87,25 @@ Para una correcta operación de la memoria se necesita una temporización adecua
 | CE' | R/W' | Accion                 |
 | --- | ---- | ---------------------- |
 | 0   | 1    | Operación de lectura   |
-| 1   | 0    | Operación de escritura |
+| 0   | 0    | Operación de escritura |
 | 1   | X    | Memoria deshabilitada. Alta impedancia.                       |
 #### Memorias de Lectura/Escritura Dinámicas
-DRAM. En estas memorias la celda básica consiste en la capacidad parásita de una compuerta de un transistor MOSFET y los circuitos asociados de control. Puesto que debido a las pérdidas inevitables el capacitor se descarga, es necesario restaurar periódicamente la información mediante un proceso que se llama *refresco*. Este refresco consiste en una lectura seguida de una escritura automática cada aproximadamente 2ms (dependiendo de la memoria). Cuando está actuando el proceso de refresco, no es posible acceder a la memoria. La velocidad de estas memorias en menor que las estáticas, sin embargo la densidad de integración en apreciablemente mayor.
+**DRAM**. En estas memorias la celda básica consiste en la *capacidad parásita de una compuerta de un transistor MOSFET* y los circuitos asociados de control. Puesto que debido a las pérdidas inevitables el capacitor se descarga, es necesario restaurar periódicamente la información mediante un proceso que se llama *refresco*. Este refresco consiste en una lectura seguida de una escritura automática cada aproximadamente 2ms (dependiendo de la memoria). Cuando está actuando el proceso de refresco, no es posible acceder a la memoria. ***La velocidad de estas memorias en menor que las estáticas***, sin embargo la densidad de integración en apreciablemente mayor.
 La estructura interna de estas memorias es generalmente 3D, con el mismo número de filas y columnas.
 ![[imagenes/DRAM.png|300]]
 Si bien estas memorias son más lentas que las estáticas, poseen una característica interesante. En muchos casos es necesario leer o escribir direcciones consecutivas de memoria.
 ### Memorias RAM de sólo Lectura (ROM)
 Estas memorias una vez programadas sólo realizan operaciones de lectura. No son volátiles, y pueden utilizarse para almacenar códigos, en generadores de caracteres, en funciones aritméticas complejas, en unidades de control microprogramadas, o en almacenamiento de partes del sistema operativo (BIOS). La organización interna es parecida a la RAM.
 #### Memorias ROM
-Se usan diodos y transistores para su construcción. Los diodos se utilizan como elementos acopladores. La conexión de varios diodos a una misma línea implementa la función OR de las señales de entrada. Puede decirse que una ROM de $`2^n \ x \ m \text{ bits}`$, podría realizar cualquier combinacional de n variables de entrada y m funciones.
+Se usan *diodos y transistores* para su construcción. Los diodos se utilizan como elementos acopladores. La conexión de varios diodos a una misma línea implementa la función OR de las señales de entrada. Puede decirse que una ROM de $`2^n \ x \ m \text{ bits}`$, podría realizar cualquier combinacional de n variables de entrada y m funciones.
 ![[imagenes/Memorias ROM.png|300]]
 La salida del bus de datos son triestados para permitir la conexión de más de una memoria a un bus común.
 #### Memorias PROM
-Los elementos de conexión son diodos o transistores con un fusible en serie. Inicialmente la memoria presenta todas las conexiones establecidas. La programación consiste en destruir el fusible en aquellos lugares donde quiere almacenarse un 0. Esto se consigue direccionando la palabra deseada e inyectando una corriente adecuada en las salidas, así la conexión queda abierta y es como si no existiera el elemento acoplador. Se deduce que **una vez programada la memoria ya no es posible volver a hacerlo**.
+Los elementos de conexión son *diodos o transistores con un fusible en serie*. Inicialmente la memoria presenta todas las conexiones establecidas. La programación consiste en destruir el fusible en aquellos lugares donde quiere almacenarse un 0. Esto se consigue direccionando la palabra deseada e inyectando una corriente adecuada en las salidas, así la conexión queda abierta y es como si no existiera el elemento acoplador. Se deduce que **una vez programada la memoria ya no es posible volver a hacerlo**.
 #### Memorias RPROM
 Las RPROM pueden ser reescritas por el usuario. Existen tres tipos:
 - EPROM: constituidas por celdas de MOSFET's. La descarga es por luz ultravioleta y la repogramación es eléctrica aplicando tensiones superiores a las de funcionamiento, es parmanente hasta que vuelva a grabarse.
-- EEPROM: similares a la anterior, pero el borrado es posición a posición.
+- EEPROM: similares a la anterior, pero el borrado es posición a posición, eléctricamente.
 - FLASH: similares a las anteriores, pero el borrado se realiza simultáneamente en todas las posiciones.
 ### Extensión de Longitud de palabra y capacidad
 Es posible aumentar la capacidad de una memoria partiendo de circuitos integrados de menor capacidad. Esto puede lograrse aumentando la longitud de palabra o la cantidad de las mismas.
@@ -122,10 +122,10 @@ Finalmente, si disponemos de memorias RAM de N palabras de m bits y pretendemos 
 - Las salidas del decodificador se conectan a las entradas de selección (CS) de cada CI, y • Las líneas de datos se conectan a un bus común de m + h bits.
 ## Memorias de Acceso Serie
 Son aquellas en las que el tiempo de escritura o lectura de una posición depende de la situación física de la misma en el interior de la memoria. Para escribir o leer en una de estas memorias es preciso **pasar primero por todas las posiciones anteriores**.
-La inormación puede organizarse de dos formas:
+La información puede organizarse de dos formas:
 1. Organización bit a bit:
 	Se disponen en *serie* tanto las palabras como los bits que las conforman. La memoria posee una sola línea de entrada de información y una sola de salida.
-	   ![[imagenes/Memoria serie bit a bit|200]]
+	![[imagenes/Memoria serie bit a bit|200]]
 2. Organización posición a posición:
 	Se disponen las palabras en *serie* pero los bits que las conforman en *paralelo*. Existen n entradas de información y n salidas de información. Se clasifican en: memorias FIFO, memorias LIFO y Registros de desplazamiento.
 	![[imagenes/Memorias posición a posición|200]]
@@ -139,7 +139,7 @@ Son aquellos en los que los impulsos de desplazamiento *no pueden anularse* porq
 Permiten construir CI de gran capacidad y bajo costo, gracias a la sencillez de las celdas y su alta densidad de integración.
 A fin de restaurar la información en estos registros **las salidas se conectan a las entradas**, de esta forma la información circula permanentemente en todo el registro sincrónicamente a los impulsos del reloj.
 ![[imagenes/Registros de desplazamiento dinamicos.png|200]]
-#### Memorias FIFO
+### Memorias FIFO
 Son memorias serie en las que la primera información que entra es la primera que sale (*First Input First Output*).
 Las memorias FIFO pueden implementarse con registros de desplazamiento estáticos y una unidad de control. Debe tener en cuenta lo siguiente:
 - La lectura es destructiva. El dato leído ya no está más en la memoria.
@@ -148,6 +148,6 @@ Las memorias FIFO pueden implementarse con registros de desplazamiento estático
 - Generar las señales de control necesarias para que el primer dato escrito esté disponible para la primera lectura.
 - Deberá aceptar al menos tres entradas exteriores: señal de lectura/escritura, señal de inicio de ciclo y señal de sincronismo.
 Las FIFO se encuentran en CI de LSI y una de sus aplicaciones es acoplar sistemas digitales con velocidades de procesamiento diferentes.
-#### Memorias LIFO
+### Memorias LIFO
 En estas memorias, la última información que entra es la primera que sale (*Last Input First Output*).
 Una LIFO puede implementarse con un registro de desplazamiento reversible. Un registro de desplazamiento reversible está formado por biestables síncronos y multiplexores. La salida de la memoria es la salida del primer biestable y la entrada es el segundo canal del primer multiplexor.

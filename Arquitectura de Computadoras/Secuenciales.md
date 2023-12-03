@@ -1,6 +1,6 @@
 ## Asíncronos
 ### Biestable Asíncrono SR
-![[imagenes/imagenes/Biestable SR.png|300]]
+![[imagenes/Biestable SR.png|300]]
 
 |  R  |  S  | Qt  | Qt+1 |
 |:---:|:---:|:---:|:----:|
@@ -66,6 +66,6 @@ No están disponibles comercialmente. Se obtienen a partir de un biestable JK ha
 |  D | Qt+1 |
 |:---:|:----:|
 |  0  |  0  |
-|  1  |  0   |
-Este Biestable **carece** de aplicación. Pueden obtenerse a partir de un SR síncrono, haciendo S = R’ = D. También desde un JK, haciendo J = K’ = D.
+|  1  |  1   |
+Este Biestable **carece** de aplicación. Pueden obtenerse a partir de un SR síncrono, haciendo S = R’ = D. También desde un JK, haciendo J = K’ = D. (Data o Delay)
 ![[imagenes/Biestable D.png|300]]

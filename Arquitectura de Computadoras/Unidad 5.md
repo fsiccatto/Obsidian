@@ -92,11 +92,11 @@ Las instrucciones de la BLUE de un solo ciclo, que permanecen en la Máquina Ele
 		LDA 2, 1000 → Carga el Acc con el contenido de la posición 6000 (1000 + 5000)
 	- Si el contenido del campo es 3, el contenido del RID se suma al campo de dirección obteniendo así la dirección del operando.
 ##### Sumador
-Para realizar la suma indicada para el direccionamiento indexado, agregamos un sumador en la CPU dedicado sólo a esta tarea (ya no usamos el tiempo de la ALU). Este sumador tiene dos registros de entrada: el registro W y el registro X de 16 bits cada uno. Además siempre suma al resultado el contenido de un terecer registro que agregaremos: el Registro Base de 16 bits.
+Para realizar la suma indicada para el direccionamiento indexado, agregamos un sumador en la CPU dedicado sólo a esta tarea (ya no usamos el tiempo de la ALU). Este sumador tiene dos registros de entrada: el registro W y el registro X de 16 bits cada uno. Además siempre suma al resultado el contenido de un tercer registro que agregaremos: el Registro Base de 16 bits.
 ##### Decodificador del Campo Modificador
 Implementamos en la Unidad de Control un nuevo decodificador: el DECODIFICADOR DEL CAMPO MODIFICADOR, además del Decodificador de Instrucciones ya existente. Esto permite realizar simultáneamente la decodificación del Código de Operación de la instrucción y del Campo Modificador.
 #### Registro Base
-Permite reubicar programas (guarda el contexto), es un registro de 16 bits. Es parecido al Registro Índice en el sentido que su contenido se suma al campo de dirección de la instrucción a fin de obtener la dirección efectiva. La *diferencia* consiste en que:
+*Permite reubicar programas* (guarda el contexto), es un registro de 16 bits. Es parecido al Registro Índice en el sentido que su contenido se suma al campo de dirección de la instrucción a fin de obtener la dirección efectiva. La *diferencia* consiste en que:
 - El usuario común **no tiene control** sobre el contenido del Registro Base, y
 - El contenido del Registro Base se suma **siempre** a la dirección efectiva cuando se realiza una referencia a memoria (puntero) en la Ejecución de la instrucción.
 - Las constantes son inmunes al cambio de instrucción en la dirección.
@@ -134,7 +134,7 @@ Se define un biestable en la UC que se llama Sistema de Interrupción (SI). El v
 - Si el SI está en 1 el sistema de interrupciones está "habilitado".
 - Si el SI está en 0 el sistema de interrupciones está "deshabilitado".
 
-Cada dispositivo con capacidad de interrumpir posee una línea de solicitud de interrupción que pone a 1 cuando necesita atención. Estas Banderas de Dispositivo (BD) van a una compuerta OR cuya salida, será una línea única de pedido IRQ de interrupción a la CPU.
+Cada dispositivo con capacidad de interrumpir posee una línea de solicitud de interrupción que pone a 1 cuando necesita atención. Estas Banderas de Dispositivo (BD) van a una compuerta OR cuya salida, será una línea única de pedido IRQ (Interrupt Request) de interrupción a la CPU.
 Si las interrupciones están habilitadas (SI=1) e IRQ pasa a 1, *se produce una interrupción en la ejecución del programa corriente*, justo **antes** del comienzo del próximo ciclo de búsqueda. Es decir, la instrucción actual termina de ejecutarse.
 Ocurren tres eventos cuando la CPU acepta una interrupción:
 - El biestable SI se coloca en 0, inhabilitando el sistema de interrupciones.
@@ -145,6 +145,13 @@ Ahora existen tres estado en la máquina:
 - Búsqueda (F)
 - Ejecución (E)
 - Interrupción (I)
+Podemos ver que el estado de interrupción ocurre cuando:
+- La línea IRQ está en 1 (algún dispositivo requiere atención),
+- El sistema de interrupciones está habilitado (SI = 1),
+- Ha finalizado la ejecución de la instrucción corriente
+	- Con CP8 en el estado de Ejecución, o
+	- al final de un ciclo de Búsqueda,
+		- Si la instrucción corriente es de 1 ciclo.
 ![[UC con sistema de interrupciones.png|400]]
 ##### Ciclo de Interrupción
 
@@ -152,7 +159,7 @@ Ahora existen tres estado en la máquina:
 | :--------------: | :---------------------------------: |
 | CP1            | Envie 1, cargue Z, cargue Y, SI=0 |
 | CP2            | Envie PC, cargue MBR              |
-| CP3            | Envie ALU (XOR), cargue MAR OE    |
+| CP3            | Envie ALU (XOR), cargue MAR, OE    |
 | CP4            | Envie 1, cargue PC                |
 | CP5            | -                                 |
 | CP6            | -                                 |
@@ -160,11 +167,11 @@ Ahora existen tres estado en la máquina:
 | CP8            | Biestable I=0                                  |
 ##### Rutina de Interrupción
 En la posición de memoria 1 debe haber una instrucción de salto a la rutina de interrupción cuya tarea consiste en la secuencia de acciones:
-1. Salvar contexto ↓
+1. Salvar contexto ↓ (guardar registros, datos del programa principal)
 2. Determinar quién causó la interrupción ↓ (polling o vectores de interrupción)
 3. Saltar a la rutina de atención del periférico ↓ (específica para cada periférico)
 4. Restaurar contexto ↓ (volver a cargar los registros de la CPU con los valores que tenían antes)
-5. Habilitar interrupciones y retornar al programa principal (RTI: retorno de interrupción, se ven en los cuadros de abajo)
+5. Habilitar interrupciones y retornar al programa principal (RTI: Retorno de Interrupción, se ven en los cuadros de abajo)
 
 |  Pulso de reloj  |               Accion                |
 |:----------------:|:-----------------------------------:|
@@ -193,10 +200,14 @@ Se recuerda que cada dispositivo con capacidad de interrumpir posee una "Bandera
 En la técnica de polling *se pregunta secuencialmente* por las BD con un cierto orden. La primera BD =1 resulta en un salto a la subrutina de atención del periférico que corresponda. Se puede proponer una nueva instrucción que verifique estas banderas:
 	***SKF XX*** → Omitir la próxima instrucción si XX es CERO, donde XX representa la bandera que se corresponde con los dispositivos que solicitan interrupción.
 El orden en que se realiza la verificación de las banderas de dispositivo, en la Rutina de Interrupción, determina la prioridad del dispositivo que solicita atención.
+Una alternativa, que no se implementa en la Máquina Elemental Indexada, es agregar un nuevo registro llamado Registro Máscara (RM) cuyo contenido puede modificarse con una nueva instrucción: EMR Valor.
+Este registro permite enmascarar (evitar dar curso a) solicitudes de interrupción.
+![[imagenes/Registro mascara.png|200]]
 ##### Vector de Interrupciones
-Otro método para determinar quién interrumpe. A cada dispositivo se le asigna una dirección llamada vector de interrupción (Trap Vector Address). Esta dirección es suplida por el dispositivo que interrumpe y en la misma, el programador debe almacenar la dirección de comienzo de la Rutina de Atención que corresponda. De esta forma toma lugar un salto indirecto a través del vector a la Rutina de Atención.
+Otro método para determinar quién interrumpe. Por un lado, se guardan los drivers de los periféricos (el espacio de memoria de los dispositivos son todos diferentes). Por otro lado, se asigna a cada dispositivo solo la primer dirección de los drivers (el espacio de memoria son todos iguales). Lo único que falta es algo que nos diga a cual periférico hay que saltar.
+A cada dispositivo se le asigna una dirección llamada vector de interrupción (Trap Vector Address). Esta dirección es suplida por el dispositivo que interrumpe y en la misma, el programador debe almacenar la dirección de comienzo de la Rutina de Atención que corresponda. De esta forma toma lugar un salto indirecto a través del vector a la Rutina de Atención.
 ![[Vector de interrupciones.png|200]]
-Éste método es más rápido que el Polling ya que no es necesario preguntar bandera a bandera. Por otro lado, es conveniente considerar una señal de reconocimiento de interrupción ACK, generada por la UC, cuando ha reconocido una solicitu de interrupción y comienza el proceso de su atención.
+Éste método es más rápido que el Polling ya que no es necesario preguntar bandera a bandera. Por otro lado, es conveniente considerar una Señal de Reconocimiento de Interrupción ACK, generada por la UC, cuando ha reconocido una solicitud de interrupción y comienza el proceso de su atención.
 #### Incio de una Transferencia
 Los periféricos son dispositivos externos a la MEI. Los periféricos pueden poseer:
 - Elementos de micromecánica (servomotores, relay, motores paso a paso, sensores ópticos, sensores magnéticos, indicadores luminosos, componentes electrónicos de media potencia, etc.),
@@ -207,7 +218,7 @@ Las acciones de control de un periférico se realizan por los **controladores**.
 - REGISTRO DE DATOS: a través del cual fluyen los datos de la transferencia.
 - REGISTRO DE CONTROL: a través del cual la CPU envía los comandos.
 - REGISTRO DE ESTADO: refleja el estado del periférico.
-
+![[imagenes/Metodo vectorizado señal ack.png|200]]
 Los periféricos se clasifican en función de la dirección de los datos que fluyen por el BUS de E/S, en:
 - Periféricos de Entrada
 - Periféricos de Salida
@@ -252,7 +263,7 @@ Si se trata de un Periférico de Entrada y se ha ejecutado una instrucción INP 
 - Si PRO = 0, la Máquina no está atendiendo una interrupción. Por lo tanto, cuando se ejecuta INP YY, el periférico YY recibe TRA e inicia las acciones para obtener el dato solicitado. 
 - Sin PRO = 1, la Máquina está atendiendo una interrupción y su Registro de Datos tendrá el dato solicitado y estará disponible en el Bus de E/S cuando el periférico sea seleccionado (CP7 de la instrucción INP YY). La señal TRA no se genera en este caso por la instrucción INP YY.
 #### Registro de Puntero de Pila
-El Sistema de Interrupciones descripto no permite que la CPU sea interrumpida cuando está atendiendo una interrupción, ya que la dirección de retorno guardada en la posición CERO se perdería. *Entonces el Registro Puntero de Pila guarda la dirección de retorno de interrupción.*
+El Sistema de Interrupciones descripto no permite que la CPU sea interrumpida cuando está atendiendo una interrupción, ya que la dirección de retorno guardada en la posición CERO se perdería. *Entonces el Registro Puntero de Pila guarda varias direcciones de retorno de interrupciones.*
 Si el contexto de la máquina (incluido el PC) se guardara en la memoria en una estructura LIFO (pila), cuya dirección inicial se indicará en un nuevo Registro, sería posible atender interrupciones dentro de una interrupción (interrupciones anidadas). A este registro se le llama REGISTRO PUNTERO DE PILA (SP). Por cada nueva interrupción, sólo debe incrementarse este Registro en la cantidad adecuada, y su contenido debe decrementarse por cada retorno de interrupción. Además, el biestable SI debería ponerse en 1 justo al comienzo de la Rutina de Atención de Dispositivo.
 El programador debe escribir la Rutina de Interrupción de manera que los dispositivos de menor prioridad no puedan interrumpir un proceso de interrupción corriente de mayor prioridad. Y habría que agregar nuevo hardware y más instrucciones.
 ## Microprocesador Intel 8088
@@ -261,11 +272,11 @@ El término microprocesador se refiere a una CPU contenida en un solo circuito i
 Tiene las siguientes características principales:
 - Interfase al bus de datos de 8 bits
 - Arquitectura interna de 16 bits
-- Capacidad de direccionamiento de 1Mbyte
+- Capacidad de direccionamiento de 1Mbyte (20 pines)
 - Compatibilidad de Software con el 8086 CPU
 - Variedad en modos de direccionamiento
 - Operaciones en bloques, palabras y bytes
-- Aritmética signada y no-signada de 8 y 16 bits, en binario, decimal, incluyendo multiplicación y división
+- Aritmética signada y no-signada de 8 y 16 bits (punto fijo), en binario, decimal, incluyendo multiplicación y división
 - 14 registros de 16 bits
 El bus de datos es de 8 bits, si bien el 8088 es un microprocesador de 16 bits. Además, está multiplexado en el tiempo, es decir, algunas líneas son de datos en un momento o direcciones de memoria en otro.
 ### Diagramas en bloques
@@ -319,23 +330,27 @@ Ocho registros generales de 16 bits se dividen en dos grupos:
 	**SP** (Puntero de pila), apunta a la última dirección de pila utilizada.
 #### Registros de Segmento
 Cuatro registros de 16 bits de propósitos especiales, están relacionados con la segmentación de la memoria.
-	**CS** Selecciona el área de memoria destinada al código del programa. 
+	**CS** Selecciona el área de memoria destinada a las instrucciones del programa. 
 	**DS** Selecciona el área de memoria destinada a los datos. 
 	**SS** Selecciona el área de memoria destinada a la pila (STACK). 
-	**ES** Selecciona el área de memoria destinada.
+	**ES** Selecciona el área de memoria destinada a dato externo.
 #### Registros de control y estado
 Dos registros de 16 bits de propósitos especiales:
 - **F** Registro de condiciones.
 - **IP** Puntero de instrucciones, indica la dirección de la próxima instrucción a ejecutar.
 ### Organización de la Memoria
-La memoria está organizada como un conjunto de cuatro segmentos, cada uno como una secuencia lineal de hasta 64 kbytes. La memoria se direcciona usando dos componentes de dirección consistentes en un *selector de segmento* de 16 bits y un *offset* de 16 bits. El primero indica el segmento seleccionado y el segundo indica el byte deseado dentro del segmento. El registro de segmento correcto es elegido automáticamente.
+¿Cómo direcciona con 20 bits una instrucción el 8088? Combina el registro de segmento CS y el puntero de instrucciones IP.
+¿Cómo direcciona con 20 bits un dato el 8088? Combina el registro de datos DS y la dirección final o efectiva del dato.
+La memoria está organizada como un conjunto de cuatro segmentos, cada **SEGMENTO** como una secuencia lineal de hasta 64 kbytes (de 0000h a FFFFh). La memoria se direcciona usando dos componentes de dirección consistentes en un *selector de segmento* de 16 bits y un *offset* de 16 bits. El primero indica el segmento seleccionado y el segundo indica el byte deseado dentro del segmento. El registro de segmento correcto es elegido automáticamente.
 ![[imagenes/Suma del segmento y offset.png|150]]
 Las primeras 03FFh posiciones (como se verá posteriormente) se encuentran destinadas para el proceso de interrupciones. Las últimas Fh posiciones (desde la FFF0h a la FFFFh) están reservadas para operaciones que tienen que ver con la carga del programa inicial.
 ### Modos de Direccionamiento
 En el 8088 son posibles *ocho modos* de direccionamiento para especificar operandos.
 Dos de ellos son provistos para instrucciones que operan sobre registros o con operandos inmediatos:
-- **Modo de operando en registro**: el operando está en uno de los registros generales (8 o 16 bits). Ejemplo: MOV AX, DX --- (DX)→(AX)
-- **Modo de operando inmediato**: el operando está incluido en la instrucción. Ejemplo: MOV AH, 14 --- 14 → AH
+- **Modo de operando en registro**: el operando está en uno de los registros generales (8 o 16 bits). 
+	  MOV AX, DX --- (DX)→(AX)
+- **Modo de operando inmediato**: el operando está incluido en la instrucción. 
+	  MOV AH, 14 --- 14 → AH
 
 Los seis modos de direccionamiento restantes permiten especificar operandos ubicados en un segmento de memoria. Como se observó, una dirección de operando en memoria posee dos componentes de 16 bits: el selector de segmento y el offset. El selector de segmento se suple por alguno de los registros de segmento, mientras que el offset se calcula por la suma de diferentes combinaciones de los siguientes tres elementos de dirección:
 - el *desplazamiento*: valor de 8 o 16 bits incluido en la instrucción.
@@ -356,6 +371,7 @@ La combinación de estos elementos de dirección define los siguientes seis modo
 - **Modo basado indexado con desplazamiento**:el offset resulta de la suma del contenido de un registro base más un registro índice y un desplazamiento.
 	  MOV \[BP + SI + 3], 2A --- 2A → (DS) * 10h + (BP) + (SI) + 3h
 Cualquier acarreo con la suma se ignora y el desplazamiento es un valor signado.
+![[../Modos de direccionamiento.png]]
 
 También cabe aclarar que el offset puede obtenerse del registro IP en la búsqueda de una instrucción o en las instrucciones de salto. En este último caso, el contenido de IP puede modificarse de tres formas: 
 - salto relativo: al contenido de IP se le suma un desplazamiento. 
@@ -398,14 +414,14 @@ El Registro (AL o AX) indica el destino del contenido del puerto referenciado.
 Para los puertos de E/S: 0000H a 0FFFFH.
 El Registro DX se usa como puntero, el cual no se altera después de ejecutada la instrucción IN o OUT.
 ### Interrupciones del 8088
-Está compuesto por un sistema de interrupciones vectorizado. Se pueden clasificar en:
+Está compuesto por un *sistema de interrupciones vectorizado*. Se pueden clasificar en:
 1. Interrupciones iniciadas por hardware
 	- Externas
-		- Enmascarables (pin INTR)
-		- No Enmascarables (pin NMI)
+		- Enmascarables (pin INTR -> Interrupt Request)
+		- No Enmascarables (pin NMI -> No Masq Interrupt)
 	- Internas
 2. Interrupciones iniciadas por software 
-	Usan la instrucción INT XX
+	Usan la instrucción INTA XX
 
 Una interrupción resulta en la transferencia del control a un nuevo programa.
 En las primeras 1024 (03FF) posiciones de memoria reside una tabla de 256 elementos, que contiene punteros a programas de servicio de interrupción.

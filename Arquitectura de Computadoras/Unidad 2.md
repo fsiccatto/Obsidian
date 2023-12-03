@@ -3,7 +3,6 @@ Un sistema es un conjunto de elementos binarios que guardan relación entre sí 
 Un sistema digital es aquel cuyos elementos son digitales (solo pueden adoptar valores discretos).
 ### Postulados y Teoremas
 Es útil definir la bivalencia, está compuesta por sólo dos elementos. El álgebra de Bool es un conjunto de elementos binarios relacionados entre sí mediante operaciones lógicas de producto y de suma, que cumplen con los postulados de Boole.
-
 ##### Identidad
 $$
 \begin{split}
@@ -108,7 +107,7 @@ El covenio mencionado permite una tercer forma, llamada compacta:
 $$
 f(a, b,c, \dots, n) = \sum_{i=0}^{2^n-1} i f(i) = \prod_{i=0}^{2^n-1}(2^n-1-i)+f(i)
 $$
-Se deduce una regla para pasar de una función canónica en minterms a una en maxterms y viceversa: se buscan los términos canónicos que no están en la expresión de la función, y se los complementa a $`2^n-1`$. Estos son los términos de la función buscada.
+Se deduce una regla para pasar de una función canónica en minterms a una en maxterms y viceversa: **se buscan los términos canónicos que no están en la expresión de la función, y se los complementa a $`2^n-1`$**. Estos son los términos de la función buscada.
 ### Minimización de Funciones Lógicas
 La mínima expresión posible es la que tiene menor cantidad de términos y de variables por términos.
 Es necesario que la función esté expresada en forma canónica. Toda función lógica es expresable en forma canónica, ya sea en minterms o maxterms.
@@ -134,7 +133,7 @@ Un sistema digital es *combinacional* cuando a cada combinación de las variable
 ![[imagenes/Sistemas combinacionales.png|center|300]]
 
 Un sistema digital es *secuencial* cuando a un mismo vector de entrada le puede corresponder más de uno de salida. Estos sistemas deben poseer memoria interna, ya que sus salidas son consecuencias de la evolución anterior de sus entradas.
-![[imagenes/remote-repo/Arquitectura de Computadoras/imagenes/Sistemas secuenciales.png|center|300]]
+![[imagenes/Sistemas secuenciales.png|300]]
 ## Sistemas Combinacionales
 En un sistema combinacional las salidas no son otra cosa que funciones lógicas de las entradas. Se puede escribir que:
 $$
@@ -163,7 +162,7 @@ Cumplen la función opuesta a los multiplexores. Tienen una entrada y `m` salida
 El circuito de un demultiplexor es coincidente con un decodificador que posea entrada de habilitación. Por esta razón no se encuentran demultiplexores específicos.
 ![[imagenes/Demultiplexor.png|center|400]]
 #### Comparadores
-Realizan la comparación entre dos números binarios de n bits. Poseen entradas por =, < y >. Permite realizar comparadores de elevado número de bits, partiendo de comparadores menores.
+Realizan la comparación entre dos números binarios de n bits. Poseen salidas por =, < y >. Permite realizar comparadores de elevado número de bits, partiendo de comparadores menores.
 ![[imagenes/Comparador.png|400|center]]
 #### Detectores/Generadores de paridad
 Son CI capaces de generar/detectar la paridad de un conjunto de bits. Las señales de control TO (paridad impar) y TE (paridad par) permiten seleccionar la paridad.

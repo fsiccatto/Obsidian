@@ -135,8 +135,8 @@ Entre dos combinaciones seguidas cambia un solo bit. Entre la primera y la últi
 
 El ejemplo más típico de un código continuo y cíclico es el llamado **Código de Gray**. Se utiliza en convertidores muy rápidos y en codificadores, ya que solo cambia un bit.
 ![[Códigos#Gray]]
-Representación del Código de Gray de 2, 3 y 4 bits
-Otro ejemplo de código binario continuo y cíclico es el de Johnson: donde la cantidad de combinaciones posibles es `2^n`.
+Representación del Código de Gray de 2, 3 y 4 bits (Combinaciones `2^n`).
+Otro ejemplo de código binario continuo y cíclico es el de Johnson: donde la cantidad de combinaciones posibles es `2*n`.
 ![[Códigos#Johnson]]
 ### Códigos BCD
 La conversión de binaria a decimal es difícil. En las calculadoras, juegos digitales, instrumentos digitales; en los que es común la entrada y salida de números en notación decimal, se emplea un código *BCD decimal codificado en binario*.
@@ -171,14 +171,14 @@ $$
 \end{split}
 $$
 ### Código Detectores de Error
-La manera más simple de lograrlo es agregar un **bit de paridad**, puede ser par o impar. Por lo que al mensaje se le agregará un bit adicional, dejando un *código de pardidad* en el que es necesario ponerse de acuerdo en qué convención se trabaja.
+La manera más simple de lograrlo es agregar un **bit de paridad**, puede ser par (compuertas XOR) o impar (compuerta XNOR). Por lo que al mensaje se le agregará un bit adicional, dejando un *código de pardidad* en el que es necesario ponerse de acuerdo en qué convención se trabaja.
 Por lo tanto, la detección de errores consiste en comprobar si el número de unos de cada combinación cumple con el bit de paridad. Si existe un error, se deberá solicitar una nueva transmisión del dato.
 Algunos códigos de detección de errores que encontramos son el 2 entre 5 y el biquinario.
 ![[Códigos#Detectores de Errores]]
 Tienen dos unos en cada combinación (paridad par) y se forman de acuerdo a los pesos asignados.
 ### Códigos Correctores de Errores
 Un código corrector detecta si la información codificada presenta o no errores, y en caso afirmativo determina la posición del bit o bits erróneos, de manera de poder corregirlos por inversión.
-Los códigos con $`D_m \geq 2`$ son códigos correctores de error. Existen tres:
+Los códigos con $`D_m > 2`$ son códigos correctores de error. Existen tres:
 - Código de Hamming
 - Código CRC y LRC
 - Código Bidimensional
