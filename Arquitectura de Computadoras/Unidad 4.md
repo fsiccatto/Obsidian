@@ -50,7 +50,7 @@ La CPU cuenta con:
 - ALU → realiza operaciones aritméticas entre los registros Z e Y. Genera la señal OV (overflow) si el resultado de la suma supera la capacidad de representación.
 - UC → tiene una entrada de sincronismo y genera órdenes en sincronismo con los flancos del reloj. Existen dos tipos: UC cableada y UC microprogramada.
 #### UM
-Memoria RAM L/E. Posee un registro asociado a las líneas de datos MBR (16 bits), a través del cual pasará la información que se lea o escriba en la memoria. También posee otro asociado a las líneas de dirección MAR (12 bits), cuyo contenido deberá ser la dirección de memoria a la que se pretende acceder. RAM con un Tiempo de Accesso `ta = 400ns`.
+Memoria RAM L/E. Posee un registro asociado a las líneas de datos MBR (Memory Buffer Register de  16 bits), a través del cual pasará la información que se lea o escriba en la memoria. También posee otro asociado a las líneas de dirección MAR (Memory Address Register de 12 bits), cuyo contenido deberá ser la dirección de memoria a la que se pretende acceder. RAM con un Tiempo de Accesso `ta = 400ns`.
 #### UE/S
 Se observan dos casos:
 - La **CONSOLA**: conectada directamente al BUS. Se comunica con la CPU a través de las 6 pulsadores, 16 llaves y 16 luces leds que indican el contenido de IR.

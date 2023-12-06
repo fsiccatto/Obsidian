@@ -60,7 +60,7 @@ Cantidad de líneas de un decodificador en organizaciones:
 La reducción de la complejidad del decodificador y del retardo que introduce se logra a costa de **agregar un decodificador y una compuerta AND por cada palabra**.
 ### Memorias RAM de Lectura/Escritura
 #### Memorias de Lectura/Escritura Estáticas
-El elemento básico de estas memorias consiste en un biestable asíncrono y algunas compuertas adicionales para manejar la selección y el control de la celda.
+**SRAM**. El elemento básico de estas memorias consiste en un biestable asíncrono y algunas compuertas adicionales para manejar la selección y el control de la celda.
 
 | Celda básica 2D                                                                                                                                                                                                                                                                                                                     | Celda básica 3D                                                                 |
 |:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
@@ -71,7 +71,7 @@ RAM de lectura/escritura con organización interna 2D de 16 palabras de 4 bits.
 ![[imagenes/RAM 2D 16 palabras 4 bits.png|400]]
 Líneas de acceso externas a la memoria:
 1. *Líneas de direccionamiento A0:A3* (Bus de Direcciones): 4 líneas unidireccionales para la selección de la palabra a acceder.
-2. *Líneas de datos I/O0:I/O3* (Bus de Datos): 4 líneas bidireccionales que pueden actura como entradas o salidas. Para lograrlo se usan buffe triestado (así evitamos usar líneas independientes).
+2. *Líneas de datos I/O0:I/O3* (Bus de Datos): 4 líneas bidireccionales que pueden actura como entradas o salidas. Para lograrlo se usan buffer triestado (así evitamos usar líneas independientes).
 3. *Señal de control de lectura/escritura* (L/E')
 	- Si L/E' = 1 se lee la memoria.
 	- Si L/E' = 0 se escribe la memoria.
@@ -84,7 +84,7 @@ Líneas de acceso externas a la memoria:
 ##### Ciclo de lectura y ciclo de escritura
 Para una correcta operación de la memoria se necesita una temporización adecuada de las señales aplicadas a sus líneas. Cada memoria tiene su propia temporización, el fabricante provee los diagramas de tiempo de señales.
 
-| CE' | R/W' | Accion                 |
+| C/S' | R/W' | Accion                 |
 | --- | ---- | ---------------------- |
 | 0   | 1    | Operación de lectura   |
 | 0   | 0    | Operación de escritura |
@@ -113,7 +113,7 @@ Es posible aumentar la capacidad de una memoria partiendo de circuitos integrado
 Memoria de `N` palabras de `k.m` bits, partiendo de un CI de `N` palabras de `m` bits. Las líneas de dirección y de control son compartidas por todos los CI. Las líneas de datos se amplían de m a `k.m` bits.
 ![[imagenes/Extension de la longitud de palabra.png|300]]
 #### Extensión del número de palabras
-memoria de 2kN palabras de m bits, partiendo de un CI de N palabras de m bits. De las p + k líneas de dirección necesarias, p se interconectan a todos los CI a fin de seleccionar una de las N (2p) palabras en cada CI. El resto de las k líneas de dirección se inyectan a un decodificador cuyas salidas se conectan a las líneas de selección (CS) de cada CI. La señal de W/R’ es común para todos los CI. El bus de datos es común para todos los CI. Esto es posible gracias a la tecnología triestados de los CI. Para ampliar la longitud de palabra y la cantidad de las mismas, se suman las técnicas indicadas.
+Memoria de 2kN palabras de m bits, partiendo de un CI de N palabras de m bits. De las p + k líneas de dirección necesarias, p se interconectan a todos los CI a fin de seleccionar una de las N (2p) palabras en cada CI. El resto de las k líneas de dirección se inyectan a un decodificador cuyas salidas se conectan a las líneas de selección (CS) de cada CI. La señal de W/R’ es común para todos los CI. El bus de datos es común para todos los CI. Esto es posible gracias a la tecnología triestados de los CI. Para ampliar la longitud de palabra y la cantidad de las mismas, se suman las técnicas indicadas.
 ![[imagenes/Extension del numero de palabras.png|300]]
 Finalmente, si disponemos de memorias RAM de N palabras de m bits y pretendemos una memoria de `N’` palabras de `h` x `m` bits, se procede como sigue: 
 - Se calcula el número de Chips, donde: Número de Cls = Entero `[N’/N]` x h

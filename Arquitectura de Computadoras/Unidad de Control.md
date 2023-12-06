@@ -11,9 +11,9 @@ Está integrada por los siguientes componentes:
 ### Secuenciador
 La señal de sincronismo es un oscilador de 8 MHz llamado RELOJ que se divide en una secuencia de *8 pulsos* (`1000 ns` en total), llamado CICLO DE MEMORIA, en líneas distintas separadas en tiempo por `125 ns`.
 Si RUN = 1 el contador cuenta los pulsos del reloj. Las salidas del contador están conectadas a las entradas de un deco binario cuyas salidas son de `125 ns`.
-Cuando la cuenta llega a 1001 (CP9), el contador borra y comienza un nuevo CICLO DE MEMORIA. Además, se usa para sincronizar el biestable ESTADO y borrar el SR sin nombre. Si la instrucción en proceso es de un ciclo, D toma el valor 0; en el caso de instrucciones de más de un ciclo, D toma el valor 1. De esta forma la máquina pasa de CICLO DE BÚSQUEDA a CICLO DE EJECUCIÓN automáticamente después del CP8.
+Cuando la cuenta llega a 1001 (CP9), el contador borra y comienza un nuevo CICLO DE MEMORIA. Además, se usa para sincronizar el biestable ESTADO y borrar el SR sin nombre. Si la instrucción en proceso es de un ciclo, D toma el valor 0; en el caso de *instrucciones de más de un ciclo, D toma el valor 1*. De esta forma la máquina pasa de CICLO DE BÚSQUEDA a CICLO DE EJECUCIÓN automáticamente después del CP8.
 Nótese que la máquina arranca con RUN = 1, al presionar el pulsador START y se detiene al presionar STOP, con un OV o con la instrucción HLT, siempre y cuando ESTADO = 0 (BÚSQUEDA).
-El biestable SR E/S genera la señal TRA hacia los periféricos en las condiciones que se ven en la Figura 4.10. Además, recibe la señal R (READY) desde los periféricos y se pone en cero.
+El biestable SR E/S genera la señal TRA hacia los periféricos. Además, recibe la señal R (READY) desde los periféricos y se pone en cero.
 Los pulsadores EXA y DEP funcionan sólo si RUN = 0 y ESTADO = 0, y disparan un único CICLO DE MEMORIA. Más adelante se muestra el diagrama de tiempo del secuenciador, y aparecen los CP1 a CP8. El CP9, que no se usa en el CICLO DE MEMORIA, es de menor duración.
 La ALU tiene un tiempo de suma de `200 ns`, es decir, que es mayor al del reloj. El de operación es de `80 ns`.
 ![[imagenes/Secuenciador Cableado.png|300]]
@@ -62,5 +62,6 @@ El circuito de la UNIDAD de CONTROL MICROPROGRAMADA se observa que el contenido 
 - Contenido del campo ÉXITO, en caso que la salida del multiplexor sea 1. 
 - El código de operación de la macrointrucción residente en el registro de instrucciones, en el caso que el bit 5 del campo acción sea 1 
 - Cero, en el caso que RESET sea 1 (esta señal proviene del botón Master Reset en la consola del operador).
-
+![[imagenes/UC microprogramada.png|300]]
 VER INSTRUCCIONES
+Ventajas y desventajas de las máquinas microprogramadas que, debido a la facilidad que da el firmware, poseen gran cantidad de instrucciones. En contraposición, las máquinas no microprogramadas poseen, entre otras características, pocas instrucciones.
