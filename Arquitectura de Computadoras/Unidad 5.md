@@ -108,7 +108,10 @@ El Sumador de Direcciones realiza la suma aritmética de direcciones sobre 3 ope
 - El registro X de 16 bits
 - El registro base de 16 bits
 Siempre que se genera una dirección en tiempo de Ejecución se realiza esta suma. Ésta suma no influye para la Búsqueda, ya que la dirección de la instrucción buscada es el contenido del registro PC. El acarreo de este sumandor no se tiene en cuenta.
-VER CONJUNTO DE INSTRUCCIONES EN PDF
+![[imagenes/Instrucciones MEI 1.png]]
+![[imagenes/Instrucciones MEI 2.png]]
+![[imagenes/Instrucciones MEI 3.png]]
+![[imagenes/Instrucciones MEI 4.png]]
 ### Ciclos de Máquinas
 VER EJEMPLOS EN EL PDF
 - La Máquina Elemental Indexada no tiene formato fijo de instrucción,
