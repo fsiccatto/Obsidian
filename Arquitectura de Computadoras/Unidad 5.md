@@ -275,6 +275,7 @@ El término microprocesador se refiere a una CPU contenida en un solo circuito i
 ![[8088.png|200]]
 Tiene las siguientes características principales:
 - Interfase al bus de datos de 8 bits
+- 
 - Arquitectura interna de 16 bits
 - Capacidad de direccionamiento de 1Mbyte (20 pines)
 - Compatibilidad de Software con el 8086 CPU
