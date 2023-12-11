@@ -200,7 +200,7 @@ En la posición de memoria 1 debe haber una instrucción de salto a la rutina de
 ##### Polling
 Sirve para determinar qué periférico solicitó la interrupción.
 Se recuerda que cada dispositivo con capacidad de interrumpir posee una "Bandera de Dispositivo" (BD). Si BD está en 1 indica que solicita interrupción, y 0 en caso contrario.
-En la técnica de polling *se pregunta secuencialmente* por las BD con un cierto orden. La primera BD =1 resulta en un salto a la subrutina de atención del periférico que corresponda. Se puede proponer una nueva instrucción que verifique estas banderas:
+En la técnica de polling *se pregunta secuencialmente* por las BD con un cierto orden. La primera BD=1 resulta en un salto a la subrutina de atención del periférico que corresponda. Se puede proponer una nueva instrucción que verifique estas banderas:
 	***SKF XX*** → Omitir la próxima instrucción si XX es CERO, donde XX representa la bandera que se corresponde con los dispositivos que solicitan interrupción.
 El orden en que se realiza la verificación de las banderas de dispositivo, en la Rutina de Interrupción, determina la prioridad del dispositivo que solicita atención.
 Una alternativa, que no se implementa en la Máquina Elemental Indexada, es agregar un nuevo registro llamado Registro Máscara (RM) cuyo contenido puede modificarse con una nueva instrucción: EMR Valor.
@@ -291,7 +291,7 @@ Las funciones internas del 8088 están divididas lógicamente en dos unidades de
 	2. Llena la cola de instrucciones que consta de 4bytes (FIFO).
 	3. Proporciona el control del bus.
 	4. Proporciona a la EU los operandos a procesar.
-	La BIU está formado por un sumador, un conjunto de 5 registros de 16 bits y la cola de instrucciones de 4 bytes.
+	 La BIU está formado por un sumador, un conjunto de 5 registros de 16 bits y la cola de instrucciones de 4 bytes.
 	
 2. La **Unidad de Ejecución** (EU) recibe la instrucción buscada previamente por la BIU y se encarga de ejecutarla.
 	La EU consta de una Unidad de Control (CU), la ALU y un conjunto de 9 registros de 16 bits.
@@ -390,7 +390,7 @@ Las instrucciones del 8088 se dividen en siete categorías:
 - De control de programa
 - De control del procesador
   
-Una instrucción puede referirse a cero, uno o dos operandos, donde un operando puede residir en un registro, en la propia instrucción o en la memoria. Las instrucciones con cero operando (NOP, HLT) tienen un byte de longitud. Las de un operando (INC, DEC) tienen usualmente dos bytes de longitud. Las de dos operandos (MOV, ADD) usualmente tienen una longitud de tres a seis bytes y pueden hacer referencia a un registro o a una locación de memoria Así, estas instrucciones permiten los siguientes cinco tipos de operaciones:
+Una instrucción puede referirse a cero, uno o dos operandos, donde un operando puede residir en un registro, en la propia instrucción o en la memoria. Las instrucciones con cero operando (NOP, HLT) tienen un byte de longitud. Las de un operando (INC, DEC) tienen usualmente dos bytes de longitud. Las de dos operandos (MOV, ADD) usualmente tienen una longitud de tres a seis bytes y pueden hacer referencia a un registro o a una locación de memoria. Así, estas instrucciones permiten los siguientes cinco tipos de operaciones:
 - registro a registro 
 - memoria a registro 
 - inmediato a registro 
@@ -424,7 +424,7 @@ Está compuesto por un *sistema de interrupciones vectorizado*. Se pueden clasif
 		- No Enmascarables (pin NMI -> No Masq Interrupt)
 	- Internas
 2. Interrupciones iniciadas por software 
-	Usan la instrucción INTA XX
+	Usan la instrucción INT XX
 
 Una interrupción resulta en la transferencia del control a un nuevo programa.
 En las primeras 1024 (03FF) posiciones de memoria reside una tabla de 256 elementos, que contiene punteros a programas de servicio de interrupción.

@@ -198,7 +198,7 @@ $$
 	c_3 = b_4 \oplus b_5 \oplus b_6 \oplus b_7
 	\end{split}
 $$
-Podemos sacar $`b_1, b_2 \space y \space b_4`$ ya que aparecen una sola vez y pueden generarse a partir de los otros, por ejemplo `b1` debe valer uno si el número $`b_3, b_5, b_6 \space y \space b_7`$ es impar, por lo tanto:
+Podemos sacar $`b_1, b_2 \space y \space b_4`$ ya que aparecen una sola vez y pueden generarse a partir de los otros, por ejemplo `b1` debe valer uno si el número $`b_3, b_5 \space y \space b_7`$ es impar, por lo tanto:
 $$
 \begin{split}
 	b_1 = b_3 \oplus b_5 \oplus b_7 \\
