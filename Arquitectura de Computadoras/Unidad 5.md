@@ -275,7 +275,6 @@ El término microprocesador se refiere a una CPU contenida en un solo circuito i
 ![[8088.png|200]]
 Tiene las siguientes características principales:
 - Interfase al bus de datos de 8 bits
-- 
 - Arquitectura interna de 16 bits
 - Capacidad de direccionamiento de 1Mbyte (20 pines)
 - Compatibilidad de Software con el 8086 CPU
@@ -283,7 +282,7 @@ Tiene las siguientes características principales:
 - Operaciones en bloques, palabras y bytes
 - Aritmética signada y no-signada de 8 y 16 bits (punto fijo), en binario, decimal, incluyendo multiplicación y división
 - 14 registros de 16 bits
-El bus de datos es de 8 bits, si bien el 8088 es un microprocesador de 16 bits. Además, está multiplexado en el tiempo, es decir, algunas líneas son de datos en un momento o direcciones de memoria en otro.
+*El bus de datos es de 8 bits*, si bien el 8088 es un microprocesador de 16 bits. Además, está multiplexado en el tiempo, es decir, algunas líneas son de datos en un momento o direcciones de memoria en otro.
 ### Diagramas en bloques
 ![[Diagrama en bloque 8088.png|400]]
 ### BIU Y EU
