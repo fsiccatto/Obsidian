@@ -211,7 +211,7 @@ Otro método para determinar quién interrumpe. Por un lado, se guardan los driv
 A cada dispositivo se le asigna una dirección llamada vector de interrupción (Trap Vector Address). Esta dirección es suplida por el dispositivo que interrumpe y en la misma, el programador debe almacenar la dirección de comienzo de la Rutina de Atención que corresponda. De esta forma toma lugar un salto indirecto a través del vector a la Rutina de Atención.
 ![[Vector de interrupciones.png|200]]
 Éste método es más rápido que el Polling ya que no es necesario preguntar bandera a bandera. Por otro lado, es conveniente considerar una Señal de Reconocimiento de Interrupción ACK, generada por la UC, cuando ha reconocido una solicitud de interrupción y comienza el proceso de su atención.
-#### Incio de una Transferencia
+#### Inicio de una Transferencia
 Los periféricos son dispositivos externos a la MEI. Los periféricos pueden poseer:
 - Elementos de micromecánica (servomotores, relay, motores paso a paso, sensores ópticos, sensores magnéticos, indicadores luminosos, componentes electrónicos de media potencia, etc.),
 - Circuitos electrónicos que permiten controlar a los diferentes elementos constitutivos del periférico (CONTROLADOR), y
