@@ -197,6 +197,7 @@ En la posición de memoria 1 debe haber una instrucción de salto a la rutina de
 |       CP6        |                  Envie MBR, cargue PC                  |
 |       CP7        |                  -                  |
 |       CP8        |            PRO=0, SI=0, Pasar a *búsqueda*            |
+Ciclo de máquina de la instrucción RTI
 ##### Polling
 Sirve para determinar qué periférico solicitó la interrupción.
 Se recuerda que cada dispositivo con capacidad de interrumpir posee una "Bandera de Dispositivo" (BD). Si BD está en 1 indica que solicita interrupción, y 0 en caso contrario.
