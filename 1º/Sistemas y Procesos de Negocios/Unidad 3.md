@@ -8,7 +8,7 @@ Existen diferentes enfoques:
 - Instrumental o mecanicista: la organización es un instrumento donde los recursos humanos y materiales son piezas intercambiables.
 - Evolucionista o biologicista: la organización como un organismo viviente que se adapta al contexto.
 - Basado en los fines: organizaciones con o sin fines de lucro.
-![[Organizacion como sistema social.png]]
+![[imagenes/Organizacion como sistema social.png]]
 
 | Sistema                         | Organización                                 |
 | ------------------------------- | -------------------------------------------- |

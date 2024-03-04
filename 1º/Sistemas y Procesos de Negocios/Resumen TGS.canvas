@@ -40,7 +40,7 @@
 		{"id":"42b9fdd4dc9f345e","type":"text","text":"Distingue sistemas reales de conceptuales\n","x":-65,"y":341,"width":250,"height":60,"color":"1"},
 		{"id":"fa5feca203e85a7f","type":"text","text":"Como se genera y valida la realidad","x":-65,"y":421,"width":250,"height":60,"color":"1"},
 		{"id":"a253220f07050a87","type":"text","text":"Marco unificador para el estudio de sistemas complejos\n","x":-65,"y":501,"width":277,"height":60,"color":"1"},
-		{"id":"1054c223ee2c5c2d","type":"text","text":"![[Metodológico.png]]","x":-2,"y":762,"width":314,"height":263,"color":"1"},
+		{"id":"1054c223ee2c5c2d","type":"text","text":"![[imagenes/Metodológico.png]]","x":-2,"y":762,"width":314,"height":263,"color":"1"},
 		{"id":"a7dccddb7612c1f1","type":"text","text":"Origen mecánico\n","x":0,"y":1051,"width":191,"height":60,"color":"1"},
 		{"id":"3495011a86fe7c29","type":"text","text":"Sistema cuerpo humano, dentro hay subsistemas que se relacionan entre sí","x":240,"y":660,"width":250,"height":102,"color":"1"},
 		{"id":"3e5281691d85ed37","type":"text","text":"Busca semejanzas ente las diferentes ciencias","x":-65,"y":681,"width":250,"height":60,"color":"1"},
@@ -81,7 +81,7 @@
 		{"id":"b035513d24bd0c5a","type":"text","text":"Las partes no pueden comprenderse si se consideran aisladas del todo","x":-486,"y":-980,"width":253,"height":100},
 		{"id":"f6859eb8f5e63366","type":"text","text":"Las partes están dinámicamente interrelacionadas y son interdependientes entre sí","x":-486,"y":-860,"width":253,"height":126},
 		{"id":"b3d181de896d0a02","type":"text","text":"Sistemas abiertos\n","x":-2080,"y":-137,"width":250,"height":60},
-		{"id":"3b9c4b812eb75ec8","type":"file","file":"remote-repo/Sistemas y Procesos de Negocios/imagenes/Sistemas.png","x":-2080,"y":24,"width":687,"height":172},
+		{"id":"3b9c4b812eb75ec8","type":"file","file":"remote-repo/1º/Sistemas y Procesos de Negocios/imagenes/Sistemas.png","x":-2080,"y":24,"width":687,"height":172},
 		{"id":"30b8aa1e9b55fd7d","type":"text","text":"Según su naturaleza","x":-1768,"y":-197,"width":250,"height":60}
 	],
 	"edges":[

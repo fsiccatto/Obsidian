@@ -1,11 +1,11 @@
 # Información
-[[Guia de estudio Informacion.pdf]]
+[[assets/Guia de estudio Informacion.pdf]]
 ## Datos e Información
 ### Diferencia entre Dato e Información
 Los **datos** son símbolos no aleatorios que representan valores de atributos o sucesos. Los datos son hechos, acontecimientos y transacciones que se han ido almacenando en un código convenido; obtenidos mediante la lectura, la observación, el cálculo, la medición, etc.
-![[Datos.png|200]]
+![[imagenes/Datos.png|200]]
 La **información** es un conjunto de datos transformados de forma que contribuye a reducir la incertidumbre del futuro y ayuda a la toma de decisiones por parte del receptor. Una información será significativa en cuanto sea útil como materia prima para tomar una decisión determinada.
-![[Informacion.png|200]]
+![[imagenes/Informacion.png|200]]
 ### Relación necesaria entre el valor de la información y el coste de esta.
 Los **costes de la información** pueden ser estimados en función de: 
 - El contenido de la información requerida
@@ -90,7 +90,7 @@ La pregunta bipolar limita al entrevistado ya que su respuesta es si o no, verda
 ❌ No proporcionan detalles adicionales (debido a que el entrevistador provee el marco de referencia para el entrevistado).
 ❌ Se pierden las ideas principales por la razón anterior.
 ❌ No se puede generar una buena comunicación entre el entrevistador y el entrevistado.
-![[Preguntas abiertas y cerradas entrevistas.png|300]]
+![[imagenes/Preguntas abiertas y cerradas entrevistas.png|300]]
 ##### Pregunta sondeo
 El propósito del sondeo es ir más allá de la respuesta inicial para obtener más detalles significativos, aclarar la información, y ampliar el punto del entrevistado. Los sondeos pueden ser preguntas abiertas o cerradas.
 Es imprecindible realizar sondeos. ¿Por qué? ¿Podría explicar eso? ¿Me puede dar un ejemplo?
@@ -98,14 +98,14 @@ Es imprecindible realizar sondeos. ¿Por qué? ¿Podría explicar eso? ¿Me pued
 ##### Estructura Pirámide
 La organización inductiva de las preguntas de la entrevista se puede visualizar en forma de pirámide. El entrevistador empieza con preguntas muy detalladas, a menudo cerradas. Después expande los temas al permitir preguntas abiertas y respuestas más generalizadas.
 Utilice una estructura de pirámide si cree que su entrevistado necesita entrar en calor en cuanto al tema.
-![[Estructura Piramide.png|200]]
+![[imagenes/Estructura Piramide.png|200]]
 ##### Estructura Embudo
 El entrevistador usa un enfoque deductivo al empezar con preguntas generalizadas y abiertas, para después reducir la cantidad de respuestas posibles mediante el uso de preguntas cerradas. El método de la estructura de embudo ofrece una manera fácil y amigable de empezar una entrevista. También es conveniente usar una secuencia de preguntas en forma de embudo cuando el entrevistado está relacionado sentimentalmente con el tema y necesita libertad para expresar esos sentimientos.
-![[Estructura Embudo.png|200]]
+![[imagenes/Estructura Embudo.png|200]]
 ##### Estructura Diamante
 Es una combinación de las dos estructuras anteriores. La entrevista empieza de una manera muy específica y después se examinan las cuestiones generales, para finalmente llegar a una conclusión muy particularizada.
 El entrevistador empieza con preguntas fáciles y cerradas que permiten al entrevistado entrar en calor; a la mitad se le pregunta lo que opina sobre temas amplios que obviamente no tienen sólo una respuesta. Después, el entrevistador restringe incluso más las preguntas para obtener respuestas específicas, con lo cual se produce un cierre tanto para el entrevistado como para el entrevistador. La estructura de diamante **combina las ventajas de los otros dos métodos pero tiene la desventaja de que toma más tiempo que las otras dos estructuras**.
-![[Estructura Diamante.png|200]]ç
+![[imagenes/Estructura Diamante.png|200]]ç
 #### Documentar una entrevista
 Necesita capturar la esencia de la entrevista por medio de un informe escrito. Es imperativo que escriba el informe tan pronto como sea posible después de la entrevista. Este paso es otra manera en la que puede asegurar la calidad de los datos obtenidos de la entrevista: entre más tiempo espere para escribir su entrevista, más borrosa se volverá la calidad de sus datos.
 Después de este resumen inicial, elabore otro más detallado donde exprese los puntos principales de la entrevista y sus propias opiniones. Ayuda a aclarar el significado que tenía el entrevistado en mente y le hace saber que usted tiene el suficiente interés como para tomarse el tiempo de comprender su punto de vista y sus percepciones.
@@ -126,7 +126,7 @@ Las preguntas deben ser claras, el flujo convincente, se debe anticipar a las pr
 Debemos anticiparnos al tipo de respuesta que obtendremos, debe ser estrecha como para guiar a los encuestados a responder en cierta forma específica. Las preguntas abiertas son adecuadas para las situaciones en las que queremos conocer las opiniones de los miembros de la organización sobre cierto aspecto del sistema, ya sea un producto o un proceso (es imposible enlistar con efectividad todas las posibles respuestas).
 ##### Preguntas Cerradas
 Hay que utilizar preguntas cerradas cuando el analista de sistemas pueda enlistar de manera efectiva todas las posibles respuestas a la pregunta y cuando todas éstas sean mutuamente exclusivas.
-![[Preguntas abiertas y cerradas cuestionarios.png|300]]
+![[imagenes/Preguntas abiertas y cerradas cuestionarios.png|300]]
 #### Escalas y tipos
 Escalar es el proceso de asignar números u otros símbolos a un atributo o característica, con el fin de medirlos.
 1. Escalas nominales: se utilizan para clasificar cosas.
@@ -180,7 +180,7 @@ Se puede observar:
 - Vestimenta
 
 # Decisiones
-[[Guía de estudio Trabajo Decisiones 2023.pdf]]
+[[assets/Guía de estudio Trabajo Decisiones 2023.pdf]]
 ### Concepto de Decisión
 Es la resolución que se toma o se da en una cosa dudosa.
 ### Concepto de Toma de Decisiones
@@ -203,7 +203,7 @@ Existe cuando un director debe considerar oponerse a las presiones provenientes 
 1. Los tomadores individuales de decisiones enfrentan un conflicto psicológico cuando diferentes opciones son atractivas o cuando ninguna lo es.
 2. Los conflictos nacen entre las personas.
 ### Etapas de la toma de decisiones
-![[Etapas de las decisiones|300|center]]
+![[imagenes/Etapas de las decisiones|300|center]]
 #### Identificación y diagnóstico del problema
 Reconocer la existencia de un problema que debe ser resuelto. El “problema” puede ser una oportunidad que requiere ser explorada, una brecha entre lo que la organización está haciendo en la actualidad y lo que podría hacer para crear un futuro más positivo.
 Reconocer que existe un problema y una oportunidad es sólo el principio de esta fase. El tomador de decisiones también debe desear hacer algo y debe creer que existen los recursos y las capacidades necesarias para conseguirlo, después debe escarbar muy a fondo e intentar diagnosticar la situación.
@@ -239,7 +239,7 @@ Creatividad suele entenderse como la capacidad para desarrollar nuevas ideas.
 Innovación significa el uso de esas ideas.
 ### Condiciones para tomas de decisiones
 Toman en cuenta las características estructurales y políticas de la organización.
-![[Tomas de decisiones.png|300]]
+![[imagenes/Tomas de decisiones.png|300]]
 ### Modelos para toma de decisiones
 #### Individuales
 | Nombre                        | Concepto básico         | Patrones de interferencia                                                                                                                                                                                                                                                                                                                                                             |

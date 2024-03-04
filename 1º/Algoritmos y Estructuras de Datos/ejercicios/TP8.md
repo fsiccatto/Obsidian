@@ -36,7 +36,7 @@ DNI: ENTERO
 Edad: ENTERO 
 FIN REGISTRO
 ```
-![[TP9Ej2.png]]
+![[../imagenes/TP9Ej2.png]]
 ## Actividad 3
 ```
 //declaraciones de Tipos registros Omnibus
@@ -62,4 +62,4 @@ Segundo: REAL
 Tercero: REAL
 FIN REGISTRO
 ```
-![[TP9Ej3.jpeg]]
+![[../imagenes/TP9Ej3.jpeg]]

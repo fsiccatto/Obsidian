@@ -155,7 +155,7 @@ Podemos ver que el estado de interrupción ocurre cuando:
 	- Con CP8 en el estado de Ejecución, o
 	- al final de un ciclo de Búsqueda,
 		- Si la instrucción corriente es de 1 ciclo.
-![[UC con sistema de interrupciones.png|400]]
+![[imagenes/UC con sistema de interrupciones.png|400]]
 ##### Ciclo de Interrupción
 
 | Pulso de reloj | Accion                            |
@@ -210,7 +210,7 @@ Este registro permite enmascarar (evitar dar curso a) solicitudes de interrupci�
 ##### Vector de Interrupciones
 Otro método para determinar quién interrumpe. Por un lado, se guardan los drivers de los periféricos (el espacio de memoria de los dispositivos son todos diferentes). Por otro lado, se asigna a cada dispositivo solo la primer dirección de los drivers (el espacio de memoria son todos iguales). Lo único que falta es algo que nos diga a cual periférico hay que saltar.
 A cada dispositivo se le asigna una dirección llamada vector de interrupción (Trap Vector Address). Esta dirección es suplida por el dispositivo que interrumpe y en la misma, el programador debe almacenar la dirección de comienzo de la Rutina de Atención que corresponda. De esta forma toma lugar un salto indirecto a través del vector a la Rutina de Atención.
-![[Vector de interrupciones.png|200]]
+![[imagenes/Vector de interrupciones.png|200]]
 Éste método es más rápido que el Polling ya que no es necesario preguntar bandera a bandera. Por otro lado, es conveniente considerar una Señal de Reconocimiento de Interrupción ACK, generada por la UC, cuando ha reconocido una solicitud de interrupción y comienza el proceso de su atención.
 #### Inicio de una Transferencia
 Los periféricos son dispositivos externos a la MEI. Los periféricos pueden poseer:
@@ -272,7 +272,7 @@ Si el contexto de la máquina (incluido el PC) se guardara en la memoria en una 
 El programador debe escribir la Rutina de Interrupción de manera que los dispositivos de menor prioridad no puedan interrumpir un proceso de interrupción corriente de mayor prioridad. Y habría que agregar nuevo hardware y más instrucciones.
 ## Microprocesador Intel 8088
 El término microprocesador se refiere a una CPU contenida en un solo circuito integrado.
-![[8088.png|200]]
+![[imagenes/8088.png|200]]
 Tiene las siguientes características principales:
 - Interfase al bus de datos de 8 bits
 - Arquitectura interna de 16 bits
@@ -284,7 +284,7 @@ Tiene las siguientes características principales:
 - 14 registros de 16 bits
 *El bus de datos es de 8 bits*, si bien el 8088 es un microprocesador de 16 bits. Además, está multiplexado en el tiempo, es decir, algunas líneas son de datos en un momento o direcciones de memoria en otro.
 ### Diagramas en bloques
-![[Diagrama en bloque 8088.png|400]]
+![[imagenes/Diagrama en bloque 8088.png|400]]
 ### BIU Y EU
 Las funciones internas del 8088 están divididas lógicamente en dos unidades de procesamiento: la BIU y la EU. Estas unidades pueden interactuar directamente, realizando las operaciones asincrónicamente.
 1. La **Unidad de Interfaz al Bus** (BIU) cumple:

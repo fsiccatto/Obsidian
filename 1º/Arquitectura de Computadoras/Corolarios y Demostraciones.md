@@ -24,7 +24,7 @@ $$
 \overline{a}+f(a, b, c, \dots, n) = \overline{a}+ f(1, b, c, \dots, n) \rightarrow \text{Cuarto Corolario}
 $$
 ##### Demostación teorema 9
-Aplicando el teorema 1 [[remote-repo/Arquitectura de Computadoras/Unidad 2#1- Dualidad]] a `f(a,b)`, se tiene:
+Aplicando el teorema 1 [[Unidad 2#1- Dualidad]] a `f(a,b)`, se tiene:
 $$
 f(a, b) = af(1,b) + \overline{a}f(0,b)
 $$

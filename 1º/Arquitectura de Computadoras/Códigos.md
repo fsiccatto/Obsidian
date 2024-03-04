@@ -47,7 +47,7 @@
 |    9    |    1001     |    1111     |     1100     |
 |         | *Ponderado* | *Ponderado* |   *Libre*    |
 # ASCII
-![[ASCII.png|500]]
+![[imagenes/ASCII.png|500]]
 # Detectores de Errores
 | Decimal | 2 entre 5 | Biquinario  |
 |:-------:|:---------:|:-----------:|
@@ -92,7 +92,7 @@ $`b_3, b_5, b_6 \space y \space b_7`$ son los bits del código original *Aiken*,
 ### Códigos Bidimensionales
 Se presenta el código bidimensional, a las filas se agregan bits Hamming y al código de columnas se le agrega un bit de paridad.
 El código de filas tendrá `Dm = 3` ya que es código Hamming, el código de las columnas tendrá una `Dm = 2` ya que es un código de paridad.
-![[código bidimensional.png|300]]
+![[imagenes/código bidimensional.png|300]]
 A fin de determinar la `Dm` del código Bidimensional podríamos encontrar un patrón de bits de error que no sea detectado por el receptor. En el caso del código horizontal habrá que cambiar 3 bits, en el caso del vertical sólo 2 bits. Por lo que `Dm = 6`. Podemos generalizar:
 $$
 	D_m (bidimensioanl) = D_m(filas) x D_m(columnas)

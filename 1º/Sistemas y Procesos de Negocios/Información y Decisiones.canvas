@@ -19,7 +19,7 @@
 		{"id":"891bbe8d38df7db8","type":"text","text":"Permiten encuestar a una muestra grande de usuarios","x":-128,"y":450,"width":311,"height":70},
 		{"id":"d8ae5a200e11b88f","type":"text","text":"Decisiones\n","x":-378,"y":1142,"width":137,"height":60,"color":"5"},
 		{"id":"8f9ea7c1ae70e5f9","type":"text","text":" Proceso mediante el cual se realiza una elección entre las alternativas o formas para resolver diferentes situaciones de la vida.","x":-360,"y":1349,"width":330,"height":120},
-		{"id":"95980305945991ef","type":"file","file":"remote-repo/Sistemas y Procesos de Negocios/imagenes/Etapas de las decisiones.md","x":-333,"y":940,"width":806,"height":160},
+		{"id":"95980305945991ef","type":"file","file":"remote-repo/1º/Sistemas y Procesos de Negocios/imagenes/Etapas de las decisiones.md","x":-333,"y":940,"width":806,"height":160},
 		{"id":"9615a1b9ae45afcd","type":"text","text":"Resolución que se toma sobre una cosa dudosa","x":-142,"y":1117,"width":212,"height":109},
 		{"id":"eabeec5bae5efa3b","type":"text","text":"No hay suficiente información para concer las consecuencias ","x":203,"y":1387,"width":250,"height":82},
 		{"id":"3b8d59a792e693d1","type":"text","text":"Ya existe un procedimiento claro o una estructura definida para llegar a la opción correcta.","x":-51,"y":1529,"width":320,"height":87},
