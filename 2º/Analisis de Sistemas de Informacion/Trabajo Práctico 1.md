@@ -120,7 +120,7 @@ C22: Se debe entregrar el pedido una vez cobrado
 | C21 |     |     |     |  X  |     |
 | C22 |     |     |     |     |  X  |
 
-![[TP1-7]]
+![[imgs/TP1-7]]
 ## 10 - Proyecto Gym Fit+
 #### Características
 C1: Un profesor puede abrir una clase estableciendo fecha y hora
