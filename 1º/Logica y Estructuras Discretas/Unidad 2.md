@@ -34,3 +34,5 @@ Luego de completar estos pasos se habrá demostrado que $\forall n: P(n)$ es **v
 > - En el paso inductivo, para demostrar que $P(k) \to P(k+1)$ es verdadera para todo natural k, se supone la verdad de $P(k)$ (***HIPÓTESIS INDUCTIVA***) y se demuestra la verdad de $P(k+1)$.
 > - Recordemos que si el antecedente es verdadero y el consecuente también, entonces la proposición condicional será verdadera.
 > - En el paso base, no necesariamente el primero elemento que hace verdad a la proposición es 1, $n \geq n_{0}$.
+# Recurrencia
+Una **sucesión** de números reales es una función $f: $
