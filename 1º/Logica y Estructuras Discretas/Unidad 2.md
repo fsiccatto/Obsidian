@@ -53,3 +53,8 @@ Si $b_{k}=0$ para todo $k$, la relación de recurrencia es homogénea.
 > $$a_{k}=ra_{k-1}+b_{k}, k \geq 1$$
 > con condición inicial $a_{0} = C$, es:
 > $a_{k} = Cr^k, k\geq{0} \text{ (Sucesión Geométrica)}$
+> 	Solución
+> 	La solución de la recurrencia lineal de orden uno:
+> 	$$a_{k} = a_{k-1} +b_{k}, k\geq 1$$
+> 	con condición inicial $a_{0} = C$, es
+> 	$$$$
