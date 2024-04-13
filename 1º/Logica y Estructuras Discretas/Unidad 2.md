@@ -47,4 +47,9 @@ $$a_{0} = \alpha_{0}, a_{1} = \alpha_{1},\dots , a_{p} = \alpha_{p}$$
 entonces la recurrencia tiene solución única.
 Una relación de recurrencia lineal de orden 1 con coeficientes constantes tiene la forma:
 $$a_{k}=ra_{k-1}+b_{k}, k \text{ entero}, k\geq{1}, r\text{ real}, r\neq 0$$
-Si $b_{k}=0$ para todo $k$, la relación d
+Si $b_{k}=0$ para todo $k$, la relación de recurrencia es homogénea.
+>[!info] Teorema
+> La solución de la recurrencia lineal homogénea de orden uno:
+> $$a_{k}=ra_{k-1}+b_{k}, k \geq 1$$
+> con condición inicial $a_{0} = C$, es:
+> $a_{k} = Cr^k, k\geq{0} \text{ (Sucesión Geométrica)}$
