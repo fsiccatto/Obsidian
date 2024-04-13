@@ -38,4 +38,4 @@ Luego de completar estos pasos se habrá demostrado que $\forall n: P(n)$ es **v
 Una **sucesión** de números reales es una función $f: N_{0} \to R$ tal que $f(n) = a_{n}$ y se escribe $\{a_{n}\}_{n\in N}$ o bien $(a_{n})$.
 También podemos representar una sucesión como un conjunto de elementos escritos en un renglón. $𝑎_{0},𝑎_{1},…,𝑎_{n}.$
 Una sucesión de números reales $𝑎_{0},𝑎_{1},…$ se dice **recurrente** si existe una ecuación que relacione cada término $a_{k}$ con algunos de sus predecesores $𝑎_{k-1},𝑎{k-2},…, 𝑎{k-p}$ donde $𝑝$ es un número entero con $𝑘−𝑝 ≥0$. A esta ecuación se la denomina **relación de recurrencia de orden p**. Si los términos de una sucesión satisface una relación de recurrencia, entonces la sucesión se denomina recurrencia.
-Una relación de con coeficientes recurrencia lineal de orden p constantes es una ecuación de la forma:
+Una relación de **recurrencia con coeficientes lineal de orden p constantes** es una ecuación de la forma:
