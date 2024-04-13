@@ -35,4 +35,4 @@ Luego de completar estos pasos se habrá demostrado que $\forall n: P(n)$ es **v
 > - Recordemos que si el antecedente es verdadero y el consecuente también, entonces la proposición condicional será verdadera.
 > - En el paso base, no necesariamente el primero elemento que hace verdad a la proposición es 1, $n \geq n_{0}$.
 # Recurrencia
-Una **sucesión** de números reales es una función $f: $
+Una **sucesión** de números reales es una función $f: N_{0} \to R$ tal que $f(n) = a_{n}$ y se escribe $/{a_{n}/}_{n\in N}$
