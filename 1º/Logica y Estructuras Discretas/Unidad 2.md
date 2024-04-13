@@ -35,4 +35,6 @@ Luego de completar estos pasos se habrá demostrado que $\forall n: P(n)$ es **v
 > - Recordemos que si el antecedente es verdadero y el consecuente también, entonces la proposición condicional será verdadera.
 > - En el paso base, no necesariamente el primero elemento que hace verdad a la proposición es 1, $n \geq n_{0}$.
 # Recurrencia
-Una **sucesión** de números reales es una función $f: N_{0} \to R$ tal que $f(n) = a_{n}$ y se escribe $\{a_{n}\}_{n\in N}$
+Una **sucesión** de números reales es una función $f: N_{0} \to R$ tal que $f(n) = a_{n}$ y se escribe $\{a_{n}\}_{n\in N}$ o bien $(a_{n})$.
+También podemos representar una sucesión como un conjunto de elementos escritos en un renglón. $𝑎_{0},𝑎_{1},…,𝑎_{n}.$
+Una sucesión de números reales $𝑎_{0},𝑎_{1},…$ se dice **recurrente** si existe una ecuación que relacione cada término $a_{k}$ con algunos de sus predecesores $𝑎_{k-1},𝑎{k-2},…, 𝑎{k-p}$ donde $𝑝$ es un número entero con $𝑘−𝑝 ≥0$. A esta ecuación se la denomina **relación de recurrencia de orden p**. Si los términos de una sucesión satisface una relación de recurrencia, entonces la sucesión se denomina recurrencia.
