@@ -42,7 +42,7 @@ Si los términos de una sucesión satisface una relación de recurrencia, entonc
 > [!tip] Ejemplo
 > Las sucesiones 3, 6, 12, 24, 48, ... y 5, 10, 20, 40, 80, ... son soluciones de la recurrencia $a_{n} = 2a_{n.1}, n \in N$, ya que ambas la satisfacen.
 
-Una relación de **recurrencia con coeficientes lineal de orden p constantes** es una ecuación de la forma:
+Una relación de **recurrencia lineal de orden p con coeficientes constantes** es una ecuación de la forma:
 $$a_{k} = c_{1}a_{k-1} + c_{2}a_{k-2} + \dots + c_{p}a_{k-p} + b_{k}, k\geq p$$
 donde $c_{1}, c_{2},\dots , c_{p}$ son constantes reales, con $c_{p} \neq0$  y $(b_{k})$ es una sucesión de números reales.
 Si además $b_{k} = 0$ para toda $k\geq p$ se dice que la recurrencia es HOMOGÉNEA.
