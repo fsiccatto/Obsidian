@@ -1,5 +1,5 @@
 #### Enumerar los requisitos candidatos
-Lista de estas ideas que consideramos como un conjunto de requisitos candidatos que podemos decidir implemnetar en una versión futura del sistema. La lista de características se utiliza solo para la planificación del trabajo.
+Lista de estas ideas que consideramos como un conjunto de requisitos candidatos que podemos decidir implementar en una versión futura del sistema. La lista de características se utiliza solo para la planificación del trabajo.
 Las características tienen un nombre corto y una breve explicación. Tiene un conjunto de valores:
 - Estado (propuesto, aprobado, incluido o validado)
 - Coste estimado de implementación (recursos y horas-personas)
@@ -66,7 +66,9 @@ Relaciones fundamentales:
 #### Inclusión <\<include>>
 Una relación de inclusión entre casos de uso especifica que un caso de uso base incorpora explicitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base.
 Una relación de inclusión se representa como una dependencia que declara que un caso de uso utiliza información y servicios de otro.
+Objetivo: compartir datos y se llama siempre!
 #### Extensión <\<extend>>
 Una relación de exclusión entre casos de uso especifica que un caso de uso base incorpora implicitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base que extiende.
 La funcionalidad de un caso de uso incluye un conjunto de pasos que ocurren solo en algunas oportunidades, es decir, se tiene que cumplir una **condición**.
 La excepción consiste en interrumpir el caso de uso A y pasar a ejecutar otro caso de uso B. (Autorizar pago con tarjeta).
+Necesita una condición para que se cumpla

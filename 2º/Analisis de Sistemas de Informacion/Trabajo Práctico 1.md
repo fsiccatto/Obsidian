@@ -56,6 +56,10 @@ C14: se necesita que cuando se realice la facturación de la visita, se añadan 
 
 
 > [!tip] No Funcionales
+
+
+## 6 - Aseguradora
+
 ## 9 - Gestión de pedidos en línea
 #### Características
 C1: Se debe obtener el alta en la página ingresando con sus datos personales: DNI, nombre, dirección, localidad, provincia, celular, mail usuario y contraseña
@@ -120,7 +124,7 @@ C22: Se debe entregrar el pedido una vez cobrado
 | C21 |     |     |     |  X  |     |
 | C22 |     |     |     |     |  X  |
 
-![[imgs/TP1-7]]
+![[TP1/7/TP1-7]]
 ## 10 - Proyecto Gym Fit+
 #### Características
 C1: Un profesor puede abrir una clase estableciendo fecha y hora
