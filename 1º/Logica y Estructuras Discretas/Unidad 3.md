@@ -1,6 +1,6 @@
 # Teoría de Conjuntos
 > [!info] Conjunto
-> Es una colección de objetos. Generalmente se los nomba con letras mayúsculas: A, B, C. A los elementos del conjunto se los designa con letra minúscula: a, b, c.
+> Es una colección de objetos. Generalmente se los nombra con letras mayúsculas: A, B, C. A los elementos del conjunto se los designa con letra minúscula: a, b, c.
 > - Por **extensión**: se enumeran o listan, en caso de ser posible, todos y cada uno de los elementos del conjunto colocándolos entre llaves $\{\}$ y separados entre sí por una coma. $A = \{4, 5, 6, 7, 8\}$
 > - Por **comprensión**: enunciando una propiedad o característica que es cumplicado por todos los elementos del conjunto y sólo por ellos. $A =\{x: x \in \mathbb{N} \wedge 3 < x < 9\}$
 

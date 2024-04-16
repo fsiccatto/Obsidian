@@ -8,7 +8,7 @@ El sistema de comunicaciones se puede representar con un diagrama simplificado.
 - Receptor: conjunto de dispositivos y circuitos electrónicos que acepta del medio de transmisión las señales transmitidas y las reconvierte a su forma original.
 ## Modulación y Demodulación
 La ***modulación*** nos permite transportar señales de información con una señal analógica de mayor frecuencia, llamada *portadora*. Modular es el proceso de cambiar uno o más parámetro/s de la onda portadora, en proporción con la señal moduladora (señal de información).
-La ***demodulación*** es el proceso inverso a la modulación, y reconvierte a la portadora modula en la información original. La demodulación se hace en un receptor, con un demodulador.
+La ***demodulación*** es el proceso inverso a la modulación, y reconvierte a la portadora modulada en la información original. La demodulación se hace en un receptor, con un demodulador.
 
 > [!info] ¿Por qué modulamos?
 > 1. Es muy difícil irradiar señales de baja frecuencia en forma de energía electromagnética con una antena, ya que los criterios de diseño de antena están dados en $\frac{\lambda}{4} \text{ y } \frac{\lambda}{2}$. Por lo tanto, a bajas frecuencias, tendríamos antenas gigantescas $c= \lambda f$.
@@ -36,3 +36,39 @@ es la descripción general de una onda senoidal de voltaje variable en el tiempo
 ### Diagrama de bloques de un Sistema de Comunicaciones
 ![[imgs/diagrama de bloques.png]]
 VER COMO FUNCIONA
+## Fuentes Contaminantes
+Son efectos indeseados e inevitables.
+- *Distorsión*: es la alteración de la señal debida a la respuesta imperfecta del sistema. La solución implica compensar dichas alteraciones para que la distorsión sea aceptable.
+- *Interferencia*: son señales de forma similar a la de la señal original de información, no deseadas por el usuario. La solución viene por el lado de interrumpir la fuente que genera la señal interferente.
+- *Ruido*: es una señal aleatoria e impredecible originada de forma natural. No existe solución a éste problema, pero podemos compensarlo.
+# Espectro Electromagnético
+El espectro total útil de radiofrecuencias (RF) se divide en bandas de frecuencia más angostas, a las que se dan nombres y números descriptivos, y algunas de ellas se subdividen a su vez en diversos tipos de servicios.
+![[imgs/RF.png]]
+
+| Frecuencias                      | Mínimo  | Máximo  |
+|:---------------------------------|:--------|:--------|
+| ELF (extremely low frequencies)  |   30 Hz |  300 Hz |
+| VF (voice frequencies)           |  300 Hz | 3000 Hz |
+| VLF (very low frequencies)       |   3 kHz |  30 kHz |
+| LF (low frequencies)             |  30 kHz | 300 kHz |
+| MF (medium frequencies)          | 300 kHz |   3 MHz |
+| HF (high frequencies)            |   3 MHz |  30 MHz |
+| VHF (very high frequencies)      |  30 MHz | 300 MHz |
+| UHF (ultrahigh frequencies)      | 300 MHz |   3 GHz |
+| SHF (superhigh frequencies)      |   3 GHz |  30 GHz |
+| EHF (extremely high frequencies) |  30 GHz | 300 GHz |  
+![[imgs/RF2.png]]
+### Longitud de Onda
+La longitud de onda $\lambda$ es la distancia que ocupa en el espacio un ciclo de una onda electromagnética. La longitud de onda es inversamente proporcional a la frecuencia de la onda, y directamente proporcional a su velocidad de propagación $\lambda = \frac{c}{f}$.
+# Modos de Transmisión
+### Modo Símplex
+Las transmisiones sólo se hacen en una dirección. Es decir, pueden **sólo recibir o sólo transmitir**. Una estación puede ser un transmisor o un receptor, pero no ambos a la vez. Ejemplo: radio, tv.
+$$Tx \to Rx$$
+### Modo Half Duplex
+Las transmisiones se pueden hacer en ambas direcciones, pero **no al mismo tiempo**. Una estación puede ser transmisora y receptora, pero no al mismo tiempo. Ejmplo: handys (un canal para T o R).
+$$\frac{Tx}{Rx} \leftrightarrow \frac{Rx}{Tx}$$
+### Modo Full Duplex
+Transmisiones en ambas direcciones al mismo tiempo. Una estación puede transmitir y recibir en forma **simultánea**. Ejemplo: telefono (dos canales).
+$$Tx \leftrightarrow  Rx$$
+$$Rx \leftrightarrow Tx$$
+![[imgs/trasnmisiones.png]]
