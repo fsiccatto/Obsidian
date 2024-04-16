@@ -57,7 +57,7 @@ $$a_{k}=ra_{k-1}+b_{k}, k \text{ entero}, k\geq{1}, r\text{ real}, r\neq 0$$
 Si $b_{k}=0$ para todo $k$, la relación de recurrencia es homogénea.
 >[!info] **Teorema**
 > La solución de la recurrencia lineal homogénea de orden uno:
-> $$a_{k}=ra_{k-1}+b_{k}, k \geq 1$$
+> $$a_{k}=ra_{k-1}, k \geq 1$$
 > con condición inicial $a_{0} = C$, es:
 > $$a_{k} = Cr^k, \space k\geq{0} \text{ (Sucesión Geométrica)}$$
 > ---
