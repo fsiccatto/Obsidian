@@ -57,10 +57,10 @@ Un razonamiento es válido si la conclusión $Q$ es verdadera cada vez que todas
 ### Reglas de Inferencia
 Las reglas de Inferencia son formas de razonamiento válidas y garantizan que dado un conjunto de premisas (hipótesis) verdaderas la conclusión obtenida de ellas también lo es.
 $$H_{1}\wedge H_{2} \wedge \dots \wedge H_{n} \to C \text{ es una tautología}$$
-- Modus Ponens $(p\to q) \wedge p \implies q$
-- Silogismo Hipotético $(p\to q) \wedge (q\to r) \implies (p\to r)$
+- *Modus Ponens* $(p\to q) \wedge p \implies q$
+- *Silogismo Hipotético* $(p\to q) \wedge (q\to r) \implies (p\to r)$
 ## Proposiciones Generales
-Sea P(x) una expresión que incluye a la variable $x$ y sea $U$ un conjunto. $P$ se llama **Función Proposicional o Predicado** (respecto de $U$) si para cada `a` de $U$, $P(a)$ es una proposición. El conjunto $U$ recibe el nombre de **Universo de Discurso**.
+Sea P(x) una expresión que incluye a la variable $x$ y sea $U$ un conjunto. $P$ se llama **Función Proposicional o Predicado** (respecto de $U$) si para cada $a$ de $U$, $P(a)$ es una proposición. El conjunto $U$ recibe el nombre de **Universo de Discurso**.
 Podemos obtener una proposición:
 1. Reemplazando la variable x por un elemento de U
 2. Cuantificando universal y existencialmente el predicado

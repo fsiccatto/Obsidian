@@ -1,4 +1,4 @@
-# Sistemas de Comunicaciones
+ # Sistemas de Comunicaciones
 El objetivo funamental de un sistema de comunicaciones es *transferir información de un lugar a otro*.
 La comunicación es la transmisión, recepción y procesamiento de información entre dos o más lugares, mediante circuitos electrónicos.
 El sistema de comunicaciones se puede representar con un diagrama simplificado.

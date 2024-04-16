@@ -4,7 +4,9 @@ $$\forall x:P(x) \to Q(x)$$
 - Puede resultar verdadera -> Demostración: Métodos
 - Puede resultar falsa -> Refutación: Contraejemplo
 ## Métodos de Demostración
-Una demostración de una proposición universal verdadera es un argumento sistemático que establece la veracidad de la misma.
+> [!info] Definición
+> Una demostración de una proposición universal verdadera es un argumento sistemático que establece la veracidad de la misma.
+
 Si $\forall x:P(x) \to Q(x)$ es una proposición **verdadera**, los métodos de demostración son:
 #### Directo
 Se parte de la verdad de $\forall x:P(x)$ y usando definiciones, leyes y propiedades ya demsotradas se debe llegar a la verdad de $\forall x:Q(x)$.
