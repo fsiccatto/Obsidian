@@ -13,7 +13,8 @@ Se parte de la verdad de $\forall x:P(x)$ y usando definiciones, leyes y propied
 #### Por Contrarrecíproco
 Se prueba el método directo que $\forall x:(-Q(x)\to-P(x))$ es verdadera.
 #### Por Contradicción (Absurdo)
-Se parte de la verdad de $\forall x:(P(x) \wedge -Q(x))$ y usando definiciones, leyes y propiedades ya demostradas se debe llegar a una contradicción o absurdo $(R \wedge -R)$. 
+Se parte de la verdad de $\forall x:(P(x) \wedge -Q(x))$ y usando definiciones, leyes y propiedades ya demostradas se debe llegar a una contradicción o absurdo $(R \wedge -R)$.
+<small>Nota: La demostración por contradicción se indica si queremos demostrar que no hay un objeto con cierta propiedad, o si se quiere demostrar que un determinado objeto no tiene determinada propiedad. </small>
 #### De Existencia
 Se utiliza para demostrar la verdad de $\exists x: P(x)$.
 Basta con encontrar un elemento $a$ del universo tal que $P(a)$ sea verdadero (constructiva).

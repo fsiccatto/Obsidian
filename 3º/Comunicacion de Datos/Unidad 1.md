@@ -1,4 +1,4 @@
- # Sistemas de Comunicaciones
+# Sistemas de Comunicaciones
 El objetivo funamental de un sistema de comunicaciones es *transferir información de un lugar a otro*.
 La comunicación es la transmisión, recepción y procesamiento de información entre dos o más lugares, mediante circuitos electrónicos.
 El sistema de comunicaciones se puede representar con un diagrama simplificado.
@@ -7,7 +7,7 @@ El sistema de comunicaciones se puede representar con un diagrama simplificado.
 - Medio de Transmisión: transporta las señales desde el transmisor hasta el receptor.
 - Receptor: conjunto de dispositivos y circuitos electrónicos que acepta del medio de transmisión las señales transmitidas y las reconvierte a su forma original.
 ## Modulación y Demodulación
-La ***modulación*** nos permite transportar señales de información con una señal analógica de mayor frecuencia, llamada *portadora*. Modular es el proceso de cambiar uno o más parámetro/s de la onda portadora, en proporción con la seña moduladora (señal de información).
+La ***modulación*** nos permite transportar señales de información con una señal analógica de mayor frecuencia, llamada *portadora*. Modular es el proceso de cambiar uno o más parámetro/s de la onda portadora, en proporción con la señal moduladora (señal de información).
 La ***demodulación*** es el proceso inverso a la modulación, y reconvierte a la portadora modula en la información original. La demodulación se hace en un receptor, con un demodulador.
 
 > [!info] ¿Por qué modulamos?
@@ -24,11 +24,11 @@ $$v(t) = V(2 \pi ft+\theta)$$
 es la descripción general de una onda senoidal de voltaje variable en el tiempo, como puede ser una *señal portadora* de alta frecuencia.
 > [!tip] RESUMEN
 >  ![[imgs/resumen modulacion.png]]
-- Si la señal de información es analógica, y variamos la portadora:
+- Si la señal de información es **analógica**, y variamos la portadora:
 	- Si se varía la amplitud de la portadora proporcionalmente a la señal de la información, produce una modulación de Amplitud (**AM**).
 	- Si se varía la frecuencia de la portadora en forma proporcional a la señal de la información, se produce la modulación de Frecuencia (**FM**).
 	- Si se varía la fase de la portadora en proporción con la señal de información, se produce la modulación de Fase (**PM**).
-- Si la señal de información es digital, y variamos la portadora:
+- Si la señal de información es **digital**, y variamos la portadora:
 	- Si se varía la amplitud de la portadora proporcionalmente a la señal de la información, produce una modulación de Amplitud (**ASK** -> amplitude shift keying).
 	- Si se varía la frecuencia de la portadora en forma proporcional a la señal de la información, se produce la modulación de Frecuencia (**FSK** -> frecuency shift keying).
 	- Si se varía la fase de la portadora en proporción con la señal de información, se produce la modulación de Fase (**PSK** -> phase shitf keying).
