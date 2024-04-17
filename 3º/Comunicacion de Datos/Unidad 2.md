@@ -4,7 +4,6 @@
 > - La capacidad de los sistemas para transmitir y procesar información
 > - Garantiza el transporte masivo de datos sin merma de la calidad
 > - No perder ninguna información transmitida
-
 ## Transmisión de la Información
 - Teoría de la información: nace con la necesidad de saber la capacidad de los Sistemas de Comunicaciones de llevar información. Se centra en las señales eléctricas y su contenido de información.
 - Fuentes: es todo aquello que emite mensajes
@@ -46,6 +45,7 @@ C: capacidad de canal en bps
 B: ancho de banda en Hz
 M: número de niveles posible de la señal -> corresponde al número de señales diferentes que sale de un modulador digital
 - Si n = 2 entonces: $M = 2^N \implies C = 2B$
+
 > [!caution] Nota
 > Para aumentar la capacidad de canal se deben incrementar los niveles de tensión, M.
 > Cuanto mayor es la velocidad de transmisión, mayor es el daño que puede ocasionar el ruido.
@@ -92,10 +92,10 @@ Banda de frecuencias producidas por un transductor. Ejemplo: micrófono, telégr
 ## Tipos de Banda Base
 ![[imgs/tipos de banda base.png]]
 
-| Banda Base               | Banda Ancha                  |
-|:-------------------------|:-----------------------------|
-| Transmite solo una señal | Transmite más de una señal   |
-| No es decodificada       | Es decodificada y regenerada |
-| Recursos limitados       | Recursos amplios             |
-| Activo / Inactivo        | Siempre activo               |  
+| Banda Base               | Banda Ancha                  |     |
+| :----------------------- | :--------------------------- | --- |
+| Transmite solo una señal | Transmite más de una señal   |     |
+| No es decodificada       | Es decodificada y regenerada |     |
+| Recursos limitados       | Recursos amplios             |     |
+| Activo / Inactivo        | Siempre activo               |     |
 ![[imgs/banda ancha vs banda base.png]]

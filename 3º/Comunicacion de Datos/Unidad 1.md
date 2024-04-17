@@ -61,6 +61,8 @@ El espectro total útil de radiofrecuencias (RF) se divide en bandas de frecuenc
 ### Longitud de Onda
 La longitud de onda $\lambda$ es la distancia que ocupa en el espacio un ciclo de una onda electromagnética. La longitud de onda es inversamente proporcional a la frecuencia de la onda, y directamente proporcional a su velocidad de propagación $\lambda = \frac{c}{f}$.
 # Modos de Transmisión
+- Serie -> mayor distancia, menos velocidad, más barato
+- Paralelo -> menor distancia, más velocidad, más caro
 ### Modo Símplex
 Las transmisiones sólo se hacen en una dirección. Es decir, pueden **sólo recibir o sólo transmitir**. Una estación puede ser un transmisor o un receptor, pero no ambos a la vez. Ejemplo: radio, tv.
 $$Tx \to Rx$$
@@ -76,5 +78,5 @@ $$Rx \leftrightarrow Tx$$
 Este estudio es *válido para ondas periódicas no senoidales o cosenoidales*.
 Cualquier forma de onda periódica está formada por un componente promedio, valor constante, y una serie de ondas senoidales y cosenoidales relacionadas armónicamente. Una armónica es un múltiplo entero de la frecuencia fundamental. La frecuencia fundamental es la *primera armónica*.
 > [!note] ¿Para qué sirve?
->  Se utiliza para pasar una señal al dominio de frecuencia para así obtener información que no es evidente en el dominio temporal.
->  La transformada de Fourier es una fórmula matemática que **transforma una señal muestreada en tiempo o espacio con la misma señal muestreada en frecuencia temporal o espacial**.
+> Se utiliza para pasar una señal al dominio de frecuencia para así obtener información que no es evidente en el dominio temporal.
+> La transformada de Fourier es una fórmula matemática que **transforma una señal muestreada en tiempo o espacio con la misma señal muestreada en frecuencia temporal o espacial**.
