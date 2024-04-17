@@ -72,3 +72,9 @@ Transmisiones en ambas direcciones al mismo tiempo. Una estación puede transmit
 $$Tx \leftrightarrow  Rx$$
 $$Rx \leftrightarrow Tx$$
 ![[imgs/trasnmisiones.png]]
+# Series de Fourier
+Este estudio es *válido para ondas periódicas no senoidales o cosenoidales*.
+Cualquier forma de onda periódica está formada por un componente promedio, valor constante, y una serie de ondas senoidales y cosenoidales relacionadas armónicamente. Una armónica es un múltiplo entero de la frecuencia fundamental. La frecuencia fundamental es la *primera armónica*.
+> [!note] ¿Para qué sirve?
+>  Se utiliza para pasar una señal al dominio de frecuencia para así obtener información que no es evidente en el dominio temporal.
+>  La transformada de Fourier es una fórmula matemática que **transforma una señal muestreada en tiempo o espacio con la misma señal muestreada en frecuencia temporal o espacial**.
