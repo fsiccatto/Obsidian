@@ -17,6 +17,8 @@
 - 14: se necesita que cuando se realice la facturación de la visita, se añadan los productos adquiridos por el cliente
 ### Requisitos
 #### Funcionales
-
+1. El veterinario registra los datos del paciente animal
+2. El veterinario registra los datos del cliente familia
+3. 
 ### Modelo de Negocio
 ![[7-Modelo de Negocio]]
