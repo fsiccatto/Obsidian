@@ -1,3 +1,4 @@
+# Captura de Requisitos
 #### Enumerar los requisitos candidatos
 Lista de estas ideas que consideramos como un conjunto de requisitos candidatos que podemos decidir implementar en una versión futura del sistema. La lista de características se utiliza solo para la planificación del trabajo.
 Las características tienen un nombre corto y una breve explicación. Tiene un conjunto de valores:

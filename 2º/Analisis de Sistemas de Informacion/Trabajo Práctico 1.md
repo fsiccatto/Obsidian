@@ -11,55 +11,6 @@
 >  9. Diagrama de clases
 >  10. Máquina de estados
 >  11. Diagrama de colaboración
-> 
-## 4 - Gestión de Clínica de tratamientos de Alta Complejidad
-#### Características
-C1: se necesita registrar la interanción de un paciente
-C2: se necesita registrar pacientes con o sin obra social
-C3: se necesita acceder a un nomenclador de prestaciones preestablecido
-C4: se necesita cobrar la Obra Social el último día hábil
-C5: se necesita ingresar los datos de la Obra Social y el plan del paciente y se valida si están dentro del convenio
-C6: se necesita informar al paciente el importe de coseguros (si corresponde)
-C7: se necesita informar los importe asociados al nomenclador en caso de no tener obra social
-C8: se necesita que el sistema muestre los datos del paciente y, si se necesita modificar algo, se hace en el momento
-C9: se necesita ingresar al paciente, en caso de que no se encuentre en el sistema
-C10: se necesita que el sistema, dependiendo del tipo de prestación, establezca el tipo de habitación que le corresponde y muestre las camas disponibles
-C11: se necesita que en el sistema se ingresen los datos relevane de los informes de laboratorio de rutina, examen médico y cardiológico
-C12: se necesita que el sistema imprima el comprobante de pago en el que se detallan los datos del paciente, importe a abonar y la cama
-C13: se necesita que el sistema almacene el ingreso a internación, historia clínica, asignación de camas y médicos.
-#### Requisitos
-> [!summary] Funcionales
-
-
-> [!tip] No Funcionales
-
-## 7 - Veterinaria
-#### Características
-C1: se necesita que el sistema registre los datos del paciente animal en la primera atención de la mascota
-C2: se necesita que el sistema registre los datos del cliente familias en la primera atención de la mascota
-C3: se necesita que el cliente tenga un código, el primer apellido del cabeza de familia, un número de cuenta bancaria, una dirección, un teléfono, una dirección mail y nombres y DNI de las personas del grupo familiar
-C4: una persona puede estar asociados a distintos clientes
-C5: se necesita registrar a cada mascota con un código, alias, especie, raza, color de pelo, fecha de nacimiento, peso medio del animal en las últimas 10 visitas y el peso en la visita actual
-C6: se necesita que en cada atención se registre en el historial médico:
-	1. La enfermadad que tuvo, la fecha en la que enfermó y el tratamiento dado
-	2. La vacacunación que se colocó, la fecha de cada vacuna y el nombre
-C7: se necesita que el veterinario registre, si es necesario, en el historial médico, la fecha de la próxima atención de la mascota
-C8: se necesita que el sistema le recuerde automáticamente al cliente, vía mail, tres días antes de la próxima visita
-C9: los productos que vende la veterinaria se pueden vender individualmente o en combo.
-C10: los precios de los productos vendidos de forma individual son diferentes a los combos
-C11: los combos tiene un código de barras igual que un producto
-C12: un combo tiene fecha de vifencia a partir de la cual ya no rigen los precios de esa oferta
-C13: el dueño de la veterinaria administra los combos y les asigna los precios
-C14: se necesita que cuando se realice la facturación de la visita, se añadan los productos adquiridos por el cliente
-#### Requisitos
-> [!summary] Funcionales
-
-
-> [!tip] No Funcionales
-
-
-## 6 - Aseguradora
-
 ## 9 - Gestión de pedidos en línea
 #### Características
 C1: Se debe obtener el alta en la página ingresando con sus datos personales: DNI, nombre, dirección, localidad, provincia, celular, mail usuario y contraseña
@@ -124,7 +75,7 @@ C22: Se debe entregrar el pedido una vez cobrado
 | C21 |     |     |     |  X  |     |
 | C22 |     |     |     |     |  X  |
 
-![[TP1/7/TP1-7]]
+![[7-Modelo de Negocio]]
 ## 10 - Proyecto Gym Fit+
 #### Características
 C1: Un profesor puede abrir una clase estableciendo fecha y hora
