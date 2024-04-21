@@ -42,7 +42,7 @@ Un modelo del dominio captura los tipos más importantes de objetos en el contex
 - Objetos del mundo real y conceptos de los que el sistema debe hacer un seguimiento, como la aviación enemiga, misiles, etc.
 - Sucesos que ocurrirán o han ocurrido, como la llegada de un avión, su salida y la hora de la comida.
 El modelado del dominio se hace mediante diagramas UML. En estos, se muestran a los clientes, usuarios, revisores  y otros desarrolladores y cómo se relacionan.
-![[imgs/Modelo del Dominio.png]]
+![[Modelo del Dominio.png]]
 > [!attention] Notación UML
 > Clases, atributos y asociaciones. El texto al final de una lúnea de asociación explica el rol de la calse en relación con la otra (el rol de asociación). La multiplicidad indican cuántos objetos de la clase de ese extremo pueden enlazarse a un objeto en el otro extremo.
 #### Clases Conceptuales
