@@ -1,5 +1,5 @@
  # Arreglos
-Hasta ahora hemos visto datos simples o primitivos en la [[Unidad 2]], que solo pueden almacenar un valor a la vez.
+Hasta ahora hemos visto datos simples o primitivos en la [[UTN-repo/1º/Algoritmos y Estructuras de Datos/Unidad 2]], que solo pueden almacenar un valor a la vez.
 ## ¿Qué es una Estructura de Datos?
 Es la representación interna de los datos en la computadora. 
 Un dato de tipo estructurado puede almacenar a más de un elemento a la vez, con la condición de que deben ser del **mismo tipo de dato**.
