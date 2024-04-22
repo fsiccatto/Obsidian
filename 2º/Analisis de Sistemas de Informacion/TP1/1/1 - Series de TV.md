@@ -28,10 +28,10 @@
 > [!done] Funcionales
 > 1. El usuario se registra
 > 2. El usuario registra su tarjeta
-> 3. El usuario prueba la plataforma de forma gratuita
+> 3. El usuario solicita la prueba de la plataforma de forma gratuita
 > 4. El usuario mira una serie de TV
 > 5. El usuario se da de baja
-> 6. El usuario critica la serie de TV
+> 6. El usuario califica la serie de TV
 > 7. El reloj cobra el servicio todos los meses
 > 8. El reloj cambia el estado del usuario a Prueba
 > 9. El reloj cambia el estado del usuario a Habilitado
@@ -41,6 +41,6 @@
 > 13. El gerente actualiza la tarifa del servicio de forma anual
 > 14. El gerente genera estadísticas de la plataforma
 ## Modelo de Casos de Uso
-## Modelo de Negocio
-
+![[1-Casos de Uso]]
 ## Modelo de Dominio
+![[1-Modelo de Dominio]]

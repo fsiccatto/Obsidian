@@ -64,12 +64,12 @@ Relaciones fundamentales:
 - Inclusión
 - Extensión
 - Generalización -> padre e hijo de una "clase" dependiendo sus atributos
-#### Inclusión <\<include>>
-Una relación de inclusión entre casos de uso especifica que un caso de uso base incorpora explicitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base.
+#### Inclusión \<include>
+Una relación de inclusión entre casos de uso especifica que un caso de uso base incorpora explícitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base.
 Una relación de inclusión se representa como una dependencia que declara que un caso de uso utiliza información y servicios de otro.
-Objetivo: compartir datos y se llama siempre!
-#### Extensión <\<extend>>
-Una relación de exclusión entre casos de uso especifica que un caso de uso base incorpora implicitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base que extiende.
+*Objetivo*: compartir datos y se llama siempre. Se da con línea punteada y flecha cerrada (\<inc>)
+#### Extensión \<extend>
+Una relación de exclusión entre casos de uso especifica que un caso de uso base incorpora implícitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base que extiende.
 La funcionalidad de un caso de uso incluye un conjunto de pasos que ocurren solo en algunas oportunidades, es decir, se tiene que cumplir una **condición**.
 La excepción consiste en interrumpir el caso de uso A y pasar a ejecutar otro caso de uso B. (Autorizar pago con tarjeta).
-Necesita una condición para que se cumpla
+*Objetivo*: Necesita una condición para que se cumpla. Se da con línea punteada y flecha cerrada (\<exc>)
