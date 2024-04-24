@@ -21,4 +21,4 @@
 2. El veterinario registra los datos del cliente familia
 3. 
 ### Modelo de Negocio
-![[7-Modelo de Negocio]]
+![[9-Modelo de Casos de Uso]]

@@ -1,10 +1,10 @@
-- 1: Se debe obtener el alta en la página ingresando con sus datos personales: DNI, nombre, dirección, localidad, provincia, celular, mail usuario y contraseña
+- 1: Se debe obtener el alta en la página ingresando con sus datos
 - 2: Se puede modificar los datos en cualquier momento
-- 3: Se puede modificar una o más veces los datos de las tarjetas de crédito
+- 3: Se puede modificar los datos de las tarjetas de crédito
 - 4: El sistema valida una vez al día, con los bancos emisores, los datos de las tarjetas registradas en ese día
 - 5: Si los datos son correctos, el sistema los confirma como clientes vía mail indicando el número de cliente que le permitirá al cliente efectuar sus compras en línea
 - 6: El sistema envía por mail un número de cuenta por cada tarjeta de crédito para los clientes mayoristas.
-- 7: Los mayoristas pueden pagar sin tener el dinero en l momento y se va acumulando saldo en su cuenta corriente
+- 7: Los mayoristas pueden pagar sin tener el dinero en el momento y se va acumulando saldo en su cuenta corriente
 - 8: Se requiere que no haya ningún pedido en curso para realizar un nuevo pedido
 - 9: El sistema muestra solo productos que tienen stock estimado
 - 10: `stock_estimado = stock_real - cant_componentes`
@@ -14,7 +14,7 @@
 - 14: Al cerrar el pedido se requiere actualizar el stock, cantidad comprometida del producto, las cantidades pedidas de los productos y se almacena el pedido como pendiente de cobro
 - 15: Se requiere pode colocar los pedidos como pendientes de cobro
 - 16: Se requiere poder cancelar los pedidos no pagados
-- 17: Se requiere guardar historial de pediso
+- 17: Se requiere guardar historial de pedidos
 - 18: Se requiere cobrar el pedido por tarjeta de crédito
 - 19: Se debe poder cargar/seleccionar otra tarjeta en caso de rechazo
 - 20: Se requiere que a minoristas se les cobre en el momento
@@ -58,4 +58,7 @@
 | C20 |     |     |     |  X  |     |
 | C21 |     |     |     |  X  |     |
 | C22 |     |     |     |     |  X  |
-### Modelo de Negocio
+### Modelo de Casos de Uso
+![[9-Modelo de Casos de Uso]]
+### Modelo de Dominio
+![[9-Modelo de Dominio]]
