@@ -111,4 +111,61 @@ $N \subseteq Z \subseteq Q \subseteq R$ y $R = Q \cup I$
 La combinatoria estudia las diferentes formas en que podemos ordenar o agrupar elementos siguiendo determinadas reglas establecidas. Nos proporciona *algoritmos* para determinar la cantida de agrupaciones que se pueden formar con los elementos del conjunto.
 ## Regla de Multiplicación
 > [!teorema] Teorema
-> 
+> Si una operación consiste en $k$ pasos y 
+> 	 el primer paso se puede realizar en $n_{1}$ formas, 
+> 	 el segundo paso se puede realizar en $n_{2}$ formas, [independientemente de cómo se realizó el primer paso],
+> 	 …... 
+> 	 el $k$-ésimo paso se puede realizar en $n_{k}$ formas,
+> 	 [independientemente de cómo se realizan los pasos anteriores], 
+> entonces,
+> 	 la operación se puede realizar de $n_{1} n_{2}\dots n_{k}$ formas.
+![[regla de multiplicacion.png]]
+## Regla de la Suma
+> [!teorema] Teorema
+> Si una operación consiste en $k$ etapas y 
+> 	 la primera etapa se puede realizar en $n_{1}$ formas, 
+> 	 la segunda etapa se puede realizar en $n_{2}$ formas,
+> 	 …... 
+> 	 el $k$-ésima etapa se puede realizar en $n_{k}$ formas,
+> *no pudiéndose realizar las etapas de cada operación en forma simultánea*, entonces, la operación se puede realizar de
+> 	 $$n_{1}+n_{2}+\dots+n_{k} \text{ formas.}$$
+
+> [!teorema] Teorema (forma alternativa):
+> Suponga un conjunto finito $A$ igual a la unión de $k$ que es $k$ subconjuntos distintos, mutuamente disjuntos, $A_{1}, A_{2}, \dots, A_{k}$. Entonces,
+> $$|A_{1} \cup A_{2} \cup \dots \cup A_{k}| = |A_{1}|+ |A_{2}|+\dots+|A_{k}|$$
+## Permutaciones y Combinaciones
+Una **permutación** de objetos es una forma de *ordenar* estos objetos.
+Una **combinación** de objetos es una agrupación que *no tiene en  cuenta el orden* de los mismos.
+> [!info] Definiciones
+> Dado un conjunto de elementos $X = \{ x_{1}, x_{2}, \dots, x_{n} \}$
+> - Una* permutación de los elementos de X* es un ordenamiento de los n elemetnos de X.
+> - Una *permutación de r elementos del conjunto X (r-permutación)*, $r \leq n$, es un ordenamiento de r elementos de X.
+> - Una *combinación de r elementos del conjunto X (r-combinación)*, $r \leq n$, es un subconjunto de r elementos de X.
+### Permutaciones
+Una 𝑟−𝑝𝑒𝑟𝑚𝑢𝑡𝑎𝑐𝑖ó𝑛 de un conjunto de 𝑛 elementos se denota por 𝑃(𝑛,𝑟).
+> [!teorema] Teorema
+> El número de permutaciones de 𝑟 elementos de un conjunto de 𝑛 elementos, $𝑟 \leq 𝑛$, es:
+> $$P(n, r) = n.(n - 1)(n - 2)\dots(n- (r - 1))$$
+> O equivalentemente, 
+> $$ P(n, r) = \frac{n!}{(n-r)!}$$
+
+Observación: si $n = r$ entonces:
+$$P(n,n) = P_{n} = n!$$
+#### Permutaciones algunos de 𝑛 elementos con elementos repetidos
+> [!info] Definiciones
+> Suponga que una colección consiste de $n$ objetos, de los cuales,
+>   $n_{1}$ son de tipo 1 y son no distinguibles entre sí
+>   $n_{2}$ son de tipo 2 y son no distinguibles entre sí
+>   ...
+>   $n_{k}$ son de tipo $k$ y son no distinguibles entre sí
+> y suponga que $n_{1}+n_{2}+\dots+n_{k} = n$
+> Entonces el número de permutaciones de los $n$ objetos es:
+> $$P(n,n_{1}, n_{2},\dots , n_{r}) = \frac{n!}{n_{1}!n_{2}!\dots n_{r}!}$$
+### Combinaciones
+> [!teorema] Teorema
+>Sean 𝑛 y 𝑟 enteros no negativos con $𝑟 \leq 𝑛$. El número de subconjuntos de tamaño 𝑟, 𝑟-combinaciones, que se pueden elegir de un conjunto de $n$ elementos es:
+>$$C(n,r) = \binom{n}{r} = \frac{n!}{(n-r)!r!}$$
+>O equivalentemente,
+>$$C(n,r) = \frac{P(n, r)}{r!}$$
+
+
