@@ -72,4 +72,53 @@ Una relación de inclusión se representa como una dependencia que declara que u
 Una relación de exclusión entre casos de uso especifica que un caso de uso base incorpora implícitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base que extiende.
 La funcionalidad de un caso de uso incluye un conjunto de pasos que ocurren solo en algunas oportunidades, es decir, se tiene que cumplir una **condición**.
 La excepción consiste en interrumpir el caso de uso A y pasar a ejecutar otro caso de uso B. (Autorizar pago con tarjeta).
-*Objetivo*: Necesita una condición para que se cumpla. Se da con línea punteada y flecha cerrada (\<exc>)
+*Objetivo*: Necesita una condición para que se cumpla. Se da con línea punteada y flecha cerrada (\<exc>).
+
+---
+![[Clase 2 - Ingeniero vs analista. Ciclo Evolutivo. Calculo Costo-Tiempo. UML y el ciclo OO(RUP) - YouTube](https://www.youtube.com/watch?v=WumQMSA_aSE&list=PLKQxFHiFixMeSkFnD4yAUN4PWgkvZ-KYD&index=2)]
+# Visión General de UML
+Tiene una notación gráfica muy expresiva que permite representar en mayor o menor medida fases del proyecto. *Nos indica como se pueden crear y leer modelos*.
+Objetivos:
+- Es un leguaje para visualizar los elementos de un gran sistema de software
+	Facilita:
+		- la comunicación entre los desarrolladores
+		- la comprensión de las soluciones
+		- el mantenimiento de las soluciones conceptuales a lo largo del tiempo
+- Es un lenguaje para especificar software
+	- Se pueden construir modelos precisos (no ambiguos) y compeltos
+	- Cubre decisiones de ánalisis, diseño, etc
+- Es un lenguaje para construir software
+	- No es un lenguaje de programación visual, pero se pueden conectar de forma directa
+- Es un lenguaje para documentar
+	- requisitos, arquitectura, diseños, código, etc
+> [!info] ¿Qué es un modelo?
+> **Un MODELO es una abstracción de la realidad**
+> - Proporciona un plano de un sistema
+> - Incluye aquellos aspectos importantes del sistema y omite aquellos elementos menores que no son relevantes (*Ignorancia selectiva*)
+> - Cada modelo nos permite fijarnos en un aspecto distinto del sistema
+
+> [!info] ¿Por qué modelamos?
+> Construimos modelos para "comprender mejor el sistema que estamos desarrollando"
+> - Nos ayudan a *visualizar* como queremos que sea un sistema
+> - Nos ayuda a *especificar* la estrucuta o el comportamiento de un sistema
+> - Nos guían en la *construcción* de un sistema
+> - *Documentan* las decisiones que hemos adoptado
+> Divide y vencerás.
+## Diagrama de Casos de Uso
+- Representa gráficamente los casos de uso que tiene un sistema. Muestra la relación entre actores y los casos de uso.
+- Se está diciendo lo que tine que hacer un sistema y cómo.
+- Representa la funcionalidad que ofrece el sistema en lo que se refiere a su interacción externa.
+> [!info] Casos de Uso
+> Se define un caso de uso como cada interacción supuesta con el sistema a desarrollar, donde se representan los requisitos funcionales.
+> Es un modo de usar el sistema. Así los analistas pueden describir todos los CU que necesita el usuario, entonces saben lo que debe hacer el sistema.
+>*Son fragmentos de funcionalidad que el sistema ofrece para aportar un resultado de valor para sus actores* -> especifica una secuencia de acciones que el sistema puede llevar a cabo interactuando con sus actores
+
+
+## Actores
+Un actor es una entidad externa al sistema que realiza algún tipo de interacción con el mismo. Si tenemos a todos los actores identificados, tenemos el entorno externo del sistema.
+Esta representación sirve tanto para actores que son persona como para otro tipo de actores (sensores, otros sistemas)
+## Captura de Requisitos
+$$\text{captura(QUE) + [analisis + diseño](COMO)}\to \text{ implementar + probar}$$
+Es el proceso de averiguar, normalmente en circunstancias difíciles, lo que se debe construir. Es complicado porque la mayoría de los usuarios no sabe que partes de su trabajo pueden transformarse en software.
+Mediante una descripción de los requisitos del sistema (capacidades que el sistema debe cumplir) para que pueda llegarse a un acuerdo entre el cliente y los desarrolladores sobre qué debe y qué no debe hacer el sistema.
+Para conseguirlo, el cliente debe ser capaz de leer y comprender el resultado de la captura, es por esto que hay que utilizar el lenguaje del cliente
