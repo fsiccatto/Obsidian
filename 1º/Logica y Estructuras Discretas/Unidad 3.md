@@ -113,10 +113,11 @@ La combinatoria estudia las diferentes formas en que podemos ordenar o agrupar e
 > [!teorema] Teorema
 > Si una operación consiste en $k$ pasos y 
 > 	 el primer paso se puede realizar en $n_{1}$ formas, 
-> 	 el segundo paso se puede realizar en $n_{2}$ formas, [independientemente de cómo se realizó el primer paso],
+> 	 el segundo paso se puede realizar en $n_{2}$ formas,
+> 	 (independientemente de cómo se realizó el primer paso),
 > 	 …... 
 > 	 el $k$-ésimo paso se puede realizar en $n_{k}$ formas,
-> 	 [independientemente de cómo se realizan los pasos anteriores], 
+> 	 (independientemente de cómo se realizan los pasos anteriores), 
 > entonces,
 > 	 la operación se puede realizar de $n_{1} n_{2}\dots n_{k}$ formas.
 ![[regla de multiplicacion.png]]
