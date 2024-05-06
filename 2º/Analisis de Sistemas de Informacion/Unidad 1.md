@@ -111,9 +111,7 @@ Objetivos:
 > [!info] Casos de Uso
 > Se define un caso de uso como cada interacción supuesta con el sistema a desarrollar, donde se representan los requisitos funcionales.
 > Es un modo de usar el sistema. Así los analistas pueden describir todos los CU que necesita el usuario, entonces saben lo que debe hacer el sistema.
->*Son fragmentos de funcionalidad que el sistema ofrece para aportar un resultado de valor para sus actores* -> especifica una secuencia de acciones que el sistema puede llevar a cabo interactuando con sus actores
-
-
+>*Son fragmentos de funcionalidad que el sistema ofrece para aportar un resultado de valor para sus actores* -> especifica una secuencia de acciones que el sistema puede llevar a cabo interactuando con sus actores.
 ## Actores
 Un actor es una entidad externa al sistema que realiza algún tipo de interacción con el mismo. Si tenemos a todos los actores identificados, tenemos el entorno externo del sistema.
 Esta representación sirve tanto para actores que son persona como para otro tipo de actores (sensores, otros sistemas)
@@ -121,4 +119,4 @@ Esta representación sirve tanto para actores que son persona como para otro tip
 $$\text{captura(QUE) + [analisis + diseño](COMO)}\to \text{ implementar + probar}$$
 Es el proceso de averiguar, normalmente en circunstancias difíciles, lo que se debe construir. Es complicado porque la mayoría de los usuarios no sabe que partes de su trabajo pueden transformarse en software.
 Mediante una descripción de los requisitos del sistema (capacidades que el sistema debe cumplir) para que pueda llegarse a un acuerdo entre el cliente y los desarrolladores sobre qué debe y qué no debe hacer el sistema.
-Para conseguirlo, el cliente debe ser capaz de leer y comprender el resultado de la captura, es por esto que hay que utilizar el lenguaje del cliente
+Para conseguirlo, el cliente debe ser capaz de leer y comprender el resultado de la captura, es por esto que hay que utilizar el lenguaje del cliente.
