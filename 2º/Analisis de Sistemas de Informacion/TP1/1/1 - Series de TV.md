@@ -30,16 +30,14 @@
 > 2. El usuario registra su tarjeta
 > 3. El usuario solicita la prueba de la plataforma de forma gratuita
 > 4. El usuario mira una serie de TV
-> 5. El usuario se da de baja
-> 6. El usuario califica la serie de TV
-> 7. El reloj cobra el servicio todos los meses
-> 8. El reloj cambia el estado del usuario a Prueba
-> 9. El reloj cambia el estado del usuario a Habilitado
-> 10. El reloj cambia el estado del usuario a Suspendido
-> 11. El reloj notifica falta de cobro
-> 12. El reloj da de baja a los usuarios Suspendidos
-> 13. El gerente actualiza la tarifa del servicio de forma anual
-> 14. El gerente genera estadísticas de la plataforma
+> 5. El usuario busca una serie
+> 6. El usuario se da de baja
+> 7. El usuario califica la serie de TV
+> 8. El reloj debita la cuota mensual
+> 9. El reloj suspende estapa de prueba
+> 10. El reloj inicializa el periodo de prueba
+> 11. El gerente actualiza la tarifa del servicio de forma anual
+> 12. El gerente genera estadísticas de la plataforma
 ## Modelo de Casos de Uso
 ![[1-Casos de Uso]]
 ## Modelo de Dominio
