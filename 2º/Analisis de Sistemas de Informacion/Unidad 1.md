@@ -73,7 +73,7 @@ Relaciones fundamentales:
 - Uso
 - Inclusión
 - Extensión
-- Generalización $->$ padre e hijo de una "clase" dependiendo sus atributos
+- Generalización $\to$ padre e hijo de una "clase" dependiendo sus atributos
 #### Inclusión \<include>
 Una relación de inclusión entre casos de uso especifica que un caso de uso base incorpora explícitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base.
 Una relación de inclusión se representa como una dependencia que declara que un caso de uso utiliza información y servicios de otro.
@@ -83,6 +83,8 @@ Una relación de exclusión entre casos de uso especifica que un caso de uso bas
 La funcionalidad de un caso de uso incluye un conjunto de pasos que ocurren solo en algunas oportunidades, es decir, se tiene que cumplir una **condición**.
 La excepción consiste en interrumpir el caso de uso A y pasar a ejecutar otro caso de uso B. (Autorizar pago con tarjeta).
 *Objetivo*: Necesita una condición para que se cumpla. Se da con línea punteada y flecha cerrada (\<exc>).
+#### Generalización
+Una relación entre caso de uso general y uno más específico que hereda y añade propiedades a aquel. Se representa con línea continua y flecha triangular "blanca o vacía".
 
 ---
 ![[Clase 2 - Ingeniero vs analista. Ciclo Evolutivo. Calculo Costo-Tiempo. UML y el ciclo OO(RUP) - YouTube](https://www.youtube.com/watch?v=WumQMSA_aSE&list=PLKQxFHiFixMeSkFnD4yAUN4PWgkvZ-KYD&index=2)]

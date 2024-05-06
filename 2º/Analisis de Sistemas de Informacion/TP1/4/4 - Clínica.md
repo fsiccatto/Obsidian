@@ -16,16 +16,17 @@
 ### Requisitos
 > [!tldr] Funcionales
 > 1. El paciente solicita internación
-> 2. La recepcionista ingresa los datos de la obra social y el plan del paciente
-> 3. El reloj valida los datos de la obra social y el plan del paciente
-> 4. El reloj informa el importe de coseguros y/o importes asociados
-> 5. La administración le cobra a las obras sociales
-> 6. El reloj muestra los datos del paciente
-> 7. El reloj puede modificar los datos del paciente
-> 8. El reloj muestra los datos del paciente
-> 9. El reloj establece la habitación que corresponda
-> 10. La recepcionista elige una cama y actualiza la historia clínica del paciente
-> 11. El reloj imprime el comprobante de pago
+> 2. El paciente informa resultados de estudios en su Historia Clínica
+> 3. El paciente finaliza la internación al ser dado de alta
+> 4. El encargado de obra social paga servicios del paciente
+> 5. El administrador de clínica genera resumen para que paguen las obras sociales
+> 6. El administrador del sistema administra tipos de presentación
+> 7. El administrador del sistema gestiona prestaciones (nomenclador)
+> 8. El administrador del sistema gestiona obras sociales
+> 9. El administrador del sistema administra planes de cada obra social
+> 10. El administrador del sistema administra coseguros a pagar de planes de obras sociales por prestación
+> 11. El administrador del sistema administra los tipos de habitación por tipo de prestación
+> 12. El administrador del sistema gestiona camas por tipo de habitación
 ### Modelo Casos de Uso
 ![[4-Casos de Uso]]
 ### Modelo de Dominio
