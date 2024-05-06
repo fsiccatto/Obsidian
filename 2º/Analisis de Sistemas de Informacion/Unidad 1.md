@@ -1,3 +1,13 @@
+# Introducción
+> [!info] Definición
+> La Ingeniería del software es el establecimiento y uso de principios de ingeniería robustos, orientados a obtener económicamente software que sea fiables y funcion eficientemente sobre máquinas reales.
+> Siempre nos ajustamos a recursos, costos, mantenimiento, etc.
+
+- Proyecto: esfuerzo temporal que se lleva a cabo para crear un producto, servicio o resultado único.
+- Trabajo Operativo: efectuar permanentemente actividades que generan un mismo producto o proveen un servicio repetitivo.
+- Proceso: es un conjunto de actividades para obtener un fin.
+- Software: 
+	PLANEAMIENTO $\to$ ANÁLISIS $\to$ DISEÑO $\to$ PROGRAMACIÓN $\to$ PRUEBAS
 # Captura de Requisitos
 ## Enumerar los requisitos candidatos
 Lista de estas ideas que consideramos como un conjunto de requisitos candidatos que podemos decidir implementar en una versión futura del sistema. La lista de características se utiliza solo para la planificación del trabajo.
@@ -26,7 +36,7 @@ Caracteristicas:
 - Deben escribirse desde la perspectiva del actor
 - Describen la interacción del actor y del sistema
 Se compone de:
-- Diagrama -> importante las especificaciones
+- Diagrama $->$ importante las especificaciones
 	- Actores
 	- Funcionalidades (Casos de Uso)
 	- Relaciones
@@ -63,7 +73,7 @@ Relaciones fundamentales:
 - Uso
 - Inclusión
 - Extensión
-- Generalización -> padre e hijo de una "clase" dependiendo sus atributos
+- Generalización $->$ padre e hijo de una "clase" dependiendo sus atributos
 #### Inclusión \<include>
 Una relación de inclusión entre casos de uso especifica que un caso de uso base incorpora explícitamente el comportamiento de otro caso de uso en el lugar establecido en el caso de uso base.
 Una relación de inclusión se representa como una dependencia que declara que un caso de uso utiliza información y servicios de otro.
@@ -111,7 +121,7 @@ Objetivos:
 > [!info] Casos de Uso
 > Se define un caso de uso como cada interacción supuesta con el sistema a desarrollar, donde se representan los requisitos funcionales.
 > Es un modo de usar el sistema. Así los analistas pueden describir todos los CU que necesita el usuario, entonces saben lo que debe hacer el sistema.
->*Son fragmentos de funcionalidad que el sistema ofrece para aportar un resultado de valor para sus actores* -> especifica una secuencia de acciones que el sistema puede llevar a cabo interactuando con sus actores.
+>*Son fragmentos de funcionalidad que el sistema ofrece para aportar un resultado de valor para sus actores* $->$ especifica una secuencia de acciones que el sistema puede llevar a cabo interactuando con sus actores.
 ## Actores
 Un actor es una entidad externa al sistema que realiza algún tipo de interacción con el mismo. Si tenemos a todos los actores identificados, tenemos el entorno externo del sistema.
 Esta representación sirve tanto para actores que son persona como para otro tipo de actores (sensores, otros sistemas)

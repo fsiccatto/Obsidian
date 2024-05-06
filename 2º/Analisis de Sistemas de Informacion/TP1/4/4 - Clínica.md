@@ -14,15 +14,18 @@
 13. se necesita que el sistema imprima el comprobante de pago en el que se detallan los datos del paciente, importe a abonar y la cama
 14. se necesita que el sistema almacene el ingreso a internación, historia clínica, asignación de camas y médicos.
 ### Requisitos
-Funcionales
-1. El paciente solicita internación
-2. La recepcionista ingresa los datos de la obra social y el plan del paciente
-3. El reloj valida los datos de la obra social y el plan del paciente
-4. El reloj informa el importe de coseguros y/o importes asociados
-5. La administración le cobra a las obras sociales
-6. El reloj muestra los datos del paciente
-7. El reloj puede modificar los datos del paciente
-8. El reloj muestra los datos del paciente
-9. El reloj establece la habitación que corresponda
-10. La recepcionista elige una cama y actualiza la historia clínica del paciente
-11. El reloj imprime el comprobante de pago
+> [!tldr] Funcionales
+> 1. El paciente solicita internación
+> 2. La recepcionista ingresa los datos de la obra social y el plan del paciente
+> 3. El reloj valida los datos de la obra social y el plan del paciente
+> 4. El reloj informa el importe de coseguros y/o importes asociados
+> 5. La administración le cobra a las obras sociales
+> 6. El reloj muestra los datos del paciente
+> 7. El reloj puede modificar los datos del paciente
+> 8. El reloj muestra los datos del paciente
+> 9. El reloj establece la habitación que corresponda
+> 10. La recepcionista elige una cama y actualiza la historia clínica del paciente
+> 11. El reloj imprime el comprobante de pago
+### Modelo Casos de Uso
+![[4-Casos de Uso]]
+### Modelo de Dominio
