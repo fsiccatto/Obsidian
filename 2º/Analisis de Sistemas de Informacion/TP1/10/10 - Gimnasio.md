@@ -20,7 +20,10 @@
 19. Se requiere que el sistema muestre solamente las clases disponibles y que no estén llenas
 ### Requisitos
 #### Funcionales
-- 1: El cliente compra un número de clases
-- 2: El cliente se anota a una clase que esté disponible y abierta
-- 3: El reloj lleva el control de cada cliente
-- 4: 
+1. El cliente compra un número de clases
+2. El cliente se anota a una clase
+3. El reloj lleva un control de las clases consumidas por cada cliente
+4. El reloj registra al cliente con sus datos personales
+5. El profesor abre una clase estableciendo fecha y hora
+7. La gerencia establece el monto a cobrar por cada clase
+8. El reloj muestra clases con máquinas disponibles y sin dictar
