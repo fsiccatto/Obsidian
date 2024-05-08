@@ -28,6 +28,6 @@
 > 11. El administrador del sistema administra los tipos de habitación por tipo de prestación
 > 12. El administrador del sistema gestiona camas por tipo de habitación
 ### Modelo Casos de Uso
-![[4-Casos de Uso]]
+![[4-Modelo de Casos de Uso]]
 ### Modelo de Dominio
  ![[4-Modelo de Dominio]]

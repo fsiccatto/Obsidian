@@ -39,6 +39,6 @@
 > 11. El gerente actualiza la tarifa del servicio de forma anual
 > 12. El gerente genera estadísticas de la plataforma
 ## Modelo de Casos de Uso
-![[1-Casos de Uso]]
+![[1-Modelo de Casos de Uso]]
 ## Modelo de Dominio
 ![[1-Modelo de Dominio]]
