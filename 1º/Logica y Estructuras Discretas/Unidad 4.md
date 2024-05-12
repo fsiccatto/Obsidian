@@ -55,13 +55,13 @@ En este caso dibujamos también una línea uniendo esos puntos. Tal represntaci�
 Sea 𝐴 un conjunto finito con al menos un elemento. Una **cadena sobre** 𝐴 es una sucesión finita de elementos de 𝐴 . Los elementos de 𝐴 se llaman caracteres de la cadena y la longitud de una cadena es el número de caracteres que contiene.
 La **cadena nula sobre 𝐴** se define como la “cadena” sin caracteres. Por lo general se denota con 𝝐 y se dice que tiene una longitud 0.
 # Orden Lexicográfico
-Engeneral, si A es cualquier conjunto con una relación de orden parcial, entonces un *diccionario* u **orden lexicográfico** se puede definir sobre un conjunto de cadenas sobre 𝐴.
+En general, si A es cualquier conjunto con una relación de orden parcial, entonces un *diccionario* u **orden lexicográfico** se puede definir sobre un conjunto de cadenas sobre 𝐴.
 > [!teorema] Teorema
-> Sea 𝐴 un conjunto con una relación de orden parcial 𝑅 y sea 𝑆un conjunto de cadenas sobre 𝐴. Se define una relación $\leq$ sobre 𝑆 como sigue:
+> Sea 𝐴 un conjunto con una relación de orden parcial 𝑅 y sea 𝑆 un conjunto de cadenas sobre 𝐴. Se define una relación $\leq$ sobre 𝑆 como sigue:
 > Para cualesquiera dos cadenas en 𝑆, $𝑎_{1}𝑎_{2}…𝑎_{m} \text{ y }𝑏_{1}𝑏_{2} …𝑏_{n}$ donde 𝑚 y 𝑛 son enteros positivos,
 > 1. Si $𝑚\leq𝑛$ y $𝑎_{i} =𝑏_{i}$ para toda 𝑖=1...𝑚, entonces $𝑎_{1}𝑎_{2}…𝑎_{m} \leq 𝑏_{1}𝑏_{2} …𝑏_{n}$. 
-> 2. Si para algún enero 𝑘 con 𝑘 ≤ 𝑚, 𝑘 ≤𝑛 y 𝑘 ≥1, $𝑎_{i} =𝑏_{i}$ para toda 𝑖 =1…𝑘−1 y $𝑎_{k} \neq b_{k}$ pero $a_{k}Rb_{k}$ entonces $𝑎_{1}𝑎_{2}…𝑎_{m} \leq 𝑏_{1}𝑏_{2} …𝑏_{n}$. 
-> 3. Si 𝜖 es la cadena nula y 𝑠 cualquier cadena, entonces 𝜖 ≼ 𝑠.
+> 2. Si para algún entero 𝑘 con 𝑘 ≤ 𝑚, 𝑘 ≤𝑛 y 𝑘 ≥1, $𝑎_{i} =𝑏_{i}$ para toda 𝑖 =1…𝑘−1 y $𝑎_{k} \neq b_{k}$ pero $a_{k}Rb_{k}$ entonces $𝑎_{1}𝑎_{2}…𝑎_{m} \leq 𝑏_{1}𝑏_{2} …𝑏_{n}$. 
+> 3. Si 𝜖 es la cadena nula y 𝑠 cualquier cadena, entonces 𝜖 $\leq$ 𝑠.
 > Si ninguna cadena está relacionada con otras por estas tres condiciones, entonces $\leq$ es un orden parcial.
 
 > A esta relación de orden parcial se le llama el **orden lexicográfico para S** que corresponde al orden parcial 𝑅 sobre 𝐴.
