@@ -7,7 +7,7 @@
 Podemos representar un conjunto a través de un Diagrama de Venn. El diagrama de Venn es una curva cerrada en la cual en el interior se colocan los elementos del conjunto y en el exterior el nombre del mismo.
 
 > [!tldr] Conjuntos Especiales
-> - Conjunto Vacío: conjunto que no tienen ningún elemento $\{ \space \} \text{ o } \emptyset$
+> - Conjunto Vacío: conjunto que no tienen ningún elemento $\{ \space \} \text{ o } \emptyset$.
 > - Conjunto Unitario: conjunto compuesto por un solo elemento.
 > - Conjunto Referencia o Universal: conjunto formado por todos los elementos relativos al tema. Se simboliza con $U$ o $X$.
 ### Inclusión de Conjuntos - Subconjuntos
@@ -25,7 +25,7 @@ Podemos representar un conjunto a través de un Diagrama de Venn. El diagrama de
 > $$A=B \Longleftrightarrow A \subseteq B \wedge B \subseteq A$$
 ### Conjuntos Potencia
 > [!info] Definición
-> Para cualquier conjunto $𝑋$ existe un conjunto cuyos elementos son todos los subconjuntos de $𝑋$. Dicho conjunto se denomina conjunto potencia y se denota $\wp(𝑋)$ .
+> Para cualquier conjunto $𝑋$ existe un conjunto cuyos elementos son todos los subconjuntos de $𝑋$. Dicho conjunto se denomina conjunto potencia y se denota $\wp(𝑋)$.
 - $\emptyset \in \wp(X) \text{ y } X \in \wp(X)$
 - Ejemplo: Sea $X = \{a, b\}, \wp(X) = \{ \emptyset, \{ a\}, \{ b \} \}$
 > [!teorema] Teorema
@@ -79,7 +79,7 @@ Sean 𝐴 y 𝐵 conjuntos definidos en un mismo conjunto referencial 𝑋. Se v
 ---
 ## Conjunto Finito - Cardinal de un Conjunto
 > [!info] Definición
-> El conjunto 𝐴 es **finito** si 𝐴 es vacío o bien existe una función biyectiva entre el conjunto {1, 2,3,…,𝑛} y 𝐴.
+> El conjunto 𝐴 es **finito** si 𝐴 es vacío o bien existe una función biyectiva entre el conjunto $\{1, 2,3,…,𝑛\}$ y 𝐴.
 
 > [!info] Definición
 > El número de elementos del conjunto finito se llama número **cardinal** del conjunto. 
@@ -91,7 +91,7 @@ Sean 𝐴 y 𝐵 conjuntos definidos en un mismo conjunto referencial 𝑋. Se v
 > [!teorema] Teorema
 > Sean 𝐴, 𝐵 y 𝐶, conjuntos finitos, entonces
 > $$|A \cup B| = |A| + |B| - |A \cap B|$$
-> $$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |C \cap C| + |A \cap B \cap C|$$
+> $$|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C|$$
 ## Conjuntos Numéricos
 ![[Conjunto numericos.png]]
 $N \subseteq Z \subseteq Q \subseteq R$ y $R = Q \cup I$
@@ -102,13 +102,13 @@ $N \subseteq Z \subseteq Q \subseteq R$ y $R = Q \cup I$
 > 2. Los conjuntos $𝐴_{1}, 𝐴_{2},.., 𝐴_{n}$ son mutuamente disjuntos ($𝐴_{i} \cap 𝐴_{j} = ∅, 𝑖 \neq 𝑗$).
 ## Par ordenado
 > [!info] Definición
-> Dados dos objetos 𝒂 y 𝒃, se llama **par ordenado** (𝒂,𝒃) al objeto en el cual 𝒂 es el primer elemento (primera componente) y 𝒃 es el segundo elemento (segunda componente). Es decir que $(𝒂,𝒃) \neq (𝒃, 𝒂)$ , para $𝒂 \neq 𝒃$.
+> Dados dos objetos 𝒂 y 𝒃, se llama **par ordenado** (𝒂, 𝒃) al objeto en el cual 𝒂 es el primer elemento (primera componente) y 𝒃 es el segundo elemento (segunda componente). Es decir que $(𝒂,𝒃) \neq (𝒃, 𝒂)$ , para $𝒂 \neq 𝒃$.
 ### Producto Cartesiano
 > [!info] Definición
-> Sean 𝐴 y 𝐵 conjuntos, se lama **producto cartesiano** de 𝐴 y 𝐵 (en ese orden) al conjunto formado por todos los pares ordenados (𝑎,𝑏) tales que la primera componente es un elemento de 𝐴 y la segunda componente es un elemento de 𝐵. Se Lo simboliza 𝐴 x 𝐵.
+> Sean 𝐴 y 𝐵 conjuntos, se lama **producto cartesiano** de 𝐴 y 𝐵 (en ese orden) al conjunto formado por todos los pares ordenados (𝑎, 𝑏) tales que la primera componente es un elemento de 𝐴 y la segunda componente es un elemento de 𝐵. Se lo simboliza 𝐴 x 𝐵.
 > $$\text{A x B} = \{ (a, b)/ a \in A \wedge b \in B \}$$
 # Combinatoria
-La combinatoria estudia las diferentes formas en que podemos ordenar o agrupar elementos siguiendo determinadas reglas establecidas. Nos proporciona *algoritmos* para determinar la cantida de agrupaciones que se pueden formar con los elementos del conjunto.
+La combinatoria estudia las diferentes formas en que podemos ordenar o agrupar elementos siguiendo determinadas reglas establecidas. Nos proporciona *algoritmos* para determinar la cantidad de agrupaciones que se pueden formar con los elementos del conjunto.
 ## Regla de Multiplicación
 > [!teorema] Teorema
 > Si una operación consiste en $k$ pasos y 
