@@ -53,3 +53,13 @@ El error de cuantificación *es la diferencia entre la señal de entrada y la se
 ### Codificación
 La codificación es la última etapa en PCM. Luego de que la muestra ha sido cuantificada, y se ha decidido el número de bits a utilizar por muestra, a cada muestra se le asigna una palabra de un código de “n bits”.
 ![[codificacion.png]]
+# Técnicas de Multiplexado
+Es la técnica de combinar dos o más señales, y transmitirlas por un solo medio de transmisión. Para su implementación se emplean un multiplexor.
+Permite aprovechar al máximo el Ancho de Banda disponible y así transmitir varias comunicaciones de forma simultánea.
+![[clasificacion de los sistemas de multiplexado.png]]
+- SDM: Multiplexación por división de espacio
+- FDM: Multiplexación por división de frecuencia
+- OFDM: Multiplexación por división de frecuencia ortogonal
+- TDM: Multiplexación por división de tiempo
+- WDM: Multiplexación por división de longitud de onda
+- CDM: Multiplexación por división de código
