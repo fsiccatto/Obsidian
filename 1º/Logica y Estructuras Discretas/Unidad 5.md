@@ -52,3 +52,14 @@ Si $(G, \ast)$ es un grupo y $a,b,c$ son elementos cualesquiera de $G$ entonces:
 2. $(a*b)^{-1} = b^{-1} \ast a^{-1}$
 3. $a \ast b = a \ast c$ implica que $b=c$
 4. $b \ast a = c \ast a$ implica que $b=c$
+#### Potencias
+- Sea (𝑆, ∗) un semigrupo. Para cualquier 𝑎 ∈ S se define:
+$$𝑎{^{1}} = 𝑎$$
+$$𝑎{^{n}} = 𝑎 ∗ 𝑎{^{n-1}} \text{   ,   } 𝑛 = 2, 3 . ., 𝑛 ∈ ℕ$$
+Cualesquiera sean 𝑎 ∈ 𝑆 y 𝑛, 𝑚 ∈ ℕ, se verifica que:
+$$i. \space 𝑎{^{n}}∗ 𝑎{^{m}} = 𝑎{^{n+m}}$$
+$$ii. \space (𝑎{^{n}} ){^{m}} = 𝑎{^{n.m}}$$
+- Sea (𝐺, ∗) un grupo. Para cualquier 𝑎 𝜖 𝐺 se define:
+$$𝑎 {^{0}} = 𝑒 $$
+$$𝑎{^{-n}} = (𝑎{^{-1}}){^{n}} ∀𝑛 ∈ ℕ$$
+Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛
