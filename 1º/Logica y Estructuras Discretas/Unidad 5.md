@@ -1,7 +1,13 @@
 # Relaciones Binarias, Semigrupos y Grupos
-## Semigrupos
+## Operación Binaria
 > [!info] Definición
-> Se $S$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $S$. Si $\ast$ es *asociativo*, entonces la dupla ($S, \ast$) se denomina **semigrupo**. En otras palabras:
+> Una **operación binaria** $\ast$ en un conjunto no vacío 𝐴 es una función $\ast$∶ 𝐴 x 𝐴 → 𝐴. Se escribe 𝑎 $\ast$ 𝑏.
+> Una operación binaria $\ast$ en un conjunto vacío $A$ es:
+> - **asociativa**: si $(a \ast b) \ast  c = a \ast (b \ast c) \space \forall a, b, c \in A$
+> - conmutativa: si $a \ast b = b \ast a \space \forall a, b \in A$
+### Semigrupos
+> [!info] Definición
+> Sea $S$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $S$. Si $\ast$ es *asociativo*, entonces la dupla ($S, \ast$) se denomina **semigrupo**. En otras palabras:
 > $$(a \ast b) \ast c = a \ast (b \ast c)$$
 > para todo $a, b, c \text{ en } S$.
 
@@ -11,7 +17,7 @@ Ejemplos:
 - La multiplicación en el conjunto de los números racioneles.
 ### Monoides
 > [!info] Definición
-> Se $M$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $M$. Si ($M, \ast$) es un semigrupo que tiene elemento identidad, entonces la dupla ($M, \ast$) se denomina **monoide**. En otras palabras:
+> Sea $M$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $M$. Si ($M, \ast$) es un semigrupo que tiene elemento identidad, entonces la dupla ($M, \ast$) se denomina **monoide**. En otras palabras:
 > - $(a \ast b) \ast c = a \ast (b \ast c)$, y
 > - existe $e \in M$ tal que
 > $$e \ast a = a = a \ast e$$
@@ -20,9 +26,9 @@ Ejemplos:
 Ejemplos:
 - La multiplicación en el conjunto de los números enteros postivos.
 - La multipliación en el conjunto de los números racionales.
-#### Grupos
+### Grupos
 > [!info] Definición
-> Se $G$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $G$. Si ($M, \ast$) es un monoide que todo elemento tiene inverso, entonces la dupla ($G, \ast$) se denomina **grupo**. En otras palabras:
+> Sea $G$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $G$. Si ($G, \ast$) es un monoide que todo elemento tiene inverso, entonces la dupla ($G, \ast$) se denomina **grupo**. En otras palabras:
 > - $(a \ast b) \ast c = a \ast (b \ast c)$, y
 > - existe $e \in G$ tal que $e \ast a = a = a \ast e$
 > - para todo $a \in G$ existe $a^{-1} \in G$ tal que
@@ -32,3 +38,17 @@ Ejemplos:
 Ejemplos:
 - La multiplicación en el conjunto de los números racionales sin el cero.
 - El producto matricial en el conjunto de las matrices reales 2x2 invertibles.
+### Semigrupos-Monoides-Grupos
+> [!info] Definición
+> Si $(G, \ast)$ es un grupo (monoide o semigrupo) y la operación binara $\ast$ es conmutativa, $(G, \ast)$ se denomina *abeliano* o *conmutativo*.
+> 
+> Un grupo $(G, \ast)$ se dice que es finito, si $G$ lo es. En este caso, el número de elementos de $G$ es llamado el *orden* del grupo
+#### Propiedades
+- El elemento identidad de un grupo o monoide es único.
+- El elemento inverso de cada elemento en un grupo es único.
+
+Si $(G, \ast)$ es un grupo y $a,b,c$ son elementos cualesquiera de $G$ entonces:
+1. $(a^{-1})^{-1}=a$
+2. $(a*b)^{-1} = b^{-1} \ast a^{-1}$
+3. $a \ast b = a \ast c$ implica que $b=c$
+4. $b \ast a = c \ast a$ implica que $b=c$
