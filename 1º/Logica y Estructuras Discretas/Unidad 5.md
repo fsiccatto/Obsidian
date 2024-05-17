@@ -1,10 +1,10 @@
-# Relaciones Binarias, Semigrupos y Grupos
+# Operaciones Binarias, Semigrupos y Grupos
 ## Operación Binaria
 > [!info] Definición
 > Una **operación binaria** $\ast$ en un conjunto no vacío 𝐴 es una función $\ast$∶ 𝐴 x 𝐴 → 𝐴. Se escribe 𝑎 $\ast$ 𝑏.
 > Una operación binaria $\ast$ en un conjunto vacío $A$ es:
-> - **asociativa**: si $(a \ast b) \ast  c = a \ast (b \ast c) \space \forall a, b, c \in A$
-> - conmutativa: si $a \ast b = b \ast a \space \forall a, b \in A$
+> - *asociativa*: si $(a \ast b) \ast  c = a \ast (b \ast c) \space \forall a, b, c \in A$
+> - *conmutativa*: si $a \ast b = b \ast a \space \forall a, b \in A$
 ### Semigrupos
 > [!info] Definición
 > Sea $S$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $S$. Si $\ast$ es *asociativo*, entonces la dupla ($S, \ast$) se denomina **semigrupo**. En otras palabras:
@@ -61,5 +61,5 @@ $$i. \space 𝑎{^{n}}∗ 𝑎{^{m}} = 𝑎{^{n+m}}$$
 $$ii. \space (𝑎{^{n}} ){^{m}} = 𝑎{^{n.m}}$$
 - Sea (𝐺, ∗) un grupo. Para cualquier 𝑎 𝜖 𝐺 se define:
 $$𝑎 {^{0}} = 𝑒 $$
-$$𝑎{^{-n}} = (𝑎{^{-1}}){^{n}} ∀𝑛 ∈ ℕ$$
+$$𝑎{^{-n}} = (𝑎{^{-1}}){^{n}} \space ∀𝑛 ∈ ℕ$$
 Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛
