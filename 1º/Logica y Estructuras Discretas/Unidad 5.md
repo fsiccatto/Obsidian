@@ -25,7 +25,7 @@ Ejemplos:
 
 Ejemplos:
 - La multiplicación en el conjunto de los números enteros postivos.
-- La multipliación en el conjunto de los números racionales.
+- La multiplicación en el conjunto de los números racionales.
 ### Grupos
 > [!info] Definición
 > Sea $G$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $G$. Si ($G, \ast$) es un monoide que todo elemento tiene inverso, entonces la dupla ($G, \ast$) se denomina **grupo**. En otras palabras:
