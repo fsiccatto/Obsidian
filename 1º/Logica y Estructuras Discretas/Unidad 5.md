@@ -62,4 +62,14 @@ $$ii. \space (𝑎{^{n}} ){^{m}} = 𝑎{^{n.m}}$$
 - Sea (𝐺, ∗) un grupo. Para cualquier 𝑎 𝜖 𝐺 se define:
 $$𝑎 {^{0}} = 𝑒 $$
 $$𝑎{^{-n}} = (𝑎{^{-1}}){^{n}} \space ∀𝑛 ∈ ℕ$$
-Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛
+Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛.
+
+| +   | 0   | 1     |
+| :-- | :-- | :---- |
+| 0   | 0   | 1<br> |
+| 1   | 1   | 0     |
+
+| x   |  0  |  1  |
+| :-- | :-: | :-: |
+| 0   |  0  |  0  |
+| 1   |  0  |  1  |
