@@ -139,14 +139,14 @@ Una **permutación** de objetos es una forma de *ordenar* estos objetos.
 Una **combinación** de objetos es una agrupación que *no tiene en  cuenta el orden* de los mismos.
 > [!info] Definiciones
 > Dado un conjunto de elementos $X = \{ x_{1}, x_{2}, \dots, x_{n} \}$
-> - Una* permutación de los elementos de X* es un ordenamiento de los n elemetnos de X.
+> - Una* permutación de los elementos de X* es un ordenamiento de los n elementos de X.
 > - Una *permutación de r elementos del conjunto X (r-permutación)*, $r \leq n$, es un ordenamiento de r elementos de X.
 > - Una *combinación de r elementos del conjunto X (r-combinación)*, $r \leq n$, es un subconjunto de r elementos de X.
 ### Permutaciones
 Una 𝑟−𝑝𝑒𝑟𝑚𝑢𝑡𝑎𝑐𝑖ó𝑛 de un conjunto de 𝑛 elementos se denota por 𝑃(𝑛,𝑟).
 > [!teorema] Teorema
 > El número de permutaciones de 𝑟 elementos de un conjunto de 𝑛 elementos, $𝑟 \leq 𝑛$, es:
-> $$P(n, r) = n.(n - 1)(n - 2)\dots(n- (r - 1))$$
+> $$P(n, r) = n(n - 1)(n - 2)\dots(n- (r - 1))$$
 > O equivalentemente, 
 > $$ P(n, r) = \frac{n!}{(n-r)!}$$
 
