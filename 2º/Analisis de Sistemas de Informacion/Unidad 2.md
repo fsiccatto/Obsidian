@@ -16,7 +16,3 @@
 > - Selectores -> consultar un objeto
 > - Modificadores -> modifica un objeto 
 > - Iteradores -> 
-
-
-
-
