@@ -77,4 +77,43 @@ Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛
 > [!teorema] Teorema
 > Si $(𝐺_{1}, ∗_{1}) , (𝐺_{2}, ∗_{2}) , … , (𝐺_{m}, ∗_{m})$ son grupos, entonces el conjunto $𝐺 = 𝐺_{1} × · · · × 𝐺_{m}$ es un grupo, con la operación ∗ definida por:
 > $$(a_{1}, a_{2}, \dots, a_{m})\ast(b_{1}, b_{2},\dots, b_{m}) = (a_{1}\ast_{1}b_{1}, a_{2}\ast_{2}b_{2},\dots,a_{m}\ast_{m}b_{m})$$
+## Aritmética Modular
+Recordando la definición de congruencia de la U3 ![[UTN-repo/1º/Logica y Estructuras Discretas/Unidad 4#Relación de Congruencia|Unidad 4]]
+El conjunto de las clases de equivalencia distintas, que constituyen una partición de $\mathbb{Z}$, se denota $\mathbb{Z_{n}}$ y se le llama el **Conjunto de Enteros Módulo $n$**
+$$\mathbb{Z} = \{ [0], [1], \dots, [n-1] \}$$
+> [!teorema] Teorema
+> Sean 𝑎 y 𝑏 elementos de $\mathbb{Z_{n}}$, se define una **suma** y un **producto** en $\mathbb{Z_{n}}$ como:
+> $$[a]+[b]=[a+b] \text{ y } [a].[b]=[a.b]$$
 
+Observaciones:
+1. Si $𝑎´∈ [𝑎] \text{ y } 𝑏´∈ [b]$ , entonces 𝑎´ ≡ 𝑎 (𝑚𝑜𝑑 𝑛) y 𝑏´ ≡ 𝑏 (𝑚𝑜𝑑 𝑛). Por lo que, 𝑎´ + 𝑏´ ≡ 𝑎 + 𝑏 (𝑚𝑜𝑑 𝑛) y 𝑎´. 𝑏´ ≡ 𝑎. 𝑏 (𝑚𝑜𝑑 𝑛). Luego
+$$[𝑎´ + 𝑏´] = [𝑎 + 𝑏] \text{ y } [𝑎´. 𝑏´] = [𝑎.𝑏] \text{, }$$
+es decir, las operaciones están *bien definidas*, pues no dependen de la elección de los representantes en las clases de equivalencia.
+2. Las operaciones suma y producto en $\mathbb{Z_{n}}$ son *operaciones binarias asociativas*.
+
+> [!teorema] Teorema
+>  $(\mathbb{Z_{n}}, +)$ es un grupo abeliano de orden $n$:
+![[Demostración grupos.png]]
+## Subgrupo
+> [!info] Definición
+> Sea $(G, \ast)$ un grupo y H un subconjunto de G $(H \subseteq G)$, se dice que **H es un subgrupo de G**, si satisface las siguientes propiedades:
+> 1. $e \in H$
+> 2. Si $a, b \in H$ entonces $a \ast b \in H$
+> 3. Si $a \in H$ entonces $a^{-1} \in H$
+
+Otros subgrupos:
+- Sea $m\in \mathbb{Z}$ y considerando $m\mathbb{Z} =\left\{  m.p:p \in \mathbb{Z}  \right\}$conjunto de los enteros múltiplos de $m$
+- Sea (𝐺, ∗) un grupo, 𝑎 ∈ 𝐺, y sea 𝐻 = {𝑎 𝑘 : 𝑘 ∈ ℤ}. Veremos que, (𝐻, ∗) es un subgrupo de (𝐺, ∗) ya que, 𝐻 ⊆ 𝐺, y
+	- Este grupo se denomina *Subgrupo Cíclico Generado por 𝑎 y se denota $𝐻 = <𝑎>$* .
+
+> [!info] Definición
+> Sea (𝐻, ∗) un subgrupo de (𝐺, ∗) , entonces 𝐻 se dirá:
+> - **subgrupo impropio** de $G$, si $H=G$
+> - **subgrupo trivial** de $G$ si $H={e}$
+> - **subgrupo propio** de $G$ si $H$ no es impropio ni trivial
+###### Propiedades
+1. Si $H_{1}$ y $H_{2}$ son subgrupos de 𝐺 entonces $H_{1} \cap H_{2}$ es subgrupo de 𝐺 y también de $H_{1}$ y $H_{2}$.
+2. Sea 𝐺 un grupo y sea 𝐻 un subconjunto finito no vacío de 𝐺. Si 𝐻 es cerrado con respecto a la operación en 𝐺, entonces 𝐻 es un subgrupo de 𝐺.
+## Teorema de Lagrange
+Si 𝐺 es un grupo finito y 𝐻 es un subgrupo de 𝐺, entonces |𝐻| es un divisor de |𝐺|.
+VER EJEMPLOS.
