@@ -73,3 +73,8 @@ Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛
 | :-- | :-: | :-: |
 | 0   |  0  |  0  |
 | 1   |  0  |  1  |
+## Grupo Producto
+> [!teorema] Teorema
+> Si $(𝐺_{1}, ∗_{1}) , (𝐺_{2}, ∗_{2}) , … , (𝐺_{m}, ∗_{m})$ son grupos, entonces el conjunto $𝐺 = 𝐺_{1} × · · · × 𝐺_{m}$ es un grupo, con la operación ∗ definida por:
+> $$(a_{1}, a_{2}, \dots, a_{m})\ast(b_{1}, b_{2},\dots, b_{m}) = (a_{1}\ast_{1}b_{1}, a_{2}\ast_{2}b_{2},\dots,a_{m}\ast_{m}b_{m})$$
+
