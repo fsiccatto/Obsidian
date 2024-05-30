@@ -115,5 +115,7 @@ Otros subgrupos:
 1. Si $H_{1}$ y $H_{2}$ son subgrupos de 𝐺 entonces $H_{1} \cap H_{2}$ es subgrupo de 𝐺 y también de $H_{1}$ y $H_{2}$.
 2. Sea 𝐺 un grupo y sea 𝐻 un subconjunto finito no vacío de 𝐺. Si 𝐻 es cerrado con respecto a la operación en 𝐺, entonces 𝐻 es un subgrupo de 𝐺.
 ## Teorema de Lagrange
-Si 𝐺 es un grupo finito y 𝐻 es un subgrupo de 𝐺, entonces |𝐻| es un divisor de |𝐺|.
+> [!teorema] Teorema
+> Si 𝐺 es un grupo finito y 𝐻 es un subgrupo de 𝐺, entonces |𝐻| es un divisor de |𝐺|.
+
 VER EJEMPLOS.
