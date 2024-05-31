@@ -4,11 +4,6 @@ Se clasifican en:
 - Códigos de Línea -> se utilizan para la transmisión
 ## Códigos de Línea
 Los códigos de línea son la representación de la banda base digital, para la transmisión de una fuente a un destino. Los unos y ceros se representa en varios formatos de señalización de bits (códigos de línea). Se realiza por medio de circuitos de "conversores de código".
-Se llaman de línea porque a medida que los datos se van generando, se van codificando.
-Condiciones:
-- Permitir extraer el código de los datos
-- Que el nivel de corriente continua en el enlace, sea constante, en lo posible, 0 Volts. Es decir, conviene que el código sea polar.
-- Que el espectro de energía sea adecuado, y reducido.
 ###### Propiedades
 - Auto sincronización: señal para la temporización (un bit)
 - Nivel de continua baja: lo más baja posible. Evitar una interpretación errónea, que genere un dato erróneo 
@@ -114,7 +109,30 @@ Los objetivos en el diseño de estas técnicas son:
 - Es un código de cambio de nivel, codifica el bit 1 cambiando de nivel positivo a cero, de cero a negativo y luego en el sentido inverso, solamente si se trata de un bit 1. Los bits 0 no se codifican, es decir no se cambia el valor de voltaje que traía.
 ![[MLT-3.png]]
 ## Codificación en placas de Red
-**Codificar**: asignar un valor de tensión al uno binario, y otro distinto al cero. Deben ser perfectamente detectados.
-Es necesario transmitir los datos y la señal de sincronismo (clock), lo cual nos implicaba hacer 2 enlaces. Una alternativa a esto, para hacer solo un enlace, era poder extraer el clock de los mismos datos.
+**Codificar**: asignar un valor de tensión al uno binario, y otro distinto al cero. Deben ser perfectamente detectados por el receptor, para no cuantificarlo.
+Es necesario transmitir los datos y la señal de sincronismo (clock), lo cual nos implicaba **hacer 2 enlaces**. Una alternativa a esto, para hacer solo un enlace, era poder extraer el clock de los mismos datos.
 ### Formas de Codificación
+**Códigos de línea**: Son códigos para la transmisión. Se llaman de línea, porque a medidaque los datos se van generando, se van codificando. Cond
+> [!info] Condiciones:
+> - Permitir extraer el código de los datos
+> - Que el nivel de corriente continua en el enlace, sea constante, en lo posible, 0 Volts. Es decir, conviene que el código sea polar.
+> - Que el espectro de energía sea adecuado, y reducido.
 
+#### Códigos de Línea para redes LAN
+1. Código Manchester
+	Este código es por cambio de nivel y bipolar. Lo utiliza la placa de red cuando transmite a 10Mbps.
+2. Código MLT-3
+	Se utilizó en redes LAN de 100 Mbps.
+#### Códigos de Línea para redes WAN
+1. AMI
+	El código AMI fue usado extensamente en la primera generación de redes PCM, Más utilizado por las normas norteamericanas.
+1. HDB-3
+## Códigos de Bloque
+Aquí codificamos de a bloques de bits, es decir, voy a tomar un conjunto de bits y recién ahí los voy a enviar.
+# Conmutación
+El conmutador es un dispositivo importante en toda red de comunicación, porque cumple la función de conectar los usuarios entre sí.
+- Garantizar que llegue la información
+- Debe ser transparante al usuario
+- Debe ser rápida
+ ![[resumen conmutacion.png]]
+ 
