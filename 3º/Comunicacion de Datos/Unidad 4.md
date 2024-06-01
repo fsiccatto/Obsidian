@@ -134,5 +134,48 @@ El conmutador es un dispositivo importante en toda red de comunicación, porque 
 - Garantizar que llegue la información
 - Debe ser transparante al usuario
 - Debe ser rápida
- ![[resumen conmutacion.png]]
- 
+ ![[resumen conmutacion.png]] 
+## Conmutación de Circuitos
+ Se utiliza cuando se necesita que los datos sean transmitidos en **tiempo real**. Se caracteriza porque crea un **canal dedicado** en la transmisión. Cuando se finaliza la comunicación el canal es desocupado y puede ser utilizado por otro usuario. Por ejemplo las llamadas telefónicas.
+ - Ventajas
+	 - Conexión dedicada, utilizo el BW disponible
+	 - No necesita protocolo
+	 - Es muy seguro, ya que no es compartido
+	 - Trabaja en tiempo real
+ - Desventajas
+	 - En los tiempo de silencio desperdicio BW
+	 - Mala administración de BW disponible
+	 - Me tarifan por tiempo y distancia de alcance
+## Conmutación de Mensajes
+Aparece el concepto de Nodo, porque **comparto enlaces**. En este tipo de conmutación, el emisor debe primero enviar el mensaje completo a un Nodo intermedio, donde es **encolado** en un Buffer. Y luego este nodo se lo envía a otro y así sucesivamente, hasta llegar al receptor. Cada Nodo debe esperar su turno para poder transmitir. Ejemplo: el telégrafo.
+- Ventajas
+	- Compartimos enlaces
+	- Me cobran solo por tiempo
+	- Aprovechamos los tiempos de silencio
+- Desventajas
+	- Usa un algortimo de cola
+	- El buffer limita el tamaño del mensaje
+	- Se requieren protocolos para identificar los mensajes
+	- No se trabaja en tiempo real
+## Conmutación de Paquetes
+**Se dividen los mensajes en paquetes** (cada uno con un encabezado). El canal es compartido por muchos usuarios, se caracteriza principalmente porque los datos son ensamblados en forma de paquetes. Cuando llegan los paquetes son reensamblados.
+- Ventajas
+	- Comparte enlaces
+	- Se tarifa por tiempo de utilización
+	- Son más rápidos que la conmutación de mensajes, porque los mensajes son más pequeños
+	- Se trabaja casi en tiempo real
+- Desventajas
+	- Hace falta un protocolo de comunicaciòn
+	- Se pueden perder paquetes, caso de datagrama
+### Circuitos Virtuales (Orientados a la conexión)
+En esta técnica, el emisor envía un paquete de control, conocido como paquete de llamada, éste será el encargado de establecer un camino virtual por donde pasaran todos los paquetes de datos. De esta manera llegan en orden establecido por el emisor.
+### Datagramas
+En esta técnica el emisor **enumera cada paquete**, se caracteriza porque cada paquete puede tomar rutas distintas, y por lo tanto pueden llegar en distinto orden, o también se pueden perder paquetes. El trabajo del receptor es **ordenar los paquetes**.
+## Aplicaciones de los sistemas de conmutación
+Modelo OSI, es un modelo de 7 capas. Define la forma en la cual se **encapsularán y desencapsularán los datos**, en el momento de ser transmitidos y recibidos, respectivamente.
+![[Modelo OSI.png]]
+### Aplicación MPLS
+MPLS (MultiProtocol Label Switching) es un protocolo de conmutación por etiquetas definido para funcionar sobre múltiples protocolos como Sonet, Frame Realy, ATM, Ethernet, aprovechando las eficiencias de cada uno de ellos.
+![[MPLS.png]]
+Se intercala entre la capa 2 y 3 del Modelo OSI y TCP/IP![[Label MPLS.png]]
+La idea es **rutear en los bordes y Conmutar en el Núcleo de la red** en cuestión. De esta forma, en los **bordes tenemos Datagramas y en el nucleo Circuitos Virtuales**. Esta aplicación es la que hoy en día hace posible la implementación de redes de datos de alta capacidad, como LTE referido a 4G y 5G en redes móviles.
