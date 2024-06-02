@@ -73,3 +73,18 @@ Para separar las señales de subida y bajada de múltiples usuarios en una sola 
 ![[TDMA.png]]
 Se pueden utilizar muchos servicios por este medio como Internet, telefonía fija, IPTV, RPV, Trama IP, TX, IoT. Lo que separa a estos servicios es VLAN.
 # Topologías
+## Físicas
+| Topología | Descripción                                                                                                                                                                                       | Imagen            |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| Bus       | Usa solo un cable backbone que debe terminarse en ambos extremos. Todos los elementos de la red se conectan directamente al backbone.                                                             | ![[Bus.png]]      |
+| Estrella  | Conecta todos los nodos con un nodo central. Red punto a punto. Si falla un nodo, la red sigue funcionando.                                                                                       | ![[Estrella.png]] |
+| Anillo    | Consiste en conectar varios nodos a una red que tiene una serie de repetidores. Cuando un nodo transmite información a otro, la información pasa por cada repetidor hasta llegar al nodo deseado. | ![[Anillo.png]]   |
+| Árbol     | Tiene varias terminales conectadas de forma que la red se ramifica desde un servidor base. Un fallo o rotura en el cable interrumpe las transmisiones                                             | ![[remote-repo/3º/Comunicacion de Datos/imgs/Arbol.png]]    |
+| Malla     | Se implementa para proporcionar la mayor protección posible para evitar una interrupción del servicio.                                                                                            | ![[Malla.png]]    |
+| Mixta     | Aquella en la que se aplica una mezcla entre alguna de las otras topologías: bus, estrella o anillo. Estrella-bus o estrella-anillo.                                                              | ![[Mixta.png]]    |
+## Lógicas
+| Topología | Descripción                                                                                                                                                                                                                                                                                                      | Imagen             |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| Broadcast | Cada host envía sus datos hacia todos los demás hosts del medio de red. No existe un orden que las estaciones deban seguir para utilizar la red. Es por orden de llegada, es cómo funciona el protocolo Ethernet.                                                                                                | ![[Broadcast.png]] |
+| Token     | Controla el acceso a la red mediante la transmisión de un token electrónico a cada host de forma secuencial. Cuando un host recibe el token, ese host puede enviar datos a través de la red. Si el host no tiene ningún dato para enviar, transmite el token al siguiente host y el proceso se vuelve a repetir. | ![[Token.png]]     |
+
