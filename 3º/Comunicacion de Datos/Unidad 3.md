@@ -8,7 +8,7 @@ Es una de las técnicas más usadas para cambiar una señal analógica a digital
 3. Los valores cuantificados son *codificados* como flujos de bits
 ![[PCM.png]]
 ### Muestreo
-En esta etapa la señal analógica es muestreada cada $T_{s}$, donde $T_{s}$ es el intervalo de muestreo o período de muestreo. La inversa es la *frecuencia* o tasa de muestreo $f_{s}$, definida en el Teorema de Nyquist. Este teorema nos dice que para muestrar y luego reproducir la señal analógica orginal es necesario que:
+En esta etapa la señal analógica es muestreada cada $T_{s}$, donde $T_{s}$ es el intervalo de muestreo o período de muestreo. La inversa es la *frecuencia* o tasa de muestreo $f_{s}$, definida en el Teorema de Nyquist. Este teorema nos dice que para muestrar y luego reproducir la señal analógica original es necesario que:
 $$T_{s} = \frac{1}{f_{s}}\leq \frac{1}{2f_{max}} \text{ Relación de Nyquist}$$
 #### Conclusión del Teorema de Nyquist
 - En primer lugar, establece que la señal a muestrar debe estar en una banda finita. Es decir, debemos poder identificar una $f_{max}$ de valor finito.
@@ -18,7 +18,7 @@ $$f_{s} \geq 2f_{max}$$
 Consiste en **transformar los valores continuos** (infinitos valores dentro de un intervalo) de amplitud presentes en la señal PAM **en valores discretos** (cantidad finita de valores dentro de ese mismo intervalo), para poder codificarlos. Es decir, cada valor continuo de amplitud se aproximará al valor discreto más cercano.
 ![[cuantificación.png]]
 #### Error de Cuantificación
-El error de cuantificación *es la diferencia entre la señal de entrada y la señal cuantificada*. Este error no se puede disminuir a menos que aumente la cantidad de niveles discretos dentro del intervalo en consideración. Pero aumentar la cantida de niveles discretos tiene un límite: cuando el error de cuantificación se compara con el ruido, no existirá certeza de que la información recuperada es correcta. Entonces, **el máximo ruido permitido es igual al valor máximo posible del error de cuantificación mínimo**.
+El error de cuantificación *es la diferencia entre la señal de entrada y la señal cuantificada*. Este error no se puede disminuir a menos que aumente la cantidad de niveles discretos dentro del intervalo en consideración. Pero aumentar la cantidad de niveles discretos tiene un límite: cuando el error de cuantificación se compara con el ruido, no existirá certeza de que la información recuperada es correcta. Entonces, **el máximo ruido permitido es igual al valor máximo posible del error de cuantificación mínimo**.
 ![[error de cuantificacion.png]]
 ### Codificación
 La codificación es la última etapa en PCM. Luego de que la muestra ha sido cuantificada, y se ha decidido el número de bits a utilizar por muestra, a cada muestra se le asigna una palabra de un código de “n bits”.
@@ -27,7 +27,7 @@ La codificación es la última etapa en PCM. Luego de que la muestra ha sido cua
 Es la transmisión de un mensaje entre dos puntos del sistema de comunicación modulando la señal portadora con la señal digital, como esto se hace en banda base, se requiere un medio de enlace entre el transmitor y el receptor (par trenzado, coaxial o fibra óptica).
 ![[Modulacion digital banda base.png]]
 La modulación digital, es el proceso de cambiar una de las características de una portadora analógica modulando con señal digital.
-![[remote-repo/3º/Comunicacion de Datos/imgs/Modulacion Digital.png]]
+![[Modulacion Digital.png]]
 
 | Ventajas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Desventajas                                                                                                                                                                                                  |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -48,7 +48,7 @@ La modulación digital, es el proceso de cambiar una de las características de 
 El término tasa de bits es la *velocidad de transferencia de datos* de un sistema de transmisión digital.
 Un baudio puede contener varios bits ya que es el *número de unidades de información por segundo*.
 ## Diagramas de Constelación
-Un diagrama de constelación es una representación de un esquema de modulación digital en plano complejo. Los ejeres real e imaginario son "en fase" y "cuadratura". Los *puntos* en la constelación representan los símbolos de modulación que componen el alfabeto, es decir, todas las "palabras" que podrán usarse en un intercambio de información. Dado un alfabeto de $m$ símbolos, cada uno lleva la información correspondiente a $\log_{2}(m) \space bits$.
+Un diagrama de constelación es una representación de un esquema de modulación digital en plano complejo. Los ejes real e imaginario son "en fase" y "cuadratura". Los *puntos* en la constelación representan los símbolos de modulación que componen el alfabeto, es decir, todas las "palabras" que podrán usarse en un intercambio de información. Dado un alfabeto de $m$ símbolos, cada uno lleva la información correspondiente a $\log_{2}(m) \space bits$.
 ![[Diagrama de constelaciones.png]]
 ## Eficiencia del ancho de banda
 La eficiencia de ancho de banda es una medida utilizada para comparar el funcionamiento de dos técnicas de modulación digital. Indica la cantidad de bits por seg que se pueden propagar a través de un medio por cada hertz de ancho de banda.

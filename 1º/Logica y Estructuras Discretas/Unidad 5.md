@@ -119,3 +119,23 @@ Otros subgrupos:
 > Si 𝐺 es un grupo finito y 𝐻 es un subgrupo de 𝐺, entonces |𝐻| es un divisor de |𝐺|.
 
 VER EJEMPLOS.
+# Álgebra de Boole
+> [!info] Definición
+> Un álgebra booleana es un conjunto B, con dos operaciones binarias ∨ y ∧, una operación unaria ' y dos elementos distintos 0 y 1 que satisfacen las siguientes propiedades, para cualesquier a, b, c en B:
+> 1. **Leyes asociativas**
+> 	$$a \vee (b \vee c) = (a \vee b) \vee c$$
+> 	$$a \wedge (b \wedge c) = (a \wedge b) \wedge c$$
+> 2. **Leyes conmutativas**
+> 	$$a \vee b = b \vee a$$
+> 	$$a \wedge b = b \wedge a$$
+> 3. **Leyes distributivas**
+> 	   $$a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$$
+> 	   $$a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$$
+> 4. **Leyes de identidad** 
+> 	$$a \vee 0 = a$$
+> 	$$a \wedge 1 = a$$
+> 5. **Leyes de complementos**
+> 	$$a \vee a' = 1$$
+> 	$$a \wedge a' = 0$$
+
+Las operaciones $\vee, \wedge \text{  y } \\'$ son llamadas unión (suma booleana), interesección (producto booleano) y complemento, respectivamente.
