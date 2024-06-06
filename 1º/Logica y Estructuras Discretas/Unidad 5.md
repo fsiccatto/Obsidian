@@ -139,3 +139,28 @@ VER EJEMPLOS.
 > 	$$a \wedge a' = 0$$
 
 Las operaciones $\vee, \wedge \text{  y } \\'$ son llamadas unión (suma booleana), interesección (producto booleano) y complemento, respectivamente.
+## Propiedades
+Sea B un álgebra booleana, entonces para cualesquiera a, b ∈ B se cumple:
+- Leyes de idempotencia $a \vee a = a \text{ y } a \wedge a = a$
+- Leyes de acotación $a \vee 1 = 1 \text{ y } a \wedge 0 = 0$
+- Leyes de absorción $a \vee(a\wedge b)=a \text{ y } a\wedge(a\vee b = a)$
+- Unicidad del complemento $\text{Si } a\vee x=1 \text{ y } a\wedge x = 0, \text{ entonces } x=a'$
+- Involución $a \in B, (a')' = a$
+- Leyes de De Morgan $(a\vee b)' = a'\wedge b' \text{ y } (a\wedge b)' = a'\vee b'$
+> [!teorema] Teorema
+> Si B es un álgebra de boole finita, entonces $|B| = 2^n, n \text{ natural}$.
+
+**Observación**: Para que un conjunto finito B sea un álgebra de boole es **condición necesaria** que tenga $2^n, n \text{ natural}$ elementos.
+## Orden en Álgebra de Boole
+En toda Álgebra de Boole (B, ∨, ∧, ’, 0, 1) es posible definir un **orden parcial**, **≼** , es decir una relación binaria que cumpla las propiedades reflexiva, antisimétrica y transitiva.
+Sean a y b elementos de B, se define la relación **≼** como:
+$$a \preccurlyeq b \iff a \wedge b = a$$
+Recordemos que un orden parcial R definido en un conjunto A es una relación que cumple: 
+- Reflexiva $\forall a \in A: aRa$
+- Antisimétrica $\forall a,b \in A: aRb \wedge bRa \implies a = b$
+- Transitiva $\forall a, b, c \in A: aRb \wedge bRc \implies aRc$
+## Átomos en un Álgebra de Boole
+> [!info] Definición
+> Sea (B, ∨, ∧, ’, 0, 1) un Álgebra de Boole, un elemento $a \in B$ se dice que es un **átomo** de B si:
+> - $0\prec a, \text{ y }$
+> - no eixste $x \in B$ tal que $0 \prec x \prec a$
