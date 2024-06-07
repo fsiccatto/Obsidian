@@ -1,9 +1,6 @@
 # Medios de Transmisión de Datos
 ## Medios de Transmisión Guiados
 ### Par Trenzado
-Un par trenzado está formado por dos conductores, generalmente de cobre, cada uno con su aislamiento de plástico. El aislamiento de plástico tiene asignado un color, con el fin de poder identificar los pares.
-## Medios de Transmisión NO Guiados
-### Par Trenzado UTP
 Es un tipo de cable que tiene dos conductores eléctricos aislados y entrelazados para **anular las interferencias de fuentes externas y diafonía de los cables adyacentes**.
 Existen distintos tipos de categorías según la asilación (trabaja sobre $\frac{S}{N}$):
 - UTP
@@ -25,14 +22,13 @@ Se aplican las leyes de la óptica geométrica (ley de reflexión, principio de 
 | n1 > n2     | Cono de Aceptación             |
 | ----------- | ------------------------------ |
 | ![[FO.png]] | ![[FO cono de aceptacion.png]] |
-|             |                                |
 #### Tipos de Fibra Óptica
 ##### Multimodo
 Se denomina así porque hay múltiples rayos de luz de una fuente luminosa que se mueven a través del núcleo por caminos distintos, dependiendo de la estructura del núcleo.
 
-| Multimodo de índice escalonado | Multimodo de índice gradual          |
-| ------------------------------ | ------------------------------------ |
-| ![[FO Multimodo escalonado.png]]          | ![[FO Multimodo gradual.png]] |
+| Multimodo de índice escalonado   | Multimodo de índice gradual   |
+| -------------------------------- | ----------------------------- |
+| ![[FO Multimodo escalonado.png]] | ![[FO Multimodo gradual.png]] |
 ##### Monomodo
 Se fabrica con un diámetro mucho más pequeño que las fibras multimodo y con una densidad (índice de refracción) sustancialmente menor. Por lo tanto, la propagación de los distintos rayos es casi idéntica, los rayos llegan "juntos" a destino y se pueden recombinar sin distorsionar la señal.
 ![[Monomodo.png]]

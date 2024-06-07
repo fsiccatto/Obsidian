@@ -108,16 +108,16 @@ Los objetivos en el diseño de estas técnicas son:
 - Trabaja en forma escalonada codificando solamente los bits 1.
 - Es un código de cambio de nivel, codifica el bit 1 cambiando de nivel positivo a cero, de cero a negativo y luego en el sentido inverso, solamente si se trata de un bit 1. Los bits 0 no se codifican, es decir no se cambia el valor de voltaje que traía.
 ![[MLT-3.png]]
+---
 ## Codificación en placas de Red
 **Codificar**: asignar un valor de tensión al uno binario, y otro distinto al cero. Deben ser perfectamente detectados por el receptor, para no cuantificarlo.
 Es necesario transmitir los datos y la señal de sincronismo (clock), lo cual nos implicaba **hacer 2 enlaces**. Una alternativa a esto, para hacer solo un enlace, era poder extraer el clock de los mismos datos.
 ### Formas de Codificación
-**Códigos de línea**: Son códigos para la transmisión. Se llaman de línea, porque a medidaque los datos se van generando, se van codificando. Cond
+**Códigos de línea**: Son códigos para la transmisión. Se llaman de línea, porque a medida que los datos se van generando, se van codificando.
 > [!info] Condiciones:
 > - Permitir extraer el código de los datos
 > - Que el nivel de corriente continua en el enlace, sea constante, en lo posible, 0 Volts. Es decir, conviene que el código sea polar.
 > - Que el espectro de energía sea adecuado, y reducido.
-
 #### Códigos de Línea para redes LAN
 1. Código Manchester
 	Este código es por cambio de nivel y bipolar. Lo utiliza la placa de red cuando transmite a 10Mbps.
@@ -126,7 +126,7 @@ Es necesario transmitir los datos y la señal de sincronismo (clock), lo cual no
 #### Códigos de Línea para redes WAN
 1. AMI
 	El código AMI fue usado extensamente en la primera generación de redes PCM, Más utilizado por las normas norteamericanas.
-1. HDB-3
+2. HDB-3
 ## Códigos de Bloque
 Aquí codificamos de a bloques de bits, es decir, voy a tomar un conjunto de bits y recién ahí los voy a enviar.
 # Conmutación
@@ -165,11 +165,11 @@ Aparece el concepto de Nodo, porque **comparto enlaces**. En este tipo de conmut
 	- Son más rápidos que la conmutación de mensajes, porque los mensajes son más pequeños
 	- Se trabaja casi en tiempo real
 - Desventajas
-	- Hace falta un protocolo de comunicaciòn
+	- Hace falta un protocolo de comunicación
 	- Se pueden perder paquetes, caso de datagrama
 ### Circuitos Virtuales (Orientados a la conexión)
-En esta técnica, el emisor envía un paquete de control, conocido como paquete de llamada, éste será el encargado de establecer un camino virtual por donde pasaran todos los paquetes de datos. De esta manera llegan en orden establecido por el emisor.
-### Datagramas
+En esta técnica, el emisor envía un paquete de control, conocido como paquete de llamada, éste será el encargado de establecer un camino virtual por donde pasarán todos los paquetes de datos. De esta manera llegan en orden establecido por el emisor.
+### Datagramas (NO orientados a la conexión)
 En esta técnica el emisor **enumera cada paquete**, se caracteriza porque cada paquete puede tomar rutas distintas, y por lo tanto pueden llegar en distinto orden, o también se pueden perder paquetes. El trabajo del receptor es **ordenar los paquetes**.
 ## Aplicaciones de los sistemas de conmutación
 Modelo OSI, es un modelo de 7 capas. Define la forma en la cual se **encapsularán y desencapsularán los datos**, en el momento de ser transmitidos y recibidos, respectivamente.
