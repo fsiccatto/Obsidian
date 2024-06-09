@@ -21,9 +21,12 @@ Utiliza múltiples antenas para transmitir y recibir más de un flujo de datos s
 Permite que múltiples dispositivos se comuniquen con el punto de acceso simultáneamente, mejorando la eficiencia en redes con muchos usuarios.
 ![[MIMO y MU-MIMO.png]]
 # Satélites
-Son redes que utilizan como medios de transmisión satélites artificiales puestos en órbita alrededor de la tierra. La principal ventaja de estos es lograr establecer enlaces de comunicación con áreas que por otros métodos es imposible ya sea por distancia o limitaciones geográficas
+Son redes que utilizan como medios de transmisión satélites artificiales puestos en órbita alrededor de la tierra. Actuan como grandes espejos de las ondas recibidas y enviadas desde la estacion terrestre.
+La principal **ventaja** de estos es lograr establecer enlaces de comunicación con áreas que por otros métodos es imposible ya sea por distancia o limitaciones geográficas.
+Como **desventaja**, son sistemas muy costosos. El retardo de señal puede llegar a ser de 1.5 segundos.
+
 Los satélites son puestos en diferentes órbitas como pueden ser las siguientes:
-- LEO 
-- MEO 
-- GEO 
-- HEO
+- LEO 600-1600km Starklink
+- MEO 10000-20000km se usan para posicionamiento
+- GEO 35848km son los mas utilizados - comunicaciones
+- HEO orbitas elipticas - cartografiar la tierra

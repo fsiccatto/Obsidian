@@ -1,8 +1,52 @@
-# Medios de Transmisión de Datos
-## Medios de Transmisión Guiados
-### Par Trenzado
-Es un tipo de cable que tiene dos conductores eléctricos aislados y entrelazados para **anular las interferencias de fuentes externas y diafonía de los cables adyacentes**.
-Existen distintos tipos de categorías según la asilación (trabaja sobre $\frac{S}{N}$):
+# U3
+## Digitalización de Señales
+![[PCM.png]]
+![[cuantificación.png]]
+![[error de cuantificacion.png]]
+![[codificacion.png]]
+## Modulación Digital
+![[Modulacion Digital.png]]
+
+| Ventajas                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Desventajas                                                                                                                                                                                                  |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| - *Gran inmunidad al ruido*: si la separación entre los niveles binarios es mayor al ruido aleatorio, el receptor puede discernir qué es señal y qué es ruido.<br>- *Facilidad de procesamiento y medición*.<br>- *Capacidad para almacenar la señal en memorias*.<br>- *La señal se puede regenerar*: al no amplificar, regeneran la señal y minimizan el ruido.<br>- *Se pueden detectar errores y corregirlos*.<br>- *Gran capacidad de adaptación con otros sistemas*: se pueden adaptar con cualquier tipo de señales. | - *Necesita un gran ancho de banda para transmitir*: se debe a que se trasmite en pulsos, tienen gran contenido de armónicos.<br>- *Requiere sincronización*.<br>- *Trae aparejado error de cuantificación*. |
+![[Tipos de Modulaciones.png]]
+![[Diagrama de constelaciones.png]]
+![[modulaciones.png]]
+$$E_{BW} = \frac{f_{m}}{BW_{min}}$$
+## Técnicas de Multiplexado
+![[clasificacion de los sistemas de multiplexado.png]]
+- SDM: Multiplexación por división de espacio -> cada canal utiliza todo el B y durante todo el tiempo
+- FDM: Multiplexación por división de frecuencia
+- OFDM: Multiplexación por división de frecuencia ortogonal
+- TDM: Multiplexación por división de tiempo
+- WDM: Multiplexación por división de longitud de onda
+- CDM: Multiplexación por división de código
+![[Clasificacion Multiplexado.png]]
+![[tecnicas de multiplexado.png]]
+## TDM - PCM 30 + 2
+Es una técnica que asigna el ancho de banda total del medio de transmisión a cada canal durante una fracción del tiempo total.
+- Generalmente utilizada en sistemas de transmisión digitales.
+- Cada canal multiplexado *se fracciona de una serie de muestras periódicas y ordenadas*, codificadas a flujo binario mediante la técnica estudiada PCM y moduladas mediante algún código de línea.
+- Los distintos fragmentos de código, resultante del proceso anterior *son empaquetados en tramas* a las cuales se les añade cierto código adicional de control y señalización.
+- Cada una de estas tramas son "encoladas" a través del medio de transmisión. Así, en el punto receptor, habrá que recoger el flujo transmitido, desentramarlo, extraer las fracciones de código de cada muestra y, para cada canal multiplexado, reconstituir el flujo original.
+- Durante el proceso descrito, se requiere un perfecto entendimiento entre el punto emisor y el punto receptor, consiguiéndose mediante un proceso de *sincronismo*, que permita asignar a cada muestra su canal correspondiente.
+![[tramas.png]]
+---
+# U4
+- Condiciones para códigos de linea
+## Conmutacion
+![[resumen conmutacion.png]]
+### Aplicación MPLS
+MPLS (MultiProtocol Label Switching) es un protocolo de conmutación por etiquetas definido para funcionar sobre múltiples protocolos como Sonet, Frame Realy, ATM, Ethernet, aprovechando las eficiencias de cada uno de ellos.
+![[MPLS.png]]
+Se intercala entre la capa 2 y 3 del Modelo OSI y TCP/IP![[Label MPLS.png]]
+La idea es **rutear en los bordes y Conmutar en el Núcleo de la red** en cuestión. De esta forma, en los **bordes tenemos Datagramas y en el nucleo Circuitos Virtuales**. Esta aplicación es la que hoy en día hace posible la implementación de redes de datos de alta capacidad, como LTE referido a 4G y 5G en redes móviles.
+
+---
+# U5
+## MNG
+Según aislación (trabaja sobre $\frac{S}{N}$):
 - UTP
 - FTP
 - STP
@@ -16,25 +60,21 @@ Categorías de cables (trabaja sobre $B$):
 - Categoría 5- hasta 100 Mbps y frecuencia máxima de 100 MHz
 - Categoría 6- hasta 1 Gbps y frecuencia máxima de 250 MHz
 - Categoría 7- hasta 10 Gbps y frecuencia máxima de 600 MHz
-### Fibra Óptica
-Se aplican las leyes de la óptica geométrica (ley de reflexión, principio de reflexión interna total, y a la ley de Snell).  El funcionamiento se basa en transmitir por el núcleo de la FO un haz de luz, tal que este no atraviese el núcleo, sino que se refleje y siga propagándose. Esto se consigue si $n_{1} > n_{2}$ y si el ángulo de incidencia no es superior al ángulo límite, este ángulo límite estará dado por el **cono de aceptación**.
-
+## FO
 | n1 > n2     | Cono de Aceptación             |
 | ----------- | ------------------------------ |
 | ![[FO.png]] | ![[FO cono de aceptacion.png]] |
-#### Tipos de Fibra Óptica
-##### Multimodo
-Se denomina así porque hay múltiples rayos de luz de una fuente luminosa que se mueven a través del núcleo por caminos distintos, dependiendo de la estructura del núcleo.
+### Multimodo
+Multiples rayos de luz (LED)
 
 | Multimodo de índice escalonado   | Multimodo de índice gradual   |
 | -------------------------------- | ----------------------------- |
 | ![[FO Multimodo escalonado.png]] | ![[FO Multimodo gradual.png]] |
-##### Monomodo
-Se fabrica con un diámetro mucho más pequeño que las fibras multimodo y con una densidad (índice de refracción) sustancialmente menor. Por lo tanto, la propagación de los distintos rayos es casi idéntica, los rayos llegan "juntos" a destino y se pueden recombinar sin distorsionar la señal.
+### Monomodo
+Un solo haz de luz (Laser)
 ![[Monomodo.png]]
-#### Ventanas de Trabajo
+### Ventanas de Trabajo
 ![[Ventanas de trabajo FO.png]]
-El origen de esta curva es debido a las características físicas del material (silicio) de la FO. la FO presenta picos de atenuación importantes en las ventanas 950 nm, 1240 nm y, la más importante de todas, en cuanto atenuación es 1380 nm.
 
 | 1º Ventana                                 | 2º Ventana                                           | 3º Ventana                                         |
 | ------------------------------------------ | ---------------------------------------------------- | -------------------------------------------------- |
@@ -42,34 +82,23 @@ El origen de esta curva es debido a las características físicas del material (
 | LED                                        | LÁSER                                                | LÁSER                                              |
 | ETH/LAN con FO multimodo                   | FO monomodo                                          | FO monomodo                                        |
 | Tendidos no mayores a 1-2km, Tx económicos | Tendidos urbanos, los enlaces no son mayores a 20 km | Tendidos interurbanos, enlaces mayores a los 20 km |
-#### Fuentes de luz para cables ópticos
-El dispositivo emisor debe estar equipado con una **fuente luminosa** y el dispositivo receptor con una **célula fotosensible** capaz de traducir la luz recibida en corriente que pueda ser usada en una computadora.
-- LED: fuente más barata, luz desenfocada y se difumina con la distancia. Se utiliza para distancias cortas
-- Láser: se pueden enfocar en un rango muy estrecho. Se utiliza para distancias considerables.
-#### Ventajas y Desventajas
+-led
+-haz de luz
+
 | Ventajas                                                                                                                                                                                                                                                  | Desventajas                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | - Inmunidad al ruido electromagnético<br>- Transmisión de datos a alta velocidad<br>- Gran ancho de banda <br>- Ocupa menor espacio que el coaxial y par trenzado<br>- Video y sonido con mejor performance<br>- Compatibilidad con la tecnología digital | - Costo alto de la conexión<br>- Costo alto de instalación<br>- Flexibilidad en la fibra<br>- Mayor complejidad a la hora de empalmar<br>- Alta complejidad en reparación de rotura de cable |
-# Redes GPON - FTTH
-## Terminología
-- PON: Passive Optical Network. Red óptica punto-multipunto. No existen elementos activos entre la OLT y el equipo terminal ONT.
-- GPON: recomendaciones que se describen las técnicas para compartir un medio común (FO) por varios usuarios, encapsular la información y gestionar los elementos de red, entre otros.
-- OLT: Optical Line Terminal. Equipo central.
-- ONT/ONU: Optical Network Termination. Equipo de usuario.
-## Funcionamiento
-GPON utiliza multiplexación por división de longitud de onda, facilitando la comunicación bidireccional sobre una sola fibra. 
+## GPON
+GPON: recomendaciones que se describen las técnicas para compartir un medio común (FO) por varios usuarios, encapsular la información y gestionar los elementos de red, entre otros. Utiliza multiplexacion por division de longitu de onda, con comunicacion bidireccional.
 - Trabaja en 1.24 Gbit/s subida y 2.48 Gbit/s bajada.
 - Alcance físico máximo: 20km.
 - Radio de multiplexación 1:64 y 1:128
 ![[GPON.png]]
-Para separar las señales de subida y bajada de múltiples usuarios en una sola FO, GPON adopta dos mecanismos:
-- En dirección de bajada (Downstream), los paquetes de datos son transmitidos por **broadcast**.
 ![[Downstream.png]]
-- En dirección de subida (Upstream), los paquetes de datos son transmitidos mediante **TDMA** (Time Division Multiplexing Access)
 ![[TDMA.png]]
-Se pueden utilizar muchos servicios por este medio como Internet, telefonía fija, IPTV, RPV, Trama IP, TX, IoT. Lo que separa a estos servicios es VLAN.
-# Topologías
-## Físicas
+## Topologías
+- Fisicas
+
 | Topología | Descripción                                                                                                                                                                                       | Imagen                                                   |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
 | Bus       | Usa solo un cable backbone que debe terminarse en ambos extremos. Todos los elementos de la red se conectan directamente al backbone.                                                             | ![[Bus.png]]                                             |
@@ -78,9 +107,9 @@ Se pueden utilizar muchos servicios por este medio como Internet, telefonía fij
 | Árbol     | Tiene varias terminales conectadas de forma que la red se ramifica desde un servidor base. Un fallo o rotura en el cable interrumpe las transmisiones                                             | ![[remote-repo/3º/Comunicacion de Datos/imgs/Arbol.png]] |
 | Malla     | Se implementa para proporcionar la mayor protección posible para evitar una interrupción del servicio.                                                                                            | ![[Malla.png]]                                           |
 | Mixta     | Aquella en la que se aplica una mezcla entre alguna de las otras topologías: bus, estrella o anillo. Estrella-bus o estrella-anillo.                                                              | ![[Mixta.png]]                                           |
-## Lógicas
+- Logicas
+
 | Topología | Descripción                                                                                                                                                                                                                                                                                                      | Imagen             |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
 | Broadcast | Cada host envía sus datos hacia todos los demás hosts del medio de red. No existe un orden que las estaciones deban seguir para utilizar la red. Es por orden de llegada, es cómo funciona el protocolo Ethernet.                                                                                                | ![[Broadcast.png]] |
 | Token     | Controla el acceso a la red mediante la transmisión de un token electrónico a cada host de forma secuencial. Cuando un host recibe el token, ese host puede enviar datos a través de la red. Si el host no tiene ningún dato para enviar, transmite el token al siguiente host y el proceso se vuelve a repetir. | ![[Token.png]]     |
-
