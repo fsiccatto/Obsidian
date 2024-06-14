@@ -84,7 +84,7 @@ Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛
 ## Aritmética Modular
 Recordando la definición de congruencia de la U3 ![[UTN-repo/1º/Logica y Estructuras Discretas/Unidad 4#Relación de Congruencia|Unidad 4]]
 El conjunto de las clases de equivalencia distintas, que constituyen una partición de $\mathbb{Z}$, se denota $\mathbb{Z_{n}}$ y se le llama el **Conjunto de Enteros Módulo $n$**
-$$\mathbb{Z} = \{ [0], [1], \dots, [n-1] \}$$
+$$\mathbb{Z}_{n} = \{ [0], [1], \dots, [n-1] \}$$
 > [!teorema] Teorema
 > Sean 𝑎 y 𝑏 elementos de $\mathbb{Z_{n}}$, se define una **suma** y un **producto** en $\mathbb{Z_{n}}$ como:
 > $$[a]+[b]=[a+b] \text{ y } [a].[b]=[a.b]$$
