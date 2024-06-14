@@ -14,7 +14,7 @@
 Ejemplos:
 - La suma en el conjunto de los números enteros positivos.
 - La multiplicación en el conjunto de los números enteros postivos.
-- La multiplicación en el conjunto de los números racioneles.
+- La multiplicación en el conjunto de los números racionales.
 ### Monoides
 > [!info] Definición
 > Sea $M$ un conjunto no vacío y sea $\ast$ una operación binaria sobre $M$. Si ($M, \ast$) es un semigrupo que tiene elemento identidad, entonces la dupla ($M, \ast$) se denomina **monoide**. En otras palabras:
@@ -77,6 +77,10 @@ Por lo que en un grupo 𝐺, $a{^{n}}$ está definido para cualquier entero 𝑛
 > [!teorema] Teorema
 > Si $(𝐺_{1}, ∗_{1}) , (𝐺_{2}, ∗_{2}) , … , (𝐺_{m}, ∗_{m})$ son grupos, entonces el conjunto $𝐺 = 𝐺_{1} × · · · × 𝐺_{m}$ es un grupo, con la operación ∗ definida por:
 > $$(a_{1}, a_{2}, \dots, a_{m})\ast(b_{1}, b_{2},\dots, b_{m}) = (a_{1}\ast_{1}b_{1}, a_{2}\ast_{2}b_{2},\dots,a_{m}\ast_{m}b_{m})$$
+
+> [!example] Ejemplo
+>  Dados los grupos $(\mathbb{Z},+)\text{ y } (\mathbb{R}^*,.)$, el conjunto producto $\mathbb{Z}x\mathbb{R}^*$ es un grupo con la operación $\ast$ definida como:
+>  $$(a,b)\ast(c,d)=(a+c,b.d)$$
 ## Aritmética Modular
 Recordando la definición de congruencia de la U3 ![[UTN-repo/1º/Logica y Estructuras Discretas/Unidad 4#Relación de Congruencia|Unidad 4]]
 El conjunto de las clases de equivalencia distintas, que constituyen una partición de $\mathbb{Z}$, se denota $\mathbb{Z_{n}}$ y se le llama el **Conjunto de Enteros Módulo $n$**
