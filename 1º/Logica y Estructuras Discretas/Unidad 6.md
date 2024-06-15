@@ -15,18 +15,23 @@
 > [!info] Definición
 >  Sea 𝐺 un grafo con conjunto de vértices $V=\{ v_{1}, \dots, v_{n} \}. La **matriz de adyacencia** de 𝐺 es la matriz $A=(a_{ij})$ de tamaño 𝑛 × 𝑛, donde:
 >  $$a_{jk} = 1 \text{ si } v_{i} \text{ es adyacente a } v_{j},  m_{ik} = 0 \text{ en otro caso}$$
-
 ###### Propiedad
 Si $G=(V(G), E(G))$ es un grafo, entonces
 $$\sum_{v_{i} \in V(G)}d(v_{i}) =2|E(G)|$$
 > [!caution] Demostración
 > Sea M la matriz de incidencia
-> $$d(v_{i}) = \sum_{j=1}^km_{ij} \to d(v_{i})=m_{12} + m_{13} + \dots + m_{1k}$$
-> $$\sum_{i=j}^nd(v_{i})=\sum_{i=1}^n(\sum_{j=1}^km_{ij})=\sum_{j=1}^k(\sum_{i=1}^nm_{ij})=\sum_{j=1}^k2=2k=2|E(G)|$$
-$$$$
+> $$d(v_{i}) = \sum_{k=1}^mm_{ik}$$
+> $$\sum_{i=1}^nd(v_{i})=\sum_{i=1}^n(\sum_{k=1}^mm_{ik})\sum_{k=1}^m(\sum_{i=1}^nm_{ik})$$
+> Como cada arista $e_{k}$ incide en exactamente dos vértices (cada columna de $M$ tiende dos unos).
+> $$\sum_{k=1}^m2=2m=2|E(G)|$$
 
 > [!important] Corolario
->  En cualquier grafo el número de vértices de grado impar es par.
+> En cualquier grafo el número de vértices de grado impar es par.
+
+> [!caution] Demostración
+> Sean V1 y V2 los subconjuntos de vértices de grado impar y grado par, respectivamente. Entonces
+> $$\sum_{v \in V_{1}}d(v)+\sum_{v \in V_{2}}d(v) = \sum_{v \in V}d(v)$$
+> es par, por teorema anterior. Como tambien $\sum_{v \in V_{2}}d(v)$ es par, se sigue que $\sum_{v \in V_{1}}d(v)$ es par, y por lo tanto $|V_{1}|$ es par.
 ### Grafos Destacados
 > [!note] Definición
 >  Sea $n$ un entero positivo. Un **grafo completo de 𝑛 vértices**, que se denota por $K_{n}$, es un grafo con 𝑛 vértices y exactamente una arista conectando a cada par de vértices distintos.
