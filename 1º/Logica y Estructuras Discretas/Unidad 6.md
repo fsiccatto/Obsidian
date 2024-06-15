@@ -19,9 +19,9 @@
 Si $G=(V(G), E(G))$ es un grafo, entonces
 $$\sum_{v_{i} \in V(G)}d(v_{i}) =2|E(G)|$$
 > [!caution] Demostración
-> Sea M la matriz de incidencia
+> Sea M la matriz de incidencia, cada vértice $i$ tenemos que
 > $$d(v_{i}) = \sum_{k=1}^mm_{ik}$$
-> $$\sum_{i=1}^nd(v_{i})=\sum_{i=1}^n(\sum_{k=1}^mm_{ik})\sum_{k=1}^m(\sum_{i=1}^nm_{ik})$$
+>$$\sum_{i=1}^nd(v_{i})=\sum_{i=1}^n(\sum_{k=1}^mm_{ik})\sum_{k=1}^m(\sum_{i=1}^nm_{ik})$$
 > Como cada arista $e_{k}$ incide en exactamente dos vértices (cada columna de $M$ tiende dos unos).
 > $$\sum_{k=1}^m2=2m=2|E(G)|$$
 
