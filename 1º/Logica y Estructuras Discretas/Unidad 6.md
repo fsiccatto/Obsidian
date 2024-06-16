@@ -1,4 +1,4 @@
-# Grafos y Árboles
+[](matriz%20de%20adyacencia.png)[](matriz%20de%20incidencia.png)# Grafos y Árboles
 ## Grafos
 > [!info] Definición
 >  Un grafo 𝐺 es una pareja ordenada $𝐺 = (𝑉 (𝐺) , 𝐸 (𝐺))$ , donde $𝑉 (G)$ es un conjunto finito no vacío cuyos elementos son llamados **vértices** y $𝐸 (G)$ es un conjunto cuyos elementos son subconjuntos de cardinalidad dos de $𝑉 (𝐺)$ , llamados **aristas**.
@@ -40,7 +40,7 @@ $$\sum_{v_{i} \in V(G)}d(v_{i}) =2|E(G)|$$
 >  Un grafo 𝐺 es **𝑘-regular** si $𝑑(v)= 𝑘$ para todo 𝑣 ∈ 𝑉(𝐺); un grafo 𝐺 es **regular**, si es 𝑘-regular para algún 𝑘.
 
 > [!note] Definición
->  Se dice que un grafo es **bipartito**, si su conjunto de vértices puede ser partido en dos subconjuntos disjuntos 𝑋 y 𝑌, (no vacíos), tales que cualquier arista tiene un extremo en 𝑋 y un extremo en 𝑌; tal partición (𝑋, 𝑌) es llamada una **bipartición** del grafo.
+>  Se dice que un grafo es **bipartito** si su conjunto de vértices puede ser partido en dos subconjuntos disjuntos 𝑋 y 𝑌, (no vacíos), tales que cualquier arista tiene un extremo en 𝑋 y un extremo en 𝑌; tal partición (𝑋, 𝑌) es llamada una **bipartición** del grafo.
 
 > [!teorema] Teorema
 > Un grafo es bipartito si y solo si no contiene ciclos de longitud impar.
@@ -52,7 +52,7 @@ $$\sum_{v_{i} \in V(G)}d(v_{i}) =2|E(G)|$$
 >  Se dice que un grafo 𝐻 es un **subgrafo** de un grafo 𝐺 si y sólo si, cada vértice en 𝐻 es también un vértice en 𝐺, cada arista en 𝐻 es también una arista en 𝐺 y cada arista en 𝐻 tiene los mismos vértices extremos de 𝐺.
 
 - Si además 𝐻 ≠ 𝐺, entonces se dice que 𝐻 es un **subgrafo propio** de 𝐺.
-- Un **subgrafo de recubrimiento** es un subgrafo 𝐻 de 𝐺 tal que 𝑉 𝐻 = 𝑉(𝐺).
+- Un **subgrafo de recubrimiento** es un subgrafo 𝐻 de 𝐺 tal que 𝑉(𝐻) = 𝑉(𝐺).
 - Sea 𝐺 un grafo y sea 𝑉′ un subconjunto no vacío de 𝑉. Sea 𝐸′ el subconjunto de aristas de 𝐺 que tienen ambos extremos en 𝑉′ . El grafo (𝑉′ , 𝐸′) es llamado el **subgrafo inducido** por 𝑉′ , y se denota 𝐺\[𝑉′].
 - Un subgrafo 𝐻 de 𝐺 es **maximal** con respecto a una propiedad, si 𝐻 cumple la propiedad, y 𝐻 no es subgrafo propio de otro grafo que cumpla la propiedad. Análogamente, 𝐻 es **minimal** con respecto a una propiedad si 𝐻 cumple la propiedad y no existe un subgrafo propio de 𝐻 que cumpla la propiedad.
 #### Caminos de un Grafo
@@ -80,7 +80,7 @@ Es decir que dos grafos pueden tener la misma estructura, difieriendo solo de lo
 > [!info] Definción
 >  Un **multigrafo** 𝐺 consiste de dos conjuntos finitos: un conjunto no vacío 𝑉(𝐺) de vértices y un conjunto de aristas 𝐸(𝐺) , donde cada arista está asociada a un conjunto compuesto por uno o dos vértices. Una arista con un solo punto extremo se llama un **bucle** o lazo y dos o más aristas distintas con el mismo conjunto de puntos extremos se dicen que son **paralelas**.
 ## Paseos Eulerianos
-Un **paseo euleriano** es un paseo recorre todas las aristas de un grafo 𝐺. **Un circuito euleriano** es un paseo euleriano cerrado. Un grafo es euleriano si contiene un circuito euleriano.
+Un **paseo euleriano** es un paseo que recorre todas las aristas de un grafo 𝐺. **Un circuito euleriano** es un paseo euleriano cerrado. Un grafo es euleriano si contiene un circuito euleriano.
 > [!teorema] Teorema
 > Un grafo conexo es euleriano si y sólo si no contiene vértices de grado impar.
 ## Ciclo Hamiltoniano
@@ -108,4 +108,15 @@ Un **recorrido** en un árbol binario $T$ con raíz $r$ es un procedimiento para
 | Recorrido preorden                                                                                                             | Recorrido postorden                                                                                                              |
 | :----------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
 | 1. Procesar el vértice raíz.<br>2. Recorrer el subárbol izquierdo en preorden.<br>3. Recorrer el subárbol derecho en preorden. | 1. Recorrer el subárbol izquierdo en postorden.<br>2. Recorrer el subárbol derecho en postorden.<br>3. Procesar el vértice raíz. |
-#### Aplicación: Notación Polaca
+| Notación Polaca                                                                                                                | Notación Polaca Inversa                                                                                                          |
+## Digrafo
+> [!info] Definción
+>  Un **grafo dirigido** $D$ o **dígrafo** es una pareja ordenada $D = (V(D), A(D))$, donde V(D) es un conjunto finito no vacío cuyos elementos son llamados vértices y A(D) es un subconjunto de parejas ordenadas de vértices distintos, cuyos elementos son llamados arcos. Si $a = (u, v) ∈ A(D)$, se dice que $u$ es el extremo inicial y $v$ es el extremo terminal de $a$.
+### Matrices de un Digrafo
+> [!info] Definción
+>  Sea $D$ un dígrafo con conjunto de vértices $V = {v_{1},…,v_{n}}y$ conjunto de arcos $E= {e_{1}, …,e_{m}}$ ,
+>  La matriz de incidencia de $D$ es la matriz donde:
+>  ![[matriz de incidencia.png]]
+>  La matriz de adyacencia de D es la matriz $A=(a_{ij})$ de tamaño $nxn$ donde:
+>  ![[matriz de adyacencia.png]]
+
