@@ -107,7 +107,7 @@ es decir, las operaciones están *bien definidas*, pues no dependen de la elecci
 
 Otros subgrupos:
 - Sea $m\in \mathbb{Z}$ y considerando $m\mathbb{Z} =\left\{  m.p:p \in \mathbb{Z}  \right\}$conjunto de los enteros múltiplos de $m$
-- Sea (𝐺, ∗) un grupo, 𝑎 ∈ 𝐺, y sea 𝐻 = {𝑎 𝑘 : 𝑘 ∈ ℤ}. Veremos que, (𝐻, ∗) es un subgrupo de (𝐺, ∗) ya que, 𝐻 ⊆ 𝐺, y
+- Sea $(𝐺, ∗)$ un grupo, $𝑎 ∈ 𝐺$, y sea $𝐻 = {𝑎 𝑘 : 𝑘 ∈ ℤ}$. Veremos que, $(𝐻, ∗)$ es un subgrupo de $(𝐺, ∗)$ ya que, $𝐻 ⊆ 𝐺$, y
 	- Este grupo se denomina *Subgrupo Cíclico Generado por 𝑎 y se denota $𝐻 = <𝑎>$* .
 
 > [!info] Definición
