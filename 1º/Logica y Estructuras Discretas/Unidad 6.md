@@ -13,7 +13,7 @@
 >  $$m_{ik} = 1 \text{ si } e_{k} \text{ incide en } v_{i},  m_{ik} = 0 \text{ en otro caso}$$
 
 > [!info] Definición
->  Sea 𝐺 un grafo con conjunto de vértices $V=\{ v_{1}, \dots, v_{n} \}. La **matriz de adyacencia** de 𝐺 es la matriz $A=(a_{ij})$ de tamaño 𝑛 × 𝑛, donde:
+>  Sea 𝐺 un grafo con conjunto de vértices $V=\{ v_{1}, \dots, v_{n}\}$. La **matriz de adyacencia** de 𝐺 es la matriz $A=(a_{ij})$ de tamaño 𝑛 × 𝑛, donde:
 >  $$a_{jk} = 1 \text{ si } v_{i} \text{ es adyacente a } v_{j},  m_{ik} = 0 \text{ en otro caso}$$
 ###### Propiedad
 Si $G=(V(G), E(G))$ es un grafo, entonces
@@ -46,7 +46,7 @@ $$\sum_{v_{i} \in V(G)}d(v_{i}) =2|E(G)|$$
 > Un grafo es bipartito si y solo si no contiene ciclos de longitud impar.
 
 > [!note] Definición
->  Sean 𝑚 y 𝑛 enteros positivos. Un **grafo completo bipartito de vértices (𝑚, 𝑛)**, que se denota por $K_{m,n}$, , es un grafo bipartito tal que $𝑋 = v_{1}, v_{2}, \dots , 𝑣_{m}$ , $𝑌 = w_{1}, w_{2}, \dots , w_{n}$ , y existe una arista de cada vértice $v_{i}$ a cada vértice $w_{j}$.
+>  Sean 𝑚 y 𝑛 enteros positivos. Un **grafo completo bipartito de vértices (𝑚, 𝑛)**, que se denota por $K_{m,n}$, es un grafo bipartito tal que $𝑋 = v_{1}, v_{2}, \dots , 𝑣_{m}$ , $𝑌 = w_{1}, w_{2}, \dots , w_{n}$ , y existe una arista de cada vértice $v_{i}$ a cada vértice $w_{j}$.
 #### Subgrafo
 > [!info] Definición
 >  Se dice que un grafo 𝐻 es un **subgrafo** de un grafo 𝐺 si y sólo si, cada vértice en 𝐻 es también un vértice en 𝐺, cada arista en 𝐻 es también una arista en 𝐺 y cada arista en 𝐻 tiene los mismos vértices extremos de 𝐺.
