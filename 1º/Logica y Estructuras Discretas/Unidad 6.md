@@ -1,4 +1,4 @@
-[](matriz%20de%20adyacencia.png)[](matriz%20de%20incidencia.png)# Grafos y Árboles
+# Grafos y Árboles
 ## Grafos
 > [!info] Definición
 >  Un grafo 𝐺 es una pareja ordenada $𝐺 = (𝑉 (𝐺) , 𝐸 (𝐺))$ , donde $𝑉 (G)$ es un conjunto finito no vacío cuyos elementos son llamados **vértices** y $𝐸 (G)$ es un conjunto cuyos elementos son subconjuntos de cardinalidad dos de $𝑉 (𝐺)$ , llamados **aristas**.
