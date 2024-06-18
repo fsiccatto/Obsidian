@@ -114,12 +114,12 @@ Un **recorrido** en un árbol binario $T$ con raíz $r$ es un procedimiento para
 | Notación Polaca                                                                                                                | Notación Polaca Inversa                                                                                                          |
 ## Digrafo
 > [!info] Definción
->  Un **grafo dirigido** $D$ o **dígrafo** es una pareja ordenada $D = (V(D), A(D))$, donde V(D) es un conjunto finito no vacío cuyos elementos son llamados vértices y A(D) es un subconjunto de parejas ordenadas de vértices distintos, cuyos elementos son llamados arcos. Si $a = (u, v) ∈ A(D)$, se dice que $u$ es el extremo inicial y $v$ es el extremo terminal de $a$.
+>  Un **grafo dirigido** $D$ o **dígrafo** es una pareja ordenada $D = (V(D), A(D))$, donde $V(D)$ es un conjunto finito no vacío cuyos elementos son llamados vértices y $A(D)$ es un subconjunto de parejas ordenadas de vértices distintos, cuyos elementos son llamados arcos. Si $a = (u, v) ∈ A(D)$, se dice que $u$ es el extremo inicial y $v$ es el extremo terminal de $a$.
 ### Matrices de un Digrafo
 > [!info] Definción
->  Sea $D$ un dígrafo con conjunto de vértices $V = {v_{1},…,v_{n}}y$ conjunto de arcos $E= {e_{1}, …,e_{m}}$ ,
+>  Sea $D$ un dígrafo con conjunto de vértices $V = {v_{1},…,v_{n}}$ y conjunto de arcos $E= {e_{1}, …,e_{m}}$,
 >  La matriz de incidencia de $D$ es la matriz donde:
 >  ![[matriz de incidencia.png]]
->  La matriz de adyacencia de D es la matriz $A=(a_{ij})$ de tamaño $nxn$ donde:
+>  La matriz de adyacencia de $D$ es la matriz $A=(a_{ij})$ de tamaño $n$x$n$ donde:
 >  ![[matriz de adyacencia.png]]
 
