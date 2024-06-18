@@ -76,6 +76,9 @@ $$\sum_{v_{i} \in V(G)}d(v_{i}) =2|E(G)|$$
 >  La función 𝜑 es un **isomorfismo** de 𝐺 en 𝐻. Si 𝐺 es isomorfo a 𝐻, escribiremos 𝐺 ≅ 𝐻.
 
 Es decir que dos grafos pueden tener la misma estructura, difieriendo solo de los nombres de los vértices.
+- Mismo orden
+- Mismo tamaño
+- Vértices correspondientes con el mismo grado
 ### Multigrafo
 > [!info] Definción
 >  Un **multigrafo** 𝐺 consiste de dos conjuntos finitos: un conjunto no vacío 𝑉(𝐺) de vértices y un conjunto de aristas 𝐸(𝐺) , donde cada arista está asociada a un conjunto compuesto por uno o dos vértices. Una arista con un solo punto extremo se llama un **bucle** o lazo y dos o más aristas distintas con el mismo conjunto de puntos extremos se dicen que son **paralelas**.
