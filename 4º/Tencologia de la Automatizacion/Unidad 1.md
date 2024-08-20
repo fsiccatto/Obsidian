@@ -88,4 +88,13 @@ Dicho de otra forma, un sistema es invertible si al **observar su salida podemos
 
 Un sistema **sin** memoria depende únicamente de la entrada actual.
 Un sistema **con** memoria depende de las entradas y/o estados anteriores además de la entrada actual. El sistema guarda información sobre las entradas y/o estados anteriores, lo que le permite tener "memoria" de su comportamiento pasado.
+### Sistema en serie y paralelo
+> [!info] Sistema serie y paralelo
+> Un sistema en serie representa una configuración donde la salida de un bloque se convierte en la entrdada de la siguiente, formando una cadena lineal de bloques.
+> Un sistema en paralelo tiene bloques que reciben la misma entrada simultáneamente, y sus salidas se combinan, generalmente sumándose, para formar la salida total del sistema.
+
+| LTI en serie                                                                                                          | LTI en paralelo                                                                                   |
+| :-------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
+| Si dos o más sistemas están en serie, el orden puede ser intercambiado sin que se vea afectada la salida del sistema. | Si dos o más sistemas están en paralelo, el sistema está definido como la suma de estos sistemas. |
+| ![[LTI serie.png]]                                                                                                    | ![[LTI en paralelo.png]]                                                              |
 ## Modelo de sistema en el espacio de estado
