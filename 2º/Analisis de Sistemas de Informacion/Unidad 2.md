@@ -5,7 +5,7 @@ Es importante el modelo de análisis por varios motivos:
 - estructura los requisitos de un modo que facilita si comprensión y su mantenimiento,
 - puede considerarse como una aproximación al modelo de diseño.
 ## Artefactos
-### 
+
 ## POO
 Orientacion a objetos = objeto + clasificación + herencia + comunicación
 ### Clases y Objetos
