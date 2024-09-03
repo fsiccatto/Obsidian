@@ -68,7 +68,7 @@ Las formas canónicas son representaciones específicas de sistemas en el espaci
 - <mark style="background: #FF5582A6;">Forma Canónica Diagonal</mark>. Simplifica el análisis al presentar la matriz de estados en una forma diagonal cuando la matriz es diagonalizable, lo que facilita el estudio de la dinámica del sistema.
 - <mark style="background: #ADCCFFA6;">Forma Canónica de Jordan</mark>. Utilizada cuando la matriz de estados no es diagonalizable. Agrupa la matriz de estados en bloques de Jordan, reflejando la estructura interna y comportamientos más complejos del sistema.
 ### Forma canónica de control FCC
-Los **estados de la FCC** se ordenan según la influencia que ejerce sobre los mismos la **entrada** de control.
+Los **estados de la FCC** se ordenan según la influencia que ejerce sobre los mismos la **entrada** de control. Este sistema me permite controlar el estado (por ejemplo un vector de temperaturas).
 Sea el sistema diferencial:
 $$
 \frac{d^{n}y}{dt^{n}}+a_{1}\frac{d^{n-1}y}{dt^{n-1}}+\dots+a_{n-1}\frac{dy}{dt}+a_{n}y = u
@@ -80,11 +80,13 @@ $$
 La anterior ecuación diferencial de orden n se puede escribir como un sistema de n ecuaciones diferenciales de primer orden. Es decir:
 $$
 \begin{align}
+\begin{cases}
 x_{1}'&=x_{2} \\
 x_{2}'&=x_{3} \\
 &\dots \\
 x_{n}' &= -a_{n}x_{1}-\dots-a_{1}x_{n}+u \\
 y &= x_{1}
+\end{cases}
 \end{align}
 $$
 Se puede deducir:
@@ -159,9 +161,8 @@ b_{n} & b_{n-1} & \dots b_{1}
 \end{bmatrix}
 \end{align}
 $$
-
 ### Forma canónica de observación FCO
-Los **estados de la FCO** se ordenan según el grado de influencia de éstos sobre la **salida** del proceso.
+Los **estados de la FCO** se ordenan según el grado de influencia de éstos sobre la **salida** del proceso. Garantiza que el sistema sea observable.
 Sea la ecuación diferencial con coeficientes constantes:
 $$
 y^{n}(t)+a_{1}y^{n-1}(t)+a_{2}y^{n-2}(t)+\dots+a_{n-1}y'(t)+a_{n}y(t)=b_{1}u^{n-1}(t)+b_{2}u^{n-2}(t)+\dots+b_{n-1}u'(t)+b_{n}u(t)
@@ -179,9 +180,9 @@ $$
 y(s)=s^{-1}(b_{1}y(s)-a_{1}u(s))+s^{-2}(b_{2}y(s)-a_{2}u(s))+\dots+s^{-n+1}(b_{n-1}y(s)-a_{n-1}u(s))+s^{-n}(b_{n}y(s)-a_{n}u(s))=0
 $$
 Todos los términos se pueden escribir en términos de potencia $s{^{-1}}$. Se define $y(s)=x_{n}(s)$, que llevará a encontrar las ecuaciones de estado correspondiente:
-![[Pasted image 20240903150715.png]]
+![[FCO ec.png]]
 Es una tecnica de programación anidada:
-![[Pasted image 20240903150943.png]]
+![[FCO ec2.png]]
 Al anti transformar se obtiene:
 $$
 \begin{align} 
@@ -191,7 +192,8 @@ x_{2}'=x_{1}(t)+(-a_{n-1}x_{n}(t)+b_{n-1}u(t)) \\
 x_{3}'=x_{2}(t)+(-a_{n-2}x_{n}(t)+b_{n-2}u(t)) \\
 \dots \\
 x_{n}'=x_{n-1}(t)+(-a_{1}x_{n}(t)+b_{1}u(t))
-\end{cases} \\
+\end{cases} \\ \\
+
 y(t)= \begin{bmatrix}
 0 & 0 & \dots & 1
 \end{bmatrix}
@@ -214,7 +216,6 @@ $$
 ### Forma canónica diagonal
 Utilizando la definición de polos de la función de transferencia, se puede obtener diferentes representaciones según la naturaleza de los polos:
 - <mark style="background: #D2B3FFA6;">Forma Diagonal</mark> $\to$ Se obtiene cuando **todos los polos del sistema son distintos**.
-- <mark style="background: #D2B3FFA6;">Forma de Jordan</mark> $\to$ Se obtiene cuando **hay repetición de polos**, es decir, cuando el sistema tiene polos múltiples.
 Los elementos no nulos y diferentes (**los polos**) se encuentran únicamente en la diagonal principal.
 Dada la función de transferencia expresada como sumas parciales con n polos diferentes $p_{1},p_{2},\dots,p_{n}$ y residuos $d_{1},d_{2},\dots,d_{n}$:
 $$
@@ -277,3 +278,86 @@ $$
 
 ![[FCD bloques.png]]
 ### Forma canónica de Jordan
+La matriz de estado no puede estar completamente diagonalizada. 
+- <mark style="background: #D2B3FFA6;">Forma de Jordan</mark> $\to$ Se obtiene cuando **hay repetición de polos**, es decir, cuando el sistema tiene polos múltiples.
+$$
+\begin{align}
+\frac{y(s)}{u(s)} &= \sum_{i=1}^n{\frac{d_{i}}{(s-p)^r}} \\
+\frac{y(s)}{u(s)}&=\frac{d_{1}}{(s-p)^r}+\frac{d_{2}}{(s-p)^{r-1}}+\dots+\frac{d_{r-1}}{(s-p)^{2}}+\frac{d_{r}}{(s-p)}
+\end{align}
+$$
+Para obtener las ecuaciones de estado, considerando la forma general de un polo $p$ de multiplicidad $r$, un polo $p_{j}$ diferente y otro polo $p_{n}$ diferente
+$$
+\frac{y(s)}{u(s)}=\frac{d_{1}}{(s-p)^r}+\frac{d_{2}}{(s-p)^{r-1}}+\dots+\frac{d_{r-1}}{(s-p)^{2}}+\frac{d_{r}}{(s-p)}+\frac{d_{n-1}}{(s-p_{j})}+\frac{d_{n}}{(s-p_{n})}
+$$
+Se define
+$$
+\begin{align}
+\begin{cases}
+x_{1}&=\frac{U(s)}{(s-p)^r} &\to &x_{1}'(t)&=px_{1}(t)+x_{2}(t) \\
+x_{2}&=\frac{U(s)}{(s-p)^r-1} &\to &x_{2}'(t)&=px_{2}(t)+x_{3}(t) \\
+\vdots \\
+x_{r-1}&=\frac{U(s)}{(s-p)^2} &\to &x_{r-1}'(t)&=px_{r-1}(t)+x_{r}(t) \\
+x_{r}&=\frac{U(s)}{(s-p)} &\to &x_{r}'(t)&=px_{r}(t)+u(t)\\
+x_{j}&=\frac{U(s)}{(s-p_{j})} &\to &x_{j}'(t)&=p_{j}x_{j}(t)+u(t)\\
+x_{n}&=\frac{U(s)}{(s-p_{n})} &\to &x_{n}'(t)&=p_{n}x_{n}(t)+u(t)
+\end{cases}
+\end{align}
+$$
+> [!info] Jordan
+> La estructura matricial considerando la forma general de un polo p de multiplicidad r (bloque de Jordan) y dos polos pj y pn diferentes es:
+>$$
+A=\begin{bmatrix}
+p & 1 & 0 & \dots & 0 & 0 \\
+0 & p & 1 & \dots & 0 & 0\\
+0 & 0 & p & \dots & 0  & 0\\
+\dots & \dots & \dots & \dots & \ddots & \vdots \\
+0 & 0 & 0 & \dots & p_{j} & 0 \\
+0 & 0 & 0 & \dots & 0 & p_{n}
+\end{bmatrix} \space
+B=\begin{bmatrix}
+0 \\ 0 \\ 1 \\ 1 \\ \vdots \\ 1
+\end{bmatrix} \space C=\begin{bmatrix}
+d_{1} & d_{2} & d_{3} & \dots & d_{j} & d_{n} 
+\end{bmatrix}
+>$$
+>Sistemas de ecuaciones:
+>$$
+\begin{align} \\
+&\begin{cases}
+x_{1}'(t)&=px_{1}(t)+x_{2}(t) \\
+x_{2}'(t)&=px_{2}(t)+x_{3}(t)  \\
+\vdots \\
+x_{r-1}'(t)&=px_{r-1}(t)+x_{r}(t) \\
+x_{r}'(t)&=px_{r}(t)+u(t)\\
+x_{j}'(t)&=p_{j}x_{j}(t)+u(t)\\
+x_{n}'(t)&=p_{n}x_{n}(t)+u(t)
+\end{cases} \\ \\
+&y(t)=d_{1}x_{1}+d_{2}x_{2}+\dots+d_{j}x_{j}+d_{n}x_{n}
+\end{align}
+>$$
+Si algunas de las raíces del denominador son complejas, las matrices A y C tendrán coeficientes complejos.
+## Unicidad de función de transferencia
+Partimos de un LTI, representado por:
+$$
+\begin{equation} \\
+\begin{cases}
+x'(t) &=& Ax(t) + Bu(t) \\
+y(t) &=& Cx(t) + Du(t)
+\end{cases}
+\end{equation}
+$$
+Por lo que:
+$$
+G(s)=\frac{y(s)}{u(s)}=\frac{{Cx(s)+Du(s)}}{u(s)}, \text{ donde } x(s)=(sI-A)^{-1}Bu(s)
+$$
+Reemplazando
+$$
+\begin{align}
+G(s)&=\frac{y(s)}{u(s)}=\frac{{C((sI-A)^{-1}Bu(s))+Du(s)}}{u(s)} \\ \\
+\Aboxed{G(s)&=\frac{y(s)}{u(s)}=C(sI-A)^{-1}B+D}
+\end{align}
+$$
+$G(s)$ es la **función de transferencia** asociada a un sistema LTI.
+La función de transferencia es invariante ante transformaciones de estado. No existe otra función de transferencia para un dado sistema. <mark style="background: #ABF7F7A6;">La función de transferencia es única</mark>.
+## Relación entre representación interna y externa
