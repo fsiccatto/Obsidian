@@ -370,4 +370,68 @@ Visto en [[Unidad 2#Unicidad de función de transferencia]].
 Es válida tanto para los sistemas SISO como MIMO, la salvedad es que en MIMO obtendríamos una matriz $G(s)$ de funciones de transferencia $pxm$ ($p$ dimensión del vector de salida y $m$ la dimensión del vector de entrada), donde cada elemento $G_{ij}(s)$ corresponde a la función de transferencia desde la entrada j-ésima $u_{j}$ a la salida i-ésima $y_{i}$.
 ### Pasaje de la representación Externa a la representación Interna
 Este pasaje recibe el nombre de **realización**.
+La realización de un sistema no es única, tenemos un LTI:
+$$
+\begin{equation} \\
+\begin{cases}
+x'(t) &=& Ax(t) + Bu(t) \\
+y(t) &=& Cx(t) + Du(t)
+\end{cases}
+\end{equation}
+$$
+Se propone $T$ una matriz de transformación de estados, no singular con dimensión $nxn$. El vector $z(t)=Tx(t)$ que es como un vector de estados del sistema:
+$$x(t) = T^{-1}z(t)$$
+Lo que nos lleva al sistema:
+$$
+\begin{equation} \\
+\begin{cases}
+z'(t) &=& \overline{A}z(t) + \overline{B}u(t) \\
+y(t) &=& \overline{C}z(t) + \overline{D}u(t)
+\end{cases}
+\end{equation}
+$$
+Estas representaciones internas diferentes tienen la misma función de transferencia que es única:
+$$C(sI-A)^{-1}B+D=\overline{C}(sI-\overline{A})^{-1}\overline{B}+\overline{D}$$
+Se dice que una **realización es mínima** si no existe otra realización con un vector de estado de menor dimensión. Esta dimensión coincide con el orden del sistema.
 
+> [!info]
+> Una realización es mínima si y solo si es completamente **controlable** y completamente **observable**.
+
+Dada una función de transferencia $G(s)$ de la forma: la condición necesaria y suficiente para que sea realizable mediante una terna $[A, B, C]$ es que el grado del numerador debe ser menor o igual que el del denominador.
+## Código MATLAB
+``` matlab
+A = [0 1; -0.4 -1.3];
+B = [0; 1];
+C = [0.8 1];
+D = 0;
+I = eye(2);
+
+% Autovalores %
+autovalores = eig(A);
+syms s
+G=inv(s*I - A);
+
+% RESIDUE calcula las fracciones parciales
+
+% LAPLACE calcula la transformada de laplace
+
+% ILPLACE calcula la anti transformada de laplace
+
+% pretty(G);
+
+%-------------------------------%
+
+sys = ss(A, B, C, D); % Sistema
+
+Gs = tf(sys); %Funcion de transferencia
+u = [1 1.3 0.4]; %Vector de entradas de la FT
+y = [0 1 0.8]; %Vector de salida de la FT
+
+sys2 = ss2tf(A, B, C, D); %Nos da el vector de salida de la funcion de transferencia
+
+[A,B,C,D] = tf2ss(y,u); %Nos da A, B, C y D
+
+fprintf('La funcion de tranferencia es:');
+Gs
+%% Podemos simplificar Gs a Gs=1/s+0.5
+```
