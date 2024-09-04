@@ -111,6 +111,7 @@ C=\begin{bmatrix}
 \end{bmatrix}
 \end{align}
 $$
+$$-$$
 ![[imgs/ecuacion diferencial general.png]]
 ![[FCC grafico.png]]
 Se introduce la nueva variable v como salida del primer bloque y entrada al segundo bloque:
@@ -141,26 +142,28 @@ $$
 > [!info] FCC
 > ![[FCC.png]]
 > $$
-\begin{align}
-A=\begin{bmatrix}
-0 & 1 & 0 & \dots & 0 \\
-0 & 0 & 1 & \dots & 0  \\
-\dots & \dots & \dots& \ddots & \vdots  \\
-0 & 0 & 0 & \dots & 1  \\
--a_{n} & -a_{n-1} & -a_{n-2} & \dots & -a_{1} \\
-\end{bmatrix}; \space
-B = \begin{bmatrix}
-0 \\
-0 \\
-0 \\
-\vdots \\
-1
-\end{bmatrix}; \space
-C=\begin{bmatrix}
-b_{n} & b_{n-1} & \dots b_{1}
-\end{bmatrix}
-\end{align}
-$$
+> \begin{align}
+> A=\begin{bmatrix}
+> 0 & 1 & 0 & \dots & 0 \\
+> 0 & 0 & 1 & \dots & 0  \\
+> \dots & \dots & \dots& \ddots & \vdots  \\
+> 0 & 0 & 0 & \dots & 1  \\
+> -a_{n} & -a_{n-1} & -a_{n-2} & \dots & -a_{1} \\
+> \end{bmatrix}; \space
+> B = \begin{bmatrix}
+> 0 \\
+> 0 \\
+> 0 \\
+> \vdots \\
+> 1
+> \end{bmatrix}; \space
+> C=\begin{bmatrix}
+> b_{n} & b_{n-1} & \dots b_{1}
+> \end{bmatrix}
+> \end{align}
+> $$
+
+$$-$$
 ### Forma canónica de observación FCO
 Los **estados de la FCO** se ordenan según el grado de influencia de éstos sobre la **salida** del proceso. Garantiza que el sistema sea observable.
 Sea la ecuación diferencial con coeficientes constantes:
@@ -230,50 +233,51 @@ y(s)=\frac{d_{1}}{s-p_{1}}U(s)+\frac{d_{2}}{s-p_{2}}U(s)+\dots+\frac{d_{n}}{s-p_
 $$
 $$
 \begin{align}
-
-x_{i}(s)&=\frac{U(s)}{s-p_{i}} \\
-x_{i}(s)(s-p_{i})&=U(s) \\ 
-sx_{i}(s)&=p_{i}x_{i}(t)+U(s) \\
-x_{i}'(t)&=p_{i}x_{i}(t)+U(t)
+x_{i}(s) &=\frac{U(s)}{s-p_{i}} \\
+x_{i}(s)(s-p_{i}) &=U(s) \\ 
+sx_{i}(s) &=p_{i}x_{i}(t)+U(s) \\
+x_{i}'(t) &=p_{i}x_{i}(t)+U(t)
 \end{align}
 $$
+$$-$$
 > [!info] Forma canónica diagonal
+>
 > $$
- \begin{bmatrix}
+> \begin{bmatrix}
 > x_{1} \\
- \vdots \\
- x_{n}
- \end{bmatrix}=
- \begin{bmatrix}
- p_{1} & 0 & \dots & 0 \\
- 0 & p_{2} & \dots & 0 \\
- \vdots & \vdots & \ddots & \vdots  \\
- 0 & 0 & \dots & p_{n}
- \end{bmatrix}
- \begin{bmatrix}
- x_{1}  \\
- x_{2} \\
- \vdots \\
- x_{n}
- \end{bmatrix}+
- \begin{bmatrix}
- 1 \\
- 1 \\
- \vdots \\
- 1
- \end{bmatrix}u
+> \vdots \\
+> x_{n}
+> \end{bmatrix}=
+> \begin{bmatrix}
+> p_{1} & 0 & \dots & 0 \\
+> 0 & p_{2} & \dots & 0 \\ \\
+> \vdots & \vdots & \ddots & \vdots  \\
+> 0 & 0 & \dots & p_{n}
+> \end{bmatrix}
+> \begin{bmatrix}
+> x_{1}  \\
+> x_{2} \\
+> \vdots \\
+> x_{n}
+> \end{bmatrix}+
+> \begin{bmatrix}
+> 1 \\
+> 1 \\
+> \vdots \\
+> 1
+> \end{bmatrix}u
 > $$
 > La ec de salida:
 > $$
- y=\begin{bmatrix}
- d_{1} & d_{2} & \dots & d_{n}
- \end{bmatrix}
- \begin{bmatrix}
- x_{1} \\
- x_{2} \\
- \vdots \\
- x_{n}
- \end{bmatrix} = Cx
+> y=\begin{bmatrix}
+> d_{1} & d_{2} & \dots & d_{n}
+> \end{bmatrix}
+> \begin{bmatrix}
+> x_{1} \\
+> x_{2} \\
+> \vdots \\
+> x_{n}
+> \end{bmatrix} = Cx
 > $$
 
 ![[FCD bloques.png]]
