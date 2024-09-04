@@ -111,7 +111,7 @@ C=\begin{bmatrix}
 \end{bmatrix}
 \end{align}
 $$
-![[ecuacion diferencial general.png]]
+![[imgs/ecuacion diferencial general.png]]
 ![[FCC grafico.png]]
 Se introduce la nueva variable v como salida del primer bloque y entrada al segundo bloque:
 $$
