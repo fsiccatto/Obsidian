@@ -305,7 +305,7 @@ x_{n}&=\frac{U(s)}{(s-p_{n})} &\to &x_{n}'(t)&=p_{n}x_{n}(t)+u(t)
 \end{align}
 $$
 > [!info] Jordan
-> La estructura matricial considerando la forma general de un polo p de multiplicidad r (bloque de Jordan) y dos polos pj y pn diferentes es:
+> La estructura matricial considerando la forma general de un polo p de multiplicidad r (bloque de Jordan) y dos polos $p_{j}$ y $p_{n}$ diferentes es:
 >$$
 A=\begin{bmatrix}
 p & 1 & 0 & \dots & 0 & 0 \\
@@ -361,3 +361,13 @@ $$
 $G(s)$ es la **función de transferencia** asociada a un sistema LTI.
 La función de transferencia es invariante ante transformaciones de estado. No existe otra función de transferencia para un dado sistema. <mark style="background: #ABF7F7A6;">La función de transferencia es única</mark>.
 ## Relación entre representación interna y externa
+> [!info] LTI
+> Es posible transformar la representación interna de un sistema lineal invariante en el tiempo (LTI) a su representación externa y viceversa.
+
+Es posible reconstruir las ecuaciones de estado, y por tanto la representación interna, a partir de una función de transferencia dada, identificando las matrices de estado que conforman el sistema.
+### Pasaje de la representación Interna a la representación Externa
+Visto en [[Unidad 2#Unicidad de función de transferencia]].
+Es válida tanto para los sistemas SISO como MIMO, la salvedad es que en MIMO obtendríamos una matriz $G(s)$ de funciones de transferencia $pxm$ ($p$ dimensión del vector de salida y $m$ la dimensión del vector de entrada), donde cada elemento $G_{ij}(s)$ corresponde a la función de transferencia desde la entrada j-ésima $u_{j}$ a la salida i-ésima $y_{i}$.
+### Pasaje de la representación Externa a la representación Interna
+Este pasaje recibe el nombre de **realización**.
+
