@@ -32,4 +32,4 @@ Toda clase Java perteneces a un paquete. Si no es uno que indicamos explícitame
 	La ruta de la caprtea raíz de esta estructura jerárquica tiene que estar apuntada por la variable de entorno **CLASSPATH**. Es decir, CLASSPATH $\to$ `mipaquete`. 
 3. Especificar el paquete al que pertence la clase
 	Cuando se define una clase, se debe especificar a qué paquete pertenece utilizando la sentencia $package \space mipaquete.Modelo1.clases;$
-	
+
