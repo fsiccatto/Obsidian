@@ -260,7 +260,7 @@ Para realizar estas operaciones, el paquete `java.io` proporciona las clases:
 La clase `ObjectOutputStream` se encarga de convertir los atributos de un objeto  (excepto las variables estáticas) más el tipo de clase y el prototipo de la misma, en una  secuencia o **flujo de bytes**. Este flujo de bytes debe ser pasado luego cómo parámetro a alguna clase que se encargue de escribirlo a disco; por ejemplo, la clase `FileOutputStream` que ya conocemos.
 La clase `ObjectInputStream`, toma un flujo de bytes leídos desde un fichero en disco, por ejemplo: a partir de la clase `FileInputStream` y hace el proceso inverso, es decir, reconstruye el objeto en la memoria.
 ![[imgs/serializacion.png]]
-Para poder serializar los objetos de una clase, ésta debe implementar la interfase `Serializable`. Es una interfaz vacía.
+Para poder serializar los objetos de una clase, ésta debe implementar la interface `Serializable`. Es una interfaz vacía.
 ```java
 import java.io.*;
 
@@ -270,7 +270,7 @@ class Una implements Serializable {
 ```
 
 > [!warning] Importante
->  Si un atributo en una clase es una referencia a objetos de otra clase, para poder serializarla, la clase asociada, también debe implementar la interfase `Serializable`
+>  Si un atributo en una clase es una referencia a objetos de otra clase, para poder serializarla, la clase asociada, también debe implementar la interface `Serializable`
 >  
 -  Escribir a fichero
 ```java
@@ -335,8 +335,8 @@ public class Titulo implements Serializable {
 ```
 ## Calificador `transient`
 El calificador `transient` aplicado sobre una variable de instancia, indica que la variable  no es una parte persistente del estado del objeto, por lo tanto, no será tomada en cuenta  en la serialización/descerialización del mismo. Es decir, todo atributo calificado con `transient` no será persistido.
-# Interfases
-Una interfase, es una estructura sintáctica que consta de dos partes: su **nombre**, precedido por la palabra reservada `interface`, y el **cuerpo de la interfaz**, encerrado entre llaves
+# Interfaces
+Una interface, es una estructura sintáctica que consta de dos partes: su **nombre**, precedido por la palabra reservada `interface`, y el **cuerpo de la interfaz**, encerrado entre llaves
 ```java
 interface XX {
     int a = 10;
