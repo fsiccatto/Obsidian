@@ -41,8 +41,8 @@ Declaramos la clase `Box`, como una clase parametrizada o generic. El argumento 
 	- ☠Heredar de `Throwable`
 No solo se pueden parametrizar las clases, sino también los métodos de una clase (incluso si son estáticos), de forma que puedan recibir argumentos de tipos genéricos. Sobre esto profundizaremos más adelante.
 Cosas que NO se pueden hacer:
-![[nohacen.png]]
-![[nohacen2.png]]
+![[imgs/nohacen.png]]
+![[imgs/nohacen2.png]]
 
 Usos de clases parametrizadas y sus estructuras sintácticas
 - Cualqueir tipo T que herede A y de B
