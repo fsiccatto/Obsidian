@@ -121,3 +121,26 @@ Se analizan distintos valores para $\xi$:
 | $$-1 < \xi < 0$$ | Las raíces son **complejas conjugadas con parte real positiva**.<br>La respuesta del sistema es una expresión exponencial sinusoidal creciente.<br>Esto muestra un Comportamiento <mark style="background: #FFB8EBA6;">oscilatorio inestable o subamortiguado inestable</mark>, es decir, con oscilaciones de amplitud creciente.                                                         |
 | $$\xi \leq -1$$  | Las raíces son **reales positivas**.<br>La respuesta del sistema es una expresión exponencial con signos positivos.<br>Esto muestra un Comportamiento <mark style="background: #ABF7F7A6;">monotónico inestable o Sobreamortiguado inestable</mark>.                                                                                                                                      |
 ## Estabilidad
+Cuando se plantea un sistema de control, la propiedad más importante que lo caracteriza es su estabilidad.
+
+> Desde el punto de vista de la **representación externa**, se dice que un LTI  es estable, si en condiciones iniciales nulas, ante una **entrada acotada** se produce una **salida también acotada**.
+
+Para analizar la estabilidad:
+- Análisis de polos: ubicación de los polos en el plano complejo
+- Criterio Routh-Huewitz: analiza la ecuación característica del sistema
+- Criterios de Nyquist y diagramas de Bode, utilizados en el análisis en el dominio de la frecuencia y el lugar de las raíces en el plano s.
+
+> Desde el punto de vista de la **representación interna**, un sistema estable está relacionado con el comportamiento de las soluciones de la ecuación de estado que describe su dinámica. Si todas las s**oluciones de la ecuación convergen a un punto de equilibrio el sistema es estable**.
+
+Para analizar la estabilidad:
+- Análisis de autovalores: . si todos los autovalores tienen parte real negativa, el sistema es estable, ya que las soluciones tienden al equilibrio cuando t→∞.
+- Plano fase: representa gráficamente la evolución de las variables de estado del sistema.
+### Estabilidad absoluta y relativa
+#### Estabilidad Absoluta
+Si un sistema lineal invariante en el tiempo es estable volverá a su condición de equilibrio después ser sometido a una perturbación en una de sus entradas.
+Un sistema continuo es **estable** cuando **todas las raíces de su ecuación característica se encuentran localizadas en el semiplano izquierdo del plano s**.
+![[imgs/plano complejo.png]]
+#### Estabilidad Relativa
+La estabilidad relativa es una **medida cuantitativa de la rapidez con que la respuesta transitoria del sistema tiende a cero**. Cuanto menor sea el tiempo que tarda en estabilizarse la respuesta, es sistema es más estable relativamente.
+Cuanto más alejados estén los polos del eje imaginario, menor será el tiempo de estabilización.
+### Clasificación
