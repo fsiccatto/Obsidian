@@ -41,12 +41,12 @@ Los elementos de un sistema de control trabajan juntos para **monitorear, regula
 ### Lazo abierto y  lazo cerrado
 #### Lazo abierto
 La entrada se elige en base en la experiencia que se tiene con dichos sistemas para producir el valor de salida requerido. **No existe retroalimentación**.
-![[Lazo abierto.png]]
+![[imgs/Lazo abierto.png]]
 Ventajas $\to$ son más sencillos y de bajo costo, y con buena confiabilidad
 Desventajas $\to$ son inexactos y se deben reemplazar si se descomponen
 #### Lazo cerrado
 Se tiene una señal de retroalimentación hacia la entrada desde la salida, la cual se utiliza para modificar la entrada de modo que la salida se mantenga constante a pesar de los cambios en las condiciones de operación.
-![[Lazo cerrado.png]]
+![[imgs/Lazo cerrado.png]]
 Ventajas $\to$ más exactos y menos sensible a las perturbaciones y a los cambios en las características de los componentes. La velocidad de respuesta se incrementa.
 ## Clasificación de los sistemas de control
 ### Sistema Lineal (L)

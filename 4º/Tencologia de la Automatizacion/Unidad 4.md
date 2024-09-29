@@ -144,3 +144,16 @@ Un sistema continuo es **estable** cuando **todas las raíces de su ecuación ca
 La estabilidad relativa es una **medida cuantitativa de la rapidez con que la respuesta transitoria del sistema tiende a cero**. Cuanto menor sea el tiempo que tarda en estabilizarse la respuesta, es sistema es más estable relativamente.
 Cuanto más alejados estén los polos del eje imaginario, menor será el tiempo de estabilización.
 ### Clasificación
+- #### Sistema Estable
+Un sistema es estable si las **raíces de la ecuación característica son reales negativas o complejas conjugadas con parte real negativa**. O dicho en forma más compacta, **si todas las raíces se encuentran en el semiplano izquierdo de la variable compleja s**.
+ - #### Sistema Inestable
+ Si **algún polo del sistema se encuentra ubicado en el semiplano derecho del plano s**, automáticamente el sistema es Inestable.
+ ![[imgs/plano S.png]]
+ - #### Sistema críticamente estable
+ Un sistema es limitadamente estable, críticamente estable si **hay un polo en el origen y los demás polos en el semiplano negativo**.
+ Si existen más de un polo
+ ![[imgs/criticamente estable.png]]
+- #### Sistema marginalmente estable
+Un sistema es marginalmente estable **si existe una pareja simple** (sin multiplicidad) **de polos complejos conjugados sobre el eje imaginario** (o sea no tienen componente real), estando el r**esto de los polos en el semiplano negativo**.
+Si existe más de una pareja de polos complejos, el sistema es inestable
+![[imgs/marginalmente estable.png]]
