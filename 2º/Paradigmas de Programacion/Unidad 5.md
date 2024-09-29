@@ -58,3 +58,46 @@ Usos de clases parametrizadas y sus estructuras sintácticas
 - Creación de una instancia de tipo genérico
 	`T otro = (T)obj.getClass().newInstance();`
 ### Parametrización acotada
+En este caso, decimos que `Box <extends Number>` es una clase parametrizada actoda. 
+En Java no existe la herencia múltiple, pero si podemos heredar de una clase e implementar varias interfaces distintas con `&`.
+```java
+public class MiClase <T extends A & B & C> {...}
+```
+Otra cosa que podemos hacer es utilizar más de un parámetro de tipo, separando los tipos con comas. Supongamos que queremos crear una clase parametrizada que reciba dos tipos diferentes de números
+```java
+public class Sumador <T1 extends Number, T2 extends Number> {...}
+```
+También podemos crear clases abstractas e interfaces como clases genéricas. E incluso métodos.
+### Métodos parametrizados
+Un método que utiliza tipos genéricos en sus parámetros formales se denomina Método parametrizado
+```java
+public <U extends Comparable> void mostrar (U obj){…}
+```
+### Parametrización con comodines
+cuando las clases parametrizadas se utilizan con jerarquías de clases (herencia), se debe considerar que los tipos genéricos son **invariantes**. Esto es, dada una clase `B`, subtipo de otra clase `A`, luego la clase parametrizada o genérica `List <B>` NO es subtipo del genérico `List <A>`.
+![[imgs/parametrizacion con comodines.png]]
+,Java ofrece la posibilidad de utilizar **el tipo comodín (?)** que nos ayuda en el trato con los tipos genéricos y que significa, ni más ni menos, «cualquier tipo de objeto».
+Los **tipos comodines o wildcard** se utilizan en las clases parametrizadas para indicar un tipo desconocido, que puede ser de cualquier clase y será superclase o subclase para todas las demás.
+```java
+static void imprimirColeccion (<Collection<?> c) {
+	for (Object e: c) {
+		System.out.println(e);
+	}
+}
+```
+- `<?extends xClase>`
+	- Establece un límite superior
+	- Cualquier clase que sea sublcase xClase
+	- Para la semántica $\ll in\gg$ de datos en métodos
+- `<? super xClase>`
+	- Establece un límite inferior
+	- Cualquier clase que sea super de xClase
+	- Para la semántica $\ll out\gg$ de datos en métodos
+Los comodines pueden utilizarse tanto con la palabra `extends` (upper bounds) como con la palabra `super` (lower bounds), para limitar el rango de objetos aceptados a un subtipo concreto, o a un supertipo respectivamente.
+![[imgs/parametrizacion con comodines ejemplo.png]]
+#### Diferencias entre el uso de comodines y parámetros
+Un comodín solo puede tener un límite (superior o inferior), mientras que un parámetro de tipo puede tener varios límites (Ejempo: `T extends Object & Comparable`).
+Un comodín puede tener un límite inferior o superior, mientras que no existe un límite inferior para un parámetro de tipo.
+
+En síntesis, podemos decir que el uso de clases y métodos parametrizados aporta mayor potencia a la POO. De hecho, todas las clases de Java que manejan contenedores usan tipos genéricos.
+Sin embargo, y a diferencia de otros lenguajes, el uso de `generics` en Java sólo se implementa a alto nivel y no a nivel de bytecode. El compilador de Java sustituye los tipos genéricos por tipos concretos en tiempo de compilación. A esta técnica se la llama **Borrado de tipo**.
