@@ -98,3 +98,21 @@ Un sistema **con** memoria depende de las entradas y/o estados anteriores ademá
 | Si dos o más sistemas están en serie, el orden puede ser intercambiado sin que se vea afectada la salida del sistema. | Si dos o más sistemas están en paralelo, el sistema está definido como la suma de estos sistemas. |
 | ![[LTI serie.png]]                                                                                                    | ![[LTI en paralelo.png]]                                                              |
 ## Modelo de sistema en el espacio de estado
+Existen dos perspectivas: la representación interna y la representación externa.
+- La **representación externa** de un sistema se centra en la relación directa entre las señales de entrada y salida. Se utiliza para comprender cómo las entradas afectan las salidas del sistema.
+$$\text{Representación externa}\begin{cases}
+\frac{SALIDA}{ENTRADA}=PROCESO
+\end{cases}$$
+- La **representación interna** se enfoca en la dinámica interna del sistema mediante el uso de variables de estado. Estas proporcionan una descripción completa del estado del sistema en cualquier momento y predicen su comportamiento futuro basado en el actual. Está expersada mediante un conjunto de ecuaciones diferenciales de primer orden.
+	La representación interna (representación por variables de estado) relacionará matemáticamente las salidas con las entradas a través de las variables de estado como paso intermedio. Trabaja en el dominio del tiempo.
+
+En los sistemas dinámicos lineales, $x$ es un vector de $n$ variables de estado, $u$ un vector de $p$ entradas, $y$ un vector de $m$ salidas, $A$ la **matriz dinámica** de $nxn$, $B$ la **matriz de control** de $nxp$, $C$ la **matriz de salida** de $mxn$, y $D$ la **matriz de influencia directa de la entrada sobre la salida**, de dimensión $mxp$ que suele ser nula.
+$$
+\begin{equation} \\
+\begin{cases}
+x'(t) &=& Ax(t) + Bu(t) \\
+y(t) &=& Cx(t) + Du(t)
+\end{cases}
+\end{equation}
+$$
+![[imgs/representacion matricial.png]]

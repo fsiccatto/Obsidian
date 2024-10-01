@@ -48,6 +48,10 @@ class A { // Clase Contenedora
 	...
 }
 ```
+> [!info] Clases anónimas
+> Las clases anónimas son un caso particular de clases internas en las que la implementación de la clase se define al mismo tiempo que se instancia un objeto. Esto se basa en que sólo se necesita un único objeto de la clase interna, y entonces, se puede evitar el nombre la clase, logrando así un mayor nivel de encapsulamiento.
+> Es más confuso, por lo que debe estar muy justificado su uso.
+
 - Miembro: son clases internas que se definen en el área de declaraciones de la clase externa y en general se usan para tipar un atributo de la clase contenedora.
 ```java
 class A { // Clase Contenedora
@@ -63,7 +67,18 @@ class A { // Clase Contenedora
 ```
 Una clase miembro, es una clase anidada que se define en la zona de declaración de la clase externa y por lo tanto tiene un nombre propio. En general se utilizan para declarar un miembro o atributo de la clase contenedora.
 Una clase miembro, es un elemento más de la clase que la contiene, y cómo tal se le aplican las mismas reglas que para el resto de los miembros. De este modo, pueden calificarse como públicas, privadas, protegidas o friendly. El hecho de que una clase miembro sea privada no impide que se pueda acceder y usar desde la clase contenedora.
+> [!info] Clase miembro
+> - Clase interna que es miembro de otra clase
+> - Pueden clasificarse públicas, privadas o protegidas
+> 	- No impide su acceso desde la clase externa
+> - Cada instancia de una clase miembro
+> 	- Se asocia a una instancia de la clase contenedora
+> 	- Tiene acceso completo y directo a la clase externa
+> 	- No puede tener miembros estáticos
+> 	- No puede tener el mismo nomber que la externa
+> 
 
 ---
-Las variables locales al método deben declararse final. De esta manera se garantiza que la variable local y la copia que se mantiene en la clase siempre tienen el mismo valor.
+Las variables locales al método deben declararse `final`. De esta manera se garantiza que la variable local y la copia que se mantiene en la clase siempre tienen el mismo valor.
 ![[imgs/clases anidadas ejemplo.png]]
+### Clases anidadas internas anónimas
