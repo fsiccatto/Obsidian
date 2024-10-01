@@ -4,7 +4,7 @@
 > [!info] Sistema
 >  Un sistema es una combinación de componentes que actúan interconectados, para cumplir un determinado objetivo.
 >  Podemos verlo como una caja negra y variables que actúan sobre el sistema. Podemos pensar en sistemas como la relación de entradas-salidas.
->  ![[sistema.png]]
+>  ![[sistema.png | center]]
 
 Un **sistema de control** es una configuración estructurada y coordinada de componentes que recibe **entradas**, **procesa** estas **entradas** y **genera salidas** para influir en el **comportamiento** de un sistema con el fin de alcanzar un **objetivo** específico, generalmente utilizando mecanismos de **retroalimentación** para mantener la **estabilidad** y compensar las **perturbaciones**.
 ### Modelado
@@ -31,7 +31,7 @@ Los elementos de un sistema de control trabajan juntos para **monitorear, regula
 >  En un sistema de control, una **señal** se puede definir como una **representación física** de una cantidad variable que transmite **información** sobre el estado o el comportamiento del sistema.
 >  Características comunes:
 >  - Dependencia de Variables: son funciones de una o más variables independientes
->  - Portadoras de Información: contienen infromación sobre la naturaleza del fenómeno físico.
+>  - Portadoras de Información: contienen información sobre la naturaleza del fenómeno físico.
 
 | Tipo de señal eléctrica | Descripción                                                                                 | Gráfica                  |
 | :---------------------- | :------------------------------------------------------------------------------------------ | ------------------------ |
@@ -41,12 +41,12 @@ Los elementos de un sistema de control trabajan juntos para **monitorear, regula
 ### Lazo abierto y  lazo cerrado
 #### Lazo abierto
 La entrada se elige en base en la experiencia que se tiene con dichos sistemas para producir el valor de salida requerido. **No existe retroalimentación**.
-![[imgs/Lazo abierto.png]]
+![[imgs/Lazo abierto.png | center]]
 Ventajas $\to$ son más sencillos y de bajo costo, y con buena confiabilidad
 Desventajas $\to$ son inexactos y se deben reemplazar si se descomponen
 #### Lazo cerrado
 Se tiene una señal de retroalimentación hacia la entrada desde la salida, la cual se utiliza para modificar la entrada de modo que la salida se mantenga constante a pesar de los cambios en las condiciones de operación.
-![[imgs/Lazo cerrado.png]]
+![[imgs/Lazo cerrado.png | center ]]
 Ventajas $\to$ más exactos y menos sensible a las perturbaciones y a los cambios en las características de los componentes. La velocidad de respuesta se incrementa.
 ## Clasificación de los sistemas de control
 ### Sistema Lineal (L)
@@ -56,21 +56,21 @@ Ventajas $\to$ más exactos y menos sensible a las perturbaciones y a los cambio
 > - Principio de **superposición** (o aditividad).
 #### Principio de Homogeneidad
 El sistema cumple con el principio de homogeneidad si **la entrada multiplicada por un escalar** produce una la **salida del sistema multiplicada por el mismo escalar**.
-![[principio de homogeneidad.png]]
+![[principio de homogeneidad.png | center ]]
 #### Principio de Superposición
 El sistema cumple con el **principio de superposición** si **dos entradas son sumadas y pasadas a través del sistema lineal**, la **salida** será equivalente a la **suma de las dos entradas evaluadas individualmente**.
-![[principio de superposicion.png]]
+![[principio de superposicion.png | center]]
 ### Sistema Invariante en el Tiempo (TI)
 > [!info] Sistema invariante en el tiempo
 > Un sistema invariante en el tiempo TI (Time-Invariant) tiene la propiedad de que cierta entrada siempre dará la misma salida, independientemente del momento en que fue aplicada al sistema.
-> ![[sistema invariante en el tiempo.png]]
+> ![[sistema invariante en el tiempo.png | center ]]
 
 En un sistema invariante en el tiempo, ambas salidas serán idénticas, excepto que la segunda figura estará **retrasada en $t_{0}$**.
 Si un sistema es invariante en el tiempo puede ser descripto por **ecuaciones diferenciales**. Los sistemas invariantes en el tiempo son modelados con ecuaciones de **coeficientes constantes**.
 ### Sistema Lineal Invariante en el Tiempo (LTI)
-![[sistema lineal invariante en el tiempo.png]]
+![[sistema lineal invariante en el tiempo.png | center ]]
 Como los sistemas LTI son subconjuntos de los sistemas lineales, éstos obedecen al **principio de superposición**. El efecto de aplicar el tiempo invariante a la definición de sistema lineal de la sección anterior es el siguiente:
-![[LTI superposicion.png]]
+![[LTI superposicion.png | center]]
 ### Sistema Causal
 > [!info] Sistema causal
 > Un sistema es causal si no depende de valores futuros de las entradas para determinar la salida.
@@ -96,7 +96,7 @@ Un sistema **con** memoria depende de las entradas y/o estados anteriores ademá
 | LTI en serie                                                                                                          | LTI en paralelo                                                                                   |
 | :-------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ |
 | Si dos o más sistemas están en serie, el orden puede ser intercambiado sin que se vea afectada la salida del sistema. | Si dos o más sistemas están en paralelo, el sistema está definido como la suma de estos sistemas. |
-| ![[LTI serie.png]]                                                                                                    | ![[LTI en paralelo.png]]                                                              |
+| ![[LTI serie.png]]                                                                                                    | ![[LTI en paralelo.png]]                                                                          |
 ## Modelo de sistema en el espacio de estado
 Existen dos perspectivas: la representación interna y la representación externa.
 - La **representación externa** de un sistema se centra en la relación directa entre las señales de entrada y salida. Se utiliza para comprender cómo las entradas afectan las salidas del sistema.
@@ -115,4 +115,4 @@ y(t) &=& Cx(t) + Du(t)
 \end{cases}
 \end{equation}
 $$
-![[imgs/representacion matricial.png]]
+![[imgs/representacion matricial.png | center ]]

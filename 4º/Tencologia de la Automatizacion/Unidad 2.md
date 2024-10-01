@@ -11,7 +11,7 @@ y(t) &=& Cx(t) + Du(t)
 \end{cases}
 \end{equation}
 $$
-Y sea $T(t)$ una matriz no singular variante en el tiempo de dimensión $nxn$. . Entonces el vector $z(t)=T(t)x(t)$ califica como un vector de estados del sistema, $x(t)$ puede ser recuperado de:
+Y sea $T(t)$ una matriz no singular variante en el tiempo de dimensión $nxn$. Entonces el vector $z(t)=T(t)x(t)$ califica como un vector de estados del sistema, $x(t)$ puede ser recuperado de:
 $$
 x(t) = T{^{-1}}z(t)
 $$
@@ -112,8 +112,8 @@ C=\begin{bmatrix}
 \end{align}
 $$
 $$-$$
-![[imgs/ecuacion diferencial general.png]]
-![[FCC grafico.png]]
+![[imgs/ecuacion diferencial general.png | center]]
+![[FCC grafico.png | center]]
 Se introduce la nueva variable v como salida del primer bloque y entrada al segundo bloque:
 $$
 \frac{v(s)}{u(s)} = \frac{1}{d(s)}
@@ -140,7 +140,7 @@ b_{n} & b_{n-1} & \dots b_{1}
 \end{bmatrix}
 $$
 > [!info] FCC
-> ![[FCC.png]]
+> ![[FCC.png | center]]
 > $$
 > \begin{align}
 > A=\begin{bmatrix}
@@ -183,9 +183,9 @@ $$
 y(s)=s^{-1}(b_{1}y(s)-a_{1}u(s))+s^{-2}(b_{2}y(s)-a_{2}u(s))+\dots+s^{-n+1}(b_{n-1}y(s)-a_{n-1}u(s))+s^{-n}(b_{n}y(s)-a_{n}u(s))=0
 $$
 Todos los términos se pueden escribir en términos de potencia $s{^{-1}}$. Se define $y(s)=x_{n}(s)$, que llevará a encontrar las ecuaciones de estado correspondiente:
-![[FCO ec.png]]
+![[FCO ec.png | center]]
 Es una tecnica de programación anidada:
-![[FCO ec2.png]]
+![[FCO ec2.png | center]]
 Al anti transformar se obtiene:
 $$
 \begin{align} 
@@ -209,10 +209,10 @@ x_{n}
 \end{align}
 $$
 > [!info] FCO
-> ![[FCO.png]]
-> ![[FCO2.png]]
+> ![[FCO.png | center]]
+> ![[FCO2.png | center]]
 
-![[FCO bloques.png]]
+![[FCO bloques.png | center]]
 - La matriz A de la FCC es la matriz A transpuesta de la FCO
 - La matriz B transpuesta de la FCC, es la matriz C de la FCO
 - La matriz C transpuesta de la FCC, es la matriz B de la FCO
@@ -280,7 +280,7 @@ $$-$$
 > \end{bmatrix} = Cx
 > $$
 
-![[FCD bloques.png]]
+![[FCD bloques.png | center]]
 ### Forma canónica de Jordan
 La matriz de estado no puede estar completamente diagonalizada. 
 - <mark style="background: #D2B3FFA6;">Forma de Jordan</mark> $\to$ Se obtiene cuando **hay repetición de polos**, es decir, cuando el sistema tiene polos múltiples.
