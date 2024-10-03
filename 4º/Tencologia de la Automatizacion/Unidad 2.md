@@ -32,7 +32,7 @@ Se puede concluir que:
 $$
 \begin{align} \\
 \begin{cases}
-z'(t) &= Tx'(t) = T(Ax(t) + Bu(t) = TAT{^{-1}}(t)z(t)+TBu(t)) \\
+z'(t) &= Tx'(t) = T(Ax(t) + Bu(t)) = TAT{^{-1}}(t)z(t)+TBu(t) \\
 y(t) &= CT{^{-1}}z(t) + Du(t) \\
 \end{cases}
 \end{align}
@@ -59,7 +59,7 @@ $$
 > [!info] Función de Transferencia
 > La función de trasferencia de un sistema lineal es la **razón de la transformada de Laplace** de la variable de **salida** del sistema a la **transformada de Laplace** de la variable de **entrada**, con todas las **condiciones iniciales** asumidas como **cero**.
 >$$
->G(s) = \frac{Y(S)}{U(S)}
+>G(s) = \frac{Y(s)}{U(s)}
 >$$
 ## Obtención de formas canónicas de representación interna
 Las formas canónicas son representaciones específicas de sistemas en el espacio de estados que simplifican su análisis y diseño:
@@ -75,9 +75,9 @@ $$
 $$
 Se definen:
 $$
-x_{i} = \frac{d^{i-1}y}{dt^{i-1}}; \space u=1,2,\dots,n
+x_{i} = \frac{d^{i-1}y}{dt^{i-1}}; \space i=1,2,\dots,n
 $$
-La anterior ecuación diferencial de orden n se puede escribir como un sistema de n ecuaciones diferenciales de primer orden. Es decir:
+La anterior ecuación diferencial de orden $n$ se puede escribir como un sistema de $n$ ecuaciones diferenciales de primer orden. Es decir:
 $$
 \begin{align}
 \begin{cases}
@@ -95,7 +95,7 @@ $$
 A=\begin{bmatrix}
 0 & 1 & 0 & \dots & 0 \\
 0 & 0 & 1 & \dots & 0  \\
-\dots & \dots & \dots& \ddots & \vdots  \\
+\vdots & \vdots & \vdots& \ddots & \vdots  \\
 0 & 0 & 0 & \dots & 1  \\
 -a_{n} & -a_{n-1} & -a_{n-2} & \dots & -a_{1} \\
 \end{bmatrix}; \space
@@ -114,7 +114,7 @@ $$
 $$-$$
 ![[imgs/ecuacion diferencial general.png | center]]
 ![[FCC grafico.png | center]]
-Se introduce la nueva variable v como salida del primer bloque y entrada al segundo bloque:
+Se introduce la nueva variable $v$ como salida del primer bloque y entrada al segundo bloque:
 $$
 \frac{v(s)}{u(s)} = \frac{1}{d(s)}
 $$
@@ -213,9 +213,9 @@ $$
 > ![[FCO2.png | center]]
 
 ![[FCO bloques.png | center]]
-- La matriz A de la FCC es la matriz A transpuesta de la FCO
-- La matriz B transpuesta de la FCC, es la matriz C de la FCO
-- La matriz C transpuesta de la FCC, es la matriz B de la FCO
+- La matriz A de la FCC es la matriz A traspuesta de la FCO
+- La matriz B traspuesta de la FCC, es la matriz C de la FCO
+- La matriz C traspuesta de la FCC, es la matriz B de la FCO
 ### Forma canónica diagonal
 Utilizando la definición de polos de la función de transferencia, se puede obtener diferentes representaciones según la naturaleza de los polos:
 - <mark style="background: #D2B3FFA6;">Forma Diagonal</mark> $\to$ Se obtiene cuando **todos los polos del sistema son distintos**.
