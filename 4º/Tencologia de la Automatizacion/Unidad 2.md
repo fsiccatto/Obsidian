@@ -315,7 +315,7 @@ A=\begin{bmatrix}
 p & 1 & 0 & \dots & 0 & 0 \\
 0 & p & 1 & \dots & 0 & 0\\
 0 & 0 & p & \dots & 0  & 0\\
-\dots & \dots & \dots & \dots & \ddots & \vdots \\
+\vdots & \vdots & \vdots & \vdots & \ddots & \vdots \\
 0 & 0 & 0 & \dots & p_{j} & 0 \\
 0 & 0 & 0 & \dots & 0 & p_{n}
 \end{bmatrix} \space
