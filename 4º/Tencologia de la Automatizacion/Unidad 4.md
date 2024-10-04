@@ -207,8 +207,38 @@ La evaluación continua hasta que todas las restantes son cero.
 El criterio de estabilidad de Routh- Hurwitz plantea que el **número de raíces de la ecuación con partes reales positivas es igual al número de cambios de signo de los coeficientes de la *primera* columna del arreglo**.
 
 La *condición necesaria y suficiente* para que **todas las raíces de la ecuación se encuentren en el semiplano izquierdo del plano s es que todos los coeficientes de la ecuación sean positivos y que todos los términos de la primera columna del arreglo tengan signo positivo**.
-
 ### Plano de fase. Autovalores del sistema
 > [!info] Plano de fase
 > La trayectoria en el plano de fase del sistema permite determinar gráficamente si el sistema es o no estable. Una familia de trayectorias de evolución del sistema se denomina Diagrama de Plano de Fase. La trayectoria en el plano de fase del sistema permite determinar gráficamente si el sistema es o no estable. Si las **trayectorias convergen al punto de equilibrio** el sistema es *estable*.
 
+ - Ejemplos de puntos de equilibrio
+	![[imgs/ejemplos punto de equilibrio.png]]
+Para determinar la **estabilidad** de un sistema, <mark style="background: #CACFD9A6;">se observan las trayectorias en torno a puntos de equilibrio. Si las trayectorias convergen hacia el punto de equilibrio, el sistema es estable, caso contrario es inestable</mark>.
+Para desarrollar el diagrama de plano de fase y determinar la estabilidad:
+1. Definir el conjunto de ecuaciones del sistema. El conjunto de ecuaciones diferenciales describen el comportamiento dinámico del sistema. Las mismas se expresan en términos de las variables de estado.
+2. Identificar puntos críticos o de equilibrio. Resolver las ecuaciones del sistema de ecuaciones diferenciales igualando las derivadas a cero, lo que dará el/los punto/s donde el sistema no cambia con el tiempo.
+3. Resolver el sistema de ecuaciones. Encontrar las soluciones del sistema de ecuaciones diferenciales, que describen cómo evolucionan las variables de estado en el tiempo.
+4. Trazar las trayectorias en el plano de fase. Utilizar las soluciones de las ecuaciones diferenciales para dibujar las trayectorias. Estas representarán cómo cambian las variables de estado a lo largo del tiempo.
+5. Analizar y determinar la estabilidad. Observar las trayectorias resultantes respecto de la cercanías al/los punto/s de equilibrio. Si converge/n hacia el mismo/s, el sistema es estable, caso contrario es inestable .
+VER EJEMPLO 
+### Clasificación de puntos críticos o de equilibrio
+Podemos clasificar el sistema en función de los autovalores de A:
+
+| Clasificación                                                                                                                                                                              | Imagen                            |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------- |
+| **Autovalores reales y distintos menores a 0**. Todas las soluciones tienden a 0 y las órbitas o trayectorias tienden al origen. El punto crítico o de equilibrio es un nodo estable.      | ![[imgs/clasificacion1.png\| center]] |
+| **Autovalores reales y distintos mayores a 0**. Todas las soluciones tienden a ∞ y las órbitas o trayectorias se alejan del origen. El punto crítico o de equilibrio es un nodo inestable. | ![[imgs/clasificacion2.png\| center]]   |
+| **Autovalores dobles negativos y A diagonal**. El punto es un nodo estelar estable.                                                                                                        | ![[imgs/clasificacion3.png\| center]]  |
+| **Autovalores dobles positivos y A diagonal**. El punto es un nodo estelar inestable.                                                                                                      | ![[imgs/clasificacion4.png\| center]] |
+| **Autovalores dobles negativos y A no diagonal**. El punto es un nodo tangente estable.                                                                                                    | ![[imgs/clasificacion5.png\| center]] |
+| **Autovalores dobles positivos y A no diagonal**. El punto es un nodo tangente inestable.                                                                                                  | ![[imgs/clasificacion6.png\| center]] |
+| **Autovalores complejos con s = 0**. Todas las soluciones son periódicas y las órbitas son curvas cerradas rodeando el origen. El nodo se llama centro.                                    | ![[imgs/clasificacion7.png\| center]] |
+| **Autovalores complejos con s < 0**. La exponencial decreciente obliga a las órbitas a cerrarse en espiral cuando t→∞ hacia el origen. El nodo se llama foco estable.                      | ![[imgs/clasificacion8.png\| center]] |
+| **Autovalores complejos con s > 0**. Las espirales corresponden a soluciones que se alejan del punto crítico. El nodo se llama foco inestable.                                             | ![[imgs/clasificacion9.png\| center]] |
+### Error en estado estacionario o permanente
+> [!error] Error estado estacionario o permanente
+> El error en un sistema de control es la diferencia entre el valor deseado o de entrada $u(t)$ y el valor actual de salida $y(t)$, de la variable controlada.
+> ![[imgs/error estado estable.png| center]]
+
+![[imgs/error dependiendo entrada.png]]
+![[imgs/tipo error.png]]
