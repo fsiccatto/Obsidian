@@ -1,6 +1,6 @@
 # Clases Anidadas
 Una clase anidada es una clase que se define dentro de otra clase
-![[imgs/clases anidadas.png]]
+![[imgs/clases anidadas.png | center]]
 Las clases anidadas (*nested class* en Java) se descomponen en clases anidadas estáticas, que sirven en general para abordar problemas del tipo del contexto global, y las clases internas o clases anidadas no estáticas, que es el caso más típico, en donde una clase existe sólo con fines de brindar servicio a su clase contenedora.
 Las clase anidadas pueden utilizarse para:
 1. Aumentar el encapsulamiento
@@ -80,5 +80,68 @@ Una clase miembro, es un elemento más de la clase que la contiene, y cómo tal 
 
 ---
 Las variables locales al método deben declararse `final`. De esta manera se garantiza que la variable local y la copia que se mantiene en la clase siempre tienen el mismo valor.
-![[imgs/clases anidadas ejemplo.png]]
+![[imgs/clases anidadas ejemplo.png | center]]
 ### Clases anidadas internas anónimas
+![[imgs/clases anonimas.png| center]]
+### Clases anidadas estáticas
+> [!info] Clases e interfaces de alto nivel
+> - Clases estáticas **anidadas** (*nested*) dentro de otra clase
+> - Deben calificarse `stacic`
+> - Solo se pueden anidar dentro de clases normales o de clases internas de alto nivel
+> - No es necesario un objeto de la clase externa para crear un nuevo objeto de la clase interna estática
+> - Modo de referenciarlas
+> 	- `NombreClaseExterna.NombreClaseInterna`
+> - Desde la clase estática interna sólo se pueden acceder a los miembros estáticos de la clase externa
+> - Al compilar el `.class` se genera
+> 	- `NombreClaseExterna$NombreClaseInterna`
+
+Una clase anidada estática no puede hacer referencia directamente a variables de instancia o métodos de instancia definidos en la clase contenedora. De lo contrario, estaríamos permitiendo llamar a un atributo o método de instancia cuando aún no existe ningún ejemplar de la clase.
+Pueden acceder de manera directa a los miembros estáticos de su clase contenedora, incluso si son privados al igual que sucede en todos los casos de clases anidadas.
+```java
+public class ClaseExterna {
+
+    public void metodoNoEstaticoExterno() {
+        System.out.println("metodoNoEstatico de la " + ClaseExterna.class.getName());
+    }
+
+    public static void metodoEstaticoExterno() {
+        System.out.println("metodoEstatico de la " + ClaseExterna.class.getName());
+    }
+
+    private static class ClaseAnidadaEstatica {
+        private static int i;
+        private int j;
+
+        private static void metodoEstatico() {
+            // ERROR: no se puede invocar un método no estático de la clase contenedora
+            // metodoNoEstaticoExterno(); 
+
+            System.out.print("metodoEstatico de la " + ClaseAnidadaEstatica.class.getName());
+            metodoEstaticoExterno(); // OK
+        }
+    }
+}
+
+```
+Una clase anidada estática solo puede declararse dentro de una clase normal o dentro de otra clase anidada estática o de alto nivel.
+Lo que estudiamos en este apartado respecto de las clases anidadas, también es válido para las **interfaces anidadas**. Recordemos que las interfaces son implícitamente públicas y estáticas.
+Las clases anidadas estáticas, admiten todos los modificadores de acceso, como cualquier miembro de una clase.
+Para crear un objeto para la clase anidada estática, se usa la siguiente sintáxis:
+```java
+ClaseExterna.ClaseAnidadaStatic nested_object = new ClaseExterna.ClaseAnidadaStatic();
+```
+Un uso común de las clases internas estáticas es como clase auxiliar pública, cuya utilidad sólo sirve a su clase contenedora. Podrían ser declaradas como externas (ya que su uso es el mismo), sin embargo, suelen anidarse para vincular su nombre al espacio de nombres de la clase contenedora o para que la traducción del mundo real al modelo resulte más natural.
+```java
+public class Calculo {
+	private double x;
+	private double y;
+	private Operacion tipo;
+	
+	private static class Operacion {
+		int suma = 0; int resta = 1;
+		int producto = 2;
+		int division = 3;
+	}
+}
+```
+![[imgs/sintaxis.png | center]]
