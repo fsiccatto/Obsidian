@@ -205,7 +205,7 @@ Existe un caso especial de asociación que se emplea para expresar una relación
 - Si se elimina un agregado se eliminan todas sus partes (dependientes)
 
 ### Diagrama de Estado
-Un diagrama de estado modela el comportamiento dinámico de los objetos como una maquina de estados
+Un diagrama de estado modela el comportamiento dinámico de los **objetos** como una maquina de estados
 
 - Muestra el ciclo de vida de un objeto en particular 
 - Los estados por los que pasa un objeto y como transita de uno a otro 

@@ -4,7 +4,7 @@ Las historias de usuario son una herramienta clave en las metodologías ágiles,
 ## Estructura de una Historia de Usuario
 Una historia de usuario sigue un formato claro y conciso:
 
-**Formato**: "Como [rol de usuario], quiero [objetivo] para [beneficio]".
+**Formato**: "Como \[rol de usuario], quiero \[objetivo] para \[beneficio]".
 
 ### Elementos esenciales:
 1. **ID**: Identificador único para la historia de usuario.
@@ -26,9 +26,10 @@ Las historias de usuario se organizan dentro del backlog, junto con:
 
 - **Épicas**: Historias de gran tamaño que abarcan más funciones o requisitos generales.
 - **Tareas**: Acciones más pequeñas y específicas derivadas de las historias de usuario.
+- **Temas**: están en un nivel por encima de las demás, representan una colección del resto para describir un sistema o subsistema.
 
 Las historias de usuario son más detalladas que las épicas y, al igual que las tareas, se ordenan por prioridad en el backlog. El nivel de detalle aumenta cuanto más prioritaria es la historia, mientras que las épicas suelen estar en la parte baja del backlog, con menos urgencia.
-
+*El backlog está compuesto por Historias de usuario y épicas*
 # Criterios de Aceptación
 Los criterios de aceptación definen las pruebas que debe pasar la historia para considerarse finalizada. Estos pueden escribirse en lenguaje natural o mediante técnicas como **BDD** (Behavior-Driven Development). Deben ser específicos y medibles para asegurar que los requisitos sean claros.
 
