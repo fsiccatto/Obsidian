@@ -12,7 +12,14 @@ Prolog (1972) es el lenguaje más usado para la programación lógica, con aplic
 
 Este paradigma se basa en conceptos de lógica proposicional y predicados. Un **predicado** es una proposición sobre entidades de un dominio (ej. "Juan es programador"). Se amplía con el uso de cuantificadores para expresar reglas generales como “Todo humano es mortal”.
 ## Hechos y Reglas
-Un programa Prolog consta de **hechos** (declaraciones categóricas) y **reglas** (predicados que infieren conclusiones). Prolog resuelve problemas estableciendo relaciones y utilizando un motor de inferencia sobre una base de conocimiento.
+Un programa Prolog consta de **hechos** (expresan una relación entre objetos y siempre son verdaderos). Prolog resuelve problemas estableciendo relaciones y utilizando un motor de inferencia sobre una base de conocimiento.
+![[imgs/hecho.png| center]]
+Las **reglas** (predicados que infieren conclusiones) son:
+1. El nombre de los objetos y las relaciones deben empezar con minúscula
+2. Primero se escribe la relación y luego el objeto entre paréntesis (separados por `,` si es más de uno)
+3. Se puede usar `_` para separar caracteres
+4. Siempre se funaliza un hecho con un `.`
+![[imgs/regla.png | center]]
 ## Variables y Sintaxis
 Las **variables** en Prolog representan entidades lógicas y se instancian según el contexto. La sintaxis requiere que los predicados terminen en punto, usen letras minúsculas y mayúsculas para variables.
 Ejemplo:
