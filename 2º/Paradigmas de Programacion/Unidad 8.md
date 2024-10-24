@@ -13,7 +13,7 @@ Las listas en Prolog son una estructura de datos fundamental que permite almacen
   El operador `|` divide la lista en cabeza y cola: `[C|L]`. La cabeza (C) es el primer elemento y la cola (L) es el resto de la lista.
 > [!example] Ejemplo
 > En `[[1,2], [a,b,c], [4,5,6], [d,e,f]] == [C|Q]`, la cabeza C es `[1,2]` y la cola Q es `[[a,b,c], [4,5,6], [d,e,f]]`.
-![[imgs/listas.png]]
+![[imgs/listas.png | center]]
 ### Unificación de Listas
 La unificación de listas sigue las mismas reglas que la de otros términos en Prolog, pero teniendo en cuenta la estructura de cabeza y cola.
 ## Ejemplos
@@ -25,7 +25,7 @@ buscar(1, [E|_], E).
 buscar(P, [_|L], E) :- P1 is P - 1, buscar(P1, L, E).
 ```
 Este predicado busca recursivamente el elemento en la posición indicada, restando uno en cada paso hasta llegar a la cabeza de la lista.
-![[imgs/caso1.png]]
+![[imgs/caso1.png | center]]
 ### CASO 2: Concatenación de listas
 - **Predicado**: `unir/3` que concatena dos listas en una tercera.
 ```prolog
@@ -33,7 +33,7 @@ unir([], L2, L2).
 unir([C|L1], L2, [C|L3]) :- unir(L1, L2, L3).
 ```
 La idea es agregar la cabeza de la primera lista (L1) a la nueva lista y seguir concatenando el resto de la cola.
-![[imgs/caso2.png]]
+![[imgs/caso2.png | center]]
 ### CASO 3: Variaciones sin repetición
 - **Predicado**: `variar/3` que genera variaciones sin repetición de N elementos de una lista.
 ```prolog
@@ -54,7 +54,7 @@ ultimo([_|Q], Y) :- ultimo(Q, Y).
 extremos([_|Q], D) :- ultimo(Q, Y), remover(Y, Q, D).
 ```
 Se obtiene el último elemento con el predicado auxiliar `ultimo/2` y luego se remueve de la cola para obtener la lista sin extremos.
-![[imgs/caso4.png]]
+![[imgs/caso4.png | center]]
 
 ---
 ## Términos Compuestos y Predicados Anidados
@@ -75,11 +75,11 @@ El *backtracking* en Prolog es un mecanismo que explora todas las posibilidades 
 cliente(persona(alejandro, _, _, _), banco(nacion)).
 ```
 Prolog retrocede para verificar todas las instancias de `persona` y sus relaciones hasta encontrar todas las soluciones posibles que satisfacen la consulta.
-![[imgs/backtracking.png]]
+![[imgs/backtracking.png | center]]
 ## Operador de "corte" u **cut (!)**
 El operador de corte se utiliza para evitar el backtracking en ciertos puntos de un programa. Este operador permite "podar" el árbol de búsqueda y evitar la exploración de ramas innecesarias, optimizando el proceso.
 ```prolog
 padre(X) :- progenitor(X), !, varon(X).
 ```
 Aquí, una vez que se encuentra un progenitor varón, se evita seguir buscando más progenitores en caso de que ya no tenga sentido.
-![[imgs/operador de corte.png]]
+![[imgs/operador de corte.png | center]]
