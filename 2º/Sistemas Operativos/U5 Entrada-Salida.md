@@ -51,7 +51,6 @@ Una interrupción que deja al equipo en un estado bien definido se conoce como *
 4. Se conoce el estado de ejecución de la instrucción a la que apunta el PC.
 Una interrupción que no cumple con estos requerimientos se conoce como **interrupción imprecisa**.
 ![[imgs/interrupciones precisas e impresisas.png | center | 400]]
-> [!caution] ¿Para que sirve una interrupción imprecisa?
 ## Fundamentos del Software de E/S
 ### Objetivos del software de E/S
 **Independencia de dispositivos**: escribir programas que puedan acceder a cualquier dispositivo de E/S sin tener que especificar el dispositivo por adelantado. El SO debe resolver el uso de distintos dispositivos, que necesitan distintas ordenes para manejarlos.
@@ -106,7 +105,7 @@ La comunicación entre el *driver* y el dispositivo se realiza a través del bus
 El límite exacto entre los controladores y el software independiente del dispositivo depende del sistema (y del dispositivo). Las funciones que se realizan comúnmente en el software independiente del dispositivo:
 ![[imgs/software de E-S.png | center | 400]]
 #### Interfaz uniforme par los controladores de software de dispositivos
-Se necesita que todos los dispositivos de E/S y sus controladores se vean más o menos iguales.
+Se necesita que todos los dispositivos de E/S y sus controladores se vean más o menos iguales. Todos los dispositivos 
 ![[imgs/interfaz uniforme para drivers.png | center | 400]]
 En la práctica no todos los dispositivos son absolutamente idénticos, pero por lo general hay sólo un pequeño número de tipos de dispositivos, e incluso éstos en general son casi iguales.
 > [!done] Funcionamiento
@@ -213,6 +212,15 @@ El objetivo de RAID es combinar múltiples discos duros en un **arreglo**, que e
 #### RAID 5 (*Striping* con Paridad)
 - **Objetivo**: Equilibrar rendimiento y fiabilidad.
 - **Funcionamiento**: RAID 5 utiliza un método de **striping** (como RAID 0) para distribuir los datos entre varios discos, pero también incluye **paridad** para proteger los datos. La paridad es un tipo de información de control que permite reconstruir los datos si uno de los discos falla. Los bloques de paridad no están en un disco fijo, sino que se distribuyen entre todos los discos para mejorar el rendimiento.
+Tenemos el ejemplo de que tenemos 3 discos. En el caso de que se nos rompa el disco 2, usamos el disco 4 y funcionaria como una XOR de vuelta.
+
+| Disco 1 | ~~Disco 2~~ | Disco 3 | Disco 4 (conectado o no) |
+| ------- | ----------- | ------- | ------------------------ |
+| 0       | ~~0~~       | 0       | 0                        |
+| 0       | ~~1~~       | 1       | 1                        |
+| 1       | ~~0~~       | 1       | 0                        |
+| 1       | ~~1~~       | 0       | 1                        |
+
 ![[imgs/raid 5.png| center | 400]]
 
 | **Aspecto**     | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |

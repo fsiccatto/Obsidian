@@ -78,14 +78,9 @@ En sistemas Linux/Unix, el primer carácter en la salida del comando `ls -l` ind
 El **mapeo de memoria** es una técnica que permite asociar archivos directamente con el espacio de direcciones del proceso, de modo que el archivo pueda ser accedido como si fuera parte de la memoria principal, sin necesidad de operaciones de E/S tradicionales (lectura/escritura).
 1. **Proporcionan una forma de asociar archivos con el espacio de direcciones del proceso**:
    - Un archivo en disco se mapea directamente a una porción de la memoria virtual del proceso.
-> [!caution] Mostrar graficamente como es el mapeo directo
-
    - Esto permite acceder a los contenidos del archivo como si fueran parte de la memoria, sin tener que leer/escribir manualmente desde/hacia el disco.
 2. **Ventaja: Minimiza E/S**:
    - Al mapear el archivo en memoria, se reduce el número de operaciones de E/S, lo que puede mejorar el rendimiento. Esto es útil cuando se requiere acceso frecuente y rápido a datos almacenados en archivos.
-> [!caution] ¿Que tiene que ver la E/S con mapear el archivo en memoria?
-
-
 3. **Desventajas: Solo para pequeños archivos**:
    - Esta técnica es más eficiente para archivos pequeños. Si un archivo es muy grande, puede ser difícil o imposible mapear todo el archivo en la memoria disponible, lo que limita su uso en esos casos.
 4. **Inconsistencia si dos procesos acceden al archivo de manera diferente**:
@@ -127,7 +122,7 @@ Por otro lado, una **ruta relativa** no empieza desde la raíz, sino que parte d
 📁 *Readdir* -> devulve la siguiente entrada en un directorio abierto
 📁 *Rename* -> se puede cambiare el nombre
 📁 *Link* -> enlace físico o simbólico
-📁 *Unlink*
+📁 *Unlink* -> eliminar de la tabla el link
 
 | **Tipo de Enlace**                     | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                     |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -145,9 +140,7 @@ Un disco físico puede dividirse en **varias particiones**, cada una de las cual
 El **MBR** o **Master Boot Record** es un sector muy importante que se encuentra en el **sector 0** de un disco. Este sector es el primer lugar donde el sistema busca información cuando enciendes la computadora. El MBR contiene dos partes principales:
 - **Código de arranque del MBR (Bootloader)**: ocupa los primeros 446 bytes y contiene el código necesario para iniciar el sistema operativo o cargar un gestor de arranque. Este código es lo primero que la computadora ejecuta al arrancar.
 - **Tabla de particiones primarias**: ubicada en los siguientes 64 bytes, contiene información sobre hasta cuatro particiones primarias del disco. Cada entrada de la tabla de particiones ocupa 16 bytes y describe el tipo, tamaño y posición de cada partición en el disco.
-- **Firma del disco**: en los últimos 2 bytes (0x55AA), actúa como un marcador o identificador que indica que el disco contiene un MBR válido. Esta firma es necesaria para que el BIOS o UEFI reconozca el MBR como válido y proceda con el proceso de arranque.
-> [!caution] ¿Podemos tener un MBR no valido, que es la firma? Si tenemos dos discos, el MBR del segundo no se usa?
-
+- **Firma del disco**: en los últimos 2 bytes (0x55AA), indica datos macros del disco. Esta firma es necesaria para que el BIOS reconozca el MBR como válido y proceda con el proceso de arranque.
 ![[imgs/MBR.png| center | 300]]
 #### 4. El superblock
 El *Superblock* contiene todos los parámetros claves acerca del sistema de archivos y se lee en la memoria cuando se arranca la computadora o se entra en contacto con el sistema de archivos por primera vez.
@@ -282,4 +275,3 @@ Consideremos cómo se busca el nombre de la ruta `/usr/ast/mbox.`
 4. A partir de este nodo-i puede **buscar** `mbox` en el mismo directorio. 
 5. Después, el nodo-i para este archivo se **lee en memoria y se mantiene** ahí hasta que se cierra el archivo.
 ![[imgs/12.png|center]]
-
