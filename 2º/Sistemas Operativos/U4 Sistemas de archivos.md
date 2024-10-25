@@ -1,6 +1,6 @@
 # Archivos
 
-> [!important] Definicion
+> [!important] Definición
 > Un **archivo** es una unidad básica de almacenamiento de información en un sistema de archivos. Contiene datos que pueden ser texto, imágenes, audio, videos, programas o cualquier tipo de información digital.
 ## Características clave de un archivo:
 1. **Nombre**: Cada archivo tiene un nombre único dentro de un directorio.
@@ -8,22 +8,38 @@
 3. **Metadatos**: Atributos del archivo, como tamaño, fecha de creación/modificación, permisos de acceso, y en algunos sistemas, su ubicación exacta en el disco.
 4. **Dirección**: El archivo tiene una ubicación dentro del sistema de archivos, definida por la ruta (ej., `/home/user/document.txt`).
 Los archivos se gestionan mediante operaciones como crear, abrir, leer, escribir, y eliminar.
-## Comparación entre  Win32 y POSIX:
+La información que se almacena en los archivos debe ser <mark style="background: #FF5582A6;">persistente</mark>, es decir, no debe ser afectada por la creación y terminación de los procesos.
+### Operaciones de archivos
+Llamadas al sistema más comunes relacionadas con los archivos:
+📃 *Create* -> el archivo se crea sin datos. Se establecen algunos atributos
+📃 *Delete* -> se elimina para liberar espacio en el disco o porque no se necesita
+📃 *Open* -> antes de usar un archivo, se debe abrir. El sistema debe llevar los atributos y listas de direcciones de disco a memoria principal para tener un acceso rápido
+📃 *Close* -> el archivo debe cerrarse para liberar espacio en la talba interna
+📃 *Read* -> los datos se leen del archivo
+📃 *Write* -> los datos se escriben en el archivo
+📃 *Append* -> función restringida de write, agrega datos al final del archivo
+📃 *Seek* -> método para acceso aleatorio al archivo que reposiciona el apuntador del archivo en una posición específica del archivo 
+📃 *Get attributes* -> leer atributos de un archivo
+📃 *Set attributes* -> establecer atributos de un archivo creado
+📃 *Rename* -> cambiar el nombre de un archivo
+📃 *Link*
+📃 *Unlink*
+## Comparación entre Win32 y POSIX:
 
-| **Aspecto**                | **Win32 (Windows)**                              | **POSIX (Unix/Linux)**                           |
-|----------------------------|--------------------------------------------------|--------------------------------------------------|
-| **Longitud máxima del archivo** | 260 caracteres (por defecto)                     | 255 caracteres por archivo (4096 caracteres para la ruta completa) |
-| **Sensibilidad a mayúsculas**  | No es sensible (ej. `archivo.txt` = `ARCHIVO.txt`) | Sensible (ej. `archivo.txt` ≠ `ARCHIVO.txt`)     |
-| **Caracteres prohibidos**      | `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `|`, nombres reservados (`CON`, `PRN`, etc.) | Solo `/` y `NUL`                                   |
-| **Extensiones**                | Se usan comúnmente, aunque no obligatorias       | No son necesarias para el sistema, usadas por convención |
-| **Separador de directorios**   | `\` (barra invertida)                           | `/` (barra)                                      |
-| **Ruta de archivo**            | Incluye letra de unidad (ej. `C:\`)              | Relativa a la raíz del sistema (ej. `/home/`)     |
+| **Aspecto**                     | **Win32 (Windows)**                                | **POSIX (Unix/Linux)**                                             |
+| ------------------------------- | -------------------------------------------------- | ------------------------------------------------------------------ |
+| **Longitud máxima del archivo** | 260 caracteres (por defecto)                       | 255 caracteres por archivo (4096 caracteres para la ruta completa) |
+| **Sensibilidad a mayúsculas**   | No es sensible (ej. `archivo.txt` = `ARCHIVO.txt`) | Sensible (ej. `archivo.txt` ≠ `ARCHIVO.txt`)                       |
+| **Caracteres prohibidos**       | `\`, `/`, `:`, `*`, `?`, `"`, `<`, `>`, `          | Solo `/` y `NULL`, nombres reservados (`CON`, `PRN`, etc.)         |
+| **Extensiones**                 | Se usan comúnmente, aunque no obligatorias         | No son necesarias para el sistema, usadas por convención           |
+| **Separador de directorios**    | `\` (barra invertida)                              | `/` (barra)                                                        |
+| **Ruta de archivo**             | Incluye letra de unidad (ej. `C:\`)                | Relativa a la raíz del sistema (ej. `/home/`)                      |
 ### Ejemplo completo
 Si ejecutas el comando `ls -l` en un archivo con estos permisos, verás algo como esto:
 ```bash
 -rwxrw-r-- 1 usuario grupo tamaño fecha nombre_de_archivo
 ```
-- **-rwxrw-r--**: Los permisos.
+- **-rwxrw-r--**: Los permisos 🔐.
 - **1**: Número de enlaces duros (links).
 - **usuario**: El dueño del archivo.
 - **grupo**: El grupo asociado al archivo.
@@ -48,23 +64,28 @@ Si ejecutas el comando `ls -l` en un archivo con estos permisos, verás algo com
 En sistemas Linux/Unix, el primer carácter en la salida del comando `ls -l` indica el **tipo de archivo o elemento** que estamos viendo. Aquí te dejo una lista con los diferentes tipos de archivos o elementos y sus correspondientes caracteres:
 ## Tipos de archivos y su representación:
 
-| **Carácter** | **Tipo de archivo o elemento** | **Descripción**                                                                                                                                             |
-| ------------ | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `-`          | **Archivo ordinario**          | Un archivo normal, como un documento de texto, imagen, etc.                                                                                                 |
-| `d`          | **Directorio**                 | Un directorio o carpeta que contiene otros archivos o directorios.                                                                                          |
-| `b`          | **Block special file**         | Archivo de dispositivo de bloque, usado para interactuar con hardware que maneja bloques de datos, como discos duros.                                       |
-| `c`          | **Character special file**     | Archivo de dispositivo de caracteres, usado para interactuar con dispositivos que manejan flujos de datos carácter por carácter (ej. terminales, teclados). |
-| `p`          | **Named pipe (FIFO)**          | Canal de comunicación interprocesos con nombre. Facilita la transferencia de datos entre procesos.                                                          |
-| `l`          | **Link simbólico**             | Un enlace simbólico (o "symlink") que apunta a otro archivo o directorio.                                                                                   |
+| **Carácter** | **Tipo de archivo o elemento** | **Descripción**                                                                                                                                                               |
+| ------------ | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-`          | **Archivo ordinario**          | Un archivo normal, como un documento de texto, imagen, etc.                                                                                                                   |
+| `d`          | **Directorio**                 | Un directorio o carpeta que contiene otros archivos o directorios.                                                                                                            |
+| `b`          | **Block special file**         | Archivo de dispositivo de bloque, usado para interactuar con hardware que maneja bloques de datos, como discos duros.                                                         |
+| `c`          | **Character special file**     | Archivo de dispositivo de caracteres, usado para interactuar con dispositivos que manejan flujos de datos carácter por carácter (ej.impresoras, terminales, teclados, redes). |
+| `p`          | **Named pipe (FIFO)**          | Canal de comunicación de interprocesos con nombre. Facilita la transferencia de datos entre procesos.                                                                         |
+| `l`          | **Link simbólico**             | Un enlace simbólico (o "symlink") que apunta a otro archivo o directorio.                                                                                                     |
 ## Posibles atributos para un archivos
-![[imgs/1.png|400]]
+![[imgs/1.png|center|400]]
 ## Mapeo en memoria
 El **mapeo de memoria** es una técnica que permite asociar archivos directamente con el espacio de direcciones del proceso, de modo que el archivo pueda ser accedido como si fuera parte de la memoria principal, sin necesidad de operaciones de E/S tradicionales (lectura/escritura).
 1. **Proporcionan una forma de asociar archivos con el espacio de direcciones del proceso**:
    - Un archivo en disco se mapea directamente a una porción de la memoria virtual del proceso.
+> [!caution] Mostrar graficamente como es el mapeo directo
+
    - Esto permite acceder a los contenidos del archivo como si fueran parte de la memoria, sin tener que leer/escribir manualmente desde/hacia el disco.
 2. **Ventaja: Minimiza E/S**:
    - Al mapear el archivo en memoria, se reduce el número de operaciones de E/S, lo que puede mejorar el rendimiento. Esto es útil cuando se requiere acceso frecuente y rápido a datos almacenados en archivos.
+> [!caution] ¿Que tiene que ver la E/S con mapear el archivo en memoria?
+
+
 3. **Desventajas: Solo para pequeños archivos**:
    - Esta técnica es más eficiente para archivos pequeños. Si un archivo es muy grande, puede ser difícil o imposible mapear todo el archivo en la memoria disponible, lo que limita su uso en esos casos.
 4. **Inconsistencia si dos procesos acceden al archivo de manera diferente**:
@@ -72,45 +93,47 @@ El **mapeo de memoria** es una técnica que permite asociar archivos directament
 5. **¿Qué pasa si el archivo ocupa más de un segmento?**:
    - En sistemas de memoria segmentada, si el archivo es más grande que el tamaño de un segmento, se divide en múltiples segmentos. El sistema operativo se encarga de gestionar la asignación y paginación de esos segmentos en la memoria virtual del proceso.
    - Cuando se accede a una parte del archivo que no está en memoria, el sistema operativo intercambia los segmentos de memoria necesarios, lo que podría degradar el rendimiento si el archivo es muy grande.
-## Directorios en Sistemas Operativos
+## Directorios
+Son también archivos que llevan el registro de archivos.
 1. **Directorios de un nivel**:
    - **Estructura**: Todos los archivos se almacenan en un único directorio común.
    - **Ventaja**: Simplicidad en la administración.
    - **Desventaja**: No permite la organización eficiente cuando hay muchos archivos, ya que todos están en el mismo nivel y pueden tener conflictos de nombres.
-2. **Directorios de dos niveles**:
+![[imgs/directorio de un solo nivel.png| center | 400]]
+1. **Directorios de dos niveles**:
    - **Estructura**: Cada usuario tiene su propio directorio, dentro del cual se almacenan sus archivos.
    - **Ventaja**: Evita conflictos de nombres entre archivos de diferentes usuarios.
    - **Desventaja**: Aún puede ser poco flexible, ya que los usuarios tienen solo un directorio para todos sus archivos, limitando la organización interna.
-3. **Directorios jerárquicos (o multinivel)**:
+2. **Directorios jerárquicos (o multinivel)**:
    - **Estructura**: Los directorios pueden contener tanto archivos como otros directorios, formando una estructura de árbol.
    - **Ventaja**: Ofrece una organización flexible, permitiendo que los archivos se almacenen en subdirectorios y evitando conflictos de nombres.
    - **Desventaja**: Requiere más administración y seguimiento de la estructura.
-![[imgs/2.png|400]]
-### Nombre de ruta (Path Names)
+![[imgs/2.png|center|400]]
+### Nombres de Rutas (*Path Names*)
 Nos referimos a las formas en las que podemos indicar la ubicación de archivos o directorios dentro del sistema de archivos. Hay dos tipos principales de nombres de rutas: **rutas absolutas** y **rutas relativas**.
 #### Ruta absoluta
 Una **ruta absoluta** es aquella que siempre comienza desde la raíz del sistema de archivos. La raíz en la mayoría de los sistemas operativos tipo Unix o Linux está representada por el símbolo `/`. Una ruta absoluta te permite identificar de forma única un archivo o directorio, ya que estás proporcionando la dirección completa desde la raíz hasta el destino.
-Por ejemplo, la ruta `/home/usuario/archivo.txt` es una ruta absoluta. Desde la raíz (`/`), navegas al directorio `home`, luego `usuario`, y finalmente al archivo `archivo.txt`. Esto es útil cuando quieres especificar una ubicación de forma exacta, sin importar dónde estés dentro del sistema de archivos.
+Por ejemplo, la ruta `/home/usuario/archivo.txt` es una ruta absoluta. Desde la raíz (`/`), navegas al directorio `home`, luego `usuario`, y finalmente al archivo `archivo.txt`. Esto es útil cuando se quiere especificar una ubicación de forma exacta, sin importar dónde estés dentro del sistema de archivos.
 #### Ruta relativa
 Por otro lado, una **ruta relativa** no empieza desde la raíz, sino que parte desde el **directorio de trabajo actual**. El directorio de trabajo actual es la carpeta en la que te encuentras en ese momento. Cuando usas una ruta relativa, el sistema operativo interpreta la ubicación en función de dónde estás trabajando en ese momento.
 #### Entradas especiales
 **"."**: Un solo punto (`.`) representa el **directorio actual**. Esto significa que si usas `.` en una ruta, estás indicando que quieres trabajar en la carpeta en la que ya te encuentras.
 **".."**: Dos puntos (`..`) representan el **directorio padre**. El directorio padre es el que contiene al directorio actual. Si te encuentras en `/home/usuario`, el directorio padre sería `/home`.
 ### Operaciones con directorios
-- Crear
-- Borrar
-- Abrir
-- Cerrar
-- Leer
-- Renombrar
-- Link (Enlazar)
-	- *Enlace fisico (Hard Link):* Un **enlace físico** es una manera de hacer que un archivo aparezca en más de un directorio. Es, esencialmente, otra entrada al mismo archivo en el sistema de archivos. Cuando creas un enlace físico, no estás creando una copia del archivo, sino una nueva referencia al mismo contenido. **Funcionamiento**: Los sistemas de archivos mantienen una estructura llamada **inodo** para cada archivo. Un inodo contiene la información sobre el archivo, como su tamaño, permisos, y la ubicación de los bloques de datos en el disco. Cuando creas un enlace físico, estás creando una nueva referencia a ese mismo inodo, lo que significa que tanto el archivo original como el enlace físico apuntan a los mismos datos.
-	- *Enlace simbólico (symbolic link)*: Un **enlace simbólico** (o **symlink**) es diferente de un enlace físico. En lugar de apuntar directamente al inodo y a los datos del archivo, el enlace simbólico crea un **puntero** a otro archivo o directorio. En esencia, es un archivo que contiene una referencia a otro archivo. **Funcionamiento**: El enlace simbólico no contiene el contenido del archivo original ni su inodo. En su lugar, apunta a una ruta, que es la dirección del archivo o directorio que estás enlazando. Si el archivo o directorio al que apunta el enlace simbólico es movido o eliminado, el enlace simbólico se "rompe" y ya no será válido. Esto se debe a que el enlace simbólico solo sabe dónde estaba ubicado el archivo, no el contenido en sí
-- Unlink (Desenlazar)
+📁 *Create* -> se crea un directorio
+📁 *Delete* -> se elimina un directorio
+📁 *Opendir* -> antes de poder leer un directorio, hay que abrirlo
+📁 *Closedir* -> se debe cerrar para liberar espacio en la tabla interna
+📁 *Readdir* -> devulve la siguiente entrada en un directorio abierto
+📁 *Rename* -> se puede cambiare el nombre
+📁 *Link*
+	- <mark style="background: #ADCCFFA6;">Enlace fisico</mark> (*Hard Link*): Un **enlace físico** es una manera de hacer que un archivo aparezca en más de un directorio. Es, esencialmente, otra entrada al mismo archivo en el sistema de archivos. Cuando creas un enlace físico, no estás creando una copia del archivo, sino una nueva referencia al mismo contenido. **Funcionamiento**: Los sistemas de archivos mantienen una estructura llamada **i-nodo** para cada archivo. Un i-nodo contiene la información sobre el archivo, como su tamaño, permisos, y la ubicación de los bloques de datos en el disco. Cuando creas un enlace físico, estás creando una nueva referencia a ese mismo i-nodo, lo que significa que tanto el archivo original como el enlace físico apuntan a los mismos datos.
+	- <mark style="background: #ADCCFFA6;">Enlace simbólico</mark> (*Symbolic link*): Un **enlace simbólico** (o **symlink**) es diferente de un enlace físico. En lugar de apuntar directamente al i-nodo y a los datos del archivo, el enlace simbólico crea un **puntero** a otro archivo o directorio. En esencia, es un archivo que contiene una referencia a otro archivo. **Funcionamiento**: El enlace simbólico no contiene el contenido del archivo original ni su i-nodo. En su lugar, apunta a una ruta, que es la dirección del archivo o directorio que estás enlazando. Si el archivo o directorio al que apunta el enlace simbólico es movido o eliminado, el enlace simbólico se "rompe" y ya no será válido. Esto se debe a que el enlace simbólico solo sabe dónde estaba ubicado el archivo, no el contenido en sí.
+📁 *Unlink*
 ## Sistema de Archivos
 En un sistema operativo, el **sistema de archivos** es la estructura que permite organizar y gestionar los archivos y directorios en el disco. Los discos físicos (como los discos duros o SSD) son donde se almacenan los sistemas de archivos, pero no siempre se utiliza todo el disco como una única unidad. Veamos más de cerca cómo se organiza esta distribución.
 ### Distribución del sistema de archivos
-![[imgs/3.png|center|400]]
+![[imgs/sistema de distribucion de archivos.png]]
 #### 1. Los sistemas de archivos se almacenan en discos
 Cada disco físico (o unidad de almacenamiento) tiene un **sistema de archivos** que organiza cómo se almacenan y acceden los archivos. El sistema de archivos define cómo se dividen los bloques de datos, cómo se gestionan los permisos y cómo se localizan los archivos en el disco. Ejemplos de sistemas de archivos son **NTFS** (en Windows), **ext4** (en Linux), y **FAT32** (en sistemas compatibles con múltiples dispositivos).
 #### 2. Particiones en el disco
@@ -120,7 +143,8 @@ El **MBR** o **Master Boot Record** es un sector muy importante que se encuentra
 - **Tabla de particiones**: contiene información sobre las particiones en el disco (como el tamaño y el tipo de cada partición).
 - **Código de arranque**: es un pequeño programa que se encarga de iniciar el proceso de arranque.
 - **Numero mágico**: el número mágico se utiliza para identificar el tipo de sistema de archivos presente en un disco o partición. Cuando un sistema operativo interactúa con un disco, puede leer el número mágico en el encabezado del sistema de archivos para saber qué tipo de sistema de archivos está utilizando, como **ext4**, **NTFS**, **FAT32**, etc.
-#### 4. El superblok
+![[imgs/MBR.png| center | 300]]
+#### 4. El superblock
 El *Superblock* contiene todos los parámetros claves acerca del sistema de archivos y se lee en la memoria cuando se arranca la computadora o se entra en contacto con el sistema de archivos por primera vez
 #### Procesos de inicio de Arranque del sistema operativo
 Cuando enciendes tu computadora, el **BIOS** (Basic Input/Output System) se activa primero. El BIOS es el firmware que inicializa el hardware del sistema y prepara el equipo para cargar el sistema operativo.
@@ -133,19 +157,18 @@ El **sistema operativo (SO)** se carga en la memoria RAM y, una vez cargado, el 
 ### Implementación
 #### Asignación continua
 En la **asignación continua** de archivos, se asigna al archivo una serie de bloques consecutivos en el disco para almacenar sus datos. Esto significa que si el archivo ocupa, por ejemplo, 10 bloques, esos 10 bloques estarán dispuestos uno detrás del otro, formando una secuencia continua en el disco.
-![[imgs/4.png|center|380]]
-
+![[imgs/asignacion de espacio de disco para archivos.png]]
 Características clave:
 - **Inicio y longitud**: Para cada archivo, el sistema de archivos necesita conocer dos cosas: la **dirección de inicio** (el primer bloque donde comienza el archivo) y la **longitud** (el número de bloques que ocupa el archivo). Con esta información, el sistema puede acceder al archivo.
 - **Acceso rápido**: Dado que los bloques están contiguos, el acceso a los datos es muy rápido. Una vez que el sistema encuentra el inicio del archivo, puede leer todos los bloques secuencialmente sin tener que buscar en diferentes partes del disco.
-*Ventajas*
+##### Ventajas
 - Simple de implementar, se almacena cada archivo como una serie contigua de bloques de disco. 
 - Fácil de leer, solo es necesario una búsqueda 
-*Desventaja*: 
+##### Desventaja: 
 - Fragmentación
 #### Asignación de lista enlazada
 En este esquema, cada archivo se representa como una **lista enlazada** de bloques en el disco. El primer bloque de un archivo contiene los datos iniciales y un puntero que señala al siguiente bloque donde continúa el archivo. El segundo bloque contiene más datos y un puntero al siguiente bloque, y así sucesivamente, hasta que se llega al último bloque del archivo, que contiene un puntero nulo (indicando que no hay más bloques).
-![[imgs/5.png|center|500]]
+![[imgs/listas enlazadas.png]]
 *Ventajas*:
 - solo ocurre fragmentación interna en el último bloque de cada archivo. 
 - En la entrada del directorio es suficiente con almacenar la dirección de disco del primer bloque.
@@ -228,7 +251,7 @@ Una entrada de directorio típica en MS-DOS consta de varios campos que almacena
 - **Enlaces**:
     - Indica cuántas veces se ha enlazado este archivo en diferentes directorios. Esto es útil para determinar la cantidad de referencias que tiene un archivo.
 ## V7 UNIX File System
-El **sistema de archivos** está en la forma de un árbol que empieza en el directorio raíz, con la adición de vínculos para formar un gráfico acíclico dirigido. Los nombres de archivos tienen hasta 14 caracteres y pueden contener cualquier carácter ASCII excepto / (debido a que es el separador entre los componentes en una ruta) y NUL (debido a que se utiliza para rellenar los nombres menores de 14 caracteres). NUL tiene el valor numérico de 0. Una entrada de directorio de UNIX contiene una entrada para cada archivo en ese directorio. Cada entrada es en extremo simple, ya que UNIX utiliza el esquema de nodos-i. Una entrada de directorio sólo contiene dos campos: el nombre del archivo (14 bytes) y el número del nodo-i para ese archivo (2 bytes). Estos parámetros limitan el número de archivos por cada sistema de archivos a 64 K
+El **sistema de archivos** está en la forma de un árbol que empieza en el directorio raíz, con la adición de vínculos para formar un gráfico acíclico dirigido. Los nombres de archivos tienen hasta 14 caracteres y pueden contener cualquier carácter ASCII excepto / (debido a que es el separador entre los componentes en una ruta) y NUL (debido a que se utiliza para rellenar los nombres menores de 14 caracteres). NUL tiene el valor numérico de 0. Una entrada de directorio de UNIX contiene una entrada para cada archivo en ese directorio. Cada entrada es en extremo simple, ya que UNIX utiliza el esquema de nodos-i. Una entrada de directorio sólo contiene dos campos: el nombre del archivo (14 bytes) y el número del nodo-i para ese archivo (2 bytes). Estos parámetros limitan el número de archivos por cada sistema de archivos a 64 K.
 ![[imgs/11.png|center|250]]
 Para poder manejar archivos muy grandes. Las primeras 10 direcciones de disco se almacenan en el mismo nodo-i, por lo que para los archivos pequeños toda la información necesaria se encuentra justo en el nodo-i, que se obtiene del disco a la memoria principal al momento de abrir el archivo. Para archivos un poco más grandes, una de las direcciones en el nodo-i es la dirección de un bloque de disco llamado **bloque indirecto sencillo**. Este bloque contiene direcciones de disco adicionales. Si esto no es suficiente, hay otra dirección en el nodo-i, llamada **bloque indirecto doble**, que contiene la dirección de un bloque que contiene una lista de bloques indirectos sencillos. Cada uno de estos bloques indirectos sencillos apunta a unos cuantos cientos de bloques de datos. Si esto aún no es suficiente, también se puede utilizar un **bloque indirecto triple** 
 ### Ejemplo de como buscaria UNIX V7 un archivo
@@ -237,6 +260,6 @@ Consideremos cómo se busca el nombre de la ruta `/usr/ast/mbox.`
 2. Después **lee el directorio raíz y busca el primer componente de la ruta**, `usr`, en el directorio raíz para encontrar el número de nodo-i del archivo `/usr`. La acción de localizar un nodo-i a partir de su número es simple, ya que cada uno tiene una ubicación fija en el disco.
 3. A partir de este nodo-i, el sistema **localiza el directorio** para `/usr` y busca el siguiente componente,` ast`, en él. Cuando encuentra la entrada para ast, tiene el nodo-i para el directorio `/usr/ast`. 
 4. A partir de este nodo-i puede **buscar** `mbox` en el mismo directorio. 
-5. Después, el nodo-i para este archivo se **lee en memoria y se mantiene** ahí hasta que se cierra el archivo
+5. Después, el nodo-i para este archivo se **lee en memoria y se mantiene** ahí hasta que se cierra el archivo.
 ![[imgs/12.png|center]]
 
