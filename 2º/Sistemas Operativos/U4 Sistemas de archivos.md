@@ -112,7 +112,7 @@ Son también archivos que llevan el registro de archivos.
 ### Nombres de Rutas (*Path Names*)
 Nos referimos a las formas en las que podemos indicar la ubicación de archivos o directorios dentro del sistema de archivos. Hay dos tipos principales de nombres de rutas: **rutas absolutas** y **rutas relativas**.
 #### Ruta absoluta
-Una **ruta absoluta** es aquella que siempre comienza desde la raíz del sistema de archivos. La raíz en la mayoría de los sistemas operativos tipo Unix o Linux está representada por el símbolo `/`. Una ruta absoluta te permite identificar de forma única un archivo o directorio, ya que estás proporcionando la dirección completa desde la raíz hasta el destino.
+Una **ruta absoluta** es aquella que <mark style="background: #FFB86CA6;">siempre comienza desde la raíz</mark> del sistema de archivos. La raíz en la mayoría de los sistemas operativos tipo Unix o Linux está representada por el símbolo `/`. Una ruta absoluta te permite identificar de forma única un archivo o directorio, ya que estás proporcionando la dirección completa desde la raíz hasta el destino.
 Por ejemplo, la ruta `/home/usuario/archivo.txt` es una ruta absoluta. Desde la raíz (`/`), navegas al directorio `home`, luego `usuario`, y finalmente al archivo `archivo.txt`. Esto es útil cuando se quiere especificar una ubicación de forma exacta, sin importar dónde estés dentro del sistema de archivos.
 #### Ruta relativa
 Por otro lado, una **ruta relativa** no empieza desde la raíz, sino que parte desde el **directorio de trabajo actual**. El directorio de trabajo actual es la carpeta en la que te encuentras en ese momento. Cuando usas una ruta relativa, el sistema operativo interpreta la ubicación en función de dónde estás trabajando en ese momento.
@@ -126,12 +126,15 @@ Por otro lado, una **ruta relativa** no empieza desde la raíz, sino que parte d
 📁 *Closedir* -> se debe cerrar para liberar espacio en la tabla interna
 📁 *Readdir* -> devulve la siguiente entrada en un directorio abierto
 📁 *Rename* -> se puede cambiare el nombre
-📁 *Link*
-	- <mark style="background: #ADCCFFA6;">Enlace fisico</mark> (*Hard Link*): Un **enlace físico** es una manera de hacer que un archivo aparezca en más de un directorio. Es, esencialmente, otra entrada al mismo archivo en el sistema de archivos. Cuando creas un enlace físico, no estás creando una copia del archivo, sino una nueva referencia al mismo contenido. **Funcionamiento**: Los sistemas de archivos mantienen una estructura llamada **i-nodo** para cada archivo. Un i-nodo contiene la información sobre el archivo, como su tamaño, permisos, y la ubicación de los bloques de datos en el disco. Cuando creas un enlace físico, estás creando una nueva referencia a ese mismo i-nodo, lo que significa que tanto el archivo original como el enlace físico apuntan a los mismos datos.
-	- <mark style="background: #ADCCFFA6;">Enlace simbólico</mark> (*Symbolic link*): Un **enlace simbólico** (o **symlink**) es diferente de un enlace físico. En lugar de apuntar directamente al i-nodo y a los datos del archivo, el enlace simbólico crea un **puntero** a otro archivo o directorio. En esencia, es un archivo que contiene una referencia a otro archivo. **Funcionamiento**: El enlace simbólico no contiene el contenido del archivo original ni su i-nodo. En su lugar, apunta a una ruta, que es la dirección del archivo o directorio que estás enlazando. Si el archivo o directorio al que apunta el enlace simbólico es movido o eliminado, el enlace simbólico se "rompe" y ya no será válido. Esto se debe a que el enlace simbólico solo sabe dónde estaba ubicado el archivo, no el contenido en sí.
+📁 *Link* -> enlace físico o simbólico
 📁 *Unlink*
+
+| **Tipo de Enlace**                     | **Descripción**                                                                                                                                                                                                                                                                                                                                                                                     |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Enlace Físico** (*Hard Link*)        | Un enlace físico permite que un archivo aparezca en más de un directorio. En lugar de una copia, <mark style="background: #FF5582A6;">es una nueva referencia al mismo contenido</mark>. **Funcionamiento**: El sistema de archivos utiliza un **i-nodo** para cada archivo; un enlace físico crea una referencia adicional a este i-nodo, apuntando al mismo contenido que el archivo original.    |
+| **Enlace Simbólico** (*Symbolic Link*) | Un enlace simbólico es un puntero a otro archivo o directorio, actuando como una referencia en lugar de un duplicado de contenido. **Funcionamiento**: No contiene el contenido ni el i-nodo del archivo original, <mark style="background: #BBFABBA6;">solo la ruta al archivo o directorio enlazado</mark>. Si el archivo enlazado se mueve o elimina, el enlace simbólico queda roto e inválido. |
 ## Sistema de Archivos
-En un sistema operativo, el **sistema de archivos** es la estructura que permite organizar y gestionar los archivos y directorios en el disco. Los discos físicos (como los discos duros o SSD) son donde se almacenan los sistemas de archivos, pero no siempre se utiliza todo el disco como una única unidad. Veamos más de cerca cómo se organiza esta distribución.
+En un sistema operativo, el **sistema de archivos** es la estructura que permite organizar y gestionar los archivos y directorios en el disco. Los discos físicos (como los discos duros o SSD) son donde se almacenan los sistemas de archivos, pero no siempre se utiliza todo el disco como una única unidad.
 ### Distribución del sistema de archivos
 ![[imgs/sistema de distribucion de archivos.png]]
 #### 1. Los sistemas de archivos se almacenan en discos
@@ -140,44 +143,58 @@ Cada disco físico (o unidad de almacenamiento) tiene un **sistema de archivos**
 Un disco físico puede dividirse en **varias particiones**, cada una de las cuales puede tener su propio sistema de archivos. Una partición es una división lógica del disco, y cada partición puede funcionar como si fuera un disco independiente. Esto permite instalar varios sistemas operativos en un solo disco o mantener diferentes sistemas de archivos en distintas secciones del mismo disco.
 #### 3. El sector 0: MBR
 El **MBR** o **Master Boot Record** es un sector muy importante que se encuentra en el **sector 0** de un disco. Este sector es el primer lugar donde el sistema busca información cuando enciendes la computadora. El MBR contiene dos partes principales:
-- **Tabla de particiones**: contiene información sobre las particiones en el disco (como el tamaño y el tipo de cada partición).
-- **Código de arranque**: es un pequeño programa que se encarga de iniciar el proceso de arranque.
-- **Numero mágico**: el número mágico se utiliza para identificar el tipo de sistema de archivos presente en un disco o partición. Cuando un sistema operativo interactúa con un disco, puede leer el número mágico en el encabezado del sistema de archivos para saber qué tipo de sistema de archivos está utilizando, como **ext4**, **NTFS**, **FAT32**, etc.
+- **Código de arranque del MBR (Bootloader)**: ocupa los primeros 446 bytes y contiene el código necesario para iniciar el sistema operativo o cargar un gestor de arranque. Este código es lo primero que la computadora ejecuta al arrancar.
+- **Tabla de particiones primarias**: ubicada en los siguientes 64 bytes, contiene información sobre hasta cuatro particiones primarias del disco. Cada entrada de la tabla de particiones ocupa 16 bytes y describe el tipo, tamaño y posición de cada partición en el disco.
+- **Firma del disco**: en los últimos 2 bytes (0x55AA), actúa como un marcador o identificador que indica que el disco contiene un MBR válido. Esta firma es necesaria para que el BIOS o UEFI reconozca el MBR como válido y proceda con el proceso de arranque.
+> [!caution] ¿Podemos tener un MBR no valido, que es la firma? Si tenemos dos discos, el MBR del segundo no se usa?
+
 ![[imgs/MBR.png| center | 300]]
 #### 4. El superblock
-El *Superblock* contiene todos los parámetros claves acerca del sistema de archivos y se lee en la memoria cuando se arranca la computadora o se entra en contacto con el sistema de archivos por primera vez
+El *Superblock* contiene todos los parámetros claves acerca del sistema de archivos y se lee en la memoria cuando se arranca la computadora o se entra en contacto con el sistema de archivos por primera vez.
 #### Procesos de inicio de Arranque del sistema operativo
 Cuando enciendes tu computadora, el **BIOS** (Basic Input/Output System) se activa primero. El BIOS es el firmware que inicializa el hardware del sistema y prepara el equipo para cargar el sistema operativo.
 El proceso que sigue es el siguiente:
-- **El BIOS lee el MBR**: El BIOS localiza el MBR en el sector 0 del disco principal (o el que está configurado como disco de arranque). El MBR tiene las instrucciones básicas que el BIOS necesita para continuar el proceso de arranque.
+- **El BIOS lee el MBR**: El BIOS localiza el MBR en el sector 0 del disco de arranque. El MBR tiene las instrucciones básicas que el BIOS necesita para continuar el proceso de arranque.
 - **El MBR localiza la partición activa**: El MBR contiene una tabla con todas las particiones del disco y, entre ellas, marca cuál es la **partición activa**. La partición activa es aquella que contiene el sistema operativo que se va a arrancar.
 - **El MBR lee el bloque de arranque**: Una vez que se localiza la partición activa, el MBR lee el **bloque de arranque** o **boot sector** de esa partición. Este bloque contiene instrucciones específicas sobre cómo iniciar el sistema operativo dentro de esa partición.
 Finalmente, el **bloque de arranque** ejecuta el código necesario para cargar el sistema operativo que está instalado en la partición.
 El **sistema operativo (SO)** se carga en la memoria RAM y, una vez cargado, el control del sistema se transfiere a él, lo que te permite empezar a utilizar tu computadora.
+### Montaje
+Permite montar un sistema de archivo en otro o una partición de disco en otra. Es decir, que, por ejemplo, un usb pueda estar disponible para su uso. En este proceso, el sistema asigna un punto de montaje donde se pueden acceder a los archivos y carpetas de esa partición. Por ejemplo con la instrucción:
+```C
+mount("/dev/fd0", "/mnt", 0)
+```
+podemos montar en `/mnt` un archivo especial de bloque `/dev/fd0` para la unidad 0 y el tercer parámetro indica que el sistema de archivo se va a montar en modo de lectura-escritura o sólo de escritura.
+![[imgs/montaje de sistemas de archivos.png| center]]
+El *daemon* es el encargado de avisarle al sistema de archivos que existe un pen-drive. El sistema de archivos lo monta automáticamente (automount), entonces el contenido de `mnt` desaparece y aparece el contenido del pen-drive (no desaparece, lo oculta).
 ### Implementación
 #### Asignación continua
 En la **asignación continua** de archivos, se asigna al archivo una serie de bloques consecutivos en el disco para almacenar sus datos. Esto significa que si el archivo ocupa, por ejemplo, 10 bloques, esos 10 bloques estarán dispuestos uno detrás del otro, formando una secuencia continua en el disco.
+En la siguiente figura 4-10 se puede ver la asignación contigua del espacio de disco para 7 archivos:
 ![[imgs/asignacion de espacio de disco para archivos.png]]
 Características clave:
 - **Inicio y longitud**: Para cada archivo, el sistema de archivos necesita conocer dos cosas: la **dirección de inicio** (el primer bloque donde comienza el archivo) y la **longitud** (el número de bloques que ocupa el archivo). Con esta información, el sistema puede acceder al archivo.
 - **Acceso rápido**: Dado que los bloques están contiguos, el acceso a los datos es muy rápido. Una vez que el sistema encuentra el inicio del archivo, puede leer todos los bloques secuencialmente sin tener que buscar en diferentes partes del disco.
-##### Ventajas
+*Ventajas*
 - Simple de implementar, se almacena cada archivo como una serie contigua de bloques de disco. 
-- Fácil de leer, solo es necesario una búsqueda 
-##### Desventaja: 
-- Fragmentación
+- Fácil de leer, solo es necesario una búsqueda.
+*Desventaja* 
+- Fragmentación -> porque tenemos bloques que no están ocupados al 100%.
 #### Asignación de lista enlazada
 En este esquema, cada archivo se representa como una **lista enlazada** de bloques en el disco. El primer bloque de un archivo contiene los datos iniciales y un puntero que señala al siguiente bloque donde continúa el archivo. El segundo bloque contiene más datos y un puntero al siguiente bloque, y así sucesivamente, hasta que se llega al último bloque del archivo, que contiene un puntero nulo (indicando que no hay más bloques).
-![[imgs/listas enlazadas.png]]
+![[imgs/listas enlazadas.png|center|400]]
 *Ventajas*:
-- solo ocurre fragmentación interna en el último bloque de cada archivo. 
+- Solo ocurre fragmentación interna en el último bloque de cada archivo. 
 - En la entrada del directorio es suficiente con almacenar la dirección de disco del primer bloque.
 *Desventajas*: 
 - El acceso aleatorio es costoso. 
 - Agregar el puntero en la cabeza de cada bloque implica mayor sobrecarga durante la copia de archivos.
-#### I-Nodos
-Un **i-nodo** (index node) es una estructura que contiene metadatos sobre un archivo o directorio. Cada archivo y directorio en un sistema de archivos tiene su propio i-nodo. Los i-nodos almacenan la información necesaria para acceder a los bloques de datos del archivo en el disco, así como información adicional sobre el archivo.
-La gran ventaja de este esquema, en comparación con los archivos vinculados que utilizan una tabla en memoria, es que el nodo-i necesita estar en memoria sólo cuando está abierto el archivo correspondiente. La desventaja es que cada i-nodo tiene un tamaño fijo.
+- Podemos tener la situación que se pierde un enlace y se rompe el archivo.
+Para "arreglar" esta última desventaja podemos usar **listas doblemente enlazadas** como **FAT**
+#### Index Node
+Un **i-nodo** es una estructura que <mark style="background: #D2B3FFA6;">contiene metadatos sobre un archivo o directorio</mark>. Cada archivo y directorio en un sistema de archivos tiene su propio i-nodo. Los i-nodos almacenan la información necesaria para acceder a los bloques de datos del archivo en el disco, así como información adicional sobre el archivo.
+![[imgs/nodo-i.png| center | 200]]
+La gran ventaja de este esquema, en comparación con los archivos vinculados que utilizan una tabla en memoria, es que el i-nodo necesita estar en memoria sólo cuando está abierto el archivo correspondiente. La desventaja es que cada i-nodo tiene un tamaño fijo.
 ![[imgs/6.png|center|400]]
 El i-nodo **contiene varios atributos o metadatos** de un archivo o directorio, como:
 1. **Tipo de archivo**: Si es un archivo regular, un directorio, un enlace simbólico, etc.
@@ -194,34 +211,39 @@ La implementación de los i-nodos está diseñada para permitir que los archivos
 2. **Puntero indirecto simple**: Si los punteros directos no son suficientes, el i-nodo tiene un puntero a un bloque de punteros. Este bloque de punteros contiene direcciones a más bloques de datos en el disco.
 3. **Puntero indirecto doble**: Para archivos más grandes, el i-nodo incluye un puntero a un bloque que contiene punteros a bloques de punteros, y estos bloques de punteros a su vez contienen direcciones de bloques de datos.
 4. **Puntero indirecto triple**: Si el archivo es aún más grande, se usa un puntero a un bloque que apunta a bloques de punteros, que a su vez contienen punteros a bloques de punteros, los cuales finalmente apuntan a los bloques de datos.
+$$
+\begin{align}
+&\text{Tamaño máximo del archivo: }
+10Tb+\frac{Tb}{4}Tb+(\frac{Tb}{4})^2Tb+(\frac{Tb}{4})^3Tb \\
+&Tb: \text{tamaño del bloque y direcciones de bloques de 4 bytes.}
+\end{align}
+$$
 ### Archivos compartidos
 Se refiere a la posibilidad de que varios usuarios puedan acceder y utilizar el mismo archivo, lo que lleva a una estructura más compleja de organización del sistema de archivos.
 La conexión o referencia entre dos directorios que comparten el acceso a un archivo se conoce como un **vínculo o enlace**. Esto permite que un archivo sea referenciado desde varios directorios sin necesidad de duplicarlo. Existen dos tipos principales de enlaces: *HardLink* o *SoftLink*
 Cuando los archivos se comparten entre múltiples directorios, la estructura del sistema de archivos deja de ser un árbol, que es una estructura jerárquica simple en la que cada archivo o directorio tiene un solo padre. En su lugar, el sistema de archivos se convierte en un **Grafo Acíclico Dirigido (DAG)**.
-![[imgs/7.png|center|200]]
+![[imgs/archivos compartidos.png|center|200]]
 
-Ocurren ciertos problemas al compartir archivos como que si el archivo esta siendo accedido por dos usuarios y uno modifica el archivo, los cambios no se verian reflejados para el otro usuario, por lo que hay dos formas de solucionar este problema la primera es con I-Nodos donde al momento en que B se vincula al archivo compartido, el nodo-i registra al propietario del archivo como C. Al crear un vínculo no se cambia la propiedad (vea la figura 4-17), sino incrementa la cuenta de vínculos en el nodo-i, por lo que el sistema sabe cuántas entradas de directorio actualmente apuntan al archivo
-![[imgs/8.png|center]]
-(a) Situación antes de enlazar
-(b) Después de enlazar
-(c) Después que el propietario original remueve al archivo
+Ocurren ciertos problemas al compartir archivos como que si el archivo esta siendo accedido por dos usuarios y uno modifica el archivo, los cambios no se verian reflejados para el otro usuario, por lo que hay dos formas de **solucionar** este problema. En la primera solución, los bloques de disco no se listan en los directorios, sino en una pequeña estructura de datos asociada con el archivo en sí. Entonces, los directorios apuntarían sólo a la pequeña estructura de datos (la pequeña estructura de datos es el i-nodo).
+La segunda solución, B se vincula a uno de los archivos de C haciendo que el sistema cree un archivo, de tipo LINK e introduciendo ese archivo en el directorio de B. El nuevo archivo contiene sólo el nombre de la ruta del archivo al cual está vinculado. Cuando B lee del archivo vinculado, el sistema operativo ve que el archivo del que se están leyendo datos es de tipo LINK, busca el nombre del archivo y lee el archivo. A este esquema se le conoce como **vínculo simbólico** (**liga simbólica**).
+Cada uno de estos métodos tiene su desventaja. El primero queda en sub-propiedad de B, aunque el archivo pertenezca a C. En el segundo método el archivo se destruye y B no puede acceder a este.
+![[imgs/archivos compartidos problema.png| center]]
 ## VFS (Virtual File System)
 El VFS actúa como una **capa de abstracción** que encapsula las diferencias entre los distintos sistemas de archivos. Esto significa que no importa si el sistema de archivos subyacente es ext4, NTFS, FAT, o cualquier otro; desde el punto de vista de las aplicaciones o del propio sistema operativo, todas las operaciones sobre archivos (leer, escribir, crear, eliminar) se manejan de la misma forma.
-
-El VFS permite que el acceso a los archivos sea **independiente del sistema de archivos subyacente** Ya sea que los archivos estén almacenados en un sistema de archivos ext4, FAT, o cualquier otro, las operaciones sobre esos archivos son homogéneas. Esto significa que los comandos que usamos para manipular archivos funcionan igual sin importar el tipo de sistema de archivos.
+El VFS permite que el acceso a los archivos sea **independiente del sistema de archivos subyacente**. Ya sea que los archivos estén almacenados en un sistema de archivos ext4, FAT, o cualquier otro, las operaciones sobre esos archivos son homogéneas. Esto significa que los comandos que usamos para manipular archivos funcionan igual sin importar el tipo de sistema de archivos.
 
 *Utilizacion del Magic Number*
 El **VFS necesita “conocer” estos magic numbers** para poder identificar correctamente qué tipo de sistema de archivos está montado. Cuando un sistema operativo monta un dispositivo de almacenamiento, el VFS lee este número mágico para determinar a qué tipo de sistema de archivos pertenece y luego interactúa con él de la manera adecuada.
 ## Administración del espacio libre en la memoria
 Un disco duro o dispositivo de almacenamiento se divide en unidades llamadas **bloques**, que son las unidades mínimas de almacenamiento que el sistema operativo utiliza para leer y escribir datos.
 ### ¿Qué es el tamaño de bloque?
-- El **tamaño de bloque** se refiere a la cantidad de datos que un bloque individual puede almacenar. Este tamaño es fijo y puede variar dependiendo del sistema de archivos, pero comúnmente es de 4 KB, aunque puede ser más grande o más pequeño según las configuraciones.
+- El **tamaño de bloque** se refiere a la cantidad de datos que un bloque individual puede almacenar. Este tamaño es fijo y puede variar dependiendo del sistema de archivos, pero comúnmente es de 4KB, aunque puede ser más grande o más pequeño según las configuraciones.
 ### Registro de bloques libres en disco
 El **registro de bloques libres** es un mecanismo que utiliza el sistema operativo para llevar un control de los bloques que están disponibles o libres en el disco, es decir, aquellos que no están ocupados por ningún archivo.
 - **Asignación de espacio**: Cuando se necesita guardar un archivo nuevo, el sistema operativo debe saber qué bloques están disponibles para asignárselos al archivo. Mantener un registro de bloques libres permite asignar espacio de manera rápida y eficiente.
 - **Liberación de espacio**: Cuando se elimina un archivo, los bloques que estaban asignados a ese archivo deben ser marcados como libres para que puedan ser reutilizados.
 Hay varios métodos que los sistemas de archivos utilizan para llevar un registro de los bloques libres:
-1. **Mapa de bits (bitmap)**:
+1. **Mapa de bits (*bitmap*)**:
     - En este esquema, el sistema operativo utiliza un mapa de bits en el que cada bit representa un bloque del disco. Un bit de valor 1 indica que el bloque está ocupado, mientras que un bit de valor 0 indica que el bloque está libre.
     - **Ventajas**: Es eficiente en términos de espacio porque cada bloque solo requiere un bit en el mapa, lo que significa que se puede registrar el estado de muchos bloques con una cantidad relativamente pequeña de memoria.
     - **Desventajas**: Si el disco es muy grande, el mapa de bits puede volverse complicado de gestionar.
@@ -229,14 +251,12 @@ Hay varios métodos que los sistemas de archivos utilizan para llevar un registr
     - En este método, los bloques libres se encadenan en una lista enlazada. Cada bloque libre contiene un puntero al siguiente bloque libre. Cuando el sistema operativo necesita un bloque, toma el primero de la lista.
     - **Ventajas**: Es fácil de implementar y no requiere mucho espacio extra.
     - **Desventajas**: Puede ser menos eficiente a la hora de buscar bloques contiguos para archivos grandes, ya que implica seguir los enlaces entre bloques.
-![[imgs/9.png|center|400]]
-(a) lista enlazada
-(b) mapa de bits
+![[imgs/lista de bloques.png| center]]
 ## MS-DOS
-**MS-DOS** (Microsoft Disk Operating System) es un sistema operativo que utiliza un sistema de archivos conocido como **FAT** para llevar un registro de cómo están organizados los archivos en el disco. En el sistema FAT, cada archivo tiene una **entrada en el directorio**. Esta entrada contiene información sobre el archivo, como su nombre, tamaño y, lo más importante, el número del **primer bloque** donde comienza el archivo.
+**MS-DOS** (Microsoft Disk Operating System) es un sistema operativo que utiliza un sistema de archivos conocido como **FAT** para llevar un registro de cómo están organizados los archivos en el disco. En el sistema FAT, <mark style="background: #FFB86CA6;">cada archivo tiene una entrada en el directorio</mark>. Esta entrada contiene información sobre el archivo, como su nombre, tamaño y, lo más importante, el número del **primer bloque** donde comienza el archivo.
 ### Estructura de la Entrada de Directorio
 Una entrada de directorio típica en MS-DOS consta de varios campos que almacenan información específica. Los componentes principales son:
-![[imgs/10.png|center|400]]
+![[imgs/entrada de directorio de MS-DOS.png|center|400]]
 - **Nombre del Archivo**:
     - Contiene el nombre del archivo, generalmente limitado a **8 caracteres** para el nombre y **3 caracteres** para la extensión (ejemplo: `ARCHIVO.TXT`).
 - **Atributos**:
@@ -252,9 +272,9 @@ Una entrada de directorio típica en MS-DOS consta de varios campos que almacena
     - Indica cuántas veces se ha enlazado este archivo en diferentes directorios. Esto es útil para determinar la cantidad de referencias que tiene un archivo.
 ## V7 UNIX File System
 El **sistema de archivos** está en la forma de un árbol que empieza en el directorio raíz, con la adición de vínculos para formar un gráfico acíclico dirigido. Los nombres de archivos tienen hasta 14 caracteres y pueden contener cualquier carácter ASCII excepto / (debido a que es el separador entre los componentes en una ruta) y NUL (debido a que se utiliza para rellenar los nombres menores de 14 caracteres). NUL tiene el valor numérico de 0. Una entrada de directorio de UNIX contiene una entrada para cada archivo en ese directorio. Cada entrada es en extremo simple, ya que UNIX utiliza el esquema de nodos-i. Una entrada de directorio sólo contiene dos campos: el nombre del archivo (14 bytes) y el número del nodo-i para ese archivo (2 bytes). Estos parámetros limitan el número de archivos por cada sistema de archivos a 64 K.
-![[imgs/11.png|center|250]]
+![[imgs/entrada de directorio de UNIX V7.png|center|250]]
 Para poder manejar archivos muy grandes. Las primeras 10 direcciones de disco se almacenan en el mismo nodo-i, por lo que para los archivos pequeños toda la información necesaria se encuentra justo en el nodo-i, que se obtiene del disco a la memoria principal al momento de abrir el archivo. Para archivos un poco más grandes, una de las direcciones en el nodo-i es la dirección de un bloque de disco llamado **bloque indirecto sencillo**. Este bloque contiene direcciones de disco adicionales. Si esto no es suficiente, hay otra dirección en el nodo-i, llamada **bloque indirecto doble**, que contiene la dirección de un bloque que contiene una lista de bloques indirectos sencillos. Cada uno de estos bloques indirectos sencillos apunta a unos cuantos cientos de bloques de datos. Si esto aún no es suficiente, también se puede utilizar un **bloque indirecto triple** 
-### Ejemplo de como buscaria UNIX V7 un archivo
+### Ejemplo de como buscaría UNIX V7 un archivo
 Consideremos cómo se busca el nombre de la ruta `/usr/ast/mbox.` 
 1. En primer lugar, el sistema de archivos **localiza el directorio raíz.** En UNIX, su nodo-i se localiza en un lugar fijo en el disco. De este nodo-i localiza el directorio raíz, que puede estar en cualquier parte del disco, pero digamos que está en el bloque 1.
 2. Después **lee el directorio raíz y busca el primer componente de la ruta**, `usr`, en el directorio raíz para encontrar el número de nodo-i del archivo `/usr`. La acción de localizar un nodo-i a partir de su número es simple, ya que cada uno tiene una ubicación fija en el disco.
