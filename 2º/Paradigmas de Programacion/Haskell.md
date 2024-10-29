@@ -93,3 +93,64 @@ ultimoG x
 	|otherwise =  ultimoG (tail x)
 ```
 
+## Clase 28/10
+Concatenar dos listas
+`lista1 ++ lista2` seria como el `append(A, B, C)`
+`C:q == [C | Q]`
+## Estructuras de Datos
+### Funciones lambda
+``` Haskell
+(\x y -> if x > y then x else y) 5 10 -- 7) Int -> Int -> Int
+(\x -> if mod x 2 == 0 then True else False) -- 8) Par impar
+(\x -> parH(x)) 10 --Verficacion
+```
+
+### map
+```Haskell
+potencia :: (Int, Int) -> Int
+potencia (b, 0) = 1
+potencia (b, e) = potencia (b, (e - 1)) * b
+
+map (potencia 2) [1, 2, 3] --consola
+```
+
+### first - second (`fst() - snd()`)
+`[a]` es una lista de tipo genérico
+```Haskell
+parejas :: [a] -> [a] -> [(a, a)] --mismo tipo de dato generico
+parejas [] [] = []
+parejas (xh:xt) (yh:yt) = (xh,yh) : (parejas xh yt) --asumimos que son listas de la misma longitud
+```
+Si queremos usar otro tipo distinto de dato generico tendriamos que hacer
+`parejas :: (Eq a) => [a] -> [b]`
+
+### Ejercicio 24
+```Haskell
+data Mov = N Int | S Int | E Int | O Int
+data Paseo a = Pasos Mov (Paseo a) | Descansa a
+
+p1 = Pasos (N 20) (Pasos(E 30) (Pasos (S 10) (Pasos (O 40) (Descansa 0))))
+```
+
+### Ejercicio 27 
+```Haskell
+data Arbol a = Hoja a | Nodo (Arbol a) (Arbol a)
+
+-- a1 :: Arbol
+a1 = Nodo(Nodo (Hoja 45) (Hoja 78)) (Nodo (Hoja 12) (Nodo (Hoja 23) (Hoja 13)))
+a2 = Nodo(NOdo (Hoja 45) (Hoja 78)) (Nodo (Hoja 12) (Nodo (Nodo (Hoja 30) (Hoja 30)) (Hoja 13)))
+```
+
+```Haskell
+-- Devolver la cantidad de nodos hojas
+cantidad :: Arbol a -> Int
+cantidad (Hoja x) = 1
+cantidad (Nodo x y) = cantidad x + cantidad y
+```
+
+```Haskell
+-- Devolver una lista de los nodos hojas del arbol
+barrido :: Arbol a -> [a]
+barrido (Hoja x) = [x]
+barrido (Nodo x y) = barrido x ++ barrido y
+```

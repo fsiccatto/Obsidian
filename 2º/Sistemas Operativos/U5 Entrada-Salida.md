@@ -146,7 +146,7 @@ El **spooling** (Simultaneous Peripheral Operations On-Line) en sistemas operati
 - **Mejor uso de los recursos**: El spooling permite que la CPU siga ejecutando otros procesos mientras el periférico está ocupado, lo que optimiza el uso del tiempo de CPU.
 - **Aprovechamiento de dispositivos lentos**: Dispositivos como impresoras suelen ser mucho más lentos que la CPU. El spooling permite a los procesos seguir ejecutándose sin estar limitados por la velocidad de los periféricos.
 - **Cola de trabajos**: El spooling permite gestionar múltiples solicitudes de diferentes usuarios o procesos, organizándolas en una cola para su procesamiento secuencial.
-##### Diferencia entre *Spooling* y Buffering*
+##### Diferencia entre *Spooling* y *Buffering*
 - **Spooling** implica el uso del disco como almacenamiento temporal, permitiendo que múltiples trabajos se acumulen y se gestionen de manera ordenada.
 - **Buffering** se refiere a un almacenamiento temporal en memoria que ayuda a gestionar pequeñas cantidades de datos mientras se transfieren entre la CPU y el periférico, sin utilizar el disco.
 ### Software de E/S en espacio de usuario
