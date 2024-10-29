@@ -158,7 +158,7 @@ El **software de entrada y salida en el espacio de usuario** es una parte fundam
 	El sistema operativo, además de recibir la solicitud, debe **formatear los datos** de manera adecuada para el dispositivo. Por ejemplo, si el dispositivo requiere trabajar en bloques, los datos se organizan en ese formato. Finalmente, la solicitud de E/S se **pone en una cola** si el dispositivo está ocupado o hay otras solicitudes en espera.
 > [!example] Ejemplo
 > Si un programa quiere leer un archivo del disco, hace una solicitud, los datos se organizan en bloques y la operación se encola si el disco está ocupado.
-1. *Nombramiento, protección, bloqueo, uso de buffer, asignación*
+2. *Nombramiento, protección, bloqueo, uso de buffer, asignación*
 	En este paso, se manejan diferentes aspectos esenciales de la operación de E/S para garantizar que la operación se realice de manera segura y eficiente:
 	- **Nombramiento**: Se asocia el archivo o recurso con un nombre en el sistema de archivos.
 	- **Protección**: Se verifica que el proceso tiene los permisos adecuados para realizar la operación de E/S.
@@ -167,7 +167,7 @@ El **software de entrada y salida en el espacio de usuario** es una parte fundam
 	- **Asignación**: Se asignan recursos, como bloques de memoria, para la operación de E/S.
 > [!example] Ejemplo
 > Al escribir en un archivo, el sistema verifica permisos, bloquea el recurso para evitar accesos simultáneos y usa un buffer para administrar la transferencia de datos.
-1. *Establecer los registros de dispositivo y verificar el estado*
+3. *Establecer los registros de dispositivo y verificar el estado*
 	Aquí, el sistema operativo configura el dispositivo de E/S, estableciendo los registros correspondientes para definir qué operación se va a realizar y qué datos se van a transferir. También se verifica el **estado del dispositivo** para asegurarse de que esté disponible para la operación de E/S.
 > [!example] Ejemplo
 > Antes de escribir en un disco, se configuran los registros del controlador del disco con la dirección de los bloques que se van a escribir, y se verifica que el disco esté listo para la operación.
