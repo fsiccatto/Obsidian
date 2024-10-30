@@ -143,7 +143,7 @@ El **MBR** o **Master Boot Record** es un sector muy importante que se encuentra
 - **Firma del disco**: en los últimos 2 bytes (0x55AA), indica datos macros del disco. Esta firma es necesaria para que el BIOS reconozca el MBR como válido y proceda con el proceso de arranque.
 ![[imgs/MBR.png| center | 300]]
 #### 4. El superblock
-El *Superblock* contiene todos los parámetros claves acerca del sistema de archivos y se lee en la memoria cuando se arranca la computadora o se entra en contacto con el sistema de archivos por primera vez.
+El *Superblock* contiene todos los parámetros claves acerca del sistema de archivos y se lee en la memoria cuando se arranca la computadora o se entra en contacto con el sistema de archivos por primera vez. Contiene el **numero mágico**.
 #### Procesos de inicio de Arranque del sistema operativo
 Cuando enciendes tu computadora, el **BIOS** (Basic Input/Output System) se activa primero. El BIOS es el firmware que inicializa el hardware del sistema y prepara el equipo para cargar el sistema operativo.
 El proceso que sigue es el siguiente:
