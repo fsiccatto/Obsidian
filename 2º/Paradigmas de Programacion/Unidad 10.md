@@ -90,7 +90,7 @@ fib 1 = 1
 fib n = fib(n - 1) + fib(n - 2)
 ```
 
-![[algunas definiciones.png]]
+![[imgs/algunas definiciones.png]]
 Las restricciones de tipo son declaraciones de la forma `Tipo a` donde `Tipo` es el nombre de una clase (`Eq, Num, Ord`, etc) y `a` es una variable de tipo. Podemos definir un tipo de datos recibido o devuelto por una función que sea de más de una clase a la vez.
 ## Declaraciones Locales
 En los lenguajes funcionales no existe el concepto de variable local como espacio de memoria definido al interior de una función. Sin embargo, Haskell permite declaraciones locales mediante las cláusulas `where` y `let-in`.
@@ -135,10 +135,10 @@ map = \f xs -> case xs of
 La función `until` aplica una expresión hasta que se cumpla una condición.
 `until :: (a -> Bool) -> (a -> a) -> a -> a`
 donde: 
-- (a->Bool) representa la condición a evaluar en cada iteración, que aplica sobre un objeto de algún tipo a y devuelve un valor booleano.
-- (a->a) representa la expresión que se evalúa en cada iteración. Es una función de algún tipo a que aplica sobre un argumento del mismo tipo. 
-- a representa el valor inicial desde el cuál se comienza a iterar. Debe ser del mismo tipo a
-- a representa el tipo de valor devuelto para la función.
+- `(a->Bool)` representa la condición a evaluar en cada iteración, que aplica sobre un objeto de algún tipo `a` y devuelve un valor booleano.
+- `(a->a)` representa la expresión que se evalúa en cada iteración. Es una función de algún tipo `a` que aplica sobre un argumento del mismo tipo. 
+- `a` representa el valor inicial desde el cuál se comienza a iterar. Debe ser del mismo tipo `a`.
+- `a` representa el tipo de valor devuelto para la función.
 ```haskell
 -- Duplicar el valor inicial hasta superar el límite
 duplicar :: (Integer, Integer) -> Integer

@@ -154,3 +154,10 @@ barrido :: Arbol a -> [a]
 barrido (Hoja x) = [x]
 barrido (Nodo x y) = barrido x ++ barrido y
 ```
+
+### Ejemplo compara
+```Haskell
+compara :: Ord a => (a -> a -> Bool) -> a -> a -> Bool
+compara (x) a b = if (x a b) then True else False
+```
+

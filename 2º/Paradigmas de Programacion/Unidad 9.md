@@ -51,7 +51,7 @@ Esta función siempre devolverá el mismo valor para cada entrada `x`, cumpliend
 
 ## Haskell
 
-Haskell implementa completamente los principios de la programación funcional, prohibiendo características de los lenguajes imperativos como la asignación destructiva y efectos laterales.
+Haskell implementa completamente los principios de la programación funcional, prohibiendo características de los lenguajes imperativos como la asignación destructiva y efectos laterales. <mark style="background: #BBFABBA6;">Es un sistema de inferencia de tipo</mark>.
 
 ### Sistema de Tipos
 Haskell es un lenguaje **fuertemente tipado** (a toda expresión se le debe poder asociar un único tipo) y **estáticamente verificado** (los tipos se verifican en tiempo de traducción). Esto previene errores de tipo en tiempo de ejecución.
