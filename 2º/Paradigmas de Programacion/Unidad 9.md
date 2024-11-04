@@ -109,6 +109,16 @@ Las listas pueden ser **finitas** o **infinitas**:
 `[1..10]` es una lista finita definida por comprensión que contendrá elementos del 1 al 10.
 `[1..]` es una lista infinita de enteros definida por comprensión.
 
+La sintaxis básica de una lista por comprensión es:
+```
+[expresion | condicion]
+```
+por ejemplo:
+```Haskell
+[x^2 | x <- [1..15], odd x]
+[x^2 | x <- [1, 3..15]]
+[x^2 | x <- take 8 [1..15], odd x]
+```
 ### Tuplas
 A diferencia de las listas, las tuplas pueden contener diferentes tipos (son heterogéneas) y tienen un tamaño fijo.
 

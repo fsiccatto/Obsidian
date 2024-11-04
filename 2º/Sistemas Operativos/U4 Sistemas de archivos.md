@@ -128,6 +128,7 @@ Por otro lado, una **ruta relativa** no empieza desde la raíz, sino que parte d
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Enlace Físico** (*Hard Link*)        | Un enlace físico permite que un archivo aparezca en más de un directorio. En lugar de una copia, <mark style="background: #FF5582A6;">es una nueva referencia al mismo contenido</mark>. **Funcionamiento**: El sistema de archivos utiliza un **i-nodo** para cada archivo; un enlace físico crea una referencia adicional a este i-nodo, apuntando al mismo contenido que el archivo original.    |
 | **Enlace Simbólico** (*Symbolic Link*) | Un enlace simbólico es un puntero a otro archivo o directorio, actuando como una referencia en lugar de un duplicado de contenido. **Funcionamiento**: No contiene el contenido ni el i-nodo del archivo original, <mark style="background: #BBFABBA6;">solo la ruta al archivo o directorio enlazado</mark>. Si el archivo enlazado se mueve o elimina, el enlace simbólico queda roto e inválido. |
+![[imgs/links.png| center |300]]
 ## Sistema de Archivos
 En un sistema operativo, el **sistema de archivos** es la estructura que permite organizar y gestionar los archivos y directorios en el disco. Los discos físicos (como los discos duros o SSD) son donde se almacenan los sistemas de archivos, pero no siempre se utiliza todo el disco como una única unidad.
 ### Distribución del sistema de archivos
@@ -159,7 +160,7 @@ mount("/dev/fd0", "/mnt", 0)
 ```
 podemos montar en `/mnt` un archivo especial de bloque `/dev/fd0` para la unidad 0 y el tercer parámetro indica que el sistema de archivo se va a montar en modo de lectura-escritura o sólo de escritura.
 ![[imgs/montaje de sistemas de archivos.png| center]]
-El *daemon* es el encargado de avisarle al sistema de archivos que existe un pen-drive. El sistema de archivos lo monta automáticamente (automount), entonces el contenido de `mnt` desaparece y aparece el contenido del pen-drive (no desaparece, lo oculta).
+El *daemon* es el encargado de avisarle al sistema de archivos que existe un pen-drive. El sistema de archivos lo monta automáticamente (automount), entonces el contenido de `mnt` se oculta y aparece el contenido del pen-drive.
 ### Implementación
 #### Asignación continua
 En la **asignación continua** de archivos, se asigna al archivo una serie de bloques consecutivos en el disco para almacenar sus datos. Esto significa que si el archivo ocupa, por ejemplo, 10 bloques, esos 10 bloques estarán dispuestos uno detrás del otro, formando una secuencia continua en el disco.
@@ -220,7 +221,7 @@ Cuando los archivos se comparten entre múltiples directorios, la estructura del
 Ocurren ciertos problemas al compartir archivos como que si el archivo esta siendo accedido por dos usuarios y uno modifica el archivo, los cambios no se verian reflejados para el otro usuario, por lo que hay dos formas de **solucionar** este problema. En la primera solución, los bloques de disco no se listan en los directorios, sino en una pequeña estructura de datos asociada con el archivo en sí. Entonces, los directorios apuntarían sólo a la pequeña estructura de datos (la pequeña estructura de datos es el i-nodo).
 La segunda solución, B se vincula a uno de los archivos de C haciendo que el sistema cree un archivo, de tipo LINK e introduciendo ese archivo en el directorio de B. El nuevo archivo contiene sólo el nombre de la ruta del archivo al cual está vinculado. Cuando B lee del archivo vinculado, el sistema operativo ve que el archivo del que se están leyendo datos es de tipo LINK, busca el nombre del archivo y lee el archivo. A este esquema se le conoce como **vínculo simbólico** (**liga simbólica**).
 Cada uno de estos métodos tiene su desventaja. El primero queda en sub-propiedad de B, aunque el archivo pertenezca a C. En el segundo método el archivo se destruye y B no puede acceder a este.
-![[imgs/archivos compartidos problema.png| center]]
+![[imgs/archivos compartidos problema.png| center | 300]]
 ## VFS (Virtual File System)
 El VFS actúa como una **capa de abstracción** que encapsula las diferencias entre los distintos sistemas de archivos. Esto significa que no importa si el sistema de archivos subyacente es ext4, NTFS, FAT, o cualquier otro; desde el punto de vista de las aplicaciones o del propio sistema operativo, todas las operaciones sobre archivos (leer, escribir, crear, eliminar) se manejan de la misma forma.
 El VFS permite que el acceso a los archivos sea **independiente del sistema de archivos subyacente**. Ya sea que los archivos estén almacenados en un sistema de archivos ext4, FAT, o cualquier otro, las operaciones sobre esos archivos son homogéneas. Esto significa que los comandos que usamos para manipular archivos funcionan igual sin importar el tipo de sistema de archivos.
