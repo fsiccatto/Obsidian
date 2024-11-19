@@ -72,7 +72,7 @@ Si la meta no puede ser satisfecha, se considera falsa, ya que Prolog usa una l�
 ### Instanciación
 Es el proceso de asignar un valor a una variable. Si se consulta con variables, el sistema intenta instanciar esas variables con los valores disponibles en la base de conocimientos.
 Ejemplo:
-- `?- licencia(juan, X).` → X = omnibus
+- `?- licencia(juan, X).` → `X = omnibus`
 ### Matching
 Prolog busca una **coincidencia exacta** entre la estructura del predicado y la meta solicitada. El predicado debe **coincidir completamente** con un hecho de la base de conocimientos para que sea considerado verdadero.
 Ejemplo:
@@ -80,7 +80,7 @@ Ejemplo:
 ### Unificación
 Cuando se encuentra una coincidencia entre la meta y un hecho o regla, se unifican los valores instanciados con las variables, dando una respuesta. Este proceso también ocurre cuando se instancian variables dentro de una regla para satisfacer submetas.
 Ejemplo:
-- `?- trabaja(juan, X).` → X = tac
+- `?- trabaja(juan, X).` → `X = tac`
 ## Reglas y Submetas
 Para consultas que involucren reglas, el motor de inferencia debe resolver primero las submetas antes de alcanzar la meta principal.
 > [!example]
@@ -91,9 +91,9 @@ Para consultas que involucren reglas, el motor de inferencia debe resolver prime
 ### Operadores `=` y `is`
 Prolog distingue entre los operadores `=` y `is` en las consultas:
 - **Operador `=`**: Busca una coincidencia o ligadura para instanciar una variable, sin evaluar expresiones.
-   Ejemplo: `?- X = 2 + 3.` → X = 2 + 3
+   Ejemplo: `?- X = 2 + 3.` → `X = 2 + 3`
 - **Operador `is`**: Evalúa una expresión aritmética y asigna el resultado a la variable.
-   Ejemplo: `?- X is 3 + 4.` → X = 7
+   Ejemplo: `?- X is 3 + 4.` → `X = 7`
 ### Variables Anónimas
 Las variables anónimas, representadas por un guion bajo `_`, se utilizan cuando no se necesita instanciar un valor específico en una consulta. Sirven para indicar la existencia de un argumento sin interés en su valor exacto.
 Ejemplo:

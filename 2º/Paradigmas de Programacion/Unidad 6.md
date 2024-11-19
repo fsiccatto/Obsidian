@@ -75,7 +75,7 @@ Una clase miembro, es un elemento más de la clase que la contiene, y cómo tal 
 > 	- Se asocia a una instancia de la clase contenedora
 > 	- Tiene acceso completo y directo a la clase externa
 > 	- No puede tener miembros estáticos
-> 	- No puede tener el mismo nomber que la externa
+> 	- No puede tener el mismo nombre que la externa
 > 
 
 ---
@@ -86,7 +86,7 @@ Las variables locales al método deben declararse `final`. De esta manera se gar
 ### Clases anidadas estáticas
 > [!info] Clases e interfaces de alto nivel
 > - Clases estáticas **anidadas** (*nested*) dentro de otra clase
-> - Deben calificarse `stacic`
+> - Deben calificarse `static`
 > - Solo se pueden anidar dentro de clases normales o de clases internas de alto nivel
 > - No es necesario un objeto de la clase externa para crear un nuevo objeto de la clase interna estática
 > - Modo de referenciarlas
