@@ -19,7 +19,7 @@ Utiliza OFDM Técnica de multiplexación que divide el espectro de frecuencia en
 Utiliza múltiples antenas para transmitir y recibir más de un flujo de datos simultáneamente, aumentando la capacidad y velocidad.
 ### MU-MIMO (Multi User - Multiple Input Multiple Output)
 Permite que múltiples dispositivos se comuniquen con el punto de acceso simultáneamente, mejorando la eficiencia en redes con muchos usuarios.
-![[MIMO y MU-MIMO.png]]
+![[imgs/MIMO y MU-MIMO.png]]
 # Satélites
 Son redes que utilizan como medios de transmisión satélites artificiales puestos en órbita alrededor de la tierra. Actuan como grandes espejos de las ondas recibidas y enviadas desde la estacion terrestre.
 La principal **ventaja** de estos es lograr establecer enlaces de comunicación con áreas que por otros métodos es imposible ya sea por distancia o limitaciones geográficas.
