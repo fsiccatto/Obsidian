@@ -55,4 +55,53 @@ Si las variables y sus relaciones dentro de un sistema son lo bastante simples, 
 > Un **MODELO** es una construcción intelectual y descriptiva de una entidad en la cual un observador tiene interés. Se construye para ser transmitido. Supuestos simples son usados para capturar el comportamiento importante.
 
 ### Tipos de Modelos
-
+1. Según el **cambio con el tiempo**
+	- Dinámicos -> utilizados para representar sistemas cuyo estado varía con el tiempo.
+	  ![[img/dinamico.png]]
+	- Estáticas -> utilizados para representar sistemas cuyo estado estado es invariable a través del tiempo.$$P(x) = ax{^2} + bx + c$$
+2. Según su **forma de representación**
+	- Matemáticos -> la realidad es representada en forma abstracta de diversas maneras. Se usan funciones matemáticas
+	  ![[img/matematico.png]]
+	- Físicos -> la realidad es representada por algo tangible, construido en escala o que por lo menos se comporta en forma análoga a esa realidad
+	  ![[img/fisico.png]]
+3. Según su **resolución**
+	- Analíticos -> la realidad se representa por fórmulas matemáticas, mediante la resolución de ecuaciones con métodos matemáticos exactos.
+	  ![[img/analitico.png]]
+	- Numéricos -> se utilizan métodos computacionales para aproximar soluciones a través de cálculos iterativos.
+	  ![[img/numerico.png]]
+4. Según sus **variables**
+	- Continuos -> representan sistemas cuyos cambios de estado son graduales. Las variables intervenientes son continuas.
+	  ![[img/continua.png]]
+	- Discretos -> representan sistemas cuyos cambios de estado son de a saltos. Las variables varían en forma discontinua.
+	  ![[img/discreto.png]]
+5. Según su **comportamiento**
+	- Determinístico -> son modelos cuya solución para determinadas condiciones es única y siempre la misma
+	  ![[img/deterministico.png]]
+	- Estocástico -> son modelos donde los hechos suceden al azar, lo cual no es repetitivo. No se puede asegurar cuáles acciones ocurren en un determinado instante.
+	  ![[img/estocastico.png]]
+6. Según su **relación con el medio ambiente**
+	- Lazo Abierto -> las entradas del sistema determinan completamente su comportamiento y no se tienen en cuenta las salidas o resultados para ajustar o modeficar las entradas.
+	  ![[img/lazo abierto.png]]
+	- Lazo Cerrado -> las salidas o resultados se usan para modificar o ajustar las entradas.
+	  ![[img/lazo cerrado.png]]
+7. Según su **relación con variables internas o externas**
+	- Abierto -> tienen actividades exógenas. La entrada es externa al modelo e independiente. Interactúan en forma dinámica con el entorno.
+	  ![[img/abierto.png]]
+	- Cerrado -> no tiene actividades exógenas. No hay entrada externa.
+	  ![[img/cerrado.png]]
+8. Según su **naturaleza**
+	- Concreto -> la naturaleza corresponde a un sistema físico o tangible (sistema de sonido, edificio) -> Hardware
+	- Abstracto -> la naturaleza corresponde a un sistema simbólico o conceptual (sistema hexadecimal, idioma español, lógica difusa) -> Software
+	  ![[img/abstracto y conceptual.png]]
+9. Según su **origen**
+	- Natural -> el origen es generado por la naturaleza (bosques, moléculas de agua)
+	- Artificial -> en contraste con el de origen natural, éste es producto de la actividad del hombre (avión, edificio, idioma)
+### Simulación de sistemas discretos, continuos y basados en agentes
+|                            |                                                                         |                                                                                  |                                                                                    |
+| -------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| **Enfoque**                | **Continuo**                                                            | **Discreto**                                                                     | **Basado en Agentes**                                                              |
+| **Características**        | Modela sistemas donde las variables cambian continuamente en el tiempo. | Modela sistemas donde los cambios ocurren en puntos específicos en el tiempo.    | Modela la interacción de individuos autónomos en un entorno.                       |
+|                            | Apropiado para sistemas con evolución fluida y gradual.                 | Se centra en eventos discretos y su impacto en el sistema.                       | Cada agente sigue reglas y toma decisiones basadas en el entorno y otros agentes.  |
+| **Ejemplos de aplicación** | Dinámicas de población, procesos químicos, flujo de tráfico.            | Movimiento de productos en almacenes, planificación de rutas, sistemas de colas. | Propagación de enfermedades, análisis de mercados, comportamiento de consumidores. |
+| Software usado             | Vensim                                                                  | Arena                                                                            | Python - Analogic                                                                  |
+### Etapas de la simulación
