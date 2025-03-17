@@ -105,3 +105,16 @@ Si las variables y sus relaciones dentro de un sistema son lo bastante simples, 
 | **Ejemplos de aplicación** | Dinámicas de población, procesos químicos, flujo de tráfico.            | Movimiento de productos en almacenes, planificación de rutas, sistemas de colas. | Propagación de enfermedades, análisis de mercados, comportamiento de consumidores. |
 | Software usado             | Vensim                                                                  | Arena                                                                            | Python - Analogic                                                                  |
 ### Etapas de la simulación
+El proceso de simulación se divide en varias etapas clave:
+1. **Formulación del problema:** Se acuerdan los objetivos, variables, perturbaciones, métodos estadísticos y uso del simulador entre cliente y desarrollador.
+2. **Definición del sistema:** Se delimita el sistema y sus interacciones con el entorno.
+3. **Formulación del modelo:** Se crea un modelo inicial que captura los aspectos relevantes, refinándose iterativamente.
+4. **Colección de datos:** Se obtienen y procesan los datos necesarios desde diversas fuentes, adaptándolos al modelo.
+5. **Implementación del modelo:** Se codifica el modelo en un lenguaje de programación o se utiliza software especializado.
+6. **Verificación:** Se asegura que la implementación esté libre de errores mediante herramientas de depuración.
+7. **Validación:** Se compara el comportamiento del modelo con datos reales o históricos para garantizar su exactitud.
+8. **Diseño de experimentos:** Se definen parámetros de simulación como tiempos y número de réplicas.
+9. **Experimentación:** Se ejecutan las simulaciones, ajustando el modelo si es necesario.
+10. **Interpretación:** Se analizan los resultados y la sensibilidad del modelo, refinando parámetros críticos si es preciso.
+11. **Implementación:** Se acompaña al cliente para asegurar el correcto uso del simulador y sus resultados.
+12. **Documentación:** Se elabora documentación técnica y manuales para facilitar mejoras futuras y asegurar el buen manejo del simulador.
