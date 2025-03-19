@@ -1,7 +1,7 @@
 # Modelado y Simulación de Sistemas
 ## Modelado de Sistemas
 ### Introducción al modelado de sistemas
-> [!info] 
+> [!info] Simulación
 > La **SIMULACIÓN** se define como una técnica numérica utilizada para representar un proceso o fenómeno mediante otro más simple que permite analizar sus caracterísiticas.
 
 Esto se utiliza para mejorar procesos, diseñar productos, planificar operaciones y prever resultados en entornos controlados y seguros.
@@ -31,10 +31,10 @@ La finalidad de la simulación no es optimizar, sino comparar los distintos esce
 - Falta o exceso de detalle
 ### Tratamiento analítico y numérico de un modelo matemático
 Si las variables y sus relaciones dentro de un sistema son lo bastante simples, es probable que se pueda encontrar un modelo matemático reconocido que pueda describir el sistema y proporcionar información precisa sobre los aspectos relevantes -> solución **analítica** -> no es necesario recurrir a una simulación.
-> [!missing]
+> [!missing] Simulación
 > En la gran mayoría de casos de sistemas reales, la complejidad de las interacciones e interrelaciones entre las variables es tal que no suele hallarse una solución **analítica** adecuada. En estos casos una práctica común y muchas veces la única a la mano, es la **SIMULACIÓN** del sistema de interés.
 
-> [!info] 
+> [!info] Métodos Numéricos
 > Los **MÉTODOS NUMÉRICOS** corresponden a un conjunto de herramientas o métodos usados para obtener una solución de problemas matemáticos de forma aproximada. Se aplican principalmente a problemas que no presentan una solución exacta, por lo tanto precisan ser resueltos numéricamente.
 
 ### Sistemas y Modelos
@@ -45,8 +45,8 @@ Si las variables y sus relaciones dentro de un sistema son lo bastante simples, 
 - **ATRIBUTOS** -> son las propiedades que caracterizan a las entidades componentes del sistema
 - **ESTADO DEL SISTEMA** -> es la caracterización de las entidades del sistema y sus atributos en un instante dado (condición que guarda el sistema en un instante de tiempo dado)
 - **ACTIVIDADES** -> son procesos que provocan cambios en el sistema
-	- ENDÓGENAS ->ocurren dentro del sistema. Las variables endógenas son aquellas determinadas dentro del modelo, es decir, son resultado de las interacciones y procesos internos del sistema que se está simulando.
-	- EXÓGENAS -> ocurren en el medio ambiente y afectan al sistema. Las variables exógenas son aquellas externas al modelo cuyos valores son dados como parámetros de entrada al sistema. Influyen en el comportamiento del sistema, pero su valor no es determinado por las relaciones internas del modelo de simulación.
+	- *ENDÓGENAS* ->ocurren dentro del sistema. Las variables endógenas son aquellas determinadas dentro del modelo, es decir, son resultado de las interacciones y procesos internos del sistema que se está simulando. Son las que podemos simular
+	- *EXÓGENAS* -> ocurren en el medio ambiente y afectan al sistema. Las variables exógenas son aquellas externas al modelo cuyos valores son dados como parámetros de entrada al sistema. Influyen en el comportamiento del sistema, pero su valor no es determinado por las relaciones internas del modelo de simulación. Hay que tenerlas en cuenta al momento de modelar.
 - **MEDIO AMBIENTE** -> es el exterior del sistema. Es importante establecer los límites entre el medio ambiente y el sistema.
 
 > [!info] Modelo
@@ -56,46 +56,46 @@ Si las variables y sus relaciones dentro de un sistema son lo bastante simples, 
 
 ### Tipos de Modelos
 1. Según el **cambio con el tiempo**
-	- Dinámicos -> utilizados para representar sistemas cuyo estado varía con el tiempo.
+	- *Dinámicos* -> utilizados para representar sistemas cuyo estado varía con el tiempo.
 	  ![[img/dinamico.png]]
-	- Estáticas -> utilizados para representar sistemas cuyo estado estado es invariable a través del tiempo.$$P(x) = ax{^2} + bx + c$$
+	- *Estáticas* -> utilizados para representar sistemas cuyo estado estado es invariable a través del tiempo.$$P(x) = ax{^2} + bx + c$$
 2. Según su **forma de representación**
-	- Matemáticos -> la realidad es representada en forma abstracta de diversas maneras. Se usan funciones matemáticas
+	- *Matemáticos* -> la realidad es representada en forma abstracta de diversas maneras. Se usan funciones matemáticas
 	  ![[img/matematico.png]]
-	- Físicos -> la realidad es representada por algo tangible, construido en escala o que por lo menos se comporta en forma análoga a esa realidad
+	- *Físicos* -> la realidad es representada por algo tangible, construido en escala o que por lo menos se comporta en forma análoga a esa realidad
 	  ![[img/fisico.png]]
 3. Según su **resolución**
-	- Analíticos -> la realidad se representa por fórmulas matemáticas, mediante la resolución de ecuaciones con métodos matemáticos exactos.
+	- *Analíticos* -> la realidad se representa por fórmulas matemáticas, mediante la resolución de ecuaciones con métodos matemáticos exactos.
 	  ![[img/analitico.png]]
-	- Numéricos -> se utilizan métodos computacionales para aproximar soluciones a través de cálculos iterativos.
+	- *Numéricos* -> se utilizan métodos computacionales para aproximar soluciones a través de cálculos iterativos.
 	  ![[img/numerico.png]]
 4. Según sus **variables**
-	- Continuos -> representan sistemas cuyos cambios de estado son graduales. Las variables intervenientes son continuas.
+	- *Continuos* -> representan sistemas cuyos cambios de estado son graduales. Las variables intervenientes son continuas.
 	  ![[img/continua.png]]
-	- Discretos -> representan sistemas cuyos cambios de estado son de a saltos. Las variables varían en forma discontinua.
+	- *Discretos* -> representan sistemas cuyos cambios de estado son de a saltos. Las variables varían en forma discontinua.
 	  ![[img/discreto.png]]
 5. Según su **comportamiento**
-	- Determinístico -> son modelos cuya solución para determinadas condiciones es única y siempre la misma
+	- *Determinístico* -> son modelos cuya solución para determinadas condiciones es única y siempre la misma
 	  ![[img/deterministico.png]]
-	- Estocástico -> son modelos donde los hechos suceden al azar, lo cual no es repetitivo. No se puede asegurar cuáles acciones ocurren en un determinado instante.
+	- *Estocástico* -> son modelos donde los hechos suceden al azar, lo cual no es repetitivo. No se puede asegurar cuáles acciones ocurren en un determinado instante.
 	  ![[img/estocastico.png]]
 6. Según su **relación con el medio ambiente**
-	- Lazo Abierto -> las entradas del sistema determinan completamente su comportamiento y no se tienen en cuenta las salidas o resultados para ajustar o modeficar las entradas.
+	- *Lazo Abierto* -> las entradas del sistema determinan completamente su comportamiento y no se tienen en cuenta las salidas o resultados para ajustar o modeficar las entradas.
 	  ![[img/lazo abierto.png]]
-	- Lazo Cerrado -> las salidas o resultados se usan para modificar o ajustar las entradas.
+	- *Lazo Cerrado* -> las salidas o resultados se usan para modificar o ajustar las entradas.
 	  ![[img/lazo cerrado.png]]
 7. Según su **relación con variables internas o externas**
-	- Abierto -> tienen actividades exógenas. La entrada es externa al modelo e independiente. Interactúan en forma dinámica con el entorno.
+	- *Abierto* -> tienen actividades exógenas. La entrada es externa al modelo e independiente. Interactúan en forma dinámica con el entorno.
 	  ![[img/abierto.png]]
-	- Cerrado -> no tiene actividades exógenas. No hay entrada externa.
+	- *Cerrado* -> no tiene actividades exógenas. No hay entrada externa.
 	  ![[img/cerrado.png]]
 8. Según su **naturaleza**
-	- Concreto -> la naturaleza corresponde a un sistema físico o tangible (sistema de sonido, edificio) -> Hardware
-	- Abstracto -> la naturaleza corresponde a un sistema simbólico o conceptual (sistema hexadecimal, idioma español, lógica difusa) -> Software
+	- *Concreto* -> la naturaleza corresponde a un sistema físico o tangible (sistema de sonido, edificio) -> Hardware
+	- *Abstracto* -> la naturaleza corresponde a un sistema simbólico o conceptual (sistema hexadecimal, idioma español, lógica difusa) -> Software
 	  ![[img/abstracto y conceptual.png]]
 9. Según su **origen**
-	- Natural -> el origen es generado por la naturaleza (bosques, moléculas de agua)
-	- Artificial -> en contraste con el de origen natural, éste es producto de la actividad del hombre (avión, edificio, idioma)
+	- *Natural* -> el origen es generado por la naturaleza (bosques, moléculas de agua)
+	- *Artificial* -> en contraste con el de origen natural, éste es producto de la actividad del hombre (avión, edificio, idioma)
 ### Simulación de sistemas discretos, continuos y basados en agentes
 |                            |                                                                         |                                                                                  |                                                                                    |
 | -------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
