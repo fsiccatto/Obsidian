@@ -118,3 +118,14 @@ El proceso de simulación se divide en varias etapas clave:
 10. **Interpretación:** Se analizan los resultados y la sensibilidad del modelo, refinando parámetros críticos si es preciso.
 11. **Implementación:** Se acompaña al cliente para asegurar el correcto uso del simulador y sus resultados.
 12. **Documentación:** Se elabora documentación técnica y manuales para facilitar mejoras futuras y asegurar el buen manejo del simulador.
+#### Fortalezas
+- Mejorar la toma de decisiones
+- Reducir costos
+- Identificación de cuellos de botella y áreas de mejora
+- Evaluación de sistemas complejos
+- Reducción de riesgos
+- Optimización de procesos
+- Predicción de resultados futuros
+- Visualización y comunicación de resultados
+- Mejor planificación y programación
+- Flexibilidad en el análisis
