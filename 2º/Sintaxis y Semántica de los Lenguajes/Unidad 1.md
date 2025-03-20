@@ -54,3 +54,21 @@ $$\begin{align*}
 > ![[imgs/ejemplo g3.png | center | 300]]
 
 #### Recursividad por izquierda
+Generan problemas a los analizadores de código:
+- No pueden procesarla
+- Se debe eliminar
+![[recursividad por izquierda.png | center | 300]]
+> [!summary] Utilización de gramáticas
+> - **G3** 
+> 	- Generan palabras
+> 	- Regulares a derecha, izquierda o lineales
+> - **G2** 
+> 	- Generan frases
+> 	- Las derivaciones se pueden representar mediante árboles
+> - **G1**
+> 	- Generan enunciados para lenguajes de programación, aunque las reglas se reducen a G2
+> 	- Diferentes significados según contexto
+> - G0 -> solo se usan de manera teórica y no son aplicables a los lenguajes de programación
+
+
+
