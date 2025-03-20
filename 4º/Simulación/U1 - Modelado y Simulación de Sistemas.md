@@ -140,3 +140,35 @@ El proceso de simulación se divide en varias etapas clave:
 - Limitación en la capacidad de replicar el preoceso
 - Pérdida de credibilidad ante stakeholders
 - Ineficiencia en la implementación de soluciones
+
+### Ejercicio 5
+1. **Formulación del problema**:
+	1. Objetivo -> evaluar y comparar el funcionamiento actual del servicio de urgencias (2 administrativos, 3 médicos, 2 enfermeros) respecto del propuesto (1 administrativo, 3 médicos, 3 enfermeros).
+	2. Justificación -> optimizar procesos, evitar costos de tener que alquilar un lugar, evitar contratar personas. El propósito es mejorar el funcionamiento del servicio en cuanto al tiempo de espera de los pacientes, tiempo de prestación de servicio, tiempo de ocio del personal y reducción de costos.
+	3. Resultados esperados (OKR) -> reducir costos de funcionamiento, cantidad de pacientes que se atendieron, tiempo promedio de espera y de servicio, tiempo de ocio de los médicos, etc; tiempo de servicio de los médicos, porcentaje de uso de los recursos, ingreso promedio.
+2. **Definción del sistema**:
+	1. Flujo, llegada del paciente, recepción administrativa, revisión médica, diagnóstico de salud (verde, amarilla, roja), atención de enfermero/médico según el diagnóstico
+	2. Establecimiento de fronteras
+	3. Alcance del sistema
+3. **Formulación de modelo**
+	1. Entidades
+		- Paciente -> nom/ap, dni, urgencia, obra social
+		- Prestador medico y administrativo -> nom/ap, matrícula, rol
+		- Fila de espera (tenemos tiempo de espera) -> id, tipo (LIFO FIFO), estructura
+		- Uso de recursos
+	2. Actividades endógenas:
+		- Registración paciente
+		- Atención servicio médico a paciente
+		- Atención de enfermería al paciente
+		- Atención del paciente con prioridad
+		- etc
+	3. Actividades exógenas:
+		- Fallas catastróficas
+		- Pandemia
+		- Atentado
+4. **Colección de datos**
+5. **Implementación** -> gráfico
+6. **Verificación**
+7. **Validación**
+8. **Diseño de experimentos**
+9. **Documentación**
