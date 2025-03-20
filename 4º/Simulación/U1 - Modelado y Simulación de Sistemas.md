@@ -106,7 +106,7 @@ Si las variables y sus relaciones dentro de un sistema son lo bastante simples, 
 | Software usado             | Vensim                                                                  | Arena                                                                            | Python - Analogic                                                                  |
 ### Etapas de la simulación
 El proceso de simulación se divide en varias etapas clave:
-1. **Formulación del problema:** Se acuerdan los objetivos, variables, perturbaciones, métodos estadísticos y uso del simulador entre cliente y desarrollador.
+1. **Formulación del problema:** Se acuerdan los objetivos, variables, perturbaciones, métodos estadísticos y uso del simulador entre cliente y desarrollador -> tiene que estar establecido el *objetivo* de la simulación ¿Por qué es necesario realizar una simulación del sistema?
 2. **Definición del sistema:** Se delimita el sistema y sus interacciones con el entorno.
 3. **Formulación del modelo:** Se crea un modelo inicial que captura los aspectos relevantes, refinándose iterativamente.
 4. **Colección de datos:** Se obtienen y procesan los datos necesarios desde diversas fuentes, adaptándolos al modelo.
@@ -129,3 +129,14 @@ El proceso de simulación se divide en varias etapas clave:
 - Visualización y comunicación de resultados
 - Mejor planificación y programación
 - Flexibilidad en el análisis
+#### Amenazas
+- Resultados inexactos o sesgados
+- Mal diseño del modelo
+- Falta de validación y verificación -> que tenga sentido lo que estoy haciendo
+- Subestimación de la variabilidad e incertidumbre
+- Falta de interpretación de los resultados
+- Deficiencia en la toma de decisiones
+- Pérdida de tiempo y recursos
+- Limitación en la capacidad de replicar el preoceso
+- Pérdida de credibilidad ante stakeholders
+- Ineficiencia en la implementación de soluciones
