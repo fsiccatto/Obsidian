@@ -57,7 +57,8 @@ $$\begin{align*}
 Generan problemas a los analizadores de código:
 - No pueden procesarla
 - Se debe eliminar
-![[recursividad por izquierda.png | center | 300]]
+![[imgs/recursividad por izquierda.png| center | 300]]
+
 > [!summary] Utilización de gramáticas
 > - **G3** 
 > 	- Generan palabras
