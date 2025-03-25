@@ -163,15 +163,15 @@ $$
 <numero_natural> ::= <digito> {<digito>}^*
 <digito> ::= '0'|'1'|'2'|...|'9'
 ```
-31. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF. ![[tp1ej31.png | center]]
+31. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF. ![[imgs/tp1ej31.png| center]]
 ```
 if_then_else ::= 'if'<expresion> 'then'<instruccion> ['else'<instruccion>]
 ```
 32. Dibuje el diagrama sintáctico equivalente a la siguiente expresión en notación EBNF.
 $<funcion>  ::= 'function'  <identificador>  '(' [<parametro> \{"," <parametro>\}^{*}] ')' '\{' \{<sentencia> ';'\}^{*} ['return' <expresion> ';'] '\}'$
-![[tp1ej32 | center]]
+![[imgs/tp1ej32| center]]
 
-33. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF: ![[tp1ej33.png | center]]
+33. Exprese el equivalente del siguiente diagrama sintáctico, en notación EBNF y BNF: ![[imgs/tp1ej33.png| center]]
 - BNF
 ```BNF
 <expresion> ::= "(" <lista-elementos> ")" | "(" ")" | "(" <lista-elementos> ")" ":" Qualident | "(" ")" ":" Quealident
@@ -187,7 +187,7 @@ $<funcion>  ::= 'function'  <identificador>  '(' [<parametro> \{"," <parametro>\
 34. Re-escriba las siguientes expresiones en notación prefija (polaca) y postfija (polaca inversa). Dibuje el árbol de evaluación.
     z=x+y-++z\*4;
     (x/2-y\*y\*y+3/4\*x)\*(2+x++)
-	![[tp1ej34.png | center]]
+	![[imgs/tp1ej34.png| center]]
 	- Prefija: +x-y\*++z4
 	- Postfija: xyz++4\*-+
 35. Dadas las siguientes expresiones en notación prefija (polaca), obtenga su equivalente en notación infija.
