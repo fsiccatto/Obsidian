@@ -53,12 +53,6 @@ $$\begin{align*}
  > [!example] Ejemplo
 > ![[imgs/ejemplo g3.png | center | 300]]
 
-#### Recursividad por izquierda
-Generan problemas a los analizadores de código:
-- No pueden procesarla
-- Se debe eliminar
-![[imgs/recursividad por izquierda.png| center | 300]]
-
 > [!summary] Utilización de gramáticas
 > - **G3** 
 > 	- Generan palabras
@@ -71,5 +65,86 @@ Generan problemas a los analizadores de código:
 > 	- Diferentes significados según contexto
 > - G0 -> solo se usan de manera teórica y no son aplicables a los lenguajes de programación
 
+## Árboles de derivación
+Son una forma de representar derivaciones. Se usan para definir árboles de derivación para gramáticas de tipo 1 o más restrictivas (tipos 2 y 3):
+- El axioma se representa en la raíz del árbol
+- Los nodos hojas del árbols son símbolos terminales de la gramática
+- Los nodos intermedios son símbolos no terminales de la gramática
+- Las derivaciones se representan creando tantos sucesores del símbolo no terminal de la izquierda como símbolos (T y N) aparezcan en la parte derecha de las producciones.
+![[imgs/arboles de derivacion.png| center]]
+## Ambigüedad
+La ambigüedad tiene que ver con que existe más de una forma de generar una palabra a partir del axioma de una gramática. La ambigüedad puede surgir a varios niveles:
+- **Sentencia** -> una sentencia es ambigua si tiene más de una derivación o árbol de derivación
+	Ejemplo: $G_{B} = \{ \{ S \}, \{ A, B \}, A, \{ (A \to 1B), (A\to S1), (B\to 1) \} \}$
+	La sentencia $11$ puede ser obtenida por las dos derivaciones siguientes:
+	$A \to 1B \to 11$ y $A \to 11$
+- **Gramática** -> una gramática es ambigua si tiene al menos una sentencia ambigua
+	Ejemplo: La gramática $G_{B}$ es ambigua, ya que $11$ es una sentencia y es ambigua
+- **Lenguaje** -> es ambiguo si existe una gramática ambigua que lo genera
+	Ejemplo: El lenguaje $L_{B}=\{ 11 \}$ es ambiguo a que la gramática $G_{B}$ lo genera y es ambigua.
+	- Si todas las gramáticas que generan un lenguaje son ambiguas, el lenguaje es inherentemente ambiguo.
+		Ejemplo: El lenguaje $L_{B}$ no es inherentemente ambiguo ya que la siguiente gramática lo genera y no es ambigua.
+	$$
+	G_{9}=\{ \{ 1 \}, \{ A \}, A, \{ (A \to 11) \} \}
+	$$
+## Recursividad
+Una gramática es **recursiva** cuando <mark style="background: #FF5582A6;">existe al menos una producción recursiva en ese conjunto de producciones</mark>. Cuando el primer símbolo del lado derecho de una producción es el mismo que el del lado izquierdo, se dice que la regla es Recursiva a Izquierda inmediata.
+Ejemplo:
+$$
+\begin{align}
+A  & \to AB | B \\
+B  & \to \lambda
+\end{align}
+$$
+✔ Las gramáticas que tienen reglas recursivas a izquierda, presentan problemas para algunos tipos de analizadores, por lo que se deben intentar eliminar este tipo de recursividad.
+![[imgs/recursividad por izquierda.png| center | 300]]
+## Notación BNF (*Backus Naur Form*)
+La notación BNF (*Backus Naur Form*) incorpora los mismos elementos que hemos utilizado hasta ahora para escribir producciones.
+> [!todo] BNF
+> `\<no terminal\>` los no terminales se encierran entre signos \<y>
+> `::=` las reglas de producción se leen como "se define como"
+> `|` significa "o"
 
-
+Ejemplo:
+En el caso más sencillo podemos enumerar los elementos de un lenguaje finito por extensión a partir de una regla gramatical.
+```
+<digito> ::= 0|1|2|3|4|5|6|7|8|9
+```
+Una vez que se ha definido un conjunto básico de categorías sintácticas se pueden usar para construir estructuras más complejas.
+```
+<enunciado-iterativo> ::= while { <enunciado> }
+```
+También podemos usar esta regla para reglas recursivas
+```
+<cadena> ::= <letra>|<cadena><letra>
+<letra> ::= a|b|c...
+```
+![[imgs/bnf regla recursiva.png| center | 300]]
+Una gramática BNF completa es tan solo un conjunto de esta clase de reglas gramaticales, las cuales definen en conjunto una jerarquía que conduce a la categoría sintáctica de máximo nivel; es decir al axioma de la gramática. programación, la categoría sintáctica de máximo nivel es En un lenguaje de programación, la categoría sintáctica de máximo nivel es \<programa\>
+✔ Las gramáticas BNF como las gramáticas de libre contexto (tipo 2) son equivalentes en cuanto a su poder descriptivo, su única diferencia radica en la forma rotacional.
+## Notación EBNF (BNF Extendida)
+La EBNF es una notación que define algunas extensiones o agregados sobre las gramáticas BNF. Estas extensiones no implican modificación sobre los alcances o restricciones de una gramática BNF, pero facilitan la escritura de reglas sintácticas complejas
+Las extensiones son:
+- `[...]` lo que está entre corchetes es un elemento **optativo**
+- `{...}^+` los elementos que están entre llaves con + se pueden **repetir 1 o más veces**
+- `{...}^*{}` los elementos que están entre llaves con/sin estrella se repiten **0 o más veces**
+![[imgs/bnf vs ebnf.png| center | 400]]
+## Diagramas de sintaxis, diagramas sintácticos o diagramas de ferrocarril
+Un diagrama sintáctico, o diagrama de ferrocarril es una forma gráfica de expresar reglas EBNF (BNF Extendida). Cada regla se representa por un camino que va **de izquierda** (entrada) **a derecha** (salida). Los **círculos** en ese camino representan elementos terminales y los **recuadros** representan nodos no terminales.
+![[imgs/diagramas.png| center | 200]]
+Cualquier **trayecto válido** de la entrada a la salida representa una cadena válida para esa regla.
+![[imgs/ejemplo diagramas.png| center | 300]]
+## Notación en Expresiones
+### Notación Infija
+La sintaxis establece que el operador va entre los dos operandos. El problema con esto es que siempre tengo que avanzar hacia delante en el recorrido de la expresión para saber si puedo ir resolviendo partes o no.
+✔ Es la más usual (requiere paréntesis)
+Ejemplo $A + B * C$
+### Notación Postfija o Polaca Inversa
+La sintaxis establece que el operador va a la derecha de los operandos. Esta otra alternativa es deseable para los lenguajes interpretados porque el recorrido o su evaluación resulta más directo. Aquí nunca aparecen paréntesis.
+✔ Evaluación muy eficiente
+Ejemplo $ABC*+$
+### Notación Prefija o Funcional
+En este caso la regla sintáctica establece que el operador va a la izquierda de los operandos.
+✔ Notación funcional
+Ejemplo: $+A*BC$
+![[imgs/expresiones.png|center]]
