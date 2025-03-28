@@ -146,7 +146,7 @@ Ejemplo $ABC*+$
 ### Notación Prefija o Funcional
 En este caso la regla sintáctica establece que el operador va a la izquierda de los operandos.
 ✔ Notación funcional
-Ejemplo: $+A*BC$
+Eje![[imgs/expresiones.png]]mplo: $+A*BC$
 ![[imgs/expresiones.png|center]]
 --- 
 ### Ejercicios importantes
