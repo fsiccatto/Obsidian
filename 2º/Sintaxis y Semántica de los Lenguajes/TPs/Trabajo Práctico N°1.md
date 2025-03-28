@@ -186,17 +186,25 @@ $<funcion>  ::= 'function'  <identificador>  '(' [<parametro> \{"," <parametro>\
 ## Notaciones algebraicas: prefija, infija y postfija
 34. Re-escriba las siguientes expresiones en notación prefija (polaca) y postfija (polaca inversa). Dibuje el árbol de evaluación.
     z=x+y-++z\*4;
-    (x/2-y\*y\*y+3/4\*x)\*(2+x++)
 	![[imgs/tp1ej34.png| center]]
 	- Prefija: +x-y\*++z4
 	- Postfija: xyz++4\*-+
+	 (x/2-y\*y\*y+3/4\*x)\*(2+x++)
+	 ![[imgs/tp1ej34|tp1ej34 | 200 | center]]
+	 - Prefija: `*+-/x2*y*yy/3*4x+2++x`
+	 - Postfija: `x2/yyy**-34x*/*2x+++*`
 35. Dadas las siguientes expresiones en notación prefija (polaca), obtenga su equivalente en notación infija.
     / (+ (- b) (- (\* b b) (\* 4 (\* a c)))) (\* 2 a)
-	-  -b+(b^2  2a c^2)
-    \+ (- (\* 4 (\* x (\* x x))) (\* 3 (\* x x))) (+ (\* 2 x) -1)
-	- 12x3+(3x-1)
+	-  `-b+(b^2  2a c^2)`
+	/-\bb\*4\*ac\*2a
+	- `(b*b-4*a*c)/(2*a)`
+	-++3\*\*\*42xx2\*14
+	- `(2+3+4*2*x*x)-(1*4)`
+		![[imgs/tp1ej35|tp1ej35 | 200]]
+	\+ (- (\* 4 (\* x (\* x x))) (\* 3 (\* x x))) (+ (\* 2 x) -1)
+	- `12x3+(3x-1)`
 36. Dadas las siguientes expresiones en notación postfija (polaca inversa), obtenga su equivalente en notación infija
-    x x \* x \* 5 \* x 2 \* - +
-	- 5x3x2x-
+    x x \* x \* 5 \* x 2 \* - 
+	- `x*x*x*5-(x*2)`
 	 a 3 \* b 2 \* + c 5 \* + 10 /
-	 - (3a+2b+5c)+10
+	 - `((a*3)+(b*2)+(c*5)0`
