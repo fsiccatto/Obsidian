@@ -148,3 +148,15 @@ En este caso la regla sintáctica establece que el operador va a la izquierda de
 ✔ Notación funcional
 Ejemplo: $+A*BC$
 ![[imgs/expresiones.png|center]]
+--- 
+### Ejercicios importantes
+Ejercicios de final
+1. $$
+L=\{ w/w \in (xyx){^{2n}}, n> 0 \}
+$$
+2. $$
+M = \{ a{^n}b{^2}c{^n} / n\geq 0 \}
+$$
+3. $$
+N = \{ zw / z \in ((10){^{-1}}){^n}, w \in (ab){^n}, n \geq 0 \}
+$$
