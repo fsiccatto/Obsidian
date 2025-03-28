@@ -100,7 +100,6 @@ class e0,a1,e1_1,a2,e1_2,b,e2_1,c,epsilon smallNode;
 25. Dada la gramática G=({S,A},{a,b,c},P,S), con P={S→Ac, A→Sa ∣ b}, elimine la recursividad a izquierda.
     $$
 	\begin{align}
-	A &\to Aca | b \\
 	S &\to Ac \\
 	A &\to bA' \\
 	A' &\to caA' | \lambda
