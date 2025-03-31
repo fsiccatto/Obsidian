@@ -43,7 +43,7 @@ void metodoB() {
 La cláusula `throw`, se asocia a la activación del constructor de un determinado tipo de error y se utiliza para construir un objeto de error y lanzarlo. Es decir, throw se utiliza para lanzar explícitamente una excepción, cuando se producen determinadas condiciones.
 Es importante el paso de la pelota del método.
 # Clasificador `static`
-Las variables de clase, que se identifican mediante el calificador static, son atributos que no forman parte de la estructura de cada objeto. Un atributo de clase es una variable única para la clase que se aloja en la región estática de memoria y que es compartida por todos los objetos instanciados de esa clase.
+Las variables de clase, que se identifican mediante el calificador `static`, son atributos que no forman parte de la estructura de cada objeto. <mark style="background: #FF5582A6;">Un atributo de clase es una variable única para la clase que se aloja en la región estática de memoria y que es compartida por todos los objetos instanciados de esa clase</mark>.
 Para acceder a un atributo `static`, no necesitamos que existan objetos de la clase; lo podemos hacer directamente a partir del nombre de la clase.
 ```java
 class A { 
@@ -76,7 +76,7 @@ public class UnaClase {
 	}
 }
 ```
-El método `setVClase` del ejemplo anterior puede acceder a `vclase` porque es un miembro estático, pero no podría acceder a `vinstancia`, ya que esta no es `static`. Tampoco se puede activar un método no `static`. Un método `static` carece de referencia this.
+El método `setVClase` del ejemplo anterior puede acceder a `vclase` porque es un miembro estático, pero no podría acceder a `vinstancia`, ya que esta no es `static`. Tampoco se puede activar un método no `static`. Un método `static` carece de referencia `this`.
 ### Constructor `static`
 Un constructor estático es un método anónimo que no tiene parámetros, no retorna ningún valor, y es invocado automáticamente por el sistema cuando se carga la clase.
 ```java
@@ -104,7 +104,6 @@ Los datos mantenidos en archivos se conocen como **datos persistentes**.
 En Java necesitamos importar el paquete `java.io`. 
 ## Archivos Secuenciales
 Para manipular archivos secuenciales, Java provee las siguientes clases:
-
 - La clase `File` que nos permitirá definir un puntero a un archivo físico en disco, existente o por crearse.
 - La clase `FileInputStream` que nos permitirá procesar el flujo de entrada desde un archivo.
 - La clase `FileOutputStream` que nos permitirá administrar el flujo de salida hacia un archivo.
@@ -376,11 +375,14 @@ Una clase Java puede heredar de una sola clase; pero de una o más interfaces.
 ```java
 interface A { 
 	... 
-} interface B { 
+}
+interface B { 
 	... 
-} class Z { 
+}
+class Z { 
 	... 
-} class X extends Z implements A,B { 
+} 
+class X extends Z implements A,B { 
 	... 
 }
 ```

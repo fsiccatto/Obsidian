@@ -2,7 +2,7 @@
 ## Herencia
 El concepto de herencia propone que cada clase tiene propiedades y comportamientos específicos, que les son propios; y otros que heredan de una clase superior que incluye las propiedades y comportamientos que son comunes también a otras clases.
 La herencia se vincula así a un tipo de relación entre clases del tipo **superclase/subclase** o padre/hijo, en la cual cada clase hijo (o subclase) tiene sus propios atributos y métodos específicos y hereda otros más generales de su clase padre (o superclase).
-### Relaciones de Generalizción/Especialización
+### Relaciones de Generalización/Especialización
 La generalización y la especialización son diferentes perspectivas del mismo concepto, la **generalización es una perspectiva ascendente** (bottom-up), mientras que la **especialización es una perspectiva descendente** (top-down).
 ### Herencia y Encapsulamiento
 Tanto los atributos como métodos podían ser calificados con alguno de los siguientes atributos:
@@ -16,7 +16,7 @@ Los atributos calificados como amigables (*friendly*) tienen alcance de paquete.
 > [!info] Clase abstracta
 > Una clase abstracta es una clase de la que no se pueden instanciar objetos.
 
-Por ejemplo el concepto de vehículo es un concepto abstracnto que para materializarse debe concretarse en un tipo de vehiculo particular.
+Por ejemplo el concepto de vehículo es un concepto abstracto que para materializarse debe concretarse en un tipo de vehiculo particular.
 Luego las clases `Auto, Frigorífico y Remolque` serán **clases concretas**.
 ### Métodos Abstractos
 Un método abstracto es un método que no tiene implementación, sólo se coloca la signatura del método en su declaración, precedido por la palabra *abstract*.

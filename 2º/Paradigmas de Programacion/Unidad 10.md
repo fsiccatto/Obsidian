@@ -147,11 +147,21 @@ duplicar (x, l) = until (> l) (* 2) x
 
 ## Conversiones de Tipo y Entrada/Salida
 Para manejar caracteres y conversiones de tipo, se usa el módulo `Char`.
-
+Son funciones predefinidas.
 ```haskell
 import Char
 digitToInt 'A'   -- Resultado: 10
 read :: Read a => String -> a
+
+import Char
+getInt :: Char -> Int
+getInt x = digitToInt x
+
+convInt :: String -> Int
+convInt x = read x :: Int
+
+convFloat :: String -> Float
+convFloat x = read x :: Float
 ```
 
 ## Coincidencia de Patrones (Pattern Matching)
@@ -191,7 +201,29 @@ La **recursión** es clave en la programación funcional para reemplazar estruct
    binario x
      | x == 0 = "0"
      | x == 1 = "1"
-     | otherwise = if even x
+     | otherwise = if even x -- even funcion predefinida
                    then binario (x `div` 2) ++ "0"
                    else binario (x `div` 2) ++ "1"
    ```
+
+## Listas
+```haskell
+buscar :: Int -> [a] -> a
+buscar 1 l = head l
+buscar n l = buscar (n - 1) tail l
+
+buscar n (c:q) 
+	| n == 1 = c
+	| n > 1 = buscar (n - 1) q
+```
+
+```Haskell
+posicion x (xs:xt) 
+	| x == xs = 0
+	| otherwise = ´posicion x xt + 1
+
+poscion :: (Eq a) => a -> [a] -> Int -- Tiene errores!
+posicion x [] = 0
+posicion x (xh:xt) = if x == xh then 1
+	else 1 + posicion x xt
+```

@@ -21,19 +21,19 @@ Se aplican las leyes de la óptica geométrica (ley de reflexión, principio de 
 
 | n1 > n2     | Cono de Aceptación             |
 | ----------- | ------------------------------ |
-| ![[FO.png]] | ![[FO cono de aceptacion.png]] |
+| ![[imgs/FO.png]] | ![[imgs/FO cono de aceptacion.png]] |
 #### Tipos de Fibra Óptica
 ##### Multimodo
 Se denomina así porque hay múltiples rayos de luz de una fuente luminosa que se mueven a través del núcleo por caminos distintos, dependiendo de la estructura del núcleo.
 
 | Multimodo de índice escalonado   | Multimodo de índice gradual   |
 | -------------------------------- | ----------------------------- |
-| ![[FO Multimodo escalonado.png]] | ![[FO Multimodo gradual.png]] |
+| ![[imgs/FO Multimodo escalonado.png]] | ![[imgs/FO Multimodo gradual.png]] |
 ##### Monomodo
 Se fabrica con un diámetro mucho más pequeño que las fibras multimodo y con una densidad (índice de refracción) sustancialmente menor. Por lo tanto, la propagación de los distintos rayos es casi idéntica, los rayos llegan "juntos" a destino y se pueden recombinar sin distorsionar la señal.
-![[Monomodo.png]]
+![[imgs/Monomodo.png]]
 #### Ventanas de Trabajo
-![[Ventanas de trabajo FO.png]]
+![[imgs/Ventanas de trabajo FO.png]]
 El origen de esta curva es debido a las características físicas del material (silicio) de la FO. la FO presenta picos de atenuación importantes en las ventanas 950 nm, 1240 nm y, la más importante de todas, en cuanto atenuación es 1380 nm.
 
 | 1º Ventana                                 | 2º Ventana                                           | 3º Ventana                                         |
@@ -61,26 +61,26 @@ GPON utiliza multiplexación por división de longitud de onda, facilitando la c
 - Trabaja en 1.24 Gbit/s subida y 2.48 Gbit/s bajada.
 - Alcance físico máximo: 20km.
 - Radio de multiplexación 1:64 y 1:128
-![[GPON.png]]
+![[imgs/GPON.png]]
 Para separar las señales de subida y bajada de múltiples usuarios en una sola FO, GPON adopta dos mecanismos:
 - En dirección de bajada (Downstream), los paquetes de datos son transmitidos por **broadcast**.
-![[Downstream.png]]
+![[imgs/Downstream.png]]
 - En dirección de subida (Upstream), los paquetes de datos son transmitidos mediante **TDMA** (Time Division Multiplexing Access)
-![[TDMA.png]]
+![[imgs/TDMA.png]]
 Se pueden utilizar muchos servicios por este medio como Internet, telefonía fija, IPTV, RPV, Trama IP, TX, IoT. Lo que separa a estos servicios es VLAN.
 # Topologías
 ## Físicas
 | Topología | Descripción                                                                                                                                                                                       | Imagen                                                   |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| Bus       | Usa solo un cable backbone que debe terminarse en ambos extremos. Todos los elementos de la red se conectan directamente al backbone.                                                             | ![[Bus.png]]                                             |
-| Estrella  | Conecta todos los nodos con un nodo central. Red punto a punto. Si falla un nodo, la red sigue funcionando.                                                                                       | ![[Estrella.png]]                                        |
-| Anillo    | Consiste en conectar varios nodos a una red que tiene una serie de repetidores. Cuando un nodo transmite información a otro, la información pasa por cada repetidor hasta llegar al nodo deseado. | ![[Anillo.png]]                                          |
+| Bus       | Usa solo un cable backbone que debe terminarse en ambos extremos. Todos los elementos de la red se conectan directamente al backbone.                                                             | ![[imgs/Bus.png]]                                             |
+| Estrella  | Conecta todos los nodos con un nodo central. Red punto a punto. Si falla un nodo, la red sigue funcionando.                                                                                       | ![[imgs/Estrella.png]]                                        |
+| Anillo    | Consiste en conectar varios nodos a una red que tiene una serie de repetidores. Cuando un nodo transmite información a otro, la información pasa por cada repetidor hasta llegar al nodo deseado. | ![[imgs/Anillo.png]]                                          |
 | Árbol     | Tiene varias terminales conectadas de forma que la red se ramifica desde un servidor base. Un fallo o rotura en el cable interrumpe las transmisiones                                             | ![[remote-repo/3º/Comunicacion de Datos/imgs/Arbol.png]] |
-| Malla     | Se implementa para proporcionar la mayor protección posible para evitar una interrupción del servicio.                                                                                            | ![[Malla.png]]                                           |
-| Mixta     | Aquella en la que se aplica una mezcla entre alguna de las otras topologías: bus, estrella o anillo. Estrella-bus o estrella-anillo.                                                              | ![[Mixta.png]]                                           |
+| Malla     | Se implementa para proporcionar la mayor protección posible para evitar una interrupción del servicio.                                                                                            | ![[imgs/Malla.png]]                                           |
+| Mixta     | Aquella en la que se aplica una mezcla entre alguna de las otras topologías: bus, estrella o anillo. Estrella-bus o estrella-anillo.                                                              | ![[imgs/Mixta.png]]                                           |
 ## Lógicas
 | Topología | Descripción                                                                                                                                                                                                                                                                                                      | Imagen             |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
-| Broadcast | Cada host envía sus datos hacia todos los demás hosts del medio de red. No existe un orden que las estaciones deban seguir para utilizar la red. Es por orden de llegada, es cómo funciona el protocolo Ethernet.                                                                                                | ![[Broadcast.png]] |
-| Token     | Controla el acceso a la red mediante la transmisión de un token electrónico a cada host de forma secuencial. Cuando un host recibe el token, ese host puede enviar datos a través de la red. Si el host no tiene ningún dato para enviar, transmite el token al siguiente host y el proceso se vuelve a repetir. | ![[Token.png]]     |
+| Broadcast | Cada host envía sus datos hacia todos los demás hosts del medio de red. No existe un orden que las estaciones deban seguir para utilizar la red. Es por orden de llegada, es cómo funciona el protocolo Ethernet.                                                                                                | ![[imgs/Broadcast.png]] |
+| Token     | Controla el acceso a la red mediante la transmisión de un token electrónico a cada host de forma secuencial. Cuando un host recibe el token, ese host puede enviar datos a través de la red. Si el host no tiene ningún dato para enviar, transmite el token al siguiente host y el proceso se vuelve a repetir. | ![[imgs/Token.png]]     |
 

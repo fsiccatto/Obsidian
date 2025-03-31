@@ -48,7 +48,7 @@ Se denomina unipolar porque usa únicamente una polaridad, esta polaridad se asi
 | Sin Retorno a Cero (NRZ)                                                                                                                        | Con Retorno a Cero (RZ)<br>                                                                                                                       |
 | :---------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
 | El nivel de tensión se mantiene constante durante la duración del bit y no hay transiciones, es decir, no hay retorno al nivel cero de tensión. | El nivel de tensión se mantiene constante y a la mitad de la duración del bit hay una transición, es decir, hay retorno al nivel cero de tensión. |
-| ![[NRZ.png]]                                                                                                                                    | ![[NR.png]]                                                                                                              |
+| ![[imgs/NRZ.png]]                                                                                                                                    | ![[imgs/NR.png]]                                                                                                              |
 #### Deseventajas
 - **Componente de Continua DC:** La amplitud media de una señal con codificación unipolar no es cero, eso crea lo que se llama una componente de corriente continua (señal de frecuencia cero). Cuando una señal contiene una componente continua, no puede viajar a través de medios que no pueden gestionar este tipo de componentes.
 - **Sincronización**: Cuando una señal no varía, el receptor no puede determinar el principio y el final de cada bit, por tanto puede tener problemas de sincronización siempre que el flujo de datos contenga una larga serie ininterrumpida de ceros y unos.
@@ -60,7 +60,7 @@ Usa dos niveles de tensión, uno positivo y uno negativo, de ésta manera se red
 | NRZ-Level                                                                                                    | NRZ-Inverted                                                                                  |
 | :----------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
 | Trabaja por Nivel, es decir, dando un valor de nivel positivo al bit 1 y un valor de nivel negativo al bit 0 | El 1 representa una inversión del nivel de voltaje. Un bit 0 se representa sin ningún cambio. |
-| ![[NRZ-L.png]]                                                                                               | ![[NRZ-I.png]]                                                                                |
+| ![[imgs/NRZ-L.png]]                                                                                               | ![[imgs/NRZ-I.png]]                                                                                |
 **NRZ-I es mejor que el NRZ-L**: debido a la sincronización implícita provista por el cambio de señal cada vez que se encuentra un 1.
 ##### Desventajas códigos NRZ
 - Presencia de una componente de continuna DC.
@@ -69,7 +69,7 @@ Usa dos niveles de tensión, uno positivo y uno negativo, de ésta manera se red
 - Estos códigos se usan con frecuencia en las grabaciones magnéticas, pero *no son convenientes para aplicaciones de transmisión de señales*.
 #### RZ
 Se lo conoce como autosincronizante ya que indica al receptor cuando se está transmitiendo un bit (0 o 1) durante el tiempo de transmisión, haciendo una transición para volver al valor cero.
-![[RZ.png]]
+![[imgs/RZ.png]]
 $\to$ El problema con estos códigos es que las secuencias largas de ceros todavía pueden causar problemas.
 #### Bifásica
 Estos códigos son muy utilizados en la transmisión de redes Ethernet.
@@ -77,7 +77,7 @@ Estos códigos son muy utilizados en la transmisión de redes Ethernet.
 | Manchester                                                                                                                                                                        | Manchester Diferencial                                                                                                                                                                                                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hacen un cambio de nivel a la mitad del período del bit, de esa manera mantienen el sincronismo. Se utiliza un patrón para representar el bit 1 y otro para representar el bit 0. | Este código es igual al Manchester con la diferencia de que en lugar de seguir un patrón para indicar el bit 1 y el 0, hace una transición de positivo a negativo, o viceversa, al comienzo del período del bit para indicar que es un bit 1, y si se trata de un bit 0, no cambia el valor de voltaje que traía del período anterior. La transición a la mitad del período del bit se mantiene siempre. |
-| ![[Manchester.png]]                                                                                                                                                               | ![[Manchester Diferencial.png]]                                                                                                                                                                                                                                                                                                                                                                          |
+| ![[imgs/Manchester.png]]                                                                                                                                                               | ![[imgs/Manchester Diferencial.png]]                                                                                                                                                                                                                                                                                                                                                                          |
 ### Codificación Bipolar
 Usa 3 tipos de codificación usa tres niveles de tensión: POSITIVO, NEGATIVO y NULO
 Los objetivos en el diseño de estas técnicas son:
@@ -91,7 +91,7 @@ Los objetivos en el diseño de estas técnicas son:
 
 | AMI          | AMI-RZ          |
 | ------------ | --------------- |
-| ![[AMI.png]] | ![[AMI-RZ.png]] |
+| ![[imgs/AMI.png]] | ![[imgs/AMI-RZ.png]] |
 #### HDB-3 (High Density Bipolar 3 zeros)
 - Este tipo de codificación se basa en el AMI, es decir, codifica sólo los bits 1 en forma alternada.
 - Cada 4 bits 0 consecutivos se evalúan y aplican en su construcción tres reglas, con el objetivo de que no se transmitan más de 3 ceros consecutivos y de esa manera mantener el nivel de continua a cero, el sincronismo y un buen espectro de frecuencia
@@ -103,11 +103,11 @@ Los objetivos en el diseño de estas técnicas son:
 
 | HDB-3          | HDB-3-RZ                             |
 | -------------- | ------------------------------------ |
-| ![[HDB-3.png]] | ![[HDB-3-RZ.png]] |
+| ![[imgs/HDB-3.png]] | ![[imgs/HDB-3-RZ.png]] |
 #### MLT-3
 - Trabaja en forma escalonada codificando solamente los bits 1.
 - Es un código de cambio de nivel, codifica el bit 1 cambiando de nivel positivo a cero, de cero a negativo y luego en el sentido inverso, solamente si se trata de un bit 1. Los bits 0 no se codifican, es decir no se cambia el valor de voltaje que traía.
-![[MLT-3.png]]
+![[imgs/MLT-3.png]]
 ---
 ## Codificación en placas de Red
 **Codificar**: asignar un valor de tensión al uno binario, y otro distinto al cero. Deben ser perfectamente detectados por el receptor, para no cuantificarlo.
@@ -134,7 +134,7 @@ El conmutador es un dispositivo importante en toda red de comunicación, porque 
 - Garantizar que llegue la información
 - Debe ser transparante al usuario
 - Debe ser rápida
- ![[resumen conmutacion.png]] 
+ ![[imgs/resumen conmutacion.png]] 
 ## Conmutación de Circuitos
  Se utiliza cuando se necesita que los datos sean transmitidos en **tiempo real**. Se caracteriza porque crea un **canal dedicado** en la transmisión. Cuando se finaliza la comunicación el canal es desocupado y puede ser utilizado por otro usuario. Por ejemplo las llamadas telefónicas.
  - Ventajas
@@ -173,9 +173,9 @@ En esta técnica, el emisor envía un paquete de control, conocido como paquete 
 En esta técnica el emisor **enumera cada paquete**, se caracteriza porque cada paquete puede tomar rutas distintas, y por lo tanto pueden llegar en distinto orden, o también se pueden perder paquetes. El trabajo del receptor es **ordenar los paquetes**.
 ## Aplicaciones de los sistemas de conmutación
 Modelo OSI, es un modelo de 7 capas. Define la forma en la cual se **encapsularán y desencapsularán los datos**, en el momento de ser transmitidos y recibidos, respectivamente.
-![[Modelo OSI.png]]
+![[imgs/Modelo OSI.png]]
 ### Aplicación MPLS
 MPLS (MultiProtocol Label Switching) es un protocolo de conmutación por etiquetas definido para funcionar sobre múltiples protocolos como Sonet, Frame Realy, ATM, Ethernet, aprovechando las eficiencias de cada uno de ellos.
-![[MPLS.png]]
-Se intercala entre la capa 2 y 3 del Modelo OSI y TCP/IP![[Label MPLS.png]]
+![[imgs/MPLS.png]]
+Se intercala entre la capa 2 y 3 del Modelo OSI y TCP/IP![[imgs/Label MPLS.png]]
 La idea es **rutear en los bordes y Conmutar en el Núcleo de la red** en cuestión. De esta forma, en los **bordes tenemos Datagramas y en el nucleo Circuitos Virtuales**. Esta aplicación es la que hoy en día hace posible la implementación de redes de datos de alta capacidad, como LTE referido a 4G y 5G en redes móviles.

@@ -161,3 +161,10 @@ compara :: Ord a => (a -> a -> Bool) -> a -> a -> Bool
 compara (x) a b = if (x a b) then True else False
 ```
 
+## Principios
+- Integridad Referencial
+- Funciones de Orden Superior
+- Sistema de Tipos Polimórficos
+- Sistema de Infrencia de tipo
+- Evaluación perezosa
+- Listas Polimórficas
