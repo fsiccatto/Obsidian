@@ -370,7 +370,7 @@ La función de transferencia es invariante ante transformaciones de estado. No e
 
 Es posible reconstruir las ecuaciones de estado, y por tanto la representación interna, a partir de una función de transferencia dada, identificando las matrices de estado que conforman el sistema.
 ### Pasaje de la representación Interna a la representación Externa
-Visto en [[Unidad 2#Unicidad de función de transferencia]].
+Visto en [[UTN-repo/4º/Tencologia de la Automatizacion/Unidad 2#Unicidad de función de transferencia]].
 Es válida tanto para los sistemas SISO como MIMO, la salvedad es que en MIMO obtendríamos una matriz $G(s)$ de funciones de transferencia $pxm$ ($p$ dimensión del vector de salida y $m$ la dimensión del vector de entrada), donde cada elemento $G_{ij}(s)$ corresponde a la función de transferencia desde la entrada j-ésima $u_{j}$ a la salida i-ésima $y_{i}$.
 ### Pasaje de la representación Externa a la representación Interna
 Este pasaje recibe el nombre de **realización**.
