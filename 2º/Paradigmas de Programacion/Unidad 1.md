@@ -1,9 +1,9 @@
 # Programación Orientada a Objetos
 ## Clases y Objetos
 Una clase es un TAD (tipo abstracto de datos) definido por el programador, que encapsula datos (atributos) y métodos (comportamientos). Estos describen los objetos de nuestro ámbito de estudio.
-![[Clase]]
+![[Clase| center ]]
 Luego de definirse la clase, podemos definir dos objetos ejemplos:
-![[ejemploClase.png]]
+![[ejemploClase.png| center ]]
 
 ``` java
 public class Camion { 
@@ -60,7 +60,7 @@ Camion otroCamion = new Camion("Ford",1.3f,"Maria Gomez")
 ```
 El resultado de activar el constructor es construir un **objeto**, es decir, mapearlo en la memoria.
 Por lo tanto, como resultado de la activación del constructor, `new` devuelve una referencia, un puntero, al objeto que el constructor mapeó en el Heap. Las variables `camionDeCocaCola` y `otroCamion` son variables locales en el Stack que apuntan al objeto que está en zona de Heap.
-![[stackheap.png]]
+![[stackheap.png| center ]]
 ### Constructores
 Un constructor es un método que tiene el mismo nombre de la clase y aunque puede recibir parámetros, no debe ser calificado con ningún tipo de devolución, ni siquiera `void`.
 ``` java
@@ -108,7 +108,7 @@ Un constructor, que recibe como argumento un objeto del mismo tipo que se está 
 3. Camion tercerCamion = new Camion(otroCamion);
 4. Camion cuartoCamion = camionDeCocaCola;
 ```
-![[constructor de copia.png]]
+![[constructor de copia.png| center ]]
 3. Usar el constructor de copia para crear un nuevo objeto en memoria (`tercerCamion`) que copia el estado del objeto `otroCamion` prexistente.
 4. Asigna la referencia guardada en la variable `camionDeCocaCola` a la variable `cuartoCamion`. De esta forma, ahora tenemos dos punteros al mismo objeto en el heap; pero **no se creó ningún objeto nuevo**.
 ### Finalizadores
