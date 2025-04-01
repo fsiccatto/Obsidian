@@ -10,10 +10,47 @@ Un autómata es una máquina **abstracta** (es decir un modelo que simula el com
 	- el **estado** en que se encuentra
 - En un instante dado sólo pueden estar en un estado
 - Formas de descripción: *gráfica matricial funcional*
-La importancia del uso de los autómatas en la lingüistica computacional, radica en que este tipo de máquinas abstractas puede ser utilizada para implementar diversas tareas, tales cómo traducir una cadena de entrada en otra de salida o reconocer si una cadena pertenece o no a un lenguaje. Además, el comportamiento de estos modelos abstractos puede ser fácilmente descripto por un algoritmo, por lo que es muy fácil programar autómatas para incorporarlos a un compilador (o traductor).
+> [!info] Estado de un autómata, número de estados, configuración y movimiento
+> - El **estado de un autómata** es toda la información necesaria en un momento dado, para poder deducir, dado un símbolo de entrada en ese momento, cual será el símbolo de salida.
+> - El autómata tendrá un determinado **número de estados**, que puede ser infinito, y se encontrará en uno u otro según sea la historia de símbolos que le han llegado.
+> - La **configuración de un autómata** se define a su situación en un instante.
+> - El **movimiento de un autómata** se define como el tránsito entre dos configuraciones.
+
+Un autómata se define como:
+$$
+A = (E, S, Q, f, g)
+$$
+$$
+\begin{align}
+ & E = \{ \text{conjunto de entradas o vocabulario de entrada} \} \\
+ & S = \{ \text{conjunto de salidas o vocabulario de salida} \} \\
+ & Q = \{ \text{conjunto de estados} \} \\
+ & f: E x Q \to Q \\
+ & g: E x Q \to S
+\end{align}
+$$
+- ***Tabla de transiciones***
+	Supongamos $A=(E,S,Q,f,g)$ donde $E=\{ a,b \}$, $S=\{ 0,1 \}$, $Q=\{ q_{1},q_{2},q_{3} \}$ y las funciones $f$ y $g$ se pueden representar por:
+	![[imgs/automatas.png| 200]]
+	Así se tiene que $f=(a,q_{1})=q_{1}; g(a,q_{1})=0$
+	Ambas funciones se pueden representar en la misma tabla
+	![[imgs/automatas2.png| 100]]
+- ***Máquina de Moore***
+	El diagrama de Moore es un grafo orientado en el que cada nodo corresponde a un estado; y si $f(\epsilon, q_{i} ) = q_{j}$ y $g(\epsilon, q_{i} ) = s$ existe un arco dirigido del nodo $q_{i}$ al correspondiente $q_{j}$ , sobre el que se pone la etiqueta $\epsilon/ s$
+	![[imgs/diagrama de moore.png| 200]]
+	Para el ejemplo anterior
+	![[imgs/diagrama de moore2.png| 200]]
 ## Autómatas traductores
 Traducen una cadena de entrada en otra cadena de salida. Para esto, trabajan con **dos alfabetos**, que pueden o no ser iguales. Un **alfabeto de entrada** al cual pertenecen los símbolos de la cinta de entrada a la máquina; y un **alfabeto de salida** al cuál pertenecen los símbolos del patrón de salida que produce la máquina abstracta en función de lo que lee en la cinta de entrada.
 ![[imgs/maquinas abstractas.png| center]]
+
+|Característica|Mealy|Moore|
+|---|---|---|
+|**Salida depende de**|Estado + Entrada|Solo Estado|
+|**Cambio de salida**|Inmediato ante un cambio de entrada|Solo cuando cambia el estado|
+|**Estados requeridos**|Menos estados generalmente|Más estados, ya que la salida es fija por estado|
+|**Uso típico**|Diseños rápidos y reactivos|Diseños más estables y predecibles|
+<mark style="background: #FF5582A6;">Se puede demostrar que dada una máquina de Mealy, siempre se puede encontrar una máquina de Moore equivalente</mark>, a costa de aumentar el número de estados
 ### Máquina de Mealy
 Se observa un **digrafo** que permite representar gráficamente el comportamiento de una máquina de Mealy. Los nodos, representan los distintos estados en que se encuentra la máquina en un momento dado, los arcos representan las transiciones posibles entre un estado y otro, los rótulos de los arcos de la forma $x/y$ representan el símbolo que se lee en la cadena de entrada y el símbolo que se escribe en la cadena de salida.
 $$
@@ -63,7 +100,7 @@ Los autómatas o máquinas de Estados Finitos (AEF o AF o FSA) son máquinas rec
 ![[imgs/AEF.png| center | 150]]
 Un AF es un grafo dirigido que **tiene un estado inicia**l, **uno o más estados finales** y **un conjunto de transiciones o arcos rotulados** que hacen que la máquina se mueva de un estado a otro. Cualquier cadena que lleve a la máquina desde su estado inicial a un estado final, es una cadena válida en el lenguaje.
 
-> [!important] AEF
+> [!important] AF
 > Es posible demostrar que existe una relación biunívoca entre los AEF y los lenguajes regulares, de forma tal que para cada lenguaje regular existe, al menos una máquina de estados finitos que reconoce las palabras en el lenguaje; y viceversa. Esto implica también una relación directa entre los AEF y las gramáticas regulares o normales (Tipo 3).
 
 #### Autómatas de Estados Finitos Deterministas
@@ -88,3 +125,13 @@ $$
 ⚠️ A diferencia de los autómatas traductores, no tienen función de salida, ya que el único resultado que arroja un AEF es: la aceptación o no de la cadena de entrada.
 ![[imgs/algoritmo de implementacion AFD.png | center]]
 #### Autómatas de Estados Finitos no Deterministas
+El problema del no determinismo, es la presencia de múltiples arcos a partir de un estado con el mismo rótulo, de modo que se tiene opción en cuanto al camino a seguir en el reconocimiento de una cinta de entrada.
+La diferencia con AFD es que los AFND:
+1. La imagen de la función de transición en un conjunto de estados ($P(Q)$ es el conjunto de Partes de Q, osea cualquier subconjunto de estados). Esto indica que para un estado de partida y un símbolo de entrada leído en la cadena, existe más de un estado al que se puede transitar. 
+2. Se aceptan transiciones-$\lambda$. Es decir, transitar de un estado a otro, sin leer nada en la cadena de entrada.
+![[imgs/AFND.png| center]]
+
+> [!attention] Lenguaje Reconocido por un AFND
+> Para un AFND, se dice que el autómata acepta la cadena, si hay algún camino desde el estado inicial a un estado final; aunque puede haber otros caminos que no llegan a un estado final.
+
+## Expresiones Regulares
