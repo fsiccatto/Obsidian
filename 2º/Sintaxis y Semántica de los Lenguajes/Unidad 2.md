@@ -75,7 +75,7 @@ Para la cadena de entrada $01001$, la cadena de salida sería: $piiip$.
 | **$q_{0}$**     | $q_{0} / p$ | $q_{1} / i$ |
 | **$q_{1}$**<br> | $q_{1} / i$ | $q_{0} / p$ |
 ### Máquina de Moore
-En una máquina de Moore la función de transición de estados, no difiere de la dada para la Máquina de Mealy. La diferencia, radica en la función de salida $g$, que en este caso depende sólo del estado actual en que se encuentre la máquina en un instante dado.
+En una máquina de Moore la función de transición de estados, no difiere de la dada para la Máquina de Mealy. La diferencia, **radica en la función de salida** $g$, que en este caso depende sólo del estado actual en que se encuentre la máquina en un instante dado.
 $$
 \begin{align}
 g(q_{0}) & =p \\
@@ -92,8 +92,6 @@ $$
 Para el ejemplo, la cadena de entrada $01001$, la cadena de salida sería: $piiip$
 ## Autómatas reconocedores
 Los autómatas reconocedores son máquinas abstractas que permiten reconocer si una palabra o cadena (o construcción sintáctica) dada como *input* a la máquina, pertenece a un lenguaje.
-Existe una relación directa entre la jerarquía de gramáticas propuesta por Chomsky y las categorías de lenguajes generados.
-De igual manera, existe una relación directa entre los tipos de lenguajes y los tipos de autómatas que los reconocen.
 ![[imgs/automatas reconocedores.png| center]]
 ### Autómatas de estado finito
 Los autómatas o máquinas de Estados Finitos (AEF o AF o FSA) son máquinas reconocedoras de lenguajes.
@@ -113,8 +111,8 @@ $$
 \begin{align}
  & \sum \text{ es el alfabeto de simobolos de entrada} \\
  & Q \text{ es el conjunto de estados} \\
- & q_{0} \subset Q \text{ es el estado inicial} \\
- & F \subseteq Q \text{ es el conjunto de estado finales} \\
+ & q_{0} \in Q \text{ es el estado inicial} \\
+ & F \subset Q \text{ es el conjunto de estado finales} \\
  & f \text{ es la funcion de transicion de estados definida como...}
 \end{align}
 $$
@@ -124,12 +122,12 @@ $$
 ⚠️ Es importante, que a diferencia de los autómatas traductores (Mealy y Moore), acá se define un estado inicial por donde empieza a operar la máquina en el reconocimiento de una cadena; y un conjunto de estados finales, en los cuáles la cadena se considera aceptada.
 ⚠️ A diferencia de los autómatas traductores, no tienen función de salida, ya que el único resultado que arroja un AEF es: la aceptación o no de la cadena de entrada.
 ![[imgs/algoritmo de implementacion AFD.png | center]]
+El estado `0` es un estado de **sumidero** o de **captación global**. Se representa con líneas punteadas, en azul están las entradas. Podemos ver que al sumidero llegan todos pero nada sale.
 #### Autómatas de Estados Finitos no Deterministas
 El problema del no determinismo, es la presencia de múltiples arcos a partir de un estado con el mismo rótulo, de modo que se tiene opción en cuanto al camino a seguir en el reconocimiento de una cinta de entrada.
 La diferencia con AFD es que los AFND:
 1. La imagen de la función de transición en un conjunto de estados ($P(Q)$ es el conjunto de Partes de Q, osea cualquier subconjunto de estados). Esto indica que para un estado de partida y un símbolo de entrada leído en la cadena, existe más de un estado al que se puede transitar. 
 2. Se aceptan transiciones-$\lambda$. Es decir, transitar de un estado a otro, sin leer nada en la cadena de entrada.
-![[imgs/AFND.png| center]]
 
 > [!attention] Lenguaje Reconocido por un AFND
 > Para un AFND, se dice que el autómata acepta la cadena, si hay algún camino desde el estado inicial a un estado final; aunque puede haber otros caminos que no llegan a un estado final.
