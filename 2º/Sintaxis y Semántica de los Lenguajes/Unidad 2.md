@@ -175,3 +175,14 @@ $$\begin{align}
  & \dots \\
  & \alpha \alpha \alpha \dots \alpha
 \end{align}$$
+### Conversiones
+![[imgs/conversionAEF-ER.png]]
+![[imgs/conversionER-AEF.png]]
+### Equivalencia de Autómatas
+> [!info] Definción Equivalencia de Autómatas
+> Dos autómatas $N=\left( \sum, q_{0},Q, F, f \right)$ y $D=\left( \sum,q'_{0}, Q',F', f' \right)$ son equivalentes si ambos reconocen el mismo lenguaje.
+> $$
+L(D)=L(N)
+$$
+
+El no determinismo **no es deseable**, dado que complica la implementación del reconocedor y puede llevar a un reconocimiento erróneo
