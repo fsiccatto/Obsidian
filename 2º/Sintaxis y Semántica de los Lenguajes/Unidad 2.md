@@ -133,3 +133,45 @@ La diferencia con AFD es que los AFND:
 > Para un AFND, se dice que el autómata acepta la cadena, si hay algún camino desde el estado inicial a un estado final; aunque puede haber otros caminos que no llegan a un estado final.
 
 ## Expresiones Regulares
+Las expresiones regulares son una tercera forma de expresar lenguajes regulares. Tenemos una relación directa entre:
+- Gramáticas regulares (G3) -> Generan lenguajes regulares
+- Autómatas finitos (AFD) -> Reconocen los lenguajes regulares
+- Expresiones regulares (ER) -> Expresan de forma consisa los lenguajes regulares
+> [!info] Definción ER
+> Sólo son expresiones regulares sobre un alfabeto $\lambda$, aquellas que se obtienen aplicando un número finito de veces las siguientes reglas:
+> -  $\lambda$ es una ER
+> - para cada $a \in \sum$, $a$ es una ER
+> - si $\alpha$ y $\beta$ son ambas ER, $\alpha + \beta$es una ER 
+> - si $\alpha$ y $\beta$ son ambas expresiones regurales, $\alpha.\beta$ es una ER (o simplemente $\alpha \beta$) 
+> - si $\alpha$ es una expresión regular, $\alpha{^*}$ es una ER. (Aquí $*$ es 0 o más - Kleene) 
+> - si $\alpha$ es una expresión regular, ($\alpha$) es una ER.
+
+El **Teorema de Kleene**, expresa la relación biunívoca que existe entre expresiones regulares y autómatas de estados finitos. En particular:
+> [!important] Teorema
+> Sea L un lenguaje sobre un alfabeto $\sum$. $L$ es regular (puede expresarse mediante expresiones regulares), si y solo si, existe un AEF con alfabeto $\sum$ que acepta $L$. 
+> Es decir: 
+> - **Teorema del Análisis**: Todo lenguaje aceptado por un AEF, es regular.
+> - **Teorema de Síntesis**: todo Lenguaje Regular es aceptado por un AEF.
+### Operaciones con las expresiones regulares
+$\alpha \text{ y } \beta$ son ER
+1. Unión $\{ \alpha | \beta \} = \{ \alpha \} \cup \{ \beta \}$
+2. Concatenación $\{ \alpha \beta \}=\{ \alpha \} \{ \beta \}$
+3. Cierre u operación estrella 
+$$\begin{align}
+\{ \alpha \}{^*} \text{ denota las cadenas:} \\
+ & \lambda \\
+ & \alpha \\
+ & \alpha \alpha \\
+ & \alpha \alpha \alpha \\
+ & \dots \\
+ & \alpha \alpha \alpha \dots \alpha
+\end{align}$$
+4. Cierre positivo
+$$\begin{align}
+\{ \alpha \}{^+} \text{ denota las cadenas:} \\
+ & \alpha \\
+ & \alpha \alpha \\
+ & \alpha \alpha \alpha \\
+ & \dots \\
+ & \alpha \alpha \alpha \dots \alpha
+\end{align}$$
