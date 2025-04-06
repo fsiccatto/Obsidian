@@ -95,6 +95,8 @@ e_{i} & = e_{0} \\
 F & = \{ e_{2} \}
 \end{align}
 $$
+![[tp2ej10.png | center | 200]]
+11. Obtenga el AFD equivalente para el siguiente AFND, dibuje el autómata AFD indicando a cuáles nodos del AFND, representa cada nodo. Describa la tabla completa de transiciones $P(Q)$.![[imgs/tp2ej11.png | center]]
 
 |                   | a                 | b       | c            |
 | :---------------- | :---------------- | :------ | ------------ |
@@ -107,7 +109,3 @@ $$
 | $q_{1}q_{2}$      | $-$               | $q_{2}$ | $q_{1}q_{2}$ |
 | $q_{0}q_{1}q_{2}$ | $q_{0}q_{1}q_{2}$ | $q_{2}$ | $q_{1}q_{2}$ |
 
-11. Obtenga el AFD equivalente para el siguiente AFND, dibuje el autómata AFD indicando a cuáles nodos del AFND, representa cada nodo. Describa la tabla completa de transiciones $P(Q)$.![[imgs/tp2ej11.png | center]]
-$$
-
-$$
