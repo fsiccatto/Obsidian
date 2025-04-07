@@ -59,3 +59,59 @@ Este enfoque, comparado con otros, es el **análisis de los efectos de los bucle
 > - Diagrama Causal o de Influencias
 > - Diagrama de Forreseter o Simulación
 ## Diagrama Causal o de Influencia
+> [!todo] Definición
+> El **DIAGRAMA CAUSAL** o **INFLUENCIA** representa las relaciones de influencia que se dan entre los elementos de un sistema y por lo tanto permite conocer la **estructura** del mismo.
+> Permite visualizar cómo diferentes variables influencian unas a otras dentro del sistema, destacando las relaciones de causalidad entre ellas.
+
+En el DIAGRAMA CAUSAL o INFLUENCIA se indican los elementos más importantes que intervienen en el proceso. Estos elementos básicos del proceso están unidos entre sí mediante flechas que indican las influencias que se establecen entre ellos. La influencia, en esta descripción, se mantiene a un nivel cualitativo, en el sentido de que únicamente se dice si se produce o no influencia, pero no la forma o **magnitud** que tenga.
+Si A y B son dos partes de un sistema, el hecho de que A influya sobre B se representa mediante una flecha de la forma $A → B$ e indica que B es una función de A, es decir $B = f(A)$. Se representa mediante un **grafo orientado**, a las flechas se les asocia un signo que indica si las variaciones del antecedente y consecuente son, o no, del mismo signo.
+$$
+\begin{align}
+A  & \to ^{+}B \text{ Signo positivo: las variaciones de A y B son del mismo sentido}\\
+A  & \to ^{-}B \text{ Signo negativo: las variaciones de A y B son de sentido contrario}
+\end{align}
+$$
+### Clasificación según estructura
+- **Diagramas abiertos, de estructura simple**
+	Representaciones gráfica en las cuales no se forman lazos cerrados o retroalimentaciones entre los elementos del sistema. El sistema tiene <mark style="background: #BBFABBA6;">comportamientos lineales</mark>.
+	![[img/diagrama causal abierto.png| center ]]
+- **Diagramas cerrados, de estructura compleja o bucles de realimentación**
+	Contienen bucles de retroalimentación donde una variable afecta a otra, que a su vez retroalimenta a la primera, creando un ciclo de interacciones. El sistema puede exhibir <mark style="background: #BBFABBA6;">comportamientos no lineales, como oscilaciones, amplificación o amortiguamiento</mark>, dependiendo de la configuración de los lazos de realimentación (afectan a la estabilidad del sistema).
+	![[img/diagrama causal cerrado.png| center]]
+### Bucles de realimentación
+> [!abstract] Bucles de realimentación
+> - Un ciclo es **positivo** ($+$ entre paréntesis) si todas las relaciones tienen signo $+$ o existe un número par de relaciones $-$.
+> - Un ciclo es **negativo** ($-$ entre paréntesis) si existe un número impar de relaciones $-$.
+
+Si existen diversos bucles combinados, es imposible predecir a partir solamente de argumentos cualitativos el comportamiento del sistema.
+- **Bucles de realimentación positivo**
+	El comportamiento que resulta de un bucle de esta naturaleza consiste en acelerar o bien el crecimiento, o el declive; hacen inestable el sistema.
+	![[img/bucles positivos.png| center]]
+- **Bucles de realimentación negativo**
+	El comportamiento que resulta de un bucle de esta naturaleza contribuye a la estabilidad del sistema al contrarrestar los cambios que podrían llevarlo fuera de equilibrio.
+	![[img/bucle negativo.png| center | 250]]
+- **Bucles de realimentación combinados**
+	Los bucles combinados pueden amplificar o atenuar la salida de un sistema, dependiendo de cómo se combinan los efectos de la realimentación positiva y negativa. Estos bucles permiten que el sistema se adapte a cambios externos al mismo tiempo que mantiene su estabilidad interna mediante la retroalimentación negativa y la capacidad de amplificación mediante la retroalimentación positiva.
+	![[img/bucles combinados.png| center | 250]]
+### Interpretación de influencias
+El sentido de la flecha y el signo asociado (+ o -) revelan la dirección y la naturaleza de la influencia. Un **signo positivo (+)** indica una relación de aumento, donde un aumento en la variable de origen conlleva un aumento en la variable de destino. Por el contrario, un **signo negativo (-)** señala una relación de disminución, donde un aumento en la variable de origen resulta en una disminución en la variable de destino.
+$$
+\begin{align}
+A  & \to ^{+}B \text{ Se lee: a mas A mas B}\\
+C  & \to ^{-}D \text{ Se lee: a mas C menos D}
+\end{align}
+$$
+### Consideraciones importantes
+Reglas a tener en cuenta:
+- Evitar bucles ficticios (no válidos).
+- Emplear elementos caracterizables por números (no abstracciones). No emplear dos veces la misma relación.
+- Evitar bucles redundantes.
+- No emplear el tiempo como factor causal.
+- Los elementos deben ser variables cuyo valor puede variar con el tiempo. 
+- Evitar el uso de verbos en los elementos. Por ejemplo, Presas es correcto. Aumento de presas es incorrecto.
+- Especificar claramente el signo de la variable en su nombre.
+- El nombre debe especificar un signo. 
+- Temperatura es mejor que FRIO.
+- Si la cadena entre dos elementos consecutivos es muy compleja y requiere explicaciones orales o escritas detalladas, es necesario incluirlas de forma explícita en el diagrama.
+- Limitar el diagrama causal a la estructura más simple posible
+## Diagrama de Forrester o de Simulación
