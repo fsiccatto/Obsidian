@@ -115,3 +115,64 @@ Reglas a tener en cuenta:
 - Si la cadena entre dos elementos consecutivos es muy compleja y requiere explicaciones orales o escritas detalladas, es necesario incluirlas de forma explícita en el diagrama.
 - Limitar el diagrama causal a la estructura más simple posible
 ## Diagrama de Forrester o de Simulación
+
+> [!info] Diagrama de Forrester
+> Es una representación simbólica de las **variables de nivel, variables de flujo y variables auxiliares** de un diagrama causal o influencias. Constituye un paso intermedio entre el diagrama Causal y el sistema de ecuaciones diferenciales que le corresponde.
+
+### Símbolos utilizados en la construcción del diagrama
+Entre los distintos elementos que aparecen en los nodos de un diagrama de influencias, algunos tienen variaciones con respecto al tiempo de otras magnitudes. Podemos expresarlas:
+$$
+\frac{dX}{dt} \to ^{+}x
+$$
+$\frac{dX}{dt}$ denota la variación con respecto al tiempo de $X$. Se establece una relación de influencia, causa efecto.
+> [!hint]
+> - La variable $X$ se denomina **variable de nivel** o **variables de estado**
+> - La variable $\frac{dX}{dt}$ se denomina **variable de flujo**
+
+- #### Variable de Nivel
+Se denomina bloque integrador y corresponde a las variables principales. Cada bloque es una ecuación diferencial.
+![[img/variable de nivel.png]]
+Son aquellas variables cuya evolución es significativa para el estudio del sistema y son equivalentes a las variables de estado de un sistema en descripción interna. Una característica común a las variables de nivel es que <mark style="background: #BBFABBA6;">cambian lentamente en respuesta a las variaciones de otras variables</mark>, en concreto de las variables de flujo.
+**Una variable de nivel no puede influir directamente en otra variable de nivel, sino es a través de un flujo.**
+Características:
+- Acumulador
+- Tangible e intangible
+- Cambio relativamente lento
+- Unidades sin tiempo
+- Se puede contar en cualquier momento
+
+- #### Variable de Flujo
+Es aquella variable que determina las variaciones en las variables de nivel del sistema y caracterizan las acciones que se toman en el sistema las cuales quedan acumuladas en los niveles correspondientes.
+![[img/variables de flujo.png]]
+A todo nivel se le asocia al menos una variable de flujo. Físicamente expresan como se convierte la información disponible del sistema en una acción.
+$$
+unidadesDeFlujo=\frac{unidadDeNivel}{tiempo}
+$$
+Características:
+- Regula las entradas y salidas de los niveles
+- Siempre unidades/tiempo
+- Flujos tangibles e intangibles
+- Flujo = única forma de cambiar los niveles
+
+- #### Variable Auxiliar
+Es aquella variable que representa pasos en los que se descompone el cálculo de una variable de flujo a partir de los valores tomados por los niveles. El propósito del uso de las variables auxiliares está en facilitar la comprensión y definición de las variables de flujo ya que las variables auxiliares suelen representar en sí mismas conceptos individuales.
+Características: 
+- Convertidores de información
+- Parte de una “red de decisión”
+- Cálculos auxiliares
+
+- #### Fuente
+Un nivel puede alimentarse, a través de un flujo desde otro nivel o bien desde una fuente exterior al sistema. Esta fuente se supone de capacidad infinita y se representa mediante una nube.
+![[img/fuente.png]]
+
+- #### Sumidero
+Un nivel puede vaciarse, a través de un flujo sobre otro nivel o sobre un sumidero exterior al sistema. De la misma forma, el sumidero se supone de capacidad infinita y se representa mediante una nube.
+![[img/sumidero.png]]
+
+- #### Conector
+Muestra los flujos de información. Alimenta las variables auxiliares y los flujos con información. Representan las relaciones entre los elementos.
+![[img/conector.png]]
+
+---
+Los niveles acumulan flujos materiales que llegarán mediante **canales de material** y las variables de flujo y auxiliares se alimentan a partir de **canales de información**.
+![[img/asociacion de diagramas.png]]
