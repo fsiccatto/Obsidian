@@ -25,19 +25,22 @@ Estos sistemas pueden en general modelarse mediante **Ecuaciones Diferenciales**
 En la solución analítica destacan el método **autovalores** y **transformada de Laplace**.
 - En el método de **autovalores** se diagonaliza la matriz de coeficientes para encontrar los valores propios y los vectores propios asociados, lo que permite escribir la solución general de las ecuaciones diferenciales en términos de estas variables.
 	Sea $\lambda$ un valor propio (o autovalor) de la matriz $A$ del sistema lineal de primer orden si y solo si $(A-\lambda I).v=0$, si $v$ es un vector propio asociado con $\lambda$ y $v\neq 0 \implies |A-\lambda I|=0$.
-	Para cada autovalor, se sustituye el mismo en $|A-\lambda I|$ para el vector propio asociado a $$
-v = \begin{bmatrix}
-a \\
-b \\
-c \\
-\end{bmatrix}
-$$
-	La solucipon general es $$x(t)=c_{1}v_{1}ve^{\lambda_{1}}+c_{2}v_{2}ve^{\lambda_{2}}+\dots+c_{n}v_{n}ve^{\lambda_{n}}$$
+	Para cada autovalor, se sustituye el mismo en $|A-\lambda I|$ para el vector propio asociado a 
+	$$
+	v = \begin{bmatrix}
+	a \\
+	b \\
+	c \\
+	\end{bmatrix}
+	$$
+	La solución general es 
+$$x(t)=c_{1}v_{1}ve^{\lambda_{1}}+c_{2}v_{2}ve^{\lambda_{2}}+\dots+c_{n}v_{n}ve^{\lambda_{n}}$$
 - La **transformada de Laplace** herramienta para resolver EDL con condiciones inciales, convirtiendo el problema en la resolución de una ecuación algebraica
 	Para un sistema lineal continuo de la forma $x'(t)=Ax(t)$, donde $x(t)$ es el vector de estado, formando variables de estado y A es la matriz dinámica de sistema, de orden $nxn$, se aplica T de Laplace, para encontrar la solución del sistema.
-	Se aplica TL en cada miembro de la ecuación: $$
-sx(s)-x(0)=Ax(s)
-$$
+	Se aplica TL en cada miembro de la ecuación:
+	 $$
+	sx(s)-x(0)=Ax(s)
+	$$
 	Se agrupa por factor común $x(s)$: $x(s)(sI-A)=x(0)$
 	Se anti transforma y se despeja para indicar la solución $x(t)$: $x(t)=L^{-1}[(sI-A)^{-1}x(0)]$
 ## Definición de dinámica de sistemas
@@ -129,7 +132,7 @@ $\frac{dX}{dt}$ denota la variación con respecto al tiempo de $X$. Se establece
 > - La variable $X$ se denomina **variable de nivel** o **variables de estado**
 > - La variable $\frac{dX}{dt}$ se denomina **variable de flujo**
 
-- #### Variable de Nivel
+#### Variable de Nivel
 Se denomina bloque integrador y corresponde a las variables principales. Cada bloque es una ecuación diferencial.
 ![[img/variable de nivel.png]]
 Son aquellas variables cuya evolución es significativa para el estudio del sistema y son equivalentes a las variables de estado de un sistema en descripción interna. Una característica común a las variables de nivel es que <mark style="background: #BBFABBA6;">cambian lentamente en respuesta a las variaciones de otras variables</mark>, en concreto de las variables de flujo.
@@ -141,7 +144,7 @@ Características:
 - Unidades sin tiempo
 - Se puede contar en cualquier momento
 
-- #### Variable de Flujo
+#### Variable de Flujo
 Es aquella variable que determina las variaciones en las variables de nivel del sistema y caracterizan las acciones que se toman en el sistema las cuales quedan acumuladas en los niveles correspondientes.
 ![[img/variables de flujo.png]]
 A todo nivel se le asocia al menos una variable de flujo. Físicamente expresan como se convierte la información disponible del sistema en una acción.
@@ -154,22 +157,22 @@ Características:
 - Flujos tangibles e intangibles
 - Flujo = única forma de cambiar los niveles
 
-- #### Variable Auxiliar
+#### Variable Auxiliar
 Es aquella variable que representa pasos en los que se descompone el cálculo de una variable de flujo a partir de los valores tomados por los niveles. El propósito del uso de las variables auxiliares está en facilitar la comprensión y definición de las variables de flujo ya que las variables auxiliares suelen representar en sí mismas conceptos individuales.
 Características: 
 - Convertidores de información
 - Parte de una “red de decisión”
 - Cálculos auxiliares
 
-- #### Fuente
+#### Fuente
 Un nivel puede alimentarse, a través de un flujo desde otro nivel o bien desde una fuente exterior al sistema. Esta fuente se supone de capacidad infinita y se representa mediante una nube.
 ![[img/fuente.png]]
 
-- #### Sumidero
+#### Sumidero
 Un nivel puede vaciarse, a través de un flujo sobre otro nivel o sobre un sumidero exterior al sistema. De la misma forma, el sumidero se supone de capacidad infinita y se representa mediante una nube.
 ![[img/sumidero.png]]
 
-- #### Conector
+#### Conector
 Muestra los flujos de información. Alimenta las variables auxiliares y los flujos con información. Representan las relaciones entre los elementos.
 ![[img/conector.png]]
 
