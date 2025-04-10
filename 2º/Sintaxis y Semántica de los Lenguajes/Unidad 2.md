@@ -110,8 +110,8 @@ donde:
 $$
 \begin{align}
  & \sum \text{ es el alfabeto de simobolos de entrada} \\
- & Q \text{ es el conjunto de estados} \\
  & q_{0} \in Q \text{ es el estado inicial} \\
+ & Q \text{ es el conjunto de estados} \\
  & F \subset Q \text{ es el conjunto de estado finales} \\
  & f \text{ es la funcion de transicion de estados definida como...}
 \end{align}
@@ -185,4 +185,56 @@ $$\begin{align}
 L(D)=L(N)
 $$
 
-El no determinismo **no es deseable**, dado que complica la implementación del reconocedor y puede llevar a un reconocimiento erróneo
+El no determinismo **no es deseable**, dado que complica la implementación del reconocedor y puede llevar a un reconocimiento erróneo. Por lo tanto, la equivalencia de autómatas:
+> [!caution] Equivalencia de Autómatas
+> - Se basa en la construcción de subconjuntos
+> - Cada estado de AFD contiene un conjunto de estados del AFND
+> - $\forall \space AFND \space \exists \space AFD$ (AFD son casos particulares de AFND)
+> - $AFND = (\sum,q_{0},Q,F,f)$ equivale a $AFD=\left( \sum,q_{0}',Q',F',f'\right)$
+> - Es decir $AFND \equiv AFD / L(AFND) = L(AFD)$, si se cumple que:
+> $$
+> \begin{align}
+>  & Q'  = 2^{|Q|} \text{ conjunto potencia } P(Q) \\
+>  & q_{i}'  = [q_{i} \dots q_{f}] \implies q_{i}\dots q_{f} \subset Q' \\
+>  & q_{0}'  = q_{0} \\
+>  & F'  = q' \in Q' / q' \cap F \neq \emptyset \\
+>  & f'(q'a)  = \cup_{q\in Q} f(qa) / q \in Q \wedge a \in \sum
+> \end{align}
+> $$
+
+El algoritmo parte del concepto de que para todo AFND, existe un AFD equivalente y viceversa.
+Así: 
+- **(AFD -> AFND)** Dado un AFD, es fácil demostrar que este es un caso particular de un AFND, ya que es en sí mismo un autómata no determinista en el que $\forall q \in Q, a \in \sum, |f(q,a)|=1$ (cantidad de transiciones desde $q$ rotuladas por $a$); y no hay transiciones-$\lambda$. 
+- **(AFND -> AFD)** Dado un AFND $N=\left( \sum, q_{0}, Q, F, f \right)$ se puede construir un AFD equivalente $D=\left( \sum, q_{0}', Q', F', f' \right)$ con el algoritmo expuesto anteriormente, el cual podemos sintetizar de la siguiente manera
+	- Eliminar estados superfluos (no alcanzables o no llegan a un estado final)
+	- Construir el conjunto $2^{|Q|}$ de estados combinados
+	- Para cada estado de $2^{|Q|}$ y símbolos de entrada ver estados alcanzables
+	- Eliminar los estados
+		- No alcanzables (excepto el inicial)
+		- Aquellos que sólo son alcanzados por los eliminados en el paso previo
+		- Los duplicados (debe queda uno de ellos)
+	- Construir el grado del AEFD
+		- El grafo obtenido debe ser conexo
+#### Ejemplos
+![[imgs/ejemplo equivalencia de automatas.png| center]]
+![[imgs/ejemplo2 equivalencia de automatas.png| center]]
+Se puede observar que la lógica que sustenta al método tiene que ver con reunir en un único estado destino (agrupamiento de estados) aquellos dos o más destinos que convertían a un nodo en NO determinista. De forma de eliminar las bifurcaciones no deterministas en el autómata.
+### Minimización de Autómatas
+El algoritmo descripto para hallar el AFD equivalente a un AFND no nos asegura que el AFD que se construye sea el mínimo posible en términos de cantidad de estados y transiciones para reconocer un lenguaje.
+Para hallar el autómata mínimo equivalente a un AFD dado, se debe aplicar el algoritmo de Minimización de AFD:
+![[imgs/minimizacion de automatas.png| center]]
+##### Descripción del algoritmo
+1. **Partición inicial P en dos grupos $G'(F), G''(Q-F)$**: separar el conjunto cociente $P$, en dos subconjuntos de estados potencialmente equivalentes, el de los estados finales y el de los estados no finales.
+2. **Para cada $G$ de $P$ (con más de un estado) obtener una nueva $P_{n}$** de modo que:
+	1. $\forall q_{i}q_{j} \in G_{i}⇔\forall \alpha\in \sum / f(q_{i}, \alpha), f(q_{j}, \alpha) \in G$ o sea que la transición va hacia el mismo grupo de P
+	2. sustituir $G$ en $P_{n}$ por el nuevo conjunto de subgrupos
+	Aquí se pide que para cada par de estados en cada una de las clases de equivalencia $G_{i}$ (que tenga más de un estado), se evalúe si son equivalentes. Dos estados son equivalentes, si partiendo de ellos; y para cada uno de los símbolos del alfabeto, transitan hacia un estado de la misma clase de equivalencia $G$.
+3. **Si $P_{n}=P$ (o indistinguible) entonces $P_{final}:=P$ e ir a (5.)**: si ya terminé de evaluar todas las posbiles equivalencias.
+4. **Sino $P := P_{n}$ e ir a (2.)**
+5. **Elegir en cada grupo de $P_{final}$, un $q_{i}$ como representante del grupo**: armo el autómata mínimo, tomando un estado de cada clase de equivalencia como representante.
+
+La aplicación del algoritmo que hemos explicado aplicando sus pasos sobre la matriz de transición, puede realizarse también trabajando directamente sobre el dígrafo.
+![[imgs/minimizacion de automatas2.png| center]]
+Lo que hacemos es delimitar las particiones en el grafo (marcando regiones que agrupan a los nodos de una misma partición), y luego observar que transiciones salen de una región hacia otra.
+#### Ejemplo
+![[imgs/ejemplo minimizacion de automatas.png| center]]
