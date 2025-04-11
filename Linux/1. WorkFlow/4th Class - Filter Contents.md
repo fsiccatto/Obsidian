@@ -53,6 +53,7 @@ sync:x:4:65534:sync:/bin:/bin/sync
 postgres:x:111:117:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
 user6:x:1000:1000:,,,:/home/user6:/bin/bash
 ```
+La barra `\` significa que `|` no es un caracter como tal, sino que hace alusión a 'o'.
 
 ## Cut
 Specific results with different characters may be separated as delimiters. Here it is handy to know how to remove specific delimiters and show the words on a line in a specified position. One of the tools that can be used for this is `cut`. Therefore we use the option "`-d`" and set the delimiter to the colon character (`:`) and define with the option "`-f`" the position in the line we want to output.
@@ -129,3 +130,24 @@ fsiccatto@htb[/htb]$ cat /etc/passwd | grep -v "false\|nologin" | tr ":" " " | a
 
 6
 ```
+
+## Ejemplo
+```bash
+ss -l -4 | grep -v "127\.0\.0" | grep "LISTEN"
+```
+1. **`ss -l -4`**: Muestra sockets **escuchando** (`-l`) usando **IPv4** (`-4`).
+2. **`grep -v "127\.0\.0"`**:
+	- `grep -v`: excluye las líneas que coincidan.
+	- `"127\.0\.0"`: busca direcciones en el **loopback local** (localhost).
+	- El **`\.`** es necesario para que `.` no se interprete como _cualquier carácter_ en la expresión regular. Es decir, `127.0.0` literalmente.
+##### Localhost
+- **`localhost`** es un nombre que apunta a la IP **`127.0.0.1`**.
+- Es la forma en que una máquina se refiere a **sí misma**.
+- Solo puede ser accedido **desde la misma máquina**, **no desde otras computadoras**.
+Significa que un servicio (como una base de datos, un servidor web, etc.) está **escuchando solo en `127.0.0.1`**, por lo tanto:
+✅ Puede ser accedido desde esa misma máquina.  
+❌ No puede ser accedido desde otra PC en la red o desde internet.
+
+Supongamos que tenés un servidor MySQL.
+- Si está escuchando en `127.0.0.1:3306`, solo podés conectarte **desde tu propia máquina**.
+- Si está en `0.0.0.0:3306`, acepta conexiones desde **cualquier IP**, incluso otras máquinas en tu red o desde internet (si está permitido por firewall).

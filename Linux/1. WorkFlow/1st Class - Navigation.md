@@ -1,24 +1,25 @@
-# CD (change directory)
+# Navigation
+## CD (change directory)
 - . (current directory). This is the directory you are currently in.
 - .. (parent directory). Takes you to the directory above your current.
 - ~ (home directory). This directory defaults to your “home directory”. Such as /home/pete.
 -  - (previous directory). This will take you to the previous directory you were just at.
-# LS (list directions)
+## LS (list directions)
 list directory contents. The ls command will list directories and files in the current directory by default, however you can specify which path you want to list the directories of.
 - -a flag to see files which are not visible
 - -l long format list
 - -la both flags
-# TOUCH
+## TOUCH
 Touch allows you to the create new empty files.
 `touch mysuperduperfile`
-# FILE
+## FILE
 To find out what kind of file a file is, you can use the file command. It will show you a description of the file’s contents. In linux, filenames aren't requiered to represent the contents of the file
 `file asf.jpg`
-# CAT
+## CAT
 It not only displays file contents but it can combine multiple files and show you the output of them.
 `cat dogfile birdfile`
 It's recommend for short files
-# LESS
+## LESS
 The text is displayed in a paged manner, so you can navigate through a text file page by page.
 `$ less /home/pete/Documents/text1`
 Use the following command to navigate through less:
@@ -28,10 +29,10 @@ Use the following command to navigate through less:
 - G - Moves to the end of the text file.
 - /search - You can search for specific text inside the text document. Prefacing the words you want to search with /
 - h - If you need a little help about how to use less while you’re in less, use help
-# HISTORY
+## HISTORY
 With history we can see all the commands that we previously entered.
 With clear we clear up our display
-# CP (copy)
+## CP (copy)
 Let’s start making some copies of these files. Much like copy and pasting files in other operating systems, the shell gives us an even simpler way of doing that.
 `$ cp mycoolfile /home/pete/Documents/cooldocs`
 mycoolfile is the file you want to copy and /home/pete/Documents/cooldocs is where you are copying the file to.
@@ -45,7 +46,7 @@ This will copy all files with the .jpg extension in your current directory to th
 `$ cp -r Pumpkin/ /home/pete/Documents`
 You can use the -i flag (interactive) to prompt you before overwriting a file.
 `$ cp -i mycoolfile /home/pete/Pictures`
-# MV (move)
+## MV (move)
 Used for moving files and also renaming them. Quite similar to the cp command in terms of flags and functionality.
 You can rename files like this:
 `$ mv oldfile newfile`
@@ -64,12 +65,12 @@ Like `cp`, if you `mv` a file or directory it will overwrite anything in the sam
 
 Let’s say you did want to `mv` a file to overwrite the previous one. You can also make a backup of that file and it will just rename the old version with a `~`.
 `$ mv -b directory1 directory2`
-# MKDIR (make directory)
+## MKDIR (make directory)
 The mkdir command (Make Directory) will create a directory if it doesn’t already exist. You can even make multiple directories at the same time.
 `$ mkdir books paintings`
 You can also create subdirectories at the same time with the -p (parent flag).
 `$ mkdir -p books/hemmingway/favorites`
-# RM (remove)
+## RM (remove)
 To remove files you can use the rm command. The rm (remove) command is used to delete files and directories.
 `$ rm file1`
 Take caution when using rm, there is no magical trash can that you can fish out removed files. Once they are gone, they are gone for good, so **be careful**.
@@ -86,7 +87,7 @@ You can’t just rm a directory by default, you’ll need to add the -r flag (re
 
 You can remove a directory with the rmdir command.
 `$ rmdir directory`
-# FIND
+## FIND
 A command for find a file
 `$ find /home -name puppies.jpg`
 With find you’ll have to specify the directory you’ll be searching it, what you’re searching for, in this case we are trying to find a file by the name of puppies.jpg.
@@ -96,11 +97,10 @@ You can specify what type of file you are trying to find.
 You can see that I set the type of file I’m trying to find as (d) for directory and I’m still searching by the name of MyFolder.
 
 One cool thing to note is that find doesn’t stop at the directory you are searching, it will look inside any subdirectories that directory may have as well.
-# HELP
+## HELP
 help, is a built-in bash command that provides help for other bash commands (echo, logout, pwd, etc).
 `$ help echo
 This will give you a description and the options you can use when you want to run echo. For other executable programs, it’s convention to have an option called --help or something similar.
 
 `$ echo --help`
 Not all developers who ship out executables will conform to this standard, but it’s probably your best shot to find some help on a program.
-#
