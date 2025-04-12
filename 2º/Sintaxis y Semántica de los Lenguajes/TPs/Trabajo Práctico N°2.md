@@ -100,7 +100,7 @@ $$
 
 |                   | a                 | b       | c            |
 | :---------------- | :---------------- | :------ | ------------ |
-| $\{  \}$          |                   |         |              |
+| $\{  \}$          | $-$               | $-$     | $-$          |
 | $q_{0}$           | $q_{0}q_{1}q_{2}$ | $q_{2}$ | $q_{1}$      |
 | $q_{1}$           | $-$               | $-$     | $q_{2}$      |
 | $q_{2}$           | $-$               | $q_{2}$ | $q_{1}$      |
@@ -108,4 +108,28 @@ $$
 | $q_{0}q_{2}$      | $q_{0}q_{1}q_{2}$ | $q_{2}$ | $q_{1}$      |
 | $q_{1}q_{2}$      | $-$               | $q_{2}$ | $q_{1}q_{2}$ |
 | $q_{0}q_{1}q_{2}$ | $q_{0}q_{1}q_{2}$ | $q_{2}$ | $q_{1}q_{2}$ |
+![[tp2ej11 1.png | center | 250]]
+12. Obtenga el AFD equivalente para el siguiente AFND, dibuje el autómata AFD indicando a cuáles nodos del AFND, representa cada nodo. Describa la tabla completa de transiciones $P(Q)$.
+![[tp2ej12.png | center | 250]]
 
+|                   | a                 | b            | Eliminar |
+| :---------------- | :---------------- | :----------- | -------- |
+| $\{  \}$          | $-$               | $-$          | X        |
+| $q_{0}$           | $q_{0}q_{1}q_{2}$ | $-$          | >        |
+| $q_{1}$           | $q_{2}$           | $q_{1}$      |          |
+| $q_{2}$           | $-$               | $q_{1}$      | \*       |
+| $q_{0}q_{1}$      | $q_{0}q_{1}q_{2}$ | $q_{1}$      | X        |
+| $q_{0}q_{2}$      | $q_{0}q_{1}q_{2}$ | $q_{1}$      | X        |
+| $q_{1}q_{2}$      | $q_{0}$           | $q_{1}q_{2}$ | X        |
+| $q_{0}q_{1}q_{2}$ | $q_{0}q_{1}q_{2}$ | $q_{1}q_{2}$ | \*       |
+![[tp2ej12 1.png | center]]
+13. Obtenga el $AFD_{min}$ equivalente al siguiente AFD. Indique la secuencia de particiones obtenidas y dibuje el el AFD resultante.
+![[tp2ej13.png | center | 250]]
+$$
+\begin{align}
+G_{0} = &  \{ q_{0},q_{1},q_{2},q_{3} \} \\
+G_{0} = & \{ q_{3} \} \quad G_{1} = \{ q_{0},q_{1},q_{2} \} \\
+\text{por a} \to G_{0} =  & \{ q_{3} \} \quad G_{1} = \{ q_{0},q_{2} \} \quad G_{2} = \{ q_{1} \}
+\end{align}
+$$
+## Autómatas de pila
