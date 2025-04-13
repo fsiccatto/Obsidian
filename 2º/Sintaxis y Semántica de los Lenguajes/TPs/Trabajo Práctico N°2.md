@@ -133,4 +133,9 @@ G_{0} = & \{ q_{3} \} \quad G_{1} = \{ q_{0},q_{1},q_{2} \} \\
 \end{align}
 $$
 ## Autómatas de pila
-15. 
+15. Defina el $APD=\{Q,\sum,\Gamma,\delta,q_{0},z_{0} \}$, donde $Q={q_{0},q_{1},q_{2}}$, $\sum=\{a,b,c\}$, $\Gamma = \{\#,z_{0}\}$, quereconoce el lenguaje $L =\{a^{n}b^{n}c / n \geq 1\}$ por vaciado de pila.
+16. Defina el $APD=\{Q,\sum,\Gamma,\delta,q_{0},z_{0} \}$, donde $Q={q_{0},q_{1},q_{2}}$, $\sum=\{a,b,c\}$, $\Gamma = \{\#,z_{0}\}$, quereconoce el lenguaje $L =\{a^{n}b^{2n}c / n \geq 1\}$  por vaciado de pila y por alcanzar el estado final.
+17. Defina el APD que reconoce el lenguaje $L =\{X^{n}Y^{n} / n \geq 0\}$  por vaciado de pila y por alcanzar el estado final.
+18. Indique si los siguientes AP son Deterministas ó No Deterministas. Justifique.
+![[tp2ej18.png | center]]
+19. Dada la gramática independiente del contexto $G=\left( N,\sum,P,S \right)$, donde $N=\{S,A,B\}$, $\sum=\{0,1,c\}$ y $P=\{S \to 0S0 | 1S1 | cA; A \to cB; B \to ca | \epsilon\}$, aplique el algoritmo de la transformación para obtener el APND que reconoce el lenguaje $L={w.(c)^{2n}.w^{-1} / w \in \{0,1\}^{*}, n>=1}$.
