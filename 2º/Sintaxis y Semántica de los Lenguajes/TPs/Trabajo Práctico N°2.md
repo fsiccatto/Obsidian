@@ -133,3 +133,4 @@ G_{0} = & \{ q_{3} \} \quad G_{1} = \{ q_{0},q_{1},q_{2} \} \\
 \end{align}
 $$
 ## Autómatas de pila
+15. 
