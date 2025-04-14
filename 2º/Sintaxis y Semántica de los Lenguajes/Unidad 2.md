@@ -238,3 +238,138 @@ La aplicación del algoritmo que hemos explicado aplicando sus pasos sobre la ma
 Lo que hacemos es delimitar las particiones en el grafo (marcando regiones que agrupan a los nodos de una misma partición), y luego observar que transiciones salen de una región hacia otra.
 #### Ejemplo
 ![[imgs/ejemplo minimizacion de automatas.png| center]]
+
+---
+## Autómatas de Pila
+Un AP también trabaja con un conjunto finito de estados y transiciones entre estados, pero agrega al modelo, una **pila de desplazamiento descendente** (LIFO o Push-Down) que aumenta el poder de reconocimiento de la máquina.
+
+> [!info] Definición
+> $$
+> \begin{align}
+> AP  & = \left( \sum, \Gamma, Q, a_{0},q_{0},F,f \right) \\ \\
+> 
+> \sum  & \to \text{ alfabeto de entrada} \\
+> \Gamma &  \to \text{ alfabeto de pila}  \\
+> Q  &  \to  \text{ conjunto de estados} \\
+> a_{0}  &  \to \text{ simbolos incial pila} \\
+> q_{0}  &  \to \text{ estado inicial} \\
+> F  &  \to \text{ estados finales} \\
+> f  & \to Q x \left( \sum \cup \epsilon \right) x \Gamma \to Q x \Gamma
+> \end{align}
+> $$
+> **Descripción o configuración instantánea**: terna $(q,x,z)$ que define el estado del autómata donde $q \in Q,x \in \sum, z \in \Gamma$.
+> **Movimiento**: paso de una descripción instantánea a otra por la aplicación de $f$.
+> **Símbolo distinguido**: $\sim \left( w\in \sum \right) \wedge \sim(w \in \Gamma)$ resuelve casos especiales (por ej. intedeterminismo).
+> 
+> Reconocimiento por:
+> - **vaciado de pila** -> $Lvp(M)=w\in \sum ^{*}/(q_{0},w,a_{0}) \to (p,\epsilon,\epsilon)/p\in Q$
+> - **estado final** -> $Lep(M)=w\in \sum ^{*}/(q_{0},w,a_{0}) \to (p,\epsilon,h)/p\in F,h\in\Gamma^{*}$
+> <mark style="background: #FF5582A6;">Los lenguajes reconocidos pueden ser diferentes.</mark>
+
+La **función de transición** de estados se define como:
+$$
+f:Q x \left( \sum e \cup \lambda \right)x\Gamma\to P\left( Qx\sum {^{*}} \right)
+$$
+Es decir, por cada estado, símbolo de entrada o palabra vacía (), y símbolo en la cima de la pila; se determina la transición a otro estado y se decide qué se debe escribir en la pila.
+El autómata tiene una cabeza lectora posicionada en cada momento en un símbolo de la cinta de entrada. Esta **cabeza lectora sólo puede moverse hacia la derecha** y termina de moverse cuando llega al final de la cinta. También **puede quedarse parada** durante un tiempo a mitad de cinta, que corresponde a realizar las transiciones con la **palabra vacía $\lambda$**.
+
+#### Movimientos
+Los movimientos del autómata pueden ser de dos formas:
+1. Se lee un símbolo de entrada y se lee el símbolo superior en la pila. Con base en ambas entradas, la máquina pasa a un nuevo estado y escribe cero o más símbolos en la pila. Para este primer tipo de movimiento, las transiciones se describirían de forma genérica como:
+	![[imgs/movimiento1.png| center]]
+2. No se lee ningún símbolo en la entrada, pero se lee un símbolo superior en la pila. Con base a esta entrada, la máquina se mueve a un nuevo estado y escribe cero o más símbolos en la pila, pero la cabeza lectora no se mueve. Para este segundo tipo de movimiento, las transiciones se describirían de forma genérica como:
+	![[imgs/movimiento2.png| center]]
+> [!example] Descripción de autómatas de pila
+> ![[imgs/ejemplo AP.png| center]]
+> ![[imgs/ejemplo AP2.png| center | 150]]
+> La flecha indica la posición de la cabeza lectora en la máquina. La flecha avanza hacia la derecha al transitar de un estado (e0,e1, etc.) cuando se procesa un símbolo. Cuando la cabeza lectora no avanza, implica que no se leyó ningún símbolo en la entrada.
+> 
+> Otro ejemplo, sobre un autómata similar que reconoce el lenguaje $a^{n}b^{n}$, para la cadena $aaabbb$.
+> ![[imgs/ejemplo AP3.png| center]]
+#### Reconocimiento en los AP
+Según sus reglas para aceptar o rechazar una cadena, los AP se clasifican en **Lvp (reconocimiento por Vaciado de Pila)** o **Lef (reconocimiento por Estado Final)**.
+La cadena será aceptada por el autómata cuando: 
+1. Se pueda transitar desde el estado inicial hasta algún estado (no necesariamente uno final) y tanto la cadena de entrada como la pila estén vacías. **Vaciado de Pila**.
+2. Se pueda transitar desde el estado inicial hasta un estado final y la cadena de entrada haya sido completamente procesada, independientemente del estado de la pila. **Por estado final**.
+ 
+Se puede demostrar que<mark style="background: #BBFABBA6;"> dado un Lvp, es posible encontrar un Lef equivalente y viceversa</mark>. Es decir, dado un Lvp encontrar un Lef que reconozca el mismo lenguaje y viceversa.
+### Autómatas de Pila Deterministas
+![[imgs/APD.png| center]]
+Se define a un **AP no determinista** (APND) siguiendo el mismo criterio con que definimos los AFND. Es decir, tenemos en cuenta que no existan dos o más transiciones desde un mismo estado, para un mismo símbolo leído en la cadena de entrada y un mismo símbolo leído en la cima de la pila (es decir dos transiciones con la misma configuración en el dominio); que transiten hacia estados diferentes y/o escriban símbolos diferentes en la pila (con diferentes imágenes).
+
+> [!example] Ejemplo APD
+> Reconocer lenguaje $ww^{R}$
+> ![[imgs/ejemplo APD.png| center]]
+> El **símbolo distinguido** $\$$, es un símbolo especial, que aunque no pertenece realmente a la cadena de entrada, se supone que estará dado en aquel punto que permita simplificar el diseño de la máquina. En nuestro caso, permite diferenciar donde termina la palabra w y comienza su inversa $w^{R}$
+
+### Relación entre AP <-> G2
+Las imagen siguiente confirma esta relación, proponiendo un algoritmo para pasar de una gramática G2->AP a un autómata de pila que reconozca el mismo lenguaje que la G2 describe.
+![[imgs/G2 a AP.png| center]]
+
+Dada una G2, se puede construir un APND que reconoce por vaciado de pila y por alcanzar el estado final, con cuatro estados (obviamente no será el óptimo ni determinista) aplicando las reglas establecidas en la imagen, las cuáles proponen:
+1. El alfabeto de la gramática $\Sigma$, será el alfabeto de símbolos terminales del autómata $\Sigma_T$.
+2. El alfabeto de pila en el autómata $\Gamma$ será el conjunto de símbolos formados por la unión de los símbolos terminales y no terminales de la gramática, más el símbolo $\#$ ($\Sigma_T \cup \Sigma_N \cup \{\#\}$).
+3. El autómata tendrá un conjunto fijo de estados $Q$ con 4 estados $i$, $p$, $q$ y $f$ (donde $f$ es el estado final).
+4. Se deberá agregar una transición $(\lambda, \lambda, \#)$ desde el estado inicial $i$, al estado $p$, en la cual no se procese ningún símbolo en la cadena de entrada, no se lea nada en la pila y sólo se escriba $\#$ en la pila.
+5. Se deberá agregar una transición $(\lambda, \lambda, S)$ desde el estado $p$ al estado $q$, en la cual no se procese ningún símbolo en la cadena de entrada, no se lea ningún símbolo en la pila y se escriba el axioma $S$ en la pila.
+6. Para toda regla de la forma $N \rightarrow w$ en la gramática, construir una transición de la forma $f(q, \varepsilon, N) = (q, w)$ en el autómata. Es decir, partiendo del estado $q$, no leo nada en la cinta de entrada, si hay un símbolo $N$ en la cima de la pila, transita al mismo estado $q$ y escriba la cadena de símbolos $w$ en la pila. Se debe observar que $w$ es una palabra que puede estar formada por terminales y no terminales ($w \in (\Sigma_T \cup \Sigma_N)^*$).
+7. Para todo símbolo terminal $x \in \Sigma$ en la gramática, construir en el autómata una transición de la forma $f(q, x, x) = (q, \varepsilon)$. Es decir, partiendo del estado $q$, si en la cinta de entrada se lee el símbolo $x$ y en la cima de la pila está el mismo símbolo $a$, eliminar el símbolo de la pila.
+
+> [!example] Ejemplo
+> ![[imgs/ejemplo g2 a ap.png| center]]
+> ![[imgs/ejemplo g2 a ap2.png]]
+
+⚠**Importante**: se debe tener en cuenta que los AP son más poderosos que los AEF, pero también son más difíciles de implementar, por lo tanto, siempre que el reconocimiento pueda hacerse con un AEF conviene usar estas máquinas.
+## Máquinas de Turing
+Las máquinas de Turing son el tipo más general o menos restrictivo de Autómata, puesto que son capaces de reconocer los lenguajes generados por las gramáticas **Tipo 0** o **Irrestrictas**.
+> [!info] Definición Máquinas de Turing
+> 
+> $$
+> \begin{align}
+> AP  & = \left( \Sigma, \Gamma, b, Q,q_{0},F,f \right) \\ \\
+> \Sigma  & \to \text{ alfabeto de entrada} \subset \Gamma \\
+> \Gamma &  \to \text{ alfabeto de simbolos de la cinta}  \\ 
+> b  & \to \text{ blanco} \in \Gamma ~\nexists~ \Sigma \\
+> Q  &  \to  \text{ conjunto de estados} \\
+> q_{0}  &  \to \text{ estado inicial} \in Q \\
+> F  &  \to \text{ estados finales} \subset Q\\
+> f  & \to Q x \Gamma \to Q x \Gamma x IDP
+> \end{align}
+> $$
+> ![[imgs/maquina de turing.png| center]]
+
+Básicamente, esta máquina permite leer la cinta de entrada en dos sentidos a izquierda y a derecha; además de permitir escribir, al mismo tiempo, en la cinta de entrada, que ahora será de Entrada/Salida.
+
+⚠**Importante**: Se debe destacar de la definición que: 
+- Se considera que la cinta de entrada para una MT, está precedida y seguida por una cantidad indefinida de espacios en blanco, representados por $b$. 
+- No se aceptan espacios en blanco en el medio en la cinta original de entrada.
+
+Una **transacción genérica** para una MT será de la forma:
+![[imgs/MT.png| center]]
+##### Ejemplo
+MT que implementa un duplicador de cadenas de unos. Es decir, si se ingresa una cadena 11, obtiene la cadena duplicada 1111.
+![[imgs/Duplicador.png| center]]
+$$
+\begin{align}
+q_0 &\quad \dots bbb\underline{1}bbb\dots \\
+q_0 &\quad \dots bbb\underline{\$}1bbb\dots \\
+q_0 &\quad \dots bbb\$\$\underline{b}bb\dots \\
+q_1 &\quad \dots bbb\$\underline{\$}bbb\dots \\
+q_2 &\quad \dots bbb\$1\underline{b}bb\dots \\
+q_1 &\quad \dots bbb\$\underline{1}1bb\dots \\
+q_1 &\quad \dots bb\$11bbb\dots \\
+q_2 &\quad \dots bb1\underline{1}1bbb\dots \\
+q_2 &\quad \dots bb11\underline{1}bbb\dots  \\
+q_2 &\quad \dots bbb111\underline{b}b\dots \\
+q_1 &\quad \dots bbb11\underline{1}1b\dots \\
+q_1 &\quad \dots bbb1\underline{1}11b\dots \\
+q_1 &\quad \dots bbb\underline{1}111b\dots \\
+q_1 &\quad \dots bb\underline{b}1111b\dots \\
+q_3 &\quad \dots bbb\underline{1}111b\dots \\
+\end{align}
+$$
+Turing demostró que si para un problema particular, se puede encontrar una MT que lo modele; entonces el problema es “**computable**”; lo que implica que se puede construir un algoritmo que lo resuelva.
+### Autómatas Linealmente Acotados
+Los autómatas linealmente acotados (ALA), son un tipo particular de Máquina de Turing que sirven para reconocer lenguajes generados por gramáticas G1 o dependientes del contexto.
+![[imgs/ALA.png| center]]
+En este tipo de autómata la cinta es finita y está acotado por los dos lados. Para ello, se definen dos símbolos especiales que delimitan el principio y el final de la cinta. Además, la cabeza lectora no podrá ir más a la izquierda que el símbolo que delimita a la izquierda, ni más a la derecha que el símbolo que delimita a la derecha.
