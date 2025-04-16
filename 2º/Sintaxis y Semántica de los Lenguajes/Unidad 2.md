@@ -300,7 +300,7 @@ Se define a un **AP no determinista** (APND) siguiendo el mismo criterio con que
 > [!example] Ejemplo APD
 > Reconocer lenguaje $ww^{R}$
 > ![[imgs/ejemplo APD.png| center]]
-> El **símbolo distinguido** $\$$, es un símbolo especial, que aunque no pertenece realmente a la cadena de entrada, se supone que estará dado en aquel punto que permita simplificar el diseño de la máquina. En nuestro caso, permite diferenciar donde termina la palabra w y comienza su inversa $w^{R}$
+> El **símbolo distinguido** $\$$, es un símbolo especial, que aunque no pertenece realmente a la cadena de entrada, se supone que estará dado en aquel punto que permita simplificar el diseño de la máquina. En nuestro caso, permite diferenciar donde termina la palabra $w$ y comienza su inversa $w^{R}$
 
 ### Relación entre AP <-> G2
 Las imagen siguiente confirma esta relación, proponiendo un algoritmo para pasar de una gramática G2->AP a un autómata de pila que reconozca el mismo lenguaje que la G2 describe.
