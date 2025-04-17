@@ -56,6 +56,7 @@ Para su estudio se realizan los siguientes pasos:
 4. El Modelo se emplea para simular como un laboratorio.
 5. La estructura se modifica hasta que sus componentes y el comportamiento resultante coincidan con el comportamiento observado.
 6. Se modifican las decisiones que puedan ser introducidas en el modelo de simulación hasta encontrar decisiones aceptables.
+
 Este enfoque, comparado con otros, es el **análisis de los efectos de los bucles o ciclos de retroalimentación**.
 > [!attention] Dinámica de Sistemas
 > Se destacan dos herramientas:
