@@ -108,7 +108,8 @@ $$
 ### Consideraciones importantes
 Reglas a tener en cuenta:
 - Evitar bucles ficticios (no válidos).
-- Emplear elementos caracterizables por números (no abstracciones). No emplear dos veces la misma relación.
+- Emplear elementos caracterizables por números (no abstracciones).
+- No emplear dos veces la misma relación.
 - Evitar bucles redundantes.
 - No emplear el tiempo como factor causal.
 - Los elementos deben ser variables cuyo valor puede variar con el tiempo. 
