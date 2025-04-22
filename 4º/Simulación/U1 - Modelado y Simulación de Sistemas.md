@@ -25,7 +25,7 @@ La finalidad de la simulación no es optimizar, sino comparar los distintos esce
 - El desarrollo de un modelo puede ser costoso, laborioso porque requiere validación y desarrollo
 ### Consideraciones a tener en cuenta para modelar
 - Tamaño insuficiente de la corrida -> para llegar a conclusiones estadísticas válidas es necesario que las variables aleatorias de respuesta se encuentren en estado estable. El problema es que si tenemos más de una variable, no pueden estar todas estables
-- Variables de respuesta mal definidas -> si la variable de respuesta seleccionada no es la apropiada, será imposible tomar decisioens que tengan impacto en la operación
+- Variables de respuesta mal definidas -> si la variable de respuesta seleccionada no es la apropiada, será imposible tomar decisiones que tengan impacto en la operación
 - Errores al determinar el tipo de distribución asociado a las variables aleatorias del modelo -> Falta de un análisis estadístico de los resultados. Un problema común por el que la simulación suele ser objeto de crítica, radica en asumir que se trata de una herramienta de optimización
 - Uso incorrecto de la información obtenida -> la información no siempre está en el formato y presentación que se requiere para la simulación
 - Falta o exceso de detalle
