@@ -122,7 +122,6 @@ cry0l1t3 /HTB/bash
 htb-student /HTB/bash
 ```
 
-
 ## Wc
 To avoid counting the lines or characters manually, we can use the tool `wc`. With the "`-l`" option, we specify that only the lines are counted.
 ```bash
