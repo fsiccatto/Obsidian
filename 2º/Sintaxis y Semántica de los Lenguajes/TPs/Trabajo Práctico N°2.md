@@ -15,10 +15,8 @@ $$
  \text{Expresion regular} =  & b{^*}ab{^*}a(a+b){^*} \\ \\
 f(q_{0}, a) = q_{1} \\
 f(q_{0}, b) = q_{0} \\ \\
-
 f(q_{1}, a) = q_{2} \\
 f(q_{1}, b) = q_{1} \\ \\
-
 f(q_{2}, a) = q_{2} \\
 f(q_{2}, b) = q_{2}
 \end{align}
@@ -37,10 +35,8 @@ $$
  \text{Expresion regular} =  & aa{^*}b(a|b){^*} \\ \\
 f(q_{0}, a) = q_{1} \\
 f(q_{0}, b) = - \\ \\
-
 f(q_{1}, a) = q_{1} \\
 f(q_{1}, b) = q_{2} \\ \\
-
 f(q_{2}, a) = q_{2} \\
 f(q_{2}, b) = q_{2}
 \end{align}
