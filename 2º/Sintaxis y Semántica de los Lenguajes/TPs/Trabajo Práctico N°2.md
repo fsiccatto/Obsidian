@@ -132,6 +132,8 @@ G_{0} = & \{ q_{3} \} \quad G_{1} = \{ q_{0},q_{1},q_{2} \} \\
 \text{por a} \to G_{0} =  & \{ q_{3} \} \quad G_{1} = \{ q_{0},q_{2} \} \quad G_{2} = \{ q_{1} \}
 \end{align}
 $$
+![[tp2ej13.png | center | 200]]
+
 ## Autómatas de pila
 15. Defina el $APD=\{Q,\sum,\Gamma,\delta,q_{0},z_{0} \}$, donde $Q={q_{0},q_{1},q_{2}}$, $\sum=\{a,b,c\}$, $\Gamma = \{\#,z_{0}\}$, quereconoce el lenguaje $L =\{a^{n}b^{n}c / n \geq 1\}$ por vaciado de pila.
 16. Defina el $APD=\{Q,\sum,\Gamma,\delta,q_{0},z_{0} \}$, donde $Q={q_{0},q_{1},q_{2}}$, $\sum=\{a,b,c\}$, $\Gamma = \{\#,z_{0}\}$, quereconoce el lenguaje $L =\{a^{n}b^{2n}c / n \geq 1\}$  por vaciado de pila y por alcanzar el estado final.
