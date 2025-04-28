@@ -136,6 +136,7 @@ $$
 
 ## Autómatas de pila
 15. Defina el $APD=\{Q,\sum,\Gamma,\delta,q_{0},z_{0} \}$, donde $Q={q_{0},q_{1},q_{2}}$, $\sum=\{a,b,c\}$, $\Gamma = \{\#,z_{0}\}$, quereconoce el lenguaje $L =\{a^{n}b^{n}c / n \geq 1\}$ por vaciado de pila.
+![[tp2ej15.png | center]]
 16. Defina el $APD=\{Q,\sum,\Gamma,\delta,q_{0},z_{0} \}$, donde $Q={q_{0},q_{1},q_{2}}$, $\sum=\{a,b,c\}$, $\Gamma = \{\#,z_{0}\}$, quereconoce el lenguaje $L =\{a^{n}b^{2n}c / n \geq 1\}$  por vaciado de pila y por alcanzar el estado final.
 17. Defina el APD que reconoce el lenguaje $L =\{X^{n}Y^{n} / n \geq 0\}$  por vaciado de pila y por alcanzar el estado final.
 ![[tp2ej17.png | center]]

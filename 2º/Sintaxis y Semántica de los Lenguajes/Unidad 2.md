@@ -254,7 +254,7 @@ Un AP también trabaja con un conjunto finito de estados y transiciones entre es
 > a_{0}  &  \to \text{ simbolos incial pila} \\
 > q_{0}  &  \to \text{ estado inicial} \\
 > F  &  \to \text{ estados finales} \\
-> f  & \to Q x \left( \sum \cup \epsilon \right) x \Gamma \to Q x \Gamma
+> f  & \to Q x \left( \sum \cup \space \epsilon \right) x \Gamma \to Q x \Gamma
 > \end{align}
 > $$
 > **Descripción o configuración instantánea**: terna $(q,x,z)$ que define el estado del autómata donde $q \in Q,x \in \sum, z \in \Gamma$.
@@ -270,7 +270,7 @@ La **función de transición** de estados se define como:
 $$
 f:Q x \left( \sum e \cup \lambda \right)x\Gamma\to P\left( Qx\sum {^{*}} \right)
 $$
-Es decir, por cada estado, símbolo de entrada o palabra vacía (), y símbolo en la cima de la pila; se determina la transición a otro estado y se decide qué se debe escribir en la pila.
+Es decir, por cada estado, símbolo de entrada o palabra vacía ($\lambda$), y símbolo en la cima de la pila; se determina la transición a otro estado y se decide qué se debe escribir en la pila.
 El autómata tiene una cabeza lectora posicionada en cada momento en un símbolo de la cinta de entrada. Esta **cabeza lectora sólo puede moverse hacia la derecha** y termina de moverse cuando llega al final de la cinta. También **puede quedarse parada** durante un tiempo a mitad de cinta, que corresponde a realizar las transiciones con la **palabra vacía $\lambda$**.
 
 #### Movimientos
