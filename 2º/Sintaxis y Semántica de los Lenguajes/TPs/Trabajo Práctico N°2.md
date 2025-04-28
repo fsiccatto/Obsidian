@@ -14,9 +14,11 @@ $$
 \begin{align} \\
  \text{Expresion regular} =  & b{^*}ab{^*}a(a+b){^*} \\ \\
 f(q_{0}, a) = q_{1} \\
-f(q_{0}, b) = q_{0} \\
+f(q_{0}, b) = q_{0} \\ \\
+
 f(q_{1}, a) = q_{2} \\
-f(q_{1}, b) = q_{1} \\
+f(q_{1}, b) = q_{1} \\ \\
+
 f(q_{2}, a) = q_{2} \\
 f(q_{2}, b) = q_{2}
 \end{align}
@@ -34,9 +36,11 @@ $$
 \begin{align} \\
  \text{Expresion regular} =  & aa{^*}b(a|b){^*} \\ \\
 f(q_{0}, a) = q_{1} \\
-f(q_{0}, b) = - \\
+f(q_{0}, b) = - \\ \\
+
 f(q_{1}, a) = q_{1} \\
-f(q_{1}, b) = q_{2} \\
+f(q_{1}, b) = q_{2} \\ \\
+
 f(q_{2}, a) = q_{2} \\
 f(q_{2}, b) = q_{2}
 \end{align}
@@ -51,12 +55,15 @@ $$
 7. Para la expresión regular $00^{*}1(1+00^{*}1)^{*}$ construya el AFD equivalente. Realice la descripción en forma gráfica, funcional y tabular.
    ![[imgs/tp2ej7.png | center | 200]]
 $$
-\begin{align} \\
-f(q_{0}, 1) = - \qquad f(q_{1}, 1) = q_{2} \\
-f(q_{0}, 0) = q_{1} \qquad f(q_{1}, 0) = q_{1} \\ \\
-
-f(q_{2}, 1) = q_{2} \qquad f(q_{3}, 1) = q_{2} \\
-f(q_{2}, 0) = q_{3} \qquad f(q_{3}, 0) = q_{3} \\
+\begin{align}
+f(q_{0}, 1) = - \\
+f(q_{0}, 0) = q_{1}  \\ \\
+f(q_{1}, 1) = q_{2} \\
+f(q_{1}, 0) = q_{1} \\ \\
+f(q_{2}, 1) = q_{2} \\
+f(q_{2}, 0) = q_{3}  \\ \\
+f(q_{3}, 1) = q_{2} \\
+f(q_{3}, 0) = q_{3} 
 \end{align}
 $$
 
