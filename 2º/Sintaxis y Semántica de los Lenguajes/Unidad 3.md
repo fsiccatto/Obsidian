@@ -95,3 +95,6 @@ Una solución alternativa y más eficiente a la implementación de reconocedores
   Aun así, algunos problemas no se pueden resolver de forma descendente. Es decir, existen muchos lenguajes que no son LL(k), para los cuáles no existe una gramática LL que los describa.
 
 ### Parser LR(1) Bottom-Up o Desplazamiento-Reducción
+
+## Arquitecturas de Traducción
+![[compilador vs interprete | center ]]
