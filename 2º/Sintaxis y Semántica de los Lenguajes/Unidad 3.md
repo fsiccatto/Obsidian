@@ -95,6 +95,64 @@ Una solución alternativa y más eficiente a la implementación de reconocedores
   Aun así, algunos problemas no se pueden resolver de forma descendente. Es decir, existen muchos lenguajes que no son LL(k), para los cuáles no existe una gramática LL que los describa.
 
 ### Parser LR(1) Bottom-Up o Desplazamiento-Reducción
+Construyen el árbol desde las hojas hacia la raíz, utilizando una técnica llamada
+desplazamiento-reducción (*Shift-Reduce*) que coincide con encontrar una derivación por derecha.
+![[bottom-up.png | center]]
+El **parser bottom-up** comienza por tomar la hoja más a la izquierda del árbol (tal como lo lee en la cadena de entrada, de izquierda a derecha) y buscar si la puede reemplazar por la parte derecha de una regla de producción en la gramática. Como no puede, sigue leyendo y agrupando los símbolos en la cadena de entrada (hojas del árbol) hasta que puede reemplazarlos por el lado derecho de una regla de producción en la gramática. El proceso de agrupar un símbolo tras otro sin hacer nada más, se llama **desplazamiento**, cuando se junta un grupo de símbolos que se puede sustituir por un no terminal a la derecha de una regla de producción se hace una **reducción**.
 
+> [!info] Características de los analizadores LR
+> - Eficiente análisis ascendente sin retroceso
+> - Detectan errores sintácticos rápidamente
+> - L = lee entrada *left-to-right*
+> - R = aplican derivaciones *rightmost* en sentido inverso
+> 	- k = número de símoblos de entrada por delante (*lookaheads*) que lee el analizador (gramática LR(k))
+> - Pueden construirse para la mayoría de las G2
+> - Complicados de construir
+
+---
+A continuación se ilustra comparativamente los procesos de derivación **MI** (más a la izquierda) y **MD** (más a la derecha) para expresiones aritméticas. La cadena se lee siempre de izquierda a derecha. En MI, se deriva siempre el **no terminal más a la izquierda**, mientras que en MD se deriva siempre el **no terminal más a la derecha**.
+![[MD y MI.png | center | 300]]
+<mark style="background: #BBFABBA6;">En cuanto hayan entrado suficientes token para detectar la parte derecha de una regla de producción, sustituirlos (reducirlos) por su parte izquierda.</mark>
+
+## Semánticas del Lenguaje
+La Semántica define el significado de las expresiones, enunciados
+y unidades de un programa.
+> [!info] Semánticas
+> Utilidad de las semánticas
+> 1. Definir "qué deben hacer" los enunciados de un lenguaje
+> 2. Implementar correctamente el lenguaje
+> 3. Desarrollar técnicas y herramientas de
+> 	1. Análisis y optimización, depuración, verificación, etc.
+> 4. Ayudar a "razonar sobre el funcionamiento" de los programas
+
+La implementación de la semántica puede ser de dos tipos:
+- **Semántica Estática**: reúne a todos aquellos aspectos semánticos de un
+lenguaje que se calculan, se resuelven o se deciden en tiempo de compilación.
+	- Correspondencia de la signatura de funciones
+	- Accesos a variables consistentes con su declaración
+	- Que identificadores y expresiones sean evaluables
+	- Que el *left-side* sea asignable
+	- Compatibilidad de expresiones y operadores
+	- Accesibilidad de las variables según su alcance
+	- Uso de identificadores únicos
+- **Semántica Dinámica**: reúne a todos aquellos aspectos semánticos de un
+lenguaje que se calculan, se resuelven o se deciden en tiempo de ejecución.
+	- Punteros con referencias nulas
+	- Valores límites de subíndices de arreglos
+	- Consistencia en el pasaje de argumentos
+	- Errores de lógica que cambian la semántica de un enunciado no son detectables $x:=\frac{z}{y}, \text{ ¿y == 0?}$
+
+---
+
+> [!attention] Especificaciones de la semántica
+> Es deseable satisfacer características como:
+> - **No ambigüedad**: facilitar la creación de descripciones rigurosas
+> - **Demostración**: permitir la posterior demostración de propiedades de los programas escritos en el lenguaje especificado
+> - **Prototipado**: posibilitar obtener prototipos ejecutables de los lenguajes que se diseñan de forma automática
+> - **Modularidad**: realizar la especificación de forma incremental
+> - **Reusabilidad**: facilitar la reutilización de descripciones para diferentes lenguajes
+> - **Legibilidad**: ser legibles por personas con formaciones heterogéneas
+> - **Flexibilidad**: adaptarse a la variedad de lenguajes existentes
+> - **Experiencia**: ser capaz de describir lenguajes reales no sólo aquellos sencillos o experimentales
 ## Arquitecturas de Traducción
 ![[compilador vs interprete | center ]]
