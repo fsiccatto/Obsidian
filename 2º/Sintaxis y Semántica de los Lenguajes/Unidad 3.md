@@ -41,7 +41,7 @@ La sintaxis en los lenguajes de programación se especifica mediante gramáticas
 
 Un parser (o analizador sintáctico) se puede implementar mediante un Autómata de Pila que reconozca lenguajes independientes del contexto (G2).
 
-Para gramáticas **BNF no ambiguas** se han descubierto técnicas sencillas de análisis sintáctico que permiten construir parsers que reconocen en un tiempo lineal. Estos son los llamados **Analizadores Recursivos** -> proponen construir el árbol basándose en el reconocimiento de la cadena de entrada de <mark style="background: #FFB86CA6;">izquierda a derecha</mark>; y decidiendo en cada paso la regla gramatical que conviene elegir para continuar con la derivación.
+Para gramáticas **BNF no ambiguas** se han descubierto técnicas sencillas de análisis sintáctico que permiten construir *parsers* que reconocen en un tiempo lineal. Estos son los llamados **Analizadores Recursivos** -> proponen construir el árbol basándose en el reconocimiento de la cadena de entrada de <mark style="background: #FFB86CA6;">izquierda a derecha</mark>; y decidiendo en cada paso la regla gramatical que conviene elegir para continuar con la derivación.
 
 > [!question] ¿Cómo se implementa este proceso?
 > **Analizadores recursivos**

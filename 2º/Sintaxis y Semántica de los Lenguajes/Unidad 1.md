@@ -45,7 +45,7 @@ Se dice que una G2 es ***Estricta***, si cumple estrictamente con la restricció
 Las gramáticas del tipo 3 también denominadas regulares, lineales o normales comienzan sus reglas de producción por un símbolo terminal, que puede ser seguido o no por un símbolo no terminal, es decir son de la forma:
 $$\begin{align*}
  S &\to \alpha B \\
- S &\to \alpha \\
+ A &\to \alpha \\
  \end{align*}$$
  donde $S, A \in V_{N}$ y $\alpha \in V_{T}$.
  - Regulares por derecha: \<No Terminal> := \<Terminal>|\<Terminal>\<No Terminal>|$\lambda$
@@ -63,12 +63,12 @@ $$\begin{align*}
 > - **G1**
 > 	- Generan enunciados para lenguajes de programación, aunque las reglas se reducen a G2
 > 	- Diferentes significados según contexto
-> - G0 -> solo se usan de manera teórica y no son aplicables a los lenguajes de programación
+> - **G0** -> solo se usan de manera teórica y no son aplicables a los lenguajes de programación
 
 ## Árboles de derivación
 Son una forma de representar derivaciones. Se usan para definir árboles de derivación para gramáticas de tipo 1 o más restrictivas (tipos 2 y 3):
 - El axioma se representa en la raíz del árbol
-- Los nodos hojas del árbols son símbolos terminales de la gramática
+- Los nodos hojas del árbol son símbolos terminales de la gramática
 - Los nodos intermedios son símbolos no terminales de la gramática
 - Las derivaciones se representan creando tantos sucesores del símbolo no terminal de la izquierda como símbolos (T y N) aparezcan en la parte derecha de las producciones.
 ![[imgs/arboles de derivacion.png| center]]
