@@ -89,7 +89,8 @@ function saludo(nombre) {
 }
 ```
 
-3. Trabaje en ANTLR Lab con la gramática ANTLR4 del lenguaje C, para obtener los árboles de análisis sintáctico de los siguientes enunciados. A partir del árbol generado, identifique si hay algún error léxico o sintáctico, e identifique en qué etapa se detecta (lexer o parser). ANTLR Lab se encuentra disponible en línea en https://antlr.org
+3. Trabaje en ANTLR Lab con la gramática ANTLR4 del lenguaje C, para obtener los árboles de análisis sintáctico de los siguientes enunciados. A partir del árbol generado, identifique si hay algún error léxico o sintáctico, e identifique en qué etapa se detecta (lexer o parser). 
+Error `?`. Se detecta en la etapa de *lexer*
 ``` C
 int miFunc() {
 	int * ?ptr,
@@ -97,13 +98,16 @@ int miFunc() {
 	ptr = &x;
 }
 ```
+![[imgs/tp3ej 3 1.png]]
 
+Error en la función `printf()` ya que no tiene los paréntesis. Etapa *parser*
 ``` C
 int main() {
 	printf "Hola, mundo!";
 }
 ```
-
+![[imgs/tp3ej3 2.png | center]]
+Error en la palabra reservada `if`. Error detectado por *lexer*
 ``` C
 int main(){
 	while(true){
@@ -112,7 +116,8 @@ int main(){
 	}
 }
 ```
-
+![[imgs/tp3ej3 3.png| center]]
+No hay errores
 ``` C
 int main() {
 	switch(1) {
@@ -121,7 +126,7 @@ int main() {
 	}
 }
 ```
-
+![[imgs/tp3ej3 4.png| center]]
 4. Exprese la siguiente gramática EBNF como una gramática en notación ANTLR4; y genere en ANTLR Lab los árboles de derivación para 2 expresiones válidas en la gramática.
 ![[imgs/tp3ej4.png | center]]
 
