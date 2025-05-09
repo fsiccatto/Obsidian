@@ -133,7 +133,7 @@ int main() {
 ## Análisis Top-Down y Bottom-Up
 6. Identifique cuales de las siguientes gramáticas cumplen los requisitos de una gramática LL(1). En caso contrario indique qué requisitos no se cumplen en cada caso y qué tipo de transformaciones deberían aplicarse.
 ![[imgs/tp3ej6.png | center]]
-7. 
+7. Define en ANTLR4, una gramática LL(1), que describa la sintaxis de las sentencias de declaración y asignación de variables en JavaScript.
 8. Dada la siguiente gramática, aplica una estrategia de análisis LR(1) para construir el árbol de derivación de la cadena “cbba” de manera ascendente (bottom-up). En cada paso, determina el símbolo leído en la entrada, el estado de la pila y el estado del árbol (o las reducciones aplicadas).
 $$
 \begin{align}

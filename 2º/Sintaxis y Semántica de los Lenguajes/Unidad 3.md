@@ -57,9 +57,9 @@ Para gramáticas **BNF no ambiguas** se han descubierto técnicas sencillas de a
 > 	- se basa en encontrar una derivación por derecha (LR)
 
 ### Parser LL(1) Top-Down o Predictivos
-Construyen el árbol desde la raíz hacia las hojas, determinando en cada paso que producción es más conveniente para expandir el nodo actual, basándose en el próximo token disponible en la cadena de entrada, de izquierda a derecha.
+Construyen el árbol desde la raíz hacia las hojas, determinando en cada paso que producción es más conveniente para expandir el nodo actual, basándose en el próximo *token* disponible en la cadena de entrada, de izquierda a derecha.
 
-Habitualmente, un parser recursivo descendente se implementa mediante un algoritmo que tiene: 
+Habitualmente, un *parser* recursivo descendente se implementa mediante un algoritmo que tiene: 
 ✔ Una subrutina para cada no terminal en la gramática.
 ✔ Un mecanismo para solicitar el input del próximo token proporcionado por el scanner.
 ✔ Una rutina para consumir ese token en la medida que se encuentra una regla de producción con la que empata o matchea.
