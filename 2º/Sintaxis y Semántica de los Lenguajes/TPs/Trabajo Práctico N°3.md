@@ -133,6 +133,67 @@ int main() {
 ## Análisis Top-Down y Bottom-Up
 6. Identifique cuales de las siguientes gramáticas cumplen los requisitos de una gramática LL(1). En caso contrario indique qué requisitos no se cumplen en cada caso y qué tipo de transformaciones deberían aplicarse.
 ![[imgs/tp3ej6.png | center]]
+
+$$
+\begin{align}
+S  & → A b | c D   \\
+A  & → S d | e F   \\
+D  & → A g | h   \\
+F  & → i | j
+\end{align}
+$$
+Tenemos recursividad a izquierda, por lo que ya no cumple con los requisitos de LL(1). Deberíamos eliminar la recursividad indirecta, reemplazando $S$ en $A$, para luego eliminar la recursividad a izquierda en $A$.
+
+---
+$$
+\begin{align}
+S  & → A B | A C  \\
+A  & → a | b  \\
+B  & → c | d  \\
+C  & → e | f
+\end{align}
+$$
+
+En este caso, no hay recursividad. Tampoco tenemos producciones con prefijos comunes. Por lo tanto, cumple con los requisitos y es una LL(1).
+
+---
+
+$$
+\begin{align}
+S  & → A B  \\
+A  & → a A' | ε  \\
+A'  & → a A' | ε  \\
+B  & → b B' | ε  \\
+B'  & → b B' | ε
+\end{align}
+$$
+No tenemos recursividad a izquierda. Tampoco tenemos problemas con producciones con prefijo común. Por lo que es una gramática de tipo LL(1).
+
+---
+
+$$
+\begin{align}
+S  & → A B | A C  \\
+A  & → a  \\
+B  & → b C  \\
+C  & → b | B
+\end{align}
+$$
+Podemos reescribir la gramática para $C$ y para $S$:
+$$
+\begin{align}
+S  & → A S'  \\
+S'  & → B | C  \\
+A  & → a  \\
+B  & → b C  \\
+C  & → b C'  \\
+C'  & → b C' | ε
+\end{align}
+$$
+Ahora sí vemos que no existe recursividad ni producciones con prefijo común. Por lo que es una LL(1).
+
+---
+
 7. Define en ANTLR4, una gramática LL(1), que describa la sintaxis de las sentencias de declaración y asignación de variables en JavaScript.
 8. Dada la siguiente gramática, aplica una estrategia de análisis LR(1) para construir el árbol de derivación de la cadena “cbba” de manera ascendente (bottom-up). En cada paso, determina el símbolo leído en la entrada, el estado de la pila y el estado del árbol (o las reducciones aplicadas).
 $$

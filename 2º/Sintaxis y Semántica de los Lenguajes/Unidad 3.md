@@ -77,7 +77,7 @@ Se puede resolver utilizando un **retroceso**. Los reconocedores Top-Down con re
 ![[imgs/analizador por izquierda con retroceso.png| center | 200]]
 En definitiva, si la gramática presenta producciones recursivas a izquierda, un analizador Top-Down/LL(1) **no** puede procesarla, por lo que es deseable buscar una gramática equivalente sin recursividad a izquierda.
 
-El segundo tipo de obstáculo que enfrentan los analizadores recursivos descendentes, son las producciones con prefijos comunes:
+El segundo tipo de obstáculo que enfrentan los analizadores recursivos descendentes, son las **producciones con prefijos comunes**:
 ![[imgs/problema del retroceso.png | center | 400]]
 Cuando en el input se proporciona el token d; el analizador top-down no tiene forma de predecir que regla de producción aplicar, puesto que d, es un prefijo común de dos reglas de producción diferentes. Lo mismo sucede con el token b.
 
