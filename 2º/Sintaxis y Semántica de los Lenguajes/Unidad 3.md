@@ -95,8 +95,7 @@ Una solución alternativa y más eficiente a la implementación de reconocedores
   Aun así, algunos problemas no se pueden resolver de forma descendente. Es decir, existen muchos lenguajes que no son LL(k), para los cuáles no existe una gramática LL que los describa.
 
 ### Parser LR(1) Bottom-Up o Desplazamiento-Reducción
-Construyen el árbol desde las hojas hacia la raíz, utilizando una técnica llamada
-desplazamiento-reducción (*Shift-Reduce*) que coincide con encontrar una derivación por derecha.
+Construyen el árbol desde las hojas hacia la raíz, utilizando una técnica llamada desplazamiento-reducción (*Shift-Reduce*) que coincide con encontrar una derivación por derecha.
 ![[bottom-up.png | center]]
 El **parser bottom-up** comienza por tomar la hoja más a la izquierda del árbol (tal como lo lee en la cadena de entrada, de izquierda a derecha) y buscar si la puede reemplazar por la parte derecha de una regla de producción en la gramática. Como no puede, sigue leyendo y agrupando los símbolos en la cadena de entrada (hojas del árbol) hasta que puede reemplazarlos por el lado derecho de una regla de producción en la gramática. El proceso de agrupar un símbolo tras otro sin hacer nada más, se llama **desplazamiento**, cuando se junta un grupo de símbolos que se puede sustituir por un no terminal a la derecha de una regla de producción se hace una **reducción**.
 
@@ -126,8 +125,7 @@ y unidades de un programa.
 > 4. Ayudar a "razonar sobre el funcionamiento" de los programas
 
 La implementación de la semántica puede ser de dos tipos:
-- **Semántica Estática**: reúne a todos aquellos aspectos semánticos de un
-lenguaje que se calculan, se resuelven o se deciden en tiempo de compilación.
+- **Semántica Estática**: reúne a todos aquellos aspectos semánticos de un lenguaje que se calculan, se resuelven o se deciden en tiempo de compilación.
 	- Correspondencia de la signatura de funciones
 	- Accesos a variables consistentes con su declaración
 	- Que identificadores y expresiones sean evaluables
@@ -135,8 +133,7 @@ lenguaje que se calculan, se resuelven o se deciden en tiempo de compilación.
 	- Compatibilidad de expresiones y operadores
 	- Accesibilidad de las variables según su alcance
 	- Uso de identificadores únicos
-- **Semántica Dinámica**: reúne a todos aquellos aspectos semánticos de un
-lenguaje que se calculan, se resuelven o se deciden en tiempo de ejecución.
+- **Semántica Dinámica**: reúne a todos aquellos aspectos semánticos de un lenguaje que se calculan, se resuelven o se deciden en tiempo de ejecución.
 	- Punteros con referencias nulas
 	- Valores límites de subíndices de arreglos
 	- Consistencia en el pasaje de argumentos
