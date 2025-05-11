@@ -151,5 +151,3 @@ La implementación de la semántica puede ser de dos tipos:
 > - **Legibilidad**: ser legibles por personas con formaciones heterogéneas
 > - **Flexibilidad**: adaptarse a la variedad de lenguajes existentes
 > - **Experiencia**: ser capaz de describir lenguajes reales no sólo aquellos sencillos o experimentales
-## Arquitecturas de Traducción
-![[compilador vs interprete | center ]]
