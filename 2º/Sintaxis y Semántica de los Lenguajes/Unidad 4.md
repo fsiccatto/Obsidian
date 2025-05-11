@@ -41,6 +41,43 @@ La primera tarea que realiza el traductor, es analizar el código fuente para re
 
 4. **Generación de Código**
 	El código objeto es ya una versión del programa en código de máquina, pero aún no es ejecutable porque falta su enlace con librerías dinámicas u otros bloques de código. Recién cuando todo el programa se enlaza y se carga en memoria estará disponible para su ejecución.
-### Compilador Nativo
+#### Compilador Nativo
+Un compilador nativo es un traductor que realiza todas las fases de traducción en un único proceso, tomando como entrada el código fuente de un programa y produciendo como salida un programa ejecutable en código binario.
+![[compilador nativo.png | center]]
+El tiempo que se necesita para traducir un lenguaje de alto nivel a lenguaje objeto se denomina **tiempo de compilación**.
 
+INPUT -> ***PROGRAMA EJECUTABLE*** -> OUTPUT
+![[compilador nativo 2.png | center]]
 
+La información proporcionada en las declaraciones del programa, son incorporadas durante el proceso de traducción a la **tabla de símbolos**.
+
+Luego el analizador semántico se vale de esta información para producir un código de máquina que haga una manipulación correcta de los símbolos declarados. 
+
+Usando la tabla de símbolos, el analizador semántico verifica el cumplimiento de una variedad de reglas de buena formación de los programas que no pueden ser expresadas en las estructuras sintácticas definidas por gramáticas independientes del contexto y los árboles de sintaxis, tales como:
+- que cada identificador sea declardado antes de ser usado
+- que los identificadores no sean utilizados en ámbitos inadecudos
+- la verificación de tipos den las expresiones y pasajes de argumentos a funciones
+
+### Enlace
+Se utilizan librerías de código. Estas librerías deben vincularse a nuestro código para componer el programa ejecutable final. Dependiendo del **momento** que lo hagan pueden ser:
+- Biblioteca estática -> cuando se vincula al código en tiempo de compilación (tiempo de traducción del programa)
+- Biblioteca dinámica -> cuando se vincula al código en tiempo de ejecución. Ejemplo: DDL (*dynamic-linlk library*)
+
+Los programas compilados (por ejemplo aquellos escritos en lenguaje C/C++), son los más rápidos (en términos de tiempo de ejecución) y óptimos con respecto a los interpretados o pseudo-compilados; pues los compiladores producen mejor calidad del código objeto. Pero, necesitamos un compilador nativo por cada tipo de arquitectura de hardware.
+El modelo de compilador nativo separa el proceso de traducción en distintas etapas, dando idea de secuencialidad.
+
+#### Traductor de un paso
+En los traductores de un paso, las fases de análisis y generación de código se realizan a la vez.
+![[traductores de un paso.png | center]]
+
+Se debe observar que en una sola pasada sobre el código fuente, se obtiene el código objeto. No hay proceso de optimización (lo cual muchas veces requiere varias pasadas de análisis sobre el código fuente).
+
+En los traductores de un paso, el proceso está dirigido por el analizador sintáctico, que constituye el centro del proceso de traducción o módulo principal, y el resto de los módulos cooperan a su alrededor. 
+
+Este tipo de traductores tienen como ventaja la velocidad de traducción (traducen muy rápido porque no optimizan) y son muy útiles cuando el objetivo es detectar y corregir errores en el código; pero como desventaja, al no optimizar el código, generan ejecutables lentos. Los traductores de un paso **son los más rápidos para traducir**. 
+
+Este tipo de compiladores son generalmente utilizados con fines académicos o en etapas tempranas del desarrollo, donde la velocidad de ejecución del programa obtenido no importa mucho. Los compiladores profesionales, en general no suelen de ser de un paso, sino que son de varios pasos. Se suele cuidar mucho la fase de optimización de código.
+
+#### Inérprete puro
+Los intérpretes son programas traductores que analizan y ejecutan simultáneamente el programa fuente, es decir no diferencian entre tiempo de traducción y ejecución.
+![[interprete puro.png | center]]
