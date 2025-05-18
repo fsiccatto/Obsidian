@@ -80,4 +80,25 @@ Este tipo de compiladores son generalmente utilizados con fines académicos o en
 
 #### Inérprete puro
 Los intérpretes son programas traductores que analizan y ejecutan simultáneamente el programa fuente, es decir no diferencian entre tiempo de traducción y ejecución.
-![[interprete puro.png | center]]
+![[utn-repo/2º/Sintaxis y Semántica de los Lenguajes/imgs/interprete puro.png| center]]
+Se pueden clasificar desde el punto de vista de su estructura:
+- Intérpretes puros 
+- Intérpretes avanzados o normales
+- Intérpretes incrementales
+Los **intérpretes puros** son los que analizan una sentencia y la ejecutan, y así sucesivamente todo el programa fuente -> fueron los desarrollados en la primera generación de ordenadores -> el problema principal de este tipo de intérpretes es que si a la mitad del programa fuente se producen errores, se debe de volver a comenzar el proceso.
+![[interprete puro 1.png| center]]
+El lenguaje fuente se traduce a una representación interna (texto o binaria) que puede ser almacenada en memoria o en disco.
+Ejemplos de lenguajes interpretados son HTML, JavaScript, Ruby, Python, entre muchos otros. Siempre requieren de un entorno intérprete para poder ejecutar.
+#### Intérprete parcial
+Los intérpretes parciales incorporan un paso previo de análisis de todo el programa fuente. Generando posteriormente un lenguaje intermedio. Este código intermedio es luego interpretado por una VM-máquina virtual que lo ejecuta. De esta forma en caso de errores sintácticos no pasan de la fase de análisis.
+![[interprete parcial.png | center]]
+Java es un lenguaje de intérprete avanzado. Se pseudo-compila y produce uno o varios ficheros con la extensión `.class`. Estos ficheros están en unformato binario denominado *byte-code* que se interpreta posteriormente el JVM o JRE.
+## Compiladores e intérpretes
+![[compiladores vs interpretes.png]]
+Los programas compilados son de 10 a 50 veces más **rápidos** que los interpretados, ya que en general, las decisiones que son tomadas en tiempo de compilación no vuelven a tomarse en tiempo de ejecución.
+
+Los programas interpretados o pseudo-compilados son mucho más **portables** entre plataformas, ya que es más fácil escribir intérpretes que compiladores complejos.
+
+Los lenguajes interpretados permiten también mayor **flexibilidad** (por ejemplo declaración dinámica de tipos) y mejor diagnóstico (mensajes de error) que los compilados, ya que dado que el código se traduce directamente, el intérprete puede incluir un excelente depurador de código.
+
+Un motor de SQL que traduce sentencias SQL en operaciones primitivas sobre archivos. En líneas generales, nosotros entenderemos que hay compilación cuando la traducción implica un completo análisis semántico sobre el significado de los enunciados.
