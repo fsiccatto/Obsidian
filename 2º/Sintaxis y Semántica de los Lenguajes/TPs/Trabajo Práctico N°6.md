@@ -82,12 +82,17 @@ console.log(typeof y);
 
 ```c++
 #include <iostream> 
-#include <typeinfo> 
+#include <typeinfo>
+
+Typedef short Temperatura;
+
 using namespace std; 
 	int main() { 
 	int x = 42; 
 	double pi = 3.14; 
 	long y = 9007199254740991; 
+	Temperatura t;
+	
 	cout << "Tipo de x: " << typeid(x).name() << endl; 
 	cout << "Tipo de pi: " << typeid(pi).name() << endl; 
 	cout << "Tipo de y: " <<  typeid(y).name() << endl; 
@@ -101,13 +106,18 @@ b. ¿C/C++ son lenguajes de tipado estático?
 Si, hay que declarar el tipo de datos de forma explícita. La verificación es en tiempo de compilación.
 c. En el código JavaScript, ¿Son x y pi de tipos equivalentes?  
 Si, porque ambos son del tipo `number`.
-d. En el código de C++,  ¿Son x y pi de tipos equivalentes?  
+d. En el código de C++,  ¿Son x y pi de tipos equivalentes? 
+No, uno es de tipo `double` y el otro es `int`. Se representan distinto en memoria.
 e. En el código JavaScript, ¿Es x de un subtipo del tipo de y?  
-f. En el código de C++,  ¿Es x de un subtipo del tipo de y? 
-g. En el código de C++,  ¿Es x de un tipo subrango del tipo de y?  
-h. Agregue una línea al código en C++ para definir un alias de tipo, llamado Temperatura, del 
-tipo short. Luego declare una variable tipada con este alias. ¿De qué tipo primitivo es la variable? 
+No, x es de tipo `number` y y es de tipo `BigInt`. Ambos son tipos de primitivos diferentes. No son equivalentes, ni uno es subtipo del otro.
+f. En el código de C++,  ¿Es x de un subtipo del tipo de y?
+No son formatos de representación diferente en memoria,
+g. En el código de C++,  ¿Es x de un tipo subrango del tipo de y? 
+No, para ser subrango debe tener un rango de valores menor, pero mantener el mismo formato de representación en memoria y el mismo conjunto de operaciones. En este caso, `int` no es un subrango de `long`
+h. Agregue una línea al código en C++ para definir un alias de tipo, llamado Temperatura, del tipo `short`. Luego declare una variable tipada con este alias. ¿De qué tipo primitivo es la variable?
+t es de tipo `short`
 i. ¿Es posible en C/C++ y/o en JavaScript definir subrangos de sus tipos primitivos?
+No, no es posible definir subrangos de sus tipos primitivos.
 
 ## Manejo de cadenas
 4. El siguiente programa en C++ no compila. Indique cuál es el error y cómo corregirlo.
