@@ -40,11 +40,19 @@ int main() {
 ```js
 let precioBase = 49.99, impuesto = "0.21", tasaActualizacion = 1.015;   
 let total = (precioBase + impuesto) * tasaActualizacion; 
-console.log(`Precio actualizado: $${total.toFixed(2)}`); 
+console.log(`Precio actualizado: $${total.toFixed(2)}`); //NaN
+// Esa es la salida debido a que la variable impuesto es un string y no un numero.
+impuesto = 0.21
 ```
 
 ```js
-let añosFuturos = 2.5; let milisegundosPorAño = 365 * 24 * 60 * 60 * 1000; let timestampFuturo = Date.now() + añosFuturos * milisegundosPorAño; let fechaFutura = new Date(timestampFuturo); let diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]; console.log(`Día de la semana en ${añosFuturos} años: ${diasSemana[fechaFutura.getDay()]}`);
+let añosFuturos = 2.5;
+let milisegundosPorAño = 365 * 24 * 60 * 60 * 1000;
+let timestampFuturo = Date.now() + añosFuturos * milisegundosPorAño;
+let fechaFutura = new Date(timestampFuturo); 
+let diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+console.log(`Día de la semana en ${añosFuturos} años: ${diasSemana[fechaFutura.getDay()]}`);
+// Devuelve Dia de la semana en 2.5 años: Lunes
 ```
 
 ```js
@@ -53,10 +61,12 @@ function calcularDistanciaEuclideana(x1, y1, x2, y2) {
 } 
 let coords_1="2326"; 
 let dist_1 = calcularDistanciaEuclideana(coords_1[0],coords_1[1],coords_1[2],coords_1[3]); 
-console.log(`Distancia entre los puntos: ${dist_1}`); 
+console.log(`Distancia entre los puntos: ${dist_1}`); // Muestra 3
 let coords_2="23.245"; 
 let dist_2 = calcularDistanciaEuclideana(coords_2[0],coords_2[1],coords_2[2],coords_2[3]); 
-console.log(`Distancia entre los puntos: ${dist_2}`);
+console.log(`Distancia entre los puntos: ${dist_2}`); // Imprime NaN
+// El problema es que al ser un string la coords_2, el valor coords_2[2]=.
+let coords_2="23245"
 ```
 
 ## Equivalencias de tipos, subtipos y subrangos
