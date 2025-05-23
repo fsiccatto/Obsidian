@@ -96,8 +96,11 @@ using namespace std;
 ```
 
 a. ¿JavaScript es un lenguaje de tipado dinámico? 
+Si, porque no obliga a declarar explícitamente el tipo de dato. La verificación es en tiempo de ejecución.
 b. ¿C/C++ son lenguajes de tipado estático?  
+Si, hay que declarar el tipo de datos de forma explícita. La verificación es en tiempo de compilación.
 c. En el código JavaScript, ¿Son x y pi de tipos equivalentes?  
+Si, porque ambos son del tipo `number`.
 d. En el código de C++,  ¿Son x y pi de tipos equivalentes?  
 e. En el código JavaScript, ¿Es x de un subtipo del tipo de y?  
 f. En el código de C++,  ¿Es x de un subtipo del tipo de y? 
