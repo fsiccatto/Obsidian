@@ -7,8 +7,10 @@ int main() {
 	float tempCelsius = 350.75;   
 	// La temperature en Celsius se multiplica por 100 para enviarla en centésimas 
 	short int tempTransmision = tempCelsius * 100;   
-	std::cout << "Temperatura enviada: " << tempTransmision << "\n";   
-} 
+	std::cout << "Temperatura enviada: " << tempTransmision << "\n";
+}
+// Compila y ejecuta, pero muestra "Temperatura enviada: 0". Debido a que el short int tiene un rango entre -32,768 to 32,767 (2 bytes).
+int tempTransimission = tempCelsius * 100;
 ```
 
 ```c++
@@ -20,6 +22,8 @@ int main() {
 	float interesCompuesto = capital * pow(1 + tasa, anios);   
 	std::cout << "Total estimado: " << (int) interesCompuesto << "\n";   
 }
+// No compila ni ejecuta. La variable anios está definida como int pero está incilizada como float.
+float anios = 5.2;
 ```
 
 ```c++
@@ -35,6 +39,8 @@ int main() {
 	recorrerCadena(cadena);  
 	return 0; 
 }
+// No compila ni ejecuta, debido a que la función espera como argumento un const int* pero recibe un const char*.
+void reccorrerCadena(const char* str)
 ```
 2. Los siguientes programas en JavaScript++ tienen problemas de verificación y conversión de tipos. Indique qué muestran en la salida y explique cómo se llega a ese resultado. Una vez identificado el problema corrija el código para que funcione adecuadamente.
 ```js
