@@ -208,8 +208,7 @@ struct Empleado {
 }; 
 int main() { 
     Empleado empleados[3] = { 
-        {1, "Ana", {101, "Revisión", new Tarea{102, "Ajustes", new Tarea{103, "Documentación", 
-nullptr}}}},                                                                        
+        {1, "Ana", {101, "Revisión", new Tarea{102, "Ajustes", new Tarea{103, "Documentación", nullptr}}}},
        {2, "Maria", {201, "Relevamiento", new Tarea{202, "Análisis", nullptr}}}, 
         {3, "Luis", {0, "", nullptr}}   
     }; 
@@ -228,15 +227,120 @@ return 0;
 }
 ```
 a. Indique qué muestra en la salida. 
-b. Indique los tipos estructurados que se utilizan en el código. 
+```bash
+Ana tiene las siguientes tareas:
+  - Revisión
+  - Ajustes
+  - Documentación
+Maria tiene las siguientes tareas:
+  - Relevamiento
+  - Análisis
+Luis tiene las siguientes tareas:
+  (Sin tareas asignadas)
+```
+
+b. Indique los tipos estructurados que se utilizan en el código.
+	Tenemos dos estructuras: Tarea y Empleado
+
 c. Indique cuánto espacio en memoria ocupa un registro del tipo tarea. 
+```c++
+struct Tarea {
+    int id;                      // 4 bytes
+    char descripcion[30];       // 30 bytes
+    Tarea* siguiente;           // 8 bytes en sistemas de 64 bits (4 si es de 32 bits)
+};
+```
+4 (int) + 30 (char\[30]) + 2 bytes de relleno (padding) + 8 (puntero) = **44 bytes**.
+
 d. Indique cuánto espacio en memoria ocupa un registro del tipo empleado. 
-e. Indique cómo cambiar el código para que el registro Empleado tenga un puntero a la 
-primera tarea de la lista, en lugar de incluir una tarea. Indique cuánto pesaría en 
-memoria el registro en este caso. 
-f. Escriba el código necesario para agregar una nueva tarea “Diseño” a la lista de tareas de 
-María.  
+```c++
+struct Empleado {
+    int id;                     // 4 bytes
+    char nombre[20];           // 20 bytes
+    Tarea primeraTarea;        // 44 bytes (como se calculó en c)
+};
+```
+4 + 20 + (2 padding) + 44 = **68 bytes**
+
+e. Indique cómo cambiar el código para que el registro Empleado tenga un puntero a la primera tarea de la lista, en lugar de incluir una tarea. Indique cuánto pesaría en memoria el registro en este caso. 
+```c++
+struct Empleado {
+    int id;                     // 4 bytes
+    char nombre[20];           // 20 bytes
+    Tarea* primeraTarea;       // 8 bytes (puntero en 64 bits)
+};
+```
+4 + 20 + (4 padding) + 8 = **36 bytes**.
+
+f. Escriba el código necesario para agregar una nueva tarea “Diseño” a la lista de tareas de María.  
+```c++
+Tarea* nuevaTarea = new Tarea{203, "Diseño", nullptr};
+Tarea* actual = empleados[1].primeraTarea;  // María es empleados[1]
+
+// Recorremos hasta el final de la lista
+while (actual->siguiente != nullptr) {
+    actual = actual->siguiente;
+}
+actual->siguiente = nuevaTarea;
+
+```
+
 g. Escriba la línea de código necesaria para agregar una nueva tarea “Limpiar disco” a Luis. Reescriba el programa del ejercicio anterior en JavaScript.
+```c++
+empleados[2].primeraTarea = new Tarea{301, "Limpiar disco", nullptr};
+```
+
+```js
+class Tarea {
+    constructor(id, descripcion, siguiente = null) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.siguiente = siguiente;
+    }
+}
+
+class Empleado {
+    constructor(id, nombre, primeraTarea = null) {
+        this.id = id;
+        this.nombre = nombre;
+        this.primeraTarea = primeraTarea;
+    }
+
+    mostrarTareas() {
+        console.log(`${this.nombre} tiene las siguientes tareas:`);
+        if (!this.primeraTarea) {
+            console.log("  (Sin tareas asignadas)");
+            return;
+        }
+        let tarea = this.primeraTarea;
+        while (tarea) {
+            console.log(`  - ${tarea.descripcion}`);
+            tarea = tarea.siguiente;
+        }
+    }
+}
+
+// Inicialización
+const empleados = [
+    new Empleado(1, "Ana", new Tarea(101, "Revisión", new Tarea(102, "Ajustes", new Tarea(103, "Documentación")))),
+    new Empleado(2, "Maria", new Tarea(201, "Relevamiento", new Tarea(202, "Análisis"))),
+    new Empleado(3, "Luis")
+];
+
+// Agregar tarea “Diseño” a Maria
+let t = empleados[1].primeraTarea;
+while (t.siguiente) t = t.siguiente;
+t.siguiente = new Tarea(203, "Diseño");
+
+// Agregar tarea “Limpiar disco” a Luis
+empleados[2].primeraTarea = new Tarea(301, "Limpiar disco");
+
+// Mostrar tareas
+for (const emp of empleados) {
+    emp.mostrarTareas();
+}
+```
+
 11. Dadas las siguientes declaraciones de tipo, resuelva lo solicitado.
 ```c++
 union EstadisticasDeporte { 
@@ -255,10 +359,103 @@ struct Jugador {
 	float promedioPuntuacion; 
 } deportistas [500];
 ```
-a. Indique el peso en memoria de deportistas.  
-b. Indique el peso en memoria de deportistas\[105].estadisticas. 
+
+a. Indique el peso en memoria de deportistas. 
+```c++
+struct Jugador {
+    int id;                        // 4 bytes
+    char nombre[30];              // 30 bytes
+    char deporte;                 // 1 byte
+    // 3 bytes padding para alinear double
+    union EstadisticasDeporte {   // Máximo tamaño entre: byte (1), double (8), int (4)
+        byte goles;               // 1 byte
+        double puntos;            // 8 bytes
+        int setsGanados;          // 4 bytes
+    } estadisticas;               // => ocupa 8 bytes
+    float promedioPuntuacion;     // 4 bytes
+};
+```
+`4 (int) + 30 (char) + 1 (char) + 8 (union) + 4 (float) = 47 bytes -> 48 bytes`
+48 bytes * 500 elementos = 24,000 bytes
+
+b. Indique el peso en memoria de deportistas\[105].estadisticas.
+Su tamaño será el del miembro más grande, que es `double`: 8 bytes
+
 c. Suponiendo que la dirección de deportistas es DB=100, indique la dirección de 
 deportistas\[5].estadisticas.setsGanados. 
+Dirección base de deportistas\[5]: DB + 5 * 48 = 100 + 240 = 340
+Jugador tiene 4+30+1+3(padding)=38 offset
+Dirección final=`340 + 38 = 378`
+
 d. Suponiendo que la dirección de deportistas es DB=100, indique la dirección de 
 deportistas\[5].estadisticas.goles. 
-e. Escriba un programa que cargue datos de 3 deportistas, uno de cada deporte y luego muestre correctamente el nombre de cada deportista, el deporte que realiza, sus estadísticas (con indicación de si son goles, puntos o setsGanados) y su promedio de puntuación.  
+Dirección final es la misma que la anterior: 378
+
+e. Escriba un programa que cargue datos de 3 deportistas, uno de cada deporte y luego muestre correctamente el nombre de cada deportista, el deporte que realiza, sus estadísticas (con indicación de si son goles, puntos o setsGanados) y su promedio de puntuación. 
+```c++
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+typedef unsigned char byte;
+
+union EstadisticasDeporte {
+    byte goles;         // fútbol
+    double puntos;      // boxeo
+    int setsGanados;    // tenis
+};
+
+struct Jugador {
+    int id;
+    char nombre[30];
+    char deporte; // 'F', 'B', 'T'
+    EstadisticasDeporte estadisticas;
+    float promedioPuntuacion;
+};
+
+int main() {
+    Jugador deportistas[3];
+
+    // Fútbol
+    deportistas[0].id = 1;
+    strcpy(deportistas[0].nombre, "Lionel Messi");
+    deportistas[0].deporte = 'F';
+    deportistas[0].estadisticas.goles = 12;
+    deportistas[0].promedioPuntuacion = 8.5;
+
+    // Boxeo
+    deportistas[1].id = 2;
+    strcpy(deportistas[1].nombre, "Canelo Álvarez");
+    deportistas[1].deporte = 'B';
+    deportistas[1].estadisticas.puntos = 98.7;
+    deportistas[1].promedioPuntuacion = 9.1;
+
+    // Tenis
+    deportistas[2].id = 3;
+    strcpy(deportistas[2].nombre, "Rafael Nadal");
+    deportistas[2].deporte = 'T';
+    deportistas[2].estadisticas.setsGanados = 3;
+    deportistas[2].promedioPuntuacion = 7.9;
+
+    // Mostrar info
+    for (int i = 0; i < 3; ++i) {
+        cout << "Jugador: " << deportistas[i].nombre << endl;
+        cout << "Deporte: ";
+        switch (deportistas[i].deporte) {
+            case 'F':
+                cout << "Fútbol\nEstadística: Goles = " << (int)deportistas[i].estadisticas.goles << endl;
+                break;
+            case 'B':
+                cout << "Boxeo\nEstadística: Puntos = " << deportistas[i].estadisticas.puntos << endl;
+                break;
+            case 'T':
+                cout << "Tenis\nEstadística: Sets Ganados = " << deportistas[i].estadisticas.setsGanados << endl;
+                break;
+        }
+        cout << "Promedio de puntuación: " << deportistas[i].promedioPuntuacion << "\n\n";
+    }
+
+    return 0;
+}
+
+```
