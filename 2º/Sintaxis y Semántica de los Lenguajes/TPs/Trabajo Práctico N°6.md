@@ -178,13 +178,18 @@ e. L-value X\[2,1] = 200+9=209
 ```
 X is array [-1..4,-6..-1,-3..0] of integer;
 ```
-a. espacio reservado para X en bytes:  
-b. espacio dimensional M0:  
-c. espacio dimensional M1:  
-d. espacio dimensional M2: 
-e. OV: 
-f. 
-L-value X\[0,-3,-2] = 
+M0 tiene 6 elementos, M1 tiene 6 elementos y M2 tiene 4 elementos
+a. espacio reservado para X en bytes:  $M_{0}*M_{1}*M_{2}*bytes_{int}=6*6*4 * 4=144*4=576bytes$
+b. espacio dimensional M0:  6
+c. espacio dimensional M1:  6
+d. espacio dimensional M2: 4
+
+$OV(i,j,k)=(i−L0​)⋅M1​⋅M2​+(j−L1​)⋅M2​+(k−L2​)$
+$L_{0}=-1, L_{1}=-6, L_{2}=-3, M_{1}=6, M_{2}=4$
+e. OV: $OV(0,-3,-2)=37$
+
+Dirección real=(DB)+Offset en elementos×tamaño de cada elemento en bytes
+f. L-value $X[0,-3,-2] = 100+37*4=100+148=248$
 
 ## Registros unidos
 10. Analice el siguiente programa en C++ y responda lo solicitado.
