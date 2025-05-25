@@ -137,8 +137,10 @@ int main() {
 	const char *cadenaOrigen = "Hola Mundo"; 
 	char *destino=copiarCadena(cadenaOrigen); 
 	std::cout <<destino << std::endl; 
-	return 0; 
+	return 0;
 }
+// El problema es que la funcion retorna un valor const char* y la variable destino está inicializada como char*, por lo que no compila.
+const char* destino = copiarCadena(cadenaOrigen);
 ```
 
 5. El siguiente programa en JavaScript no tiene el comportamiento esperado. Indique cuál es el error y cómo corregirlo.
@@ -149,7 +151,11 @@ function reemplazarLetra(cadena, indice, nuevaLetra) {
 } 
 let texto = "Holado"; 
 let nuevoTexto = reemplazarLetra(texto, 1, 'e'); 
-console.log(`Texto modificado: ${nuevoTexto}`); 
+console.log(`Texto modificado: ${nuevoTexto}`);
+// No funciona debido a que las cadenas son inmutables, por lo que no se pueden modificar por índice como un array
+function reemplazarLetra(cadena, indice, nuevaLetra) {
+    return cadena.slice(0, indice) + nuevaLetra + cadena.slice(indice + 1);
+}
 ```
 
 ## Arreglos
@@ -157,11 +163,16 @@ console.log(`Texto modificado: ${nuevoTexto}`);
 ```c++
 char X[5][4]
 ```
-a. espacio reservado para X en bytes: 
-b. espacio dimensional M0: 
-c. espacio dimensional M1:  
-d. OV:  
-e. L-value X\[2,1] =  
+Cada char ocupa un byte. Por lo que `5*4=20`
+a. espacio reservado para X en bytes: 20 bytes
+b. espacio dimensional M0: 5
+c. espacio dimensional M1: 4
+
+(Offset Value) $OV(i,j)=i⋅M1+j$ con $x[i][j]$
+d. OV: $OV(2,1)=2*4+1=9$
+
+$Direccion(X[2][1])=DB+OV$
+e. L-value X\[2,1] = 200+9=209
 
 7. Dado el siguiente arreglo (en un lenguaje genérico) y suponiendo DB=100, calcule lo solicitado.
 ```
