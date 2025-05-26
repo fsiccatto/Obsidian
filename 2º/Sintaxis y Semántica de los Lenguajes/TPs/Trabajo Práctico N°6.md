@@ -1,7 +1,7 @@
 # Traducción de la semántica de datos
 ## Verificación y conversión de tipos
-1. Los siguientes programas en C++ tienen problemas de verificación y conversión de tipos. Indique, si compilan y ejecutan, qué muestran en la salida y cómo se llega al resultado. Una vez identificado el problema corrija el código para que funcione adecuadamente.
-```c++
+1. Los siguientes programas en c tienen problemas de verificación y conversión de tipos. Indique, si compilan y ejecutan, qué muestran en la salida y cómo se llega al resultado. Una vez identificado el problema corrija el código para que funcione adecuadamente.
+```c
 #include <iostream> 
 int main() { 
 	float tempCelsius = 350.75;   
@@ -13,7 +13,7 @@ int main() {
 int tempTransimission = tempCelsius * 100;
 ```
 
-```c++
+```c
 #include <iostream> 
 #include <cmath> 
 int main() { 
@@ -26,7 +26,7 @@ int main() {
 float anios = 5.2;
 ```
 
-```c++
+```c
 #include <iostream> 
 void recorrerCadena(const int* str) { 
 	while (*str != '\0') { 
@@ -76,7 +76,7 @@ let coords_2="23245"
 ```
 
 ## Equivalencias de tipos, subtipos y subrangos
-3. Compruebe y compare los siguientes programas en JavaScript y C++. Observe qué, si bien ambos parecen equivalentes, tienen importantes diferencias vinculada a su semántica de tipos. Luego, responda lo solicitado, fundamentando su respuesta.
+3. Compruebe y compare los siguientes programas en JavaScript y c. Observe qué, si bien ambos parecen equivalentes, tienen importantes diferencias vinculada a su semántica de tipos. Luego, responda lo solicitado, fundamentando su respuesta.
 ```js
 let x = 42;  
 let pi = 3.14; 
@@ -86,7 +86,7 @@ console.log(typeof pi);
 console.log(typeof y); 
 ```
 
-```c++
+```c
 #include <iostream> 
 #include <typeinfo>
 
@@ -108,26 +108,26 @@ using namespace std;
 
 a. ¿JavaScript es un lenguaje de tipado dinámico? 
 Si, porque no obliga a declarar explícitamente el tipo de dato. La verificación es en tiempo de ejecución.
-b. ¿C/C++ son lenguajes de tipado estático?  
+b. ¿C/c son lenguajes de tipado estático?  
 Si, hay que declarar el tipo de datos de forma explícita. La verificación es en tiempo de compilación.
 c. En el código JavaScript, ¿Son x y pi de tipos equivalentes?  
 Si, porque ambos son del tipo `number`.
-d. En el código de C++,  ¿Son x y pi de tipos equivalentes? 
+d. En el código de c,  ¿Son x y pi de tipos equivalentes? 
 No, uno es de tipo `double` y el otro es `int`. Se representan distinto en memoria.
 e. En el código JavaScript, ¿Es x de un subtipo del tipo de y?  
 No, x es de tipo `number` y y es de tipo `BigInt`. Ambos son tipos de primitivos diferentes. No son equivalentes, ni uno es subtipo del otro.
-f. En el código de C++,  ¿Es x de un subtipo del tipo de y?
+f. En el código de c,  ¿Es x de un subtipo del tipo de y?
 No son formatos de representación diferente en memoria,
-g. En el código de C++,  ¿Es x de un tipo subrango del tipo de y? 
+g. En el código de c,  ¿Es x de un tipo subrango del tipo de y? 
 No, para ser subrango debe tener un rango de valores menor, pero mantener el mismo formato de representación en memoria y el mismo conjunto de operaciones. En este caso, `int` no es un subrango de `long`
-h. Agregue una línea al código en C++ para definir un alias de tipo, llamado Temperatura, del tipo `short`. Luego declare una variable tipada con este alias. ¿De qué tipo primitivo es la variable?
+h. Agregue una línea al código en c para definir un alias de tipo, llamado Temperatura, del tipo `short`. Luego declare una variable tipada con este alias. ¿De qué tipo primitivo es la variable?
 t es de tipo `short`
-i. ¿Es posible en C/C++ y/o en JavaScript definir subrangos de sus tipos primitivos?
+i. ¿Es posible en C/c y/o en JavaScript definir subrangos de sus tipos primitivos?
 No, no es posible definir subrangos de sus tipos primitivos.
 
 ## Manejo de cadenas
-4. El siguiente programa en C++ no compila. Indique cuál es el error y cómo corregirlo.
-```c++
+4. El siguiente programa en c no compila. Indique cuál es el error y cómo corregirlo.
+```c
 #include <iostream> 
 const char* copiarCadena(const char * origen) { 
 	const char *destino = origen; 
@@ -159,8 +159,8 @@ function reemplazarLetra(cadena, indice, nuevaLetra) {
 ```
 
 ## Arreglos
-6. Dado el siguiente arreglo en C/C++ y suponiendo DB=200, calcule lo solicitado.
-```c++
+6. Dado el siguiente arreglo en C/c y suponiendo DB=200, calcule lo solicitado.
+```c
 char X[5][4]
 ```
 Cada char ocupa un byte. Por lo que `5*4=20`
@@ -192,8 +192,8 @@ Dirección real=(DB)+Offset en elementos×tamaño de cada elemento en by
 f. L-value $X[0,-3,-2] = 100+37*4=100+148=248$
 
 ## Registros unidos
-10. Analice el siguiente programa en C++ y responda lo solicitado.
-```c++
+10. Analice el siguiente programa en c y responda lo solicitado.
+```c
 #include <iostream> 
 #include <cstring> 
 struct Tarea { 
@@ -243,7 +243,7 @@ b. Indique los tipos estructurados que se utilizan en el código.
 	Tenemos dos estructuras: Tarea y Empleado
 
 c. Indique cuánto espacio en memoria ocupa un registro del tipo tarea. 
-```c++
+```c
 struct Tarea {
     int id;                      // 4 bytes
     char descripcion[30];       // 30 bytes
@@ -253,7 +253,7 @@ struct Tarea {
 4 (int) + 30 (char\[30]) + 2 bytes de relleno (padding) + 8 (puntero) = **44 bytes**.
 
 d. Indique cuánto espacio en memoria ocupa un registro del tipo empleado. 
-```c++
+```c
 struct Empleado {
     int id;                     // 4 bytes
     char nombre[20];           // 20 bytes
@@ -263,7 +263,7 @@ struct Empleado {
 4 + 20 + (2 padding) + 44 = **68 bytes**
 
 e. Indique cómo cambiar el código para que el registro Empleado tenga un puntero a la primera tarea de la lista, en lugar de incluir una tarea. Indique cuánto pesaría en memoria el registro en este caso. 
-```c++
+```c
 struct Empleado {
     int id;                     // 4 bytes
     char nombre[20];           // 20 bytes
@@ -273,7 +273,7 @@ struct Empleado {
 4 + 20 + (4 padding) + 8 = **36 bytes**.
 
 f. Escriba el código necesario para agregar una nueva tarea “Diseño” a la lista de tareas de María.  
-```c++
+```c
 Tarea* nuevaTarea = new Tarea{203, "Diseño", nullptr};
 Tarea* actual = empleados[1].primeraTarea;  // María es empleados[1]
 
@@ -286,7 +286,7 @@ actual->siguiente = nuevaTarea;
 ```
 
 g. Escriba la línea de código necesaria para agregar una nueva tarea “Limpiar disco” a Luis. Reescriba el programa del ejercicio anterior en JavaScript.
-```c++
+```c
 empleados[2].primeraTarea = new Tarea{301, "Limpiar disco", nullptr};
 ```
 
@@ -342,7 +342,7 @@ for (const emp of empleados) {
 ```
 
 11. Dadas las siguientes declaraciones de tipo, resuelva lo solicitado.
-```c++
+```c
 union EstadisticasDeporte { 
 	byte goles;         
 	  // futbol 
@@ -361,7 +361,7 @@ struct Jugador {
 ```
 
 a. Indique el peso en memoria de deportistas. 
-```c++
+```c
 struct Jugador {
     int id;                        // 4 bytes
     char nombre[30];              // 30 bytes
@@ -392,7 +392,7 @@ deportistas\[5].estadisticas.goles.
 Dirección final es la misma que la anterior: 378
 
 e. Escriba un programa que cargue datos de 3 deportistas, uno de cada deporte y luego muestre correctamente el nombre de cada deportista, el deporte que realiza, sus estadísticas (con indicación de si son goles, puntos o setsGanados) y su promedio de puntuación. 
-```c++
+```c
 #include <iostream>
 #include <cstring>
 using namespace std;
