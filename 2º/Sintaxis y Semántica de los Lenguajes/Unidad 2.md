@@ -96,7 +96,7 @@ Los autómatas reconocedores son máquinas abstractas que permiten reconocer si 
 ### Autómatas de estado finito
 Los autómatas o máquinas de Estados Finitos (AEF o AF o FSA) son máquinas reconocedoras de lenguajes.
 ![[imgs/AEF.png| center | 150]]
-Un AF es un grafo dirigido que **tiene un estado inicia**l, **uno o más estados finales** y **un conjunto de transiciones o arcos rotulados** que hacen que la máquina se mueva de un estado a otro. Cualquier cadena que lleve a la máquina desde su estado inicial a un estado final, es una cadena válida en el lenguaje.
+Un AF es un grafo dirigido que **tiene un estado inicial**, **uno o más estados finales** y **un conjunto de transiciones o arcos rotulados** que hacen que la máquina se mueva de un estado a otro. Cualquier cadena que lleve a la máquina desde su estado inicial a un estado final, es una cadena válida en el lenguaje.
 
 > [!important] AF
 > Es posible demostrar que existe una relación biunívoca entre los AEF y los lenguajes regulares, de forma tal que para cada lenguaje regular existe, al menos una máquina de estados finitos que reconoce las palabras en el lenguaje; y viceversa. Esto implica también una relación directa entre los AEF y las gramáticas regulares o normales (Tipo 3).
@@ -141,7 +141,7 @@ Las expresiones regulares son una tercera forma de expresar lenguajes regulares.
 > Sólo son expresiones regulares sobre un alfabeto $\lambda$, aquellas que se obtienen aplicando un número finito de veces las siguientes reglas:
 > -  $\lambda$ es una ER
 > - para cada $a \in \sum$, $a$ es una ER
-> - si $\alpha$ y $\beta$ son ambas ER, $\alpha + \beta$es una ER 
+> - si $\alpha$ y $\beta$ son ambas ER, $\alpha + \beta$ es una ER 
 > - si $\alpha$ y $\beta$ son ambas expresiones regurales, $\alpha.\beta$ es una ER (o simplemente $\alpha \beta$) 
 > - si $\alpha$ es una expresión regular, $\alpha{^*}$ es una ER. (Aquí $*$ es 0 o más - Kleene) 
 > - si $\alpha$ es una expresión regular, ($\alpha$) es una ER.
@@ -176,14 +176,14 @@ $$\begin{align}
  & \alpha \alpha \alpha \dots \alpha
 \end{align}$$
 ### Conversiones
-![[imgs/conversionAEF-ER.png]]
-![[imgs/conversionER-AEF.png]]
+![[imgs/conversionAEF-ER.png | center]]
+![[imgs/conversionER-AEF.png | center]]
 ### Equivalencia de Autómatas
 > [!info] Definción Equivalencia de Autómatas
 > Dos autómatas $N=\left( \sum, q_{0},Q, F, f \right)$ y $D=\left( \sum,q'_{0}, Q',F', f' \right)$ son equivalentes si ambos reconocen el mismo lenguaje.
 > $$
-L(D)=L(N)
-$$
+> L(D)=L(N)
+> $$
 
 El no determinismo **no es deseable**, dado que complica la implementación del reconocedor y puede llevar a un reconocimiento erróneo. Por lo tanto, la equivalencia de autómatas:
 > [!caution] Equivalencia de Autómatas
