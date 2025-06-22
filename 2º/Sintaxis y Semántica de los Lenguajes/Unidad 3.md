@@ -72,7 +72,7 @@ Los analizadores recursivos top-down resultan más fáciles de comprender e impl
 - Los prefijos comunes.
 
 ![[imgs/analizador por izquieda.png| center | 200]]
-Si bien la cadena pertenece al lenguaje descripto por la gramática, la estrategia LL(1) se traba en el paso (3), no encuentra una regla de producción para el no terminal A que comience con b y por lo tanto no sabe cuál de las dos reglas escoger para seguir.
+Si bien la cadena pertenece al lenguaje descripto por la gramática, la estrategia LL(1) se traba en el paso (3), no encuentra una regla de producción para el no terminal $A$ que comience con $b$ y por lo tanto no sabe cuál de las dos reglas escoger para seguir.
 Se puede resolver utilizando un **retroceso**. Los reconocedores Top-Down con retroceso son más lentos y difíciles de programar.
 ![[imgs/analizador por izquierda con retroceso.png| center | 200]]
 En definitiva, si la gramática presenta producciones recursivas a izquierda, un analizador Top-Down/LL(1) **no** puede procesarla, por lo que es deseable buscar una gramática equivalente sin recursividad a izquierda.

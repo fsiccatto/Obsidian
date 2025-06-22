@@ -138,7 +138,7 @@ Las expresiones regulares son una tercera forma de expresar lenguajes regulares.
 - Autómatas finitos (AFD) -> Reconocen los lenguajes regulares
 - Expresiones regulares (ER) -> Expresan de forma consisa los lenguajes regulares
 > [!info] Definción ER
-> Sólo son expresiones regulares sobre un alfabeto $\lambda$, aquellas que se obtienen aplicando un número finito de veces las siguientes reglas:
+> Sólo son expresiones regulares sobre un alfabeto $\left( \sum \right)$, aquellas que se obtienen aplicando un número finito de veces las siguientes reglas:
 > -  $\lambda$ es una ER
 > - para cada $a \in \sum$, $a$ es una ER
 > - si $\alpha$ y $\beta$ son ambas ER, $\alpha + \beta$ es una ER 
@@ -148,7 +148,7 @@ Las expresiones regulares son una tercera forma de expresar lenguajes regulares.
 
 El **Teorema de Kleene**, expresa la relación biunívoca que existe entre expresiones regulares y autómatas de estados finitos. En particular:
 > [!important] Teorema
-> Sea L un lenguaje sobre un alfabeto $\sum$. $L$ es regular (puede expresarse mediante expresiones regulares), si y solo si, existe un AEF con alfabeto $\sum$ que acepta $L$. 
+> Sea $L$ un lenguaje sobre un alfabeto $\sum$. $L$ es regular (puede expresarse mediante expresiones regulares), si y solo si, existe un AEF con alfabeto $\sum$ que acepta $L$. 
 > Es decir: 
 > - **Teorema del Análisis**: Todo lenguaje aceptado por un AEF, es regular.
 > - **Teorema de Síntesis**: todo Lenguaje Regular es aceptado por un AEF.
