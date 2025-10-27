@@ -72,9 +72,54 @@ CSMA o Acceso Múltiple por Detección de Portadora es un protocolo que permite 
 Si dos dispositivos transmiten al mismo tiempo, ocurre una colisión. CSMA/CD permite que los dispositivos detecten esta colisión, detengan la transmisión y esperen un tiempo aleatorio antes de reintentar.
 
 ### 6. Protocolos disponibles para las redes LAN inalámbricas
-- **Coaxial (10Base5, 10Base2):** primeras versiones de Ethernet. Hoy obsoleto.
-- **Par trenzado (UTP/STP, 10/100/1000Base-T):** el más común, económico y flexible.
-- **Fibra óptica (100Base-FX, 1000Base-LX, 10GBase):** largas distancias, alta velocidad e inmunidad al ruido.
+El protocolo de acceso al medio que utilizan es **CSMA/CA** (Acceso Múltiple por Detección de Portadora con Prevención de Colisiones).
+Los estándares más comunes de esta familia (que definen las velocidades y frecuencias) son:
+- **802.11b:** (Hasta 11 Mbps, 2.4 GHz)
+- **802.11g:** (Hasta 54 Mbps, 2.4 GHz)
+- **802.11n (Wi-Fi 4):** (Hasta 600 Mbps, 2.4/5 GHz, introduce MIMO)
+- **802.11ac (Wi-Fi 5):** (Hasta ~6.9 Gbps, 5 GHz)
+- **802.11ax (Wi-Fi 6/6E):** (Hasta ~9.6 Gbps, 2.4/5/6 GHz, enfocado en eficiencia y alta densidad de dispositivos)
+### 7. Explicar y graficar los distintos tipos de cableados de las redes Ethernet.
+Históricamente, Ethernet ha usado tres tipos principales de cableado, asociados a distintas topologías:
+1. **Cable Coaxial (Topología de Bus):**
+    - Usado en las primeras redes (10Base5 "Thicknet" y 10Base2 "Thinnet").
+    - Todos los dispositivos se conectaban a un único cable compartido (bus).
+    - Requería terminadores en ambos extremos del cable.
+    ![[Pasted image 20251026223735.jpg | 200]]
+2. **Par Trenzado (UTP/STP) (Topología de Estrella):**
+    - Es el estándar actual (10Base-T, 100Base-TX, 1000Base-T, 10GBase-T).
+    - Cada dispositivo se conecta con su propio cable a un dispositivo central (hub o, más comúnmente, un **switch**).
+    - Usa conectores RJ45.
+      ![[Pasted image 20251026223756.jpg | 200]]
+3. **Fibra Óptica (Topología de Estrella o Punto a Punto):**
+    - Usado para alta velocidad (100Base-FX, 1000Base-SX/LX, 10/40/100 GBase).
+    - Ideal para distancias largas (varios kilómetros) y entornos con alta interferencia electromagnética.
+    - Se usa comúnmente para _backbones_ (enlaces troncales) entre switches o para conectar edificios.
+    ![[Pasted image 20251026223834.jpg | 200]]
+### 8. Explicar y graficar las tramas Ethernet y IEEE 802.3. ¿Qué diferencias tienen?
+Ambas tramas son muy similares y su estructura es la base de las LAN modernas.
+![[Pasted image 20251026223901.jpg | 400 ]]
+#### Estructura de la Trama
+La trama se compone de los siguientes campos:
+- **Preámbulo (7 bytes):** Sincronización (alterna 1s y 0s).
+- **SFD (1 byte):** Delimitador de inicio de trama (10101011).
+- **MAC Destino (6 bytes):** Dirección física del receptor.
+- **MAC Origen (6 bytes):** Dirección física del emisor.
+- **Tipo/Longitud (2 bytes):** **¡Aquí está la diferencia clave!**
+- **Datos (46 a 1500 bytes):** El _payload_ (paquete IP, etc.).
+- **FCS (4 bytes):** Secuencia de verificación de trama (CRC para detectar errores).
+#### Diferencias (Campo Tipo/Longitud)
+1. **Trama Ethernet II (o DIX):**
+    - Este formato es el estándar _de facto_ usado hoy.
+    - El campo de 2 bytes se usa como **Tipo (Type)**.
+    - Indica qué protocolo de capa superior está contenido en los datos (ej. `0x0800` para IPv4, `0x0806` para ARP).
+    - Cualquier valor en este campo **mayor a 1536** (0x0600) se interpreta como un "Tipo".
+    
+2. **Trama IEEE 802.3 (Original):**
+    - En el estándar original, este campo se usaba como **Longitud (Length)**.
+    - Indicaba el número de bytes en el campo de datos.
+    - Cualquier valor **igual o menor a 1500** (0x05DC) se interpreta como "Longitud".
+    - Para saber el protocolo de capa superior, 802.3 requería usar un encabezado extra (LLC 802.2) dentro del campo de datos, lo que añadía complejidad.
 
 ### 9. Longitud mínima y máxima de las tramas
 - **Longitud mínima (64 bytes):** necesaria para garantizar que, en CSMA/CD, una colisión pueda detectarse antes de que termine la transmisión.
