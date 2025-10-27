@@ -81,12 +81,12 @@ Los estándares más comunes de esta familia (que definen las velocidades y frec
 - **802.11ax (Wi-Fi 6/6E):** (Hasta ~9.6 Gbps, 2.4/5/6 GHz, enfocado en eficiencia y alta densidad de dispositivos)
 ### 7. Explicar y graficar los distintos tipos de cableados de las redes Ethernet.
 Históricamente, Ethernet ha usado tres tipos principales de cableado, asociados a distintas topologías:
-1. **Cable Coaxial (Topología de Bus):**
+1. **Cable Coaxial:**
     - Usado en las primeras redes (10Base5 "Thicknet" y 10Base2 "Thinnet").
     - Velocidad típica 10 Mbps.
     - Todos los dispositivos se conectaban a un único cable compartido (bus).
     - Requería terminadores en ambos extremos del cable para evitar reflexiones de señal, muy rígido y un solo cable compartido.
-    ![[Pasted image 20251026223735.jpg | 200]]
+    ![[Pasted image 20251027092320.png | 400]]
 2. **Par Trenzado (UTP/STP) (Topología de Estrella):**
     - Es el estándar actual (10Base-T, 100Base-TX, 1000Base-T, 10GBase-T).
     - Velocidad de 10 Mbps hasta 10 Gbps.
@@ -96,14 +96,14 @@ Históricamente, Ethernet ha usado tres tipos principales de cableado, asociados
     - Cada dispositivo se conecta con su propio cable a un dispositivo central (hub o, más comúnmente, un **switch**).
     - Flexible, económico y fácil de instalar. Permite distancias de hasta 100m por enlace.
     - Usa conectores RJ45.
-    ![[Pasted image 20251026223756.jpg | 200]]
+    ![[Pasted image 20251027092444.png | 400]]
 3. **Fibra Óptica (Topología de Estrella o Punto a Punto):**
     - Usado para alta velocidad (100Base-FX, 1000Base-SX/LX, 10/40/100 GBase).
 	    - Monomodo: un solo haz de luz, larga distancia (decenas de km)
 	    - Multimodo: varios haces, corta distancia (hasta 2km)
     - Ideal para distancias largas (varios kilómetros) y entornos con alta interferencia electromagnética.
     - Se usa comúnmente para _backbones_ (enlaces troncales) entre switches o para conectar edificios.
-    ![[Pasted image 20251026223834.jpg | 200]]
+    ![[Pasted image 20251027092733.png]]
 ### 8. Explicar y graficar las tramas Ethernet y IEEE 802.3. ¿Qué diferencias tienen?
 #### Estructura de la Trama
 La trama se compone de los siguientes campos:
