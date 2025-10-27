@@ -9,7 +9,7 @@
  5. Explicar las características del protocolo CSMA con detección de colisiones.
  6. ¿Qué protocolos están disponibles para las redes LAN inalámbricas?
  7. Explicar y graficar los distintos tipos de cableados de las redes Ethernet.
- 8. Explicar y graficar las tramas Ethernet y IEEE 802.3.  Qué diferencias
+ 8. Explicar y graficar las tramas Ethernet y IEEE 802.3. ¿Qué diferencias
  tienen?
  9. ¿Porqué las tramas deben tener una longitud máxima y una mínima?
  10. ¿Cómo medimos el desempeño de una red Ethernet?
@@ -83,21 +83,28 @@ Los estándares más comunes de esta familia (que definen las velocidades y frec
 Históricamente, Ethernet ha usado tres tipos principales de cableado, asociados a distintas topologías:
 1. **Cable Coaxial (Topología de Bus):**
     - Usado en las primeras redes (10Base5 "Thicknet" y 10Base2 "Thinnet").
+    - Velocidad típica 10 Mbps.
     - Todos los dispositivos se conectaban a un único cable compartido (bus).
-    - Requería terminadores en ambos extremos del cable.
+    - Requería terminadores en ambos extremos del cable para evitar reflexiones de señal, muy rígido y un solo cable compartido.
     ![[Pasted image 20251026223735.jpg | 200]]
 2. **Par Trenzado (UTP/STP) (Topología de Estrella):**
     - Es el estándar actual (10Base-T, 100Base-TX, 1000Base-T, 10GBase-T).
+    - Velocidad de 10 Mbps hasta 10 Gbps.
+    - Tipos comunes
+	    - UTP
+	    - STP
     - Cada dispositivo se conecta con su propio cable a un dispositivo central (hub o, más comúnmente, un **switch**).
+    - Flexible, económico y fácil de instalar. Permite distancias de hasta 100m por enlace.
     - Usa conectores RJ45.
     ![[Pasted image 20251026223756.jpg | 200]]
 3. **Fibra Óptica (Topología de Estrella o Punto a Punto):**
     - Usado para alta velocidad (100Base-FX, 1000Base-SX/LX, 10/40/100 GBase).
+	    - Monomodo: un solo haz de luz, larga distancia (decenas de km)
+	    - Multimodo: varios haces, corta distancia (hasta 2km)
     - Ideal para distancias largas (varios kilómetros) y entornos con alta interferencia electromagnética.
     - Se usa comúnmente para _backbones_ (enlaces troncales) entre switches o para conectar edificios.
     ![[Pasted image 20251026223834.jpg | 200]]
 ### 8. Explicar y graficar las tramas Ethernet y IEEE 802.3. ¿Qué diferencias tienen?
-![[Pasted image 20251026225126.png | 400]]
 #### Estructura de la Trama
 La trama se compone de los siguientes campos:
 - **Preámbulo (7 bytes):** Sincronización (alterna 1s y 0s).
@@ -109,16 +116,19 @@ La trama se compone de los siguientes campos:
 - **FCS (4 bytes):** Secuencia de verificación de trama (CRC para detectar errores).
 #### Diferencias (Campo Tipo/Longitud)
 1. **Trama Ethernet II (o DIX):**
-    - Este formato es el estándar _de facto_ usado hoy.
+    - Este formato es el estándar usado hoy.
     - El campo de 2 bytes se usa como **Tipo (Type)**.
     - Indica qué protocolo de capa superior está contenido en los datos (ej. `0x0800` para IPv4, `0x0806` para ARP).
     - Cualquier valor en este campo **mayor a 1536** (0x0600) se interpreta como un "Tipo".
+    ![[Pasted image 20251027091357.png]]
     
 2. **Trama IEEE 802.3 (Original):**
     - En el estándar original, este campo se usaba como **Longitud (Length)**.
     - Indicaba el número de bytes en el campo de datos.
     - Cualquier valor **igual o menor a 1500** (0x05DC) se interpreta como "Longitud".
-    - Para saber el protocolo de capa superior, 802.3 requería usar un encabezado extra (LLC 802.2) dentro del campo de datos, lo que añadía complejidad.
+    - Para saber el protocolo de capa superior, 802.3 requería usar un encabezado extra (LLC 802.2) dentro del campo de datos, lo que añade complejidad.
+	![[Pasted image 20251027091249.png]]
+En resumen, la principal diferencia entre ambos formatos radica en el campo Tipo/Longitud: Ethernet II usa este campo para identificar el protocolo de capa superior, mientras que IEEE 802.3 lo usa para indicar la longitud y requiere un encabezado adicional LLC/SNAP. Por simplicidad y compatibilidad, Ethernet II es el formato más utilizado actualmente.
 
 ### 9. Longitud mínima y máxima de las tramas
 - **Longitud mínima (64 bytes):** necesaria para garantizar que, en CSMA/CD, una colisión pueda detectarse antes de que termine la transmisión.
