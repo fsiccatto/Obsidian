@@ -90,15 +90,14 @@ Históricamente, Ethernet ha usado tres tipos principales de cableado, asociados
     - Es el estándar actual (10Base-T, 100Base-TX, 1000Base-T, 10GBase-T).
     - Cada dispositivo se conecta con su propio cable a un dispositivo central (hub o, más comúnmente, un **switch**).
     - Usa conectores RJ45.
-      ![[Pasted image 20251026223756.jpg | 200]]
+    ![[Pasted image 20251026223756.jpg | 200]]
 3. **Fibra Óptica (Topología de Estrella o Punto a Punto):**
     - Usado para alta velocidad (100Base-FX, 1000Base-SX/LX, 10/40/100 GBase).
     - Ideal para distancias largas (varios kilómetros) y entornos con alta interferencia electromagnética.
     - Se usa comúnmente para _backbones_ (enlaces troncales) entre switches o para conectar edificios.
     ![[Pasted image 20251026223834.jpg | 200]]
 ### 8. Explicar y graficar las tramas Ethernet y IEEE 802.3. ¿Qué diferencias tienen?
-Ambas tramas son muy similares y su estructura es la base de las LAN modernas.
-![[Pasted image 20251026223901.jpg | 400 ]]
+![[Pasted image 20251026225126.png | 400]]
 #### Estructura de la Trama
 La trama se compone de los siguientes campos:
 - **Preámbulo (7 bytes):** Sincronización (alterna 1s y 0s).
