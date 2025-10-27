@@ -80,4 +80,31 @@ Si dos dispositivos transmiten al mismo tiempo, ocurre una colisión. CSMA/CD p
 - **Longitud mínima (64 bytes):** necesaria para garantizar que, en CSMA/CD, una colisión pueda detectarse antes de que termine la transmisión.
 - **Longitud máxima (1518 bytes):** evita que una sola estación monopolice el medio por demasiado tiempo, mejora la equidad y limita la latencia.
 
-### 10. 
+### 10. Medición del desempeño en una red Ethernet
+El desempeño de una red Ethernet puede medirse principalmente mediante los siguientes indicadores:
+- **Throughput (ancho de banda efectivo):** cantidad de datos útiles transmitidos por unidad de tiempo, considerando la pérdida por colisiones y retransmisiones.
+- **Latencia:** tiempo que tarda un paquete en viajar desde el emisor al receptor.
+- **Tasa de colisiones:** número de colisiones que ocurren en la red durante un período determinado.
+- **Tasa de errores:** porcentaje de tramas erróneas que deben ser retransmitidas.
+- **Utilización del canal:** porcentaje del tiempo en que el medio está siendo utilizado para transmisión efectiva.
+
+### 11. Ventajas de una red Ethernet conmutada
+- **Reducción de colisiones:** Al conectar cada estación a un puerto exclusivo del switch, cada enlace opera en modo dedicado, evitando colisiones.
+- **Mayor rendimiento:** Al eliminar la competencia por el medio, el throughput es casi máximo teórico para cada enlace.
+- **Segmentación eficiente:** Los switches pueden segmentar la red en dominios de colisión más pequeños, mejorando el desempeño.
+- **Soporte para full-duplex:** Permite transmisión y recepción simultánea sin colisiones.
+- **Escalabilidad:** Facilita agregar más nodos sin degradación significativa de rendimiento.
+- **Mejora la seguridad:** Permite controlar y filtrar el tráfico entre puertos.
+
+### 12. Estudio comparativo entre FastEthernet y GigabitEthernet
+
+|Característica|FastEthernet (FE)|GigabitEthernet (GE)|
+|---|---|---|
+|Velocidad|100 Mbps|1 Gbps (1000 Mbps)|
+|Medios de transmisión|Par trenzado (Cat5) y fibra óptica|Par trenzado (Cat5e/Cat6), fibra óptica|
+|Distancia máxima|Hasta 100 m (UTP)|Hasta 100 m (UTP Cat5e/Cat6), más en fibra óptica|
+|Costos|Menor costo|Generalmente mayor por velocidad y componentes|
+|Uso típico|Redes de área local estándar|Redes que requieren mayor ancho de banda, centros de datos|
+|Compatibilidad|Compatible con Ethernet 10Base-T|Compatible con FastEthernet y Ethernet 10Base-T mediante auto-negociación|
+|Soporte full-duplex|Sí|Sí|
+|Consumo energético|Bajo|Relativamente mayor|
