@@ -70,12 +70,11 @@ Se aplican mecanismos como WPA3 para cifrado robusto, autenticación mediante ce
 - Filtrado MAC y ocultamiento SSID (complementarios, no suficientes).
 
 14. Explicar el funcionamiento de los firewalls y de los sistemas de detección de intrusos. Graficar
-Filtran el tráfico según reglas (IP, puertos, protocolos). Hay varios tipos:
-- Packet filtering
-- Stateful inspection
-- Application layer (proxy)
-IDS (*Intrusion Detection System*)
-    
+Un **firewall** es un dispositivo de seguridad de red que actúa como una **barrera** entre una red interna de confianza (como la red de tu oficina o tu casa) y redes externas no confiables (como Internet).
+El trabajo principal es filtrar el tráfico de red entrante y saliente basándose en un conjunto de reglas de seguridad predefinidas.
+
+El **Sistema de detección de Instrusos** (*IDS*) no bloquea el tráfico. Su trabajo es monitorear la red en busca de actividades sospechosas o maliciosas y generar alertas cuando las detecta.
+
 INTERNET ---> Firewall ---> IDS ---> Red interna
-        | Bloquea tráfico no permitido |
-        | IDS detecta y alerta intrusiones |
+      | Bloquea tráfico no permitido      |
+      | IDS detecta y alerta intrusiones |
