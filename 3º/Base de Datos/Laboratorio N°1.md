@@ -20,8 +20,28 @@ Un DBMS centralizado almacena todos los datos en un único servidor o ubicación
 ### 2. Entorno Práctico
 1. Elaborar una tabla comparativa con recomendaciones, errores comunes y diferencias al instalar DBMS en distintos sistemas operativos (Windows, Linux, Mac, etc.).
 
+|**Aspecto**|**Windows**|**Linux**|**macOS**|
+|---|---|---|---|
+|**DBMS más comunes**|SQL Server, MySQL, Oracle, PostgreSQL|MySQL, PostgreSQL, MariaDB, Oracle|PostgreSQL, MySQL, SQLite|
+|**Método de instalación**|Instaladores gráficos (.exe / .msi). SQL Server usa su propio instalador con asistente paso a paso.|Gestores de paquetes (`apt`, `yum`, `dnf`). Ej: `sudo apt install mysql-server`. También imágenes Docker.|Homebrew (`brew install postgresql`), DMG instaladores, o Docker.|
+|**Privilegios requeridos**|Ejecutar como Administrador. SQL Server requiere cuenta de servicio dedicada.|Usuario root o `sudo`. Se crea un usuario de sistema propio (ej: `mysql`, `postgres`).|Permisos de administrador para Homebrew o instaladores .pkg.|
+|**Configuración de red/firewall**|Habilitar puertos en Firewall de Windows (ej: 1433 para SQL Server, 3306 para MySQL).|Configurar `iptables`/`ufw` para abrir puertos. Editar `bind-address` en archivos .cnf/.conf.|Firewall menos restrictivo por defecto, pero verificar en Preferencias de Seguridad.|
+|**Ruta de datos por defecto**|`C:\Program Files\MySQL\data\` o `C:\Program Files\Microsoft SQL Server\MSSQL\DATA\`|`/var/lib/mysql/` o `/var/lib/postgresql/`|`/usr/local/var/postgres/` (Homebrew) o `/opt/homebrew/var/` (Apple Silicon).|
+|**Servicio/daemon**|Se registra como servicio de Windows. Gestión desde `services.msc` o `net start/stop`.|Se gestiona con `systemctl` (systemd). Ej: `sudo systemctl start mysql`.|`brew services start postgresql` o `launchctl` para gestión de daemons.|
+|**Errores comunes**|Conflictos de puerto si ya hay otro DBMS instalado. Falta de .NET Framework o Visual C++ Redistributable. Olvidar habilitar TCP/IP en SQL Server.|Olvidar ejecutar `mysql_secure_installation`. Permisos incorrectos en directorios de datos. `bind-address` en 127.0.0.1 impide conexiones remotas.|Problemas de permisos en Apple Silicon (M1/M2/M3). Versiones no compatibles con ARM. Conflictos entre instalación por Homebrew y por .dmg.|
+|**Compatibilidad destacada**|SQL Server es nativo y tiene mejor integración. Oracle y MySQL funcionan sin problemas.|Entorno preferido para servidores en producción. Mejor rendimiento y estabilidad para MySQL, PostgreSQL y MariaDB.|Ideal para desarrollo local. SQL Server no tiene versión nativa (se usa Docker). Oracle no soporta macOS oficialmente.|
+|**Recomendaciones**|Usar el instalador oficial. Verificar requisitos previos (.NET, RAM, disco). Configurar autenticación mixta en SQL Server.|Siempre correr el script de seguridad post-instalación. Usar `systemctl enable` para inicio automático. Preferir paquetes oficiales del repositorio del proveedor.|Usar Homebrew para simplificar instalación y actualizaciones. Recurrir a Docker para DBMS no soportados nativamente (SQL Server, Oracle).|
+
+---
 ##### Bibliografía
-• Elmasri, R. y Navathe, S. B. (2016). Fundamentals of Database Systems (7.ª ed.). Pearson.
-• Silberschatz, A., Korth, H. F. y Sudarshan, S. (2019). Database System Concepts (7.ª ed.). McGraw-Hill.
-• Date, C. J. (2004). An Introduction to Database Systems (8.ª ed.).
-• Oracle Corp. (2025). Oracle Database Documentation.
+- Elmasri, R. y Navathe, S. B. (2016). Fundamentals of Database Systems (7.ª ed.). Pearson.
+- Silberschatz, A., Korth, H. F. y Sudarshan, S. (2019). Database System Concepts (7.ª ed.). McGraw-Hill.
+- Date, C. J. (2004). An Introduction to Database Systems (8.ª ed.).
+- Elmasri, R. y Navathe, S. B. (2016). _Fundamentals of Database Systems_ (7.ª ed.). Pearson. Cap. 2.
+- Silberschatz, A., Korth, H. F. y Sudarshan, S. (2019). _Database System Concepts_ (7.ª ed.). McGraw-Hill. Cap. 1.
+- Oracle Corp. (2025)
+- Microsoft (2025)
+- PostgreSQL Global Development Group (2025). _PostgreSQL Installation_
+- Docker Inc. (2025). _Docker Hub
+
+---
