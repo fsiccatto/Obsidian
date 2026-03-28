@@ -157,6 +157,13 @@ Docker:
 Conexiones:
 ![[dbeaver.png]]
 
+#### Participantes
+- Franco Siccatto
+- Kevin Diaz
+- Lucia Vazquez
+- Martin Coria
+- Alejandro Cortes
+
 ---
 ##### Bibliografía
 - Elmasri, R. y Navathe, S. B. (2016). Fundamentals of Database Systems (7.ª ed.). Pearson.
