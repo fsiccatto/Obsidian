@@ -95,9 +95,9 @@ psql                                          # Entrar a la consola
 ```
 
 ```sql
-CREATE DATABASE laboratorio_bd;                            -- Crear base de datos
+CREATE DATABASE postgres;                            -- Crear base de datos
 CREATE USER admin_pg WITH PASSWORD '{password}';             -- Crear usuario con contraseña
-GRANT ALL PRIVILEGES ON DATABASE laboratorio_bd TO admin_pg;  -- Asignar permisos
+GRANT ALL PRIVILEGES ON DATABASE postgres TO admin_pg;  -- Asignar permisos
 ALTER USER admin_pg WITH SUPERUSER;                        -- Darle rol de superusuario
 ```
 
