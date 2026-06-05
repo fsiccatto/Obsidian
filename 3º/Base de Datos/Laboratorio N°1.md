@@ -36,6 +36,7 @@ Un DBMS centralizado almacena todos los datos en un único servidor o ubicación
 - ##### Ajustes y correcciones realizados luego del intercambio grupal
 Durante la revisión conjunta del informe se realizaron las siguientes correcciones: se unificó la terminología utilizada en la parte teórica (por ejemplo, estandarizar "DBMS" en lugar de alternar con "SGBD"), se corrigieron errores menores en los comandos de instalación de MariaDB y PostgreSQL dentro de los contenedores Docker, y se reorganizó la tabla comparativa de instalación en distintos sistemas operativos para que fuera más clara y concisa.
 - ##### Aportes de cada integrante
+<<<<<<< HEAD
 | Integrante      | Rol                       | Aportes                                                                                                                           |
 | --------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | [Integrante 1]  | Coordinador general       | Organizó las reuniones, distribuyó las tareas, realizó la revisión final del informe completo y unificó el formato de entrega.    |
@@ -43,6 +44,16 @@ Durante la revisión conjunta del informe se realizaron las siguientes correccio
 | [Integrante 3]  | Análisis comparativo      | Elaboró la tabla comparativa de instalación en Windows, Linux y macOS, incluyendo errores comunes y recomendaciones.              |
 | Franco Siccatto | Entorno práctico (Docker) | Creó y configuró los contenedores Docker para MariaDB y PostgreSQL. Realizó las pruebas de conexión remota desde DBeaver.         |
 | [Integrante 5]  | Entorno práctico (Oracle) | Configuró el contenedor de Oracle Database XE sobre Oracle Linux. Documentó los pasos de conexión desde SQL Developer.            |
+=======
+| Integrante       | Rol                       | Aportes                                                                                                                           |
+| ---------------- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Todos            | Coordinadores generales   | Organizamos las reuniones, distribuimos las tareas y unificamos el formato                                                        |
+| Alejandro Cortes | Investigación teórica     | Redactó la clasificación de DBMS según modelo de datos, cantidad de usuarios y distribución geográfica. Recopiló la bibliografía. |
+| Lucia Vazquez    | Análisis comparativo      | Elaboró la tabla comparativa de instalación en Windows, Linux y macOS, incluyendo errores comunes y recomendaciones.              |
+| Martin Coria     | Entorno práctico (Docker) | Creó y configuró los contenedores Docker para MariaDB y PostgreSQL. Realizó las pruebas de conexión remota desde DBeaver.         |
+| Franco Siccatto  | Entorno práctico (Oracle) | Creó y configuró los contenedores Docker para PostgreSQL. Realizó las pruebas de conexión remota desde DBeaver.                   |
+| Kevin Diaz       | Entorno práctico (Oracle) | Configuró el contenedor de Oracle Database XE sobre Oracle Linux. Documentó los pasos de conexión desde SQL Developer.            |
+>>>>>>> origin/main
 - ##### Dificultades en la dinámica grupal
 La principal dificultad fue la coordinación de horarios, ya que no todos los integrantes tenían disponibilidad en los mismos momentos, lo que retrasó algunas instancias de revisión conjunta. También surgieron problemas técnicos durante la configuración de los contenedores Docker: en particular, la conexión remota a PostgreSQL presentó errores de autenticación que no pudieron resolverse por completo, lo cual requirió más tiempo del planificado. La participación fue relativamente pareja, aunque la carga de trabajo en la parte práctica recayó más sobre \[Integrante 4] e \[Integrante 5], lo cual se compensó con una mayor participación de los demás en la redacción y revisión del informe. Los desacuerdos menores (por ejemplo, qué DBMS comerciales incluir en la comparativa) se resolvieron mediante votación simple dentro del grupo.
 
@@ -94,9 +105,9 @@ psql                                          # Entrar a la consola
 ```
 
 ```sql
-CREATE DATABASE laboratorio_bd;                            -- Crear base de datos
+CREATE DATABASE postgres;                            -- Crear base de datos
 CREATE USER admin_pg WITH PASSWORD '{password}';             -- Crear usuario con contraseña
-GRANT ALL PRIVILEGES ON DATABASE laboratorio_bd TO admin_pg;  -- Asignar permisos
+GRANT ALL PRIVILEGES ON DATABASE postgres TO admin_pg;  -- Asignar permisos
 ALTER USER admin_pg WITH SUPERUSER;                        -- Darle rol de superusuario
 ```
 
@@ -155,6 +166,13 @@ Docker:
 
 Conexiones:
 ![[dbeaver.png]]
+
+#### Participantes
+- Franco Siccatto
+- Kevin Diaz
+- Lucia Vazquez
+- Martin Coria
+- Alejandro Cortes
 
 ---
 ##### Bibliografía
